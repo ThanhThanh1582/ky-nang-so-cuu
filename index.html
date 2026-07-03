@@ -2286,16 +2286,22 @@
         }
 
         // 2. KHỞI TẠO HIỆU ỨNG CHỮ CHẠY ĐÁNH MÁY CHO SLIDE 1
+        let typewriterTimeout = null;
         function typeWriterEffect() {
             const titleEl = document.getElementById("slide1-title");
             const text = "Bài 31: KĨ NĂNG SƠ CỨU VẾT THƯƠNG NHẸ";
+            if (typewriterTimeout) {
+                clearTimeout(typewriterTimeout);
+            }
             titleEl.textContent = "";
             let i = 0;
             function type() {
                 if (i < text.length) {
                     titleEl.textContent += text.charAt(i);
                     i++;
-                    setTimeout(type, 80);
+                    typewriterTimeout = setTimeout(type, 80);
+                } else {
+                    typewriterTimeout = null;
                 }
             }
             type();
@@ -2923,7 +2929,6 @@
         // BẮT ĐẦU ỨNG DỤNG
         window.onload = () => {
             buildSidebar();
-            typeWriterEffect();
             updateSlideUI();
         };
     </script>
