@@ -47,8 +47,8 @@
             background-image: url('emergency_room_bg.png');
             background-size: cover;
             background-position: center;
-            filter: blur(10px);
-            opacity: 0.25;
+            filter: blur(2px);
+            opacity: 0.35;
             z-index: -2;
         }
 
@@ -62,43 +62,61 @@
         /* SIDEBAR ĐIỀU HƯỚNG BÊN TRÁI */
         .sidebar {
             width: var(--sidebar-width);
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.93);
             backdrop-filter: blur(15px);
-            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            border-right: 1px solid rgba(0, 119, 182, 0.15);
             display: flex;
             flex-direction: column;
             z-index: 10;
+            overflow-y: auto;
         }
 
         .sidebar-header {
-            padding: 18px;
+            padding: 20px 15px;
             background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             color: white;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 16px;
             text-align: center;
             border-bottom: 2px solid var(--secondary);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .sidebar-stage-group {
+            margin-bottom: 12px;
+        }
+
+        .sidebar-stage-title {
+            padding: 8px 12px;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--secondary);
+            background: rgba(0, 168, 150, 0.06);
+            border-left: 3px solid var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .slide-list {
-            flex: 1;
-            overflow-y: auto;
             list-style: none;
-            padding: 10px 5px;
+            padding: 4px 6px;
         }
 
         .slide-item {
-            padding: 10px 12px;
-            margin-bottom: 5px;
+            padding: 8px 10px;
+            margin-bottom: 3px;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 13px;
+            font-size: 12.5px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             color: var(--text-muted);
             transition: all 0.2s ease;
+            line-height: 1.3;
             border: 1px solid transparent;
         }
 
@@ -165,6 +183,19 @@
             font-size: 12px;
             font-weight: 600;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-role-badge {
+            background: rgba(6, 182, 212, 0.12);
+            color: #06b6d4;
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            display: none;
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.15);
+            transition: all 0.3s ease;
         }
 
         /* KHUNG CHỨA SLIDE DẠNG GLASSMORPHISM - ĐÃ PHÓNG TO HƠN */
@@ -1374,8 +1405,9 @@
                 <div class="header-title" id="header-slide-info">
                     BÀI 31: KĨ NĂNG SƠ CỨU VẾT THƯƠNG NHẸ
                 </div>
-                <div class="header-stage-badge" id="header-stage-badge">
-                    GIAI ĐOẠN: KHỞI ĐỘNG
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <div class="header-role-badge" id="header-role-badge">🩺 BÁC SĨ THỰC TẬP</div>
+                    <div class="header-stage-badge" id="header-stage-badge">GIAI ĐOẠN: KHỞI ĐỘNG</div>
                 </div>
             </div>
 
@@ -1401,11 +1433,11 @@
                             </div>
                             <div class="mt01-col">
                                 <div class="mt01-col-title">🩹 Kỹ năng</div>
-                                <div class="mt01-col-desc">Thực hiện thuần thục phác đồ sơ cứu 5 bước vô trùng và kỹ thuật băng bó vết thương khít chặt, an toàn cho nạn nhân.</div>
+                                <div class="mt01-col-desc">Thực hiện thuần thục phác đồ sơ cứu 5 bước vô trùng, kỹ thuật băng bó vết thương khít chặt, an toàn và cố định dị vật cho nạn nhân.</div>
                             </div>
                             <div class="mt01-col">
                                 <div class="mt01-col-title">❤️ Thái độ</div>
-                                <div class="mt01-col-desc">Giữ vững tâm lý bình tĩnh trước chấn thương, thể hiện sự ân cần thấu cảm để xoa dịu nỗi sợ hãi của bạn học.</div>
+                                <div class="mt01-col-desc">Giữ vững tâm lý bình tĩnh trước chấn thương, thể hiện sự ân cần thấu cảm và chuyên nghiệp trước khi tiếp cận hỗ trợ đồng đội.</div>
                             </div>
                         </div>
                     </div>
@@ -1553,7 +1585,7 @@
                         <div class="tk01-header">TỔNG KẾT GIAI ĐOẠN 1</div>
                         <div class="tk01-list-container">
                             <ul class="tk01-list">
-                                <li class="tk01-item">Vệ sinh tay của người sơ cứu là nguyên tắc vô trùng bắt buộc đầu tiên.</li>
+                                <li class="tk01-item">Vệ sinh tay của người sơ cứu là nguyên tắc vô trùng bắt buộc đầu tiên khi tiếp cận cấp cứu.</li>
                                 <li class="tk01-item">Không được tự ý dùng tay bẩn bịt miệng vết thương hở để tránh đưa vi khuẩn vào sâu.</li>
                                 <li class="tk01-item">Luôn rửa sạch tay dưới vòi nước chảy bằng xà phòng sát khuẩn tối thiểu 20 giây.</li>
                             </ul>
@@ -2276,18 +2308,46 @@
 
         // 1. TỰ ĐỘNG KHỞI TẠO DANH SÁCH SIDEBAR
         function buildSidebar() {
-            const list = document.getElementById("sidebar-list");
-            list.innerHTML = "";
-            slidesConfig.forEach((slide, index) => {
-                const li = document.createElement("li");
-                li.className = `slide-item ${index === currentSlideIndex ? 'active' : ''}`;
-                li.onclick = () => goToSlide(slide.id);
-                li.innerHTML = `
-                    <span class="slide-badge">${slide.type}</span>
-                    <span>Slide ${slide.id}</span>
-                `;
-                list.appendChild(li);
+            const sidebar = document.querySelector(".sidebar");
+            const header = sidebar.querySelector(".sidebar-header");
+            sidebar.innerHTML = "";
+            sidebar.appendChild(header);
+
+            const groups = {};
+            slidesConfig.forEach(slide => {
+                if (!groups[slide.stage]) {
+                    groups[slide.stage] = [];
+                }
+                groups[slide.stage].push(slide);
             });
+
+            for (let stage in groups) {
+                const groupDiv = document.createElement("div");
+                groupDiv.className = "sidebar-stage-group";
+
+                const titleDiv = document.createElement("div");
+                titleDiv.className = "sidebar-stage-title";
+                titleDiv.innerText = stage;
+                groupDiv.appendChild(titleDiv);
+
+                const ul = document.createElement("ul");
+                ul.className = "slide-list";
+
+                groups[stage].forEach(slide => {
+                    const li = document.createElement("li");
+                    li.className = "slide-item";
+                    li.setAttribute("data-slide-id", slide.id);
+                    li.onclick = () => goToSlide(slide.id);
+                    li.innerHTML = `
+                        <span class="slide-badge">${slide.type}</span>
+                        <span>S${slide.id}: ${slide.title.toUpperCase()}</span>
+                    `;
+                    ul.appendChild(li);
+                });
+
+                groupDiv.appendChild(ul);
+                sidebar.appendChild(groupDiv);
+            }
         }
 
         // 2. KHỞI TẠO HIỆU ỨNG CHỮ CHẠY ĐÁNH MÁY CHO SLIDE 1
@@ -2332,8 +2392,9 @@
 
             // Cập nhật Sidebar active class
             const items = document.querySelectorAll(".slide-item");
-            items.forEach((item, index) => {
-                if (index === currentSlideIndex) {
+            items.forEach(item => {
+                const slideId = item.getAttribute("data-slide-id");
+                if (slideId == currentSlide.id) {
                     item.classList.add("active");
                 } else {
                     item.classList.remove("active");
@@ -2343,6 +2404,44 @@
             // Cập nhật Header
             document.getElementById("header-slide-info").innerHTML = `Slide ${currentSlide.id}: ${currentSlide.title.toUpperCase()}`;
             document.getElementById("header-stage-badge").innerText = `GIAI ĐOẠN: ${currentSlide.stage.toUpperCase()}`;
+
+            // Cập nhật Rank Badge
+            const roleBadge = document.getElementById("header-role-badge");
+            if (roleBadge) {
+                const sId = currentSlide.id;
+                // Slide 2-8B: Bác sĩ thực tập (Teal)
+                const isPractitioner = (sId >= 2 && sId <= 8) || sId === "8B";
+                // Slide 8C: Nâng cấp bác sĩ (Yellow)
+                const isUpgrade = sId === "8C";
+                // Slide 9-24: Bác sĩ chính thức (Green/Mint)
+                // Slide 25+: Bác sĩ chính thức
+                const isOfficial = (sId >= 9 && sId <= 35) || sId === "14B" || sId === "29B";
+
+                if (currentSlideIndex === 0) {
+                    roleBadge.style.display = "none";
+                } else {
+                    roleBadge.style.display = "block";
+                    if (isPractitioner) {
+                        roleBadge.innerText = "🩺 BÁC SĨ THỰC TẬP";
+                        roleBadge.style.background = "rgba(6, 182, 212, 0.12)";
+                        roleBadge.style.color = "#06b6d4";
+                        roleBadge.style.borderColor = "rgba(6, 182, 212, 0.3)";
+                        roleBadge.style.boxShadow = "0 0 10px rgba(6, 182, 212, 0.2)";
+                    } else if (isUpgrade) {
+                        roleBadge.innerText = "⚡ NÂNG CẤP BÁC SĨ";
+                        roleBadge.style.background = "rgba(245, 158, 11, 0.12)";
+                        roleBadge.style.color = "#f59e0b";
+                        roleBadge.style.borderColor = "rgba(245, 158, 11, 0.3)";
+                        roleBadge.style.boxShadow = "0 0 10px rgba(245, 158, 11, 0.2)";
+                    } else if (isOfficial) {
+                        roleBadge.innerText = "🎖️ BÁC SĨ CHÍNH THỨC";
+                        roleBadge.style.background = "rgba(16, 185, 129, 0.12)";
+                        roleBadge.style.color = "#10b981";
+                        roleBadge.style.borderColor = "rgba(16, 185, 129, 0.3)";
+                        roleBadge.style.boxShadow = "0 0 10px rgba(16, 185, 129, 0.2)";
+                    }
+                }
+            }
 
             // Quản lý trạng thái nút Next / Prev
             document.getElementById("btn-prev").className = `btn btn-nav ${currentSlideIndex === 0 ? 'btn-disabled' : ''}`;
@@ -2969,22 +3068,26 @@
         // 15. NGĂN NGẮT DÒNG TIẾNG VIỆT CHO TỪ GHÉP Y KHOA
         function preventCompoundWordWrapping() {
             const medicalTerms = [
-                "sơ cứu", "vết thương", "chấn thương", "vô trùng", "băng bó", 
-                "chẩn đoán", "biến chứng", "nhiễm trùng", "uốn ván", "bác sĩ", 
-                "phác đồ", "hội chẩn", "cấp cứu", "mạch máu", "khám bệnh"
+                "Viêm mô tế bào", "Lê Minh Quân", "vết thương", "chấn thương", "thương tổn",
+                "nhiễm trùng", "khám bệnh", "chẩn đoán", "biến chứng", "Gia Bách", "Minh Quân",
+                "Mai Chi", "Hoàng Nam", "Minh Khôi", "sát trùng", "khí quản", "tiếp cận",
+                "cố định", "uốn ván", "bác sĩ", "phác đồ", "hội chẩn", "cấp cứu", "mạch máu",
+                "biểu bì", "Vy Anh", "dị vật", "y khoa", "sơ cứu", "vô trùng", "băng bó"
             ];
+            medicalTerms.sort((a, b) => b.length - a.length);
+            const regexes = medicalTerms.map(term => ({
+                regex: new RegExp(term.replace(/ /g, '[ \\t\\r\\n]+'), 'gi'),
+                replacement: term.replace(/ /g, '\u00A0')
+            }));
 
             function traverseDOM(node) {
                 if (node.nodeType === Node.TEXT_NODE) {
                     let text = node.nodeValue;
                     let replaced = false;
 
-                    medicalTerms.forEach(term => {
-                        const regex = new RegExp(`\\b${term}\\b`, 'gi');
+                    regexes.forEach(({ regex, replacement }) => {
                         if (regex.test(text)) {
-                            // Thay khoảng trắng thông thường thành không ngắt dòng (\u00A0)
-                            const nonBreakingTerm = term.replace(/\s+/g, '\u00A0');
-                            text = text.replace(regex, nonBreakingTerm);
+                            text = text.replace(regex, replacement);
                             replaced = true;
                         }
                     });
@@ -3006,6 +3109,18 @@
         window.onload = () => {
             buildSidebar();
             updateSlideUI();
+
+            document.addEventListener('keydown', (e) => {
+                const activeEl = document.activeElement;
+                if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA')) {
+                    return;
+                }
+                if (e.key === 'ArrowRight' || e.key === 'Right') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+                    prevSlide();
+                }
+            });
         };
     </script>
 </body>
