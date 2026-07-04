@@ -683,7 +683,7 @@
         }
         .drop-slot {
             flex: 1;
-            height: 65px;
+            height: 75px;
             border: 2px dashed rgba(0, 119, 182, 0.25);
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.5);
@@ -1007,13 +1007,18 @@
             color: var(--primary-dark);
         }
         .diag-drop-target {
-            height: 42px;
+            height: 70px;
             border: 1px dashed rgba(0, 119, 182, 0.3);
             border-radius: 4px;
             background: rgba(255,255,255,0.4);
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        .selected-drag-card {
+            outline: 3px solid var(--accent-yellow) !important;
+            box-shadow: 0 0 15px rgba(255, 183, 3, 0.6) !important;
+            transform: scale(1.03);
         }
 
         /* 15. CK01: Bản cam kết / Bản phê duyệt */
@@ -1163,7 +1168,7 @@
         }
         .arranger-drag-card {
             width: 180px;
-            height: 65px;
+            height: 70px;
             background: white;
             border: 1px solid rgba(0, 119, 182, 0.2);
             border-radius: 6px;
@@ -1514,14 +1519,14 @@
                             </div>
                             <div class="game-arrange-drop">
                                 <div class="game-drop-slots">
-                                    <div class="drop-slot" id="slot-8-1" ondrop="dropCard(event, 8, 1)" ondragover="allowDrop(event)">Thả Bước 1 tại đây</div>
-                                    <div class="drop-slot" id="slot-8-2" ondrop="dropCard(event, 8, 2)" ondragover="allowDrop(event)">Thả Bước 2 tại đây</div>
-                                    <div class="drop-slot" id="slot-8-3" ondrop="dropCard(event, 8, 3)" ondragover="allowDrop(event)">Thả Bước 3 tại đây</div>
+                                    <div class="drop-slot" id="slot-8-1" ondrop="dropCard(event, 8, 1)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'card', 1)">Thả Bước 1 tại đây</div>
+                                    <div class="drop-slot" id="slot-8-2" ondrop="dropCard(event, 8, 2)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'card', 2)">Thả Bước 2 tại đây</div>
+                                    <div class="drop-slot" id="slot-8-3" ondrop="dropCard(event, 8, 3)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'card', 3)">Thả Bước 3 tại đây</div>
                                 </div>
                                 <div class="arranger-card-pool" style="justify-content: flex-start; margin-top: 5px;">
-                                    <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="card-8-b1">Rửa vết thương dưới nước mát</div>
-                                    <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="card-8-b2">Sát trùng mép vết thương</div>
-                                    <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="card-8-b3">Băng bó lại bằng gạc sạch</div>
+                                    <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="card-8-b1" onclick="selectCardTouch(this)">Rửa vết thương dưới nước mát</div>
+                                    <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="card-8-b2" onclick="selectCardTouch(this)">Sát trùng mép vết thương</div>
+                                    <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="card-8-b3" onclick="selectCardTouch(this)">Băng bó lại bằng gạc sạch</div>
                                 </div>
                                 <button class="btn btn-action" style="align-self: flex-end; margin-top: 5px;" onclick="checkGame1()">Sơ cứu & Chờ kết quả</button>
                             </div>
@@ -1796,10 +1801,10 @@
 
                         <div class="diag-game-layout" style="margin-top: 10px;">
                             <div class="diag-options-pool">
-                                <div class="diag-drag-card" draggable="true" ondragstart="dragCard(event)" id="diag-c1">Bỏng mỡ nhiệt độ 1</div>
-                                <div class="diag-drag-card" draggable="true" ondragstart="dragCard(event)" id="diag-c2">Rách da nhiễm đất cát</div>
-                                <div class="diag-drag-card" draggable="true" ondragstart="dragCard(event)" id="diag-c3">Chảy máu vỡ mạch mũi</div>
-                                <div class="diag-drag-card" draggable="true" ondragstart="dragCard(event)" id="diag-c4">Viêm mô tế bào / Uốn ván</div>
+                                <div class="diag-drag-card" draggable="true" ondragstart="dragCard(event)" id="diag-c1" onclick="selectCardTouch(this)">Bỏng mỡ nhiệt độ 1</div>
+                                <div class="diag-drag-card" draggable="true" ondragstart="dragCard(event)" id="diag-c2" onclick="selectCardTouch(this)">Rách da nhiễm đất cát</div>
+                                <div class="diag-drag-card" draggable="true" ondragstart="dragCard(event)" id="diag-c3" onclick="selectCardTouch(this)">Chảy máu vỡ mạch mũi</div>
+                                <div class="diag-drag-card" draggable="true" ondragstart="dragCard(event)" id="diag-c4" onclick="selectCardTouch(this)">Viêm mô tế bào / Uốn ván</div>
                             </div>
                             <div style="overflow-x: auto;">
                                 <table class="diag-table">
@@ -1813,13 +1818,13 @@
                                     <tbody>
                                         <tr>
                                             <td>👦 An (Gối bẩn)</td>
-                                            <td><div class="diag-drop-target" id="drop-18-an-d" ondrop="dropDiag(event, 'diag-c2')" ondragover="allowDrop(event)">Thả tại đây</div></td>
-                                            <td><div class="diag-drop-target" id="drop-18-an-c" ondrop="dropDiag(event, 'diag-c4')" ondragover="allowDrop(event)">Thả tại đây</div></td>
+                                            <td><div class="diag-drop-target" id="drop-18-an-d" ondrop="dropDiag(event)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'diag')">Thả tại đây</div></td>
+                                            <td><div class="diag-drop-target" id="drop-18-an-c" ondrop="dropDiag(event)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'diag')">Thả tại đây</div></td>
                                         </tr>
                                         <tr>
                                             <td>👧 Minh (Bỏng mỡ)</td>
-                                            <td><div class="diag-drop-target" id="drop-18-minh-d" ondrop="dropDiag(event, 'diag-c1')" ondragover="allowDrop(event)">Thả tại đây</div></td>
-                                            <td><div class="diag-drop-target" id="drop-18-minh-c" ondrop="dropDiag(event, 'diag-c4')" ondragover="allowDrop(event)">Thả tại đây</div></td>
+                                            <td><div class="diag-drop-target" id="drop-18-minh-d" ondrop="dropDiag(event)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'diag')">Thả tại đây</div></td>
+                                            <td><div class="diag-drop-target" id="drop-18-minh-c" ondrop="dropDiag(event)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'diag')">Thả tại đây</div></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1998,28 +2003,28 @@
 
                         <div class="arranger-game-layout" style="margin-top: 10px;">
                             <div class="arranger-slots">
-                                <div class="arranger-slot" id="aslot-1" ondrop="dropArranger(event, 1)" ondragover="allowDrop(event)">
+                                <div class="arranger-slot" id="aslot-1" ondrop="dropArranger(event, 1)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 1)">
                                     <span class="arranger-slot-num">Bước 1</span>
                                 </div>
-                                <div class="arranger-slot" id="aslot-2" ondrop="dropArranger(event, 2)" ondragover="allowDrop(event)">
+                                <div class="arranger-slot" id="aslot-2" ondrop="dropArranger(event, 2)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 2)">
                                     <span class="arranger-slot-num">Bước 2</span>
                                 </div>
-                                <div class="arranger-slot" id="aslot-3" ondrop="dropArranger(event, 3)" ondragover="allowDrop(event)">
+                                <div class="arranger-slot" id="aslot-3" ondrop="dropArranger(event, 3)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 3)">
                                     <span class="arranger-slot-num">Bước 3</span>
                                 </div>
-                                <div class="arranger-slot" id="aslot-4" ondrop="dropArranger(event, 4)" ondragover="allowDrop(event)">
+                                <div class="arranger-slot" id="aslot-4" ondrop="dropArranger(event, 4)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 4)">
                                     <span class="arranger-slot-num">Bước 4</span>
                                 </div>
-                                <div class="arranger-slot" id="aslot-5" ondrop="dropArranger(event, 5)" ondragover="allowDrop(event)">
+                                <div class="arranger-slot" id="aslot-5" ondrop="dropArranger(event, 5)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 5)">
                                     <span class="arranger-slot-num">Bước 5</span>
                                 </div>
                             </div>
                             <div class="arranger-card-pool" id="arranger-pool">
-                                <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-2">Sát trùng mép vết thương</div>
-                                <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-1">Rửa sạch tay & làm sạch vết thương</div>
-                                <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-3">Đắp gạc & quấn băng bó vừa vặn</div>
-                                <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-5">Nâng cao chi bị chấn thương cao hơn tim</div>
-                                <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-4">Theo dõi lưu thông máu đầu chi</div>
+                                <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-2" onclick="selectCardTouch(this)">Sát trùng mép vết thương</div>
+                                <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-1" onclick="selectCardTouch(this)">Rửa sạch tay & làm sạch vết thương</div>
+                                <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-3" onclick="selectCardTouch(this)">Đắp gạc & quấn băng bó vừa vặn</div>
+                                <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-5" onclick="selectCardTouch(this)">Nâng cao chi bị chấn thương cao hơn tim</div>
+                                <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-4" onclick="selectCardTouch(this)">Theo dõi lưu thông máu đầu chi</div>
                             </div>
                             <button class="btn btn-action" style="align-self: flex-end; margin-top: 5px;" onclick="checkArrangerGame()">Kiểm tra quy trình</button>
                         </div>
@@ -2098,22 +2103,22 @@
                             <div class="tchart-tables">
                                 <div class="tchart-col">
                                     <div class="tchart-col-header tchart-col-should">NÊN LÀM</div>
-                                    <div class="tchart-dropzone" id="tzone-should" ondrop="dropTChart(event, 'should')" ondragover="allowDrop(event)"></div>
+                                    <div class="tchart-dropzone" id="tzone-should" ondrop="dropTChart(event, 'should')" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'tchart', 'should')"></div>
                                 </div>
                                 <div class="tchart-col">
                                     <div class="tchart-col-header tchart-col-shouldnt">KHÔNG NÊN LÀM</div>
-                                    <div class="tchart-dropzone" id="tzone-shouldnt" ondrop="dropTChart(event, 'shouldnt')" ondragover="allowDrop(event)"></div>
+                                    <div class="tchart-dropzone" id="tzone-shouldnt" ondrop="dropTChart(event, 'shouldnt')" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'tchart', 'shouldnt')"></div>
                                 </div>
                             </div>
                             <div class="tchart-pool" id="tchart-pool">
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-1">Rửa tay xà phòng sát khuẩn</div>
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-2">Bôi kem đánh răng làm dịu bỏng</div>
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-3">Cúi nhẹ đầu bóp cánh mũi khi chảy máu</div>
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-4">Ngửa cổ ra sau khi chảy máu cam</div>
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-5">Chườm túi đá lạnh khi bị ong đốt</div>
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-6">Đắp lá bàng dã nát lên vết trầy</div>
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-7">Xả nước mát sạch lên vùng da bỏng</div>
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-8">Dùng nhíp giật dị vật đâm sâu rách da</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-1" onclick="selectCardTouch(this)">Rửa tay xà phòng sát khuẩn</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-2" onclick="selectCardTouch(this)">Bôi kem đánh răng làm dịu bỏng</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-3" onclick="selectCardTouch(this)">Cúi nhẹ đầu bóp cánh mũi khi chảy máu</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-4" onclick="selectCardTouch(this)">Ngửa cổ ra sau khi chảy máu cam</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-5" onclick="selectCardTouch(this)">Chườm túi đá lạnh khi bị ong đốt</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-6" onclick="selectCardTouch(this)">Đắp lá bàng dã nát lên vết trầy</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-7" onclick="selectCardTouch(this)">Xả nước mát sạch lên vùng da bỏng</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-8" onclick="selectCardTouch(this)">Dùng nhíp giật dị vật đâm sâu rách da</div>
                             </div>
                         </div>
                         <button class="btn btn-action" style="align-self: flex-end; margin-top: 5px;" onclick="checkTChartGame()">Kiểm tra bảng</button>
@@ -2309,6 +2314,13 @@
 
         // 3. ĐIỀU HƯỚNG SLIDE & QUẢN LÝ NÚT PHỤ
         function updateSlideUI() {
+            // Dừng mọi bộ đếm chạy ngầm của các slide khác khi đổi slide
+            for (let id in timers) {
+                if (timers[id]) {
+                    pauseTimer(id);
+                }
+            }
+
             const frames = document.querySelectorAll(".slide-frame");
             frames.forEach(f => f.classList.remove("active"));
 
@@ -2502,6 +2514,60 @@
         }
 
         let dragData8 = {};
+        let selectedCardId = null;
+        function selectCardTouch(cardElement) {
+            document.querySelectorAll(".selected-drag-card").forEach(el => {
+                if (el !== cardElement) {
+                    el.classList.remove("selected-drag-card");
+                }
+            });
+            if (cardElement.classList.contains("selected-drag-card")) {
+                cardElement.classList.remove("selected-drag-card");
+                selectedCardId = null;
+            } else {
+                cardElement.classList.add("selected-drag-card");
+                selectedCardId = cardElement.id;
+                playDocumentSound();
+            }
+        }
+        function handleSlotTouch(slotElement, gameType, slotParam) {
+            if (!selectedCardId) return;
+            const card = document.getElementById(selectedCardId);
+            if (!card) return;
+            if (gameType === 'card') {
+                if (slotElement.innerHTML.indexOf("card-") === -1) {
+                    slotElement.innerHTML = "";
+                    slotElement.appendChild(card);
+                    dragData8[slotParam] = selectedCardId;
+                }
+            } else if (gameType === 'diag') {
+                if (slotElement.innerHTML.indexOf("diag-") === -1) {
+                    slotElement.innerHTML = "";
+                    const clone = card.cloneNode(true);
+                    clone.id = selectedCardId + "-clone-" + slotElement.id;
+                    clone.style.width = "100%";
+                    clone.style.height = "100%";
+                    clone.style.margin = "0";
+                    clone.onclick = () => {
+                        slotElement.innerHTML = "Thả tại đây";
+                        delete diagData[slotElement.id];
+                    };
+                    slotElement.appendChild(clone);
+                    diagData[slotElement.id] = selectedCardId;
+                }
+            } else if (gameType === 'arranger') {
+                if (slotElement.innerHTML.indexOf("acard-") === -1) {
+                    slotElement.appendChild(card);
+                    arrangerData[slotParam] = selectedCardId;
+                }
+            } else if (gameType === 'tchart') {
+                slotElement.appendChild(card);
+                tchartData[selectedCardId] = slotParam;
+            }
+            card.classList.remove("selected-drag-card");
+            selectedCardId = null;
+            playStamp();
+        }
         function allowDrop(ev) {
             ev.preventDefault();
         }
@@ -2572,13 +2638,23 @@
 
         // 8. GAME 3: KÉO THẢ CHẨN ĐOÁN SLIDE 18
         let diagData = {};
-        function dropDiag(ev, cardId) {
+        function dropDiag(ev) {
             ev.preventDefault();
-            const target = ev.target;
+            const cardId = ev.dataTransfer.getData("text");
+            const target = ev.currentTarget || ev.target;
             const card = document.getElementById(cardId);
-            if (target.innerHTML.indexOf("diag-") === -1) {
+            if (card && target.innerHTML.indexOf("diag-") === -1) {
                 target.innerHTML = "";
-                target.appendChild(card);
+                const clone = card.cloneNode(true);
+                clone.id = cardId + "-clone-" + target.id;
+                clone.style.width = "100%";
+                clone.style.height = "100%";
+                clone.style.margin = "0";
+                clone.onclick = () => {
+                    target.innerHTML = "Thả tại đây";
+                    delete diagData[target.id];
+                };
+                target.appendChild(clone);
                 diagData[target.id] = cardId;
             }
         }
