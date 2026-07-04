@@ -205,14 +205,15 @@
             padding: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Cho phép căn trên để cuộn tự nhiên */
+            overflow-y: auto;
         }
 
         .slide-frame {
             width: 100%;
-            height: 100%;
+            min-height: 620px;
+            height: auto;
             max-width: 1100px;
-            max-height: 620px;
             background: var(--bg-glass);
             backdrop-filter: blur(15px);
             border: 1px solid var(--border-glass);
@@ -223,8 +224,9 @@
             flex-direction: column;
             justify-content: center;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
             animation: slideFadeIn 0.4s ease;
+            margin: auto;
         }
 
         .slide-frame.active {
@@ -1721,8 +1723,8 @@
                 <!-- SLIDE 13 (TH01) -->
                 <div class="slide-frame" id="slide-13">
                     <div class="template-th01">
-                        <div class="th01-title">THỰC HÀNH KHÁM BỆNH</div>
-                        <div class="th01-subtitle">Thảo luận nhóm và tìm thói quen sai lầm trên bệnh án</div>
+                        <div class="th01-title">THỰC HÀNH KHÁM BỆNH - PHẦN 1</div>
+                        <div class="th01-subtitle">Thảo luận nhóm và tìm thói quen sai lầm trên bệnh án của Gia Bách và Lê Minh Quân</div>
                         
                         <div class="th01-timer-row">
                             <span class="timer-display" id="timer-display-13">04:00</span>
@@ -1735,27 +1737,47 @@
 
                         <div class="cases-grid-s13">
                             <div class="case-card-s13">
-                                <div class="case-card-title">👦 An (Giường 01)</div>
+                                <div class="case-card-title">👦 Gia Bách (Giường 01)</div>
                                 <div class="case-card-text">
-                                    Bệnh nhân An bị <span class="interactive-word" onclick="highlightWord(this)">ngã rách da đầu gối</span>. Vết thương bị <span class="interactive-word" onclick="highlightWord(this)">rỉ máu nhẹ</span> và bị <span class="interactive-word" onclick="highlightWord(this)">bám nhiều cát bụi đất bẩn</span>. Do sợ bạn cười chê vụng về, An đã tự ý <span class="interactive-word" onclick="highlightWord(this)">lấy tay bẩn bịt chặt</span> vết xước.
+                                    Bệnh nhân Gia Bách bị <span class="interactive-word" onclick="highlightWord(this)">ngã rách da đầu gối</span>. Vết thương bị <span class="interactive-word" onclick="highlightWord(this)">rỉ máu nhẹ</span> và bị <span class="interactive-word" onclick="highlightWord(this)">bám nhiều cát bụi đất bẩn</span>. Do sợ bạn cười chê vụng về, Gia Bách đã tự ý <span class="interactive-word" onclick="highlightWord(this)">lấy tay bẩn bịt chặt</span> vết xước.
                                 </div>
                             </div>
                             <div class="case-card-s13">
-                                <div class="case-card-title">👧 Minh (Giường 02)</div>
+                                <div class="case-card-title">👦 Lê Minh Quân (Giường 02)</div>
                                 <div class="case-card-text">
-                                    Bệnh nhân Minh bị <span class="interactive-word" onclick="highlightWord(this)">dầu mỡ nóng bắn trúng</span>. Vùng da bị <span class="interactive-word" onclick="highlightWord(this)">ửng đỏ</span>, phồng nhẹ, cảm giác <span class="interactive-word" onclick="highlightWord(this)">rát buốt</span> liên tục. Người nhà định lấy <span class="interactive-word" onclick="highlightWord(this)">kem đánh răng bôi trực tiếp</span>.
+                                    Bệnh nhân Lê Minh Quân bị <span class="interactive-word" onclick="highlightWord(this)">dầu mỡ nóng bắn trúng</span>. Vùng da bị <span class="interactive-word" onclick="highlightWord(this)">ửng đỏ</span>, phồng nhẹ, cảm giác <span class="interactive-word" onclick="highlightWord(this)">rát buốt</span> liên tục. Người nhà định <span class="interactive-word" onclick="highlightWord(this)">đắp lá cây giã nhai dở</span> trực tiếp lên vết thương.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 13B (TH01) -->
+                <div class="slide-frame" id="slide-13B">
+                    <div class="template-th01">
+                        <div class="th01-title">THỰC HÀNH KHÁM BỆNH - PHẦN 2</div>
+                        <div class="th01-subtitle">Thảo luận nhóm và tìm thói quen sai lầm trên bệnh án của Hoàng Nam và Minh Khôi</div>
+                        
+                        <div class="th01-timer-row">
+                            <span class="timer-display" id="timer-display-13B">04:00</span>
+                            <div class="timer-controls">
+                                <button class="btn-timer" onclick="startTimer('13B', 240)">BẮT ĐẦU</button>
+                                <button class="btn-timer" onclick="pauseTimer('13B')">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="resetTimer('13B', 240)">LÀM LẠI</button>
+                            </div>
+                        </div>
+
+                        <div class="cases-grid-s13">
+                            <div class="case-card-s13">
+                                <div class="case-card-title">👦 Hoàng Nam (Giường 03)</div>
+                                <div class="case-card-text">
+                                    Bệnh nhân Hoàng Nam đang đứng chào cờ thì bị <span class="interactive-word" onclick="highlightWord(this)">chảy máu cam</span> đột ngột. Cảm thấy hoảng hốt, Hoàng Nam vội vàng <span class="interactive-word" onclick="highlightWord(this)">ngửa cổ ra sau</span> để ngăn máu không chảy ra ngoài.
                                 </div>
                             </div>
                             <div class="case-card-s13">
-                                <div class="case-card-title">👦 Nam (Giường 03)</div>
+                                <div class="case-card-title">👦 Minh Khôi (Giường 04)</div>
                                 <div class="case-card-text">
-                                    Bệnh nhân Nam đang đứng chào cờ thì bị <span class="interactive-word" onclick="highlightWord(this)">chảy máu cam</span> đột ngột. Cảm thấy hoảng hốt, Nam vội vàng <span class="interactive-word" onclick="highlightWord(this)">ngửa cổ ra sau</span> để ngăn máu không chảy ra ngoài.
-                                </div>
-                            </div>
-                            <div class="case-card-s13">
-                                <div class="case-card-title">👦 Khang (Giường 04)</div>
-                                <div class="case-card-text">
-                                    Bệnh nhân Khang bị <span class="interactive-word" onclick="highlightWord(this)">kiến ba khoang bám cẳng tay</span>. Do ngứa, Khang đã <span class="interactive-word" onclick="highlightWord(this)">cào gãi thật mạnh</span> làm rách da rỉ máu, xung quanh bị <span class="interactive-word" onclick="highlightWord(this)">sưng đỏ tấy</span>.
+                                    Bệnh nhân Minh Khôi bị <span class="interactive-word" onclick="highlightWord(this)">kiến ba khoang bám cẳng tay</span>. Do ngứa, Minh Khôi đã <span class="interactive-word" onclick="highlightWord(this)">cào gãi thật mạnh</span> làm rách da rỉ máu, xung quanh bị <span class="interactive-word" onclick="highlightWord(this)">sưng đỏ tấy</span>.
                                 </div>
                             </div>
                         </div>
@@ -1766,19 +1788,30 @@
                 <div class="slide-frame" id="slide-14">
                     <div class="template-da01">
                         <div class="da01-box">
-                            <div class="da01-title">ĐÁP ÁN TỪ KHÓA LÂM SÀNG</div>
+                            <div class="da01-title">ĐÁP ÁN TỪ KHÓA LÂM SÀNG - PHẦN 1</div>
                             <div class="da01-content" style="font-size: 16px; line-height: 1.6;">
-                                <p style="margin-bottom: 8px;"><strong>An:</strong> rách da đầu gối, rỉ máu nhẹ, bám nhiều cát bụi đất bẩn, lấy tay bẩn bịt chặt.</p>
-                                <p style="margin-bottom: 8px;"><strong>Minh:</strong> dầu mỡ nóng bắn trúng, ửng đỏ, rát buốt, kem đánh răng bôi trực tiếp.</p>
-                                <p style="margin-bottom: 8px;"><strong>Nam:</strong> chảy máu cam, ngửa cổ ra sau.</p>
-                                <p><strong>Khang:</strong> kiến ba khoang bám cẳng tay, cào gãi thật mạnh, sưng đỏ tấy.</p>
+                                <p style="margin-bottom: 8px;"><strong>Gia Bách:</strong> rách da đầu gối, rỉ máu nhẹ, bám nhiều cát bụi đất bẩn, lấy tay bẩn bịt chặt.</p>
+                                <p><strong>Lê Minh Quân:</strong> dầu mỡ nóng bắn trúng, ửng đỏ, rát buốt, đắp lá cây giã nhai dở.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- SLIDE 14B (TK01) -->
+                <!-- SLIDE 14B (ĐA01) -->
                 <div class="slide-frame" id="slide-14B">
+                    <div class="template-da01">
+                        <div class="da01-box">
+                            <div class="da01-title">ĐÁP ÁN TỪ KHÓA LÂM SÀNG - PHẦN 2</div>
+                            <div class="da01-content" style="font-size: 16px; line-height: 1.6;">
+                                <p style="margin-bottom: 8px;"><strong>Hoàng Nam:</strong> chảy máu cam, ngửa cổ ra sau.</p>
+                                <p><strong>Minh Khôi:</strong> kiến ba khoang bám cẳng tay, cào gãi thật mạnh, sưng đỏ tấy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 14C (TK01) -->
+                <div class="slide-frame" id="slide-14C">
                     <div class="template-tk01">
                         <div class="tk01-header">TỔNG KẾT GIAI ĐOẠN 3</div>
                         <div class="tk01-list-container">
@@ -2310,9 +2343,11 @@
             { id: 10, type: "NV01", title: "Nhiệm vụ hồ sơ lâm sàng", stage: "KHÁM BỆNH" },
             { id: 11, type: "CB01", title: "Chuẩn bị khám bệnh", stage: "KHÁM BỆNH" },
             { id: 12, type: "HD01", title: "Quy trình thực hiện", stage: "KHÁM BỆNH" },
-            { id: 13, type: "TH01", title: "Highlighter triệu chứng", stage: "KHÁM BỆNH" },
-            { id: 14, type: "ĐA01", title: "Đáp án gạch chân triệu chứng", stage: "KHÁM BỆNH" },
-            { id: "14B", type: "TK01", title: "Tổng kết thăm khám", stage: "KHÁM BỆNH" },
+            { id: 13, type: "TH01", title: "Khám lâm sàng (Gia Bách & Minh Quân)", stage: "KHÁM BỆNH" },
+            { id: "13B", type: "TH01", title: "Khám lâm sàng (Hoàng Nam & Minh Khôi)", stage: "KHÁM BỆNH" },
+            { id: 14, type: "ĐA01", title: "Đáp án khám lâm sàng (Phần 1)", stage: "KHÁM BỆNH" },
+            { id: "14B", type: "ĐA01", title: "Đáp án khám lâm sàng (Phần 2)", stage: "KHÁM BỆNH" },
+            { id: "14C", type: "TK01", title: "Tổng kết thăm khám", stage: "KHÁM BỆNH" },
             { id: 15, type: "GT01", title: "Giới thiệu chẩn đoán", stage: "CHẨN ĐOÁN" },
             { id: 16, type: "CB01", title: "Chuẩn bị chẩn đoán", stage: "CHẨN ĐOÁN" },
             { id: 17, type: "HD01", title: "Quy trình chẩn đoán", stage: "CHẨN ĐOÁN" },
@@ -2450,7 +2485,7 @@
                 const isUpgrade = sId === "8C";
                 // Slide 9-24: Bác sĩ chính thức (Green/Mint)
                 // Slide 25+: Bác sĩ chính thức
-                const isOfficial = (sId >= 9 && sId <= 35) || sId === "14B" || sId === "29B";
+                const isOfficial = (sId >= 9 && sId <= 35) || sId === "13B" || sId === "14B" || sId === "14C" || sId === "29B";
 
                 if (currentSlideIndex === 0) {
                     roleBadge.style.display = "none";
@@ -2508,9 +2543,9 @@
             const currentSlide = slidesConfig[currentSlideIndex];
             const btnAns = document.getElementById("btn-answer-trigger");
             
-            // Slide trước đáp án: Slide 8, Slide 13, Slide 18, Slide 22, Slide 28, Slide 32
-            const triggerSlides = [8, 13, 18, 22, 28, 32];
-            if (triggerSlides.includes(currentSlide.id)) {
+            // Slide trước đáp án: Slide 8, Slide 13, Slide 13B, Slide 14, Slide 18, Slide 22, Slide 28, Slide 32
+            const triggerSlides = ["8", "13", "13B", "14", "18", "22", "28", "32"];
+            if (triggerSlides.includes(currentSlide.id.toString())) {
                 btnAns.style.display = "flex";
                 // Cập nhật chỉ dẫn giai đoạn tiếp theo cho giáo viên
                 let nextIndicator = activeFrameIndicatorText(currentSlide.id);
@@ -2522,13 +2557,15 @@
         }
 
         function activeFrameIndicatorText(slideId) {
-            switch(slideId) {
-                case 8: return "CHUẨN BỊ HIỆN: ĐÁP ÁN LỖI RỬA TAY";
-                case 13: return "CHUẨN BỊ HIỆN: ĐÁP ÁN GẠCH CHÂN CHUẨN";
-                case 18: return "CHUẨN BỊ HIỆN: ĐÁP ÁN CHẨN ĐOÁN Y KHOA";
-                case 22: return "CHUẨN BỊ HIỆN: KẾT QUẢ CHẨN ĐOÁN AN, MINH, NAM, KHANG";
-                case 28: return "CHUẨN BỊ HIỆN: ĐÁP ÁN PHÁC ĐỒ SƠ CỨU 5 BƯỚC";
-                case 32: return "CHUẨN BỊ HIỆN: ĐÁP ÁN PHÂN LOẠI NÊN/KHÔNG NÊN";
+            switch(slideId.toString()) {
+                case "8": return "CHUẨN BỊ HIỆN: ĐÁP ÁN LỖI RỬA TAY";
+                case "13": return "CHUẨN BỊ HIỆN: KHÁM LÂM SÀNG PHẦN 2 (HOÀNG NAM & MINH KHÔI)";
+                case "13B": return "CHUẨN BỊ HIỆN: ĐÁP ÁN GẠCH CHÂN PHẦN 1 (GIA BÁCH & MINH QUÂN)";
+                case "14": return "CHUẨN BỊ HIỆN: ĐÁP ÁN GẠCH CHÂN PHẦN 2 (HOÀNG NAM & MINH KHÔI)";
+                case "18": return "CHUẨN BỊ HIỆN: ĐÁP ÁN CHẨN ĐOÁN Y KHOA";
+                case "22": return "CHUẨN BỊ HIỆN: KẾT QUẢ CHẨN ĐOÁN AN, MINH, NAM, KHANG";
+                case "28": return "CHUẨN BỊ HIỆN: ĐÁP ÁN PHÁC ĐỒ SƠ CỨU 5 BƯỚC";
+                case "32": return "CHUẨN BỊ HIỆN: ĐÁP ÁN PHÂN LOẠI NÊN/KHÔNG NÊN";
                 default: return "";
             }
         }
@@ -2558,12 +2595,15 @@
 
         function showAnswerSlide() {
             const currentSlide = slidesConfig[currentSlideIndex];
-            if (currentSlide.id === 8) goToSlide("8B");
-            else if (currentSlide.id === 13) goToSlide(14);
-            else if (currentSlide.id === 18) goToSlide(19);
-            else if (currentSlide.id === 22) goToSlide(23);
-            else if (currentSlide.id === 28) goToSlide(29);
-            else if (currentSlide.id === 32) goToSlide(33);
+            const sId = currentSlide.id.toString();
+            if (sId === "8") goToSlide("8B");
+            else if (sId === "13") goToSlide("13B");
+            else if (sId === "13B") goToSlide(14);
+            else if (sId === "14") goToSlide("14B");
+            else if (sId === "18") goToSlide(19);
+            else if (sId === "22") goToSlide(23);
+            else if (sId === "28") goToSlide(29);
+            else if (sId === "32") goToSlide(33);
         }
 
         function nextSlide() {
