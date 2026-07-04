@@ -2543,8 +2543,8 @@
             const currentSlide = slidesConfig[currentSlideIndex];
             const btnAns = document.getElementById("btn-answer-trigger");
             
-            // Slide trước đáp án: Slide 8, Slide 13, Slide 13B, Slide 14, Slide 18, Slide 22, Slide 28, Slide 32
-            const triggerSlides = ["8", "13", "13B", "14", "18", "22", "28", "32"];
+            // Slide trước đáp án/tổng kết: Slide 8, Slide 13, Slide 13B, Slide 14, Slide 14B, Slide 18, Slide 22, Slide 28, Slide 32
+            const triggerSlides = ["8", "13", "13B", "14", "14B", "18", "22", "28", "32"];
             if (triggerSlides.includes(currentSlide.id.toString())) {
                 btnAns.style.display = "flex";
                 // Cập nhật chỉ dẫn giai đoạn tiếp theo cho giáo viên
@@ -2562,6 +2562,7 @@
                 case "13": return "CHUẨN BỊ HIỆN: KHÁM LÂM SÀNG PHẦN 2 (HOÀNG NAM & MINH KHÔI)";
                 case "13B": return "CHUẨN BỊ HIỆN: ĐÁP ÁN GẠCH CHÂN PHẦN 1 (GIA BÁCH & MINH QUÂN)";
                 case "14": return "CHUẨN BỊ HIỆN: ĐÁP ÁN GẠCH CHÂN PHẦN 2 (HOÀNG NAM & MINH KHÔI)";
+                case "14B": return "CHUẨN BỊ HIỆN: TỔNG KẾT GIAI ĐOẠN 3 (KHÁM BỆNH)";
                 case "18": return "CHUẨN BỊ HIỆN: ĐÁP ÁN CHẨN ĐOÁN Y KHOA";
                 case "22": return "CHUẨN BỊ HIỆN: KẾT QUẢ CHẨN ĐOÁN AN, MINH, NAM, KHANG";
                 case "28": return "CHUẨN BỊ HIỆN: ĐÁP ÁN PHÁC ĐỒ SƠ CỨU 5 BƯỚC";
@@ -3147,7 +3148,9 @@
                 "nhiễm trùng", "khám bệnh", "chẩn đoán", "biến chứng", "Gia Bách", "Minh Quân",
                 "Mai Chi", "Hoàng Nam", "Minh Khôi", "sát trùng", "khí quản", "tiếp cận",
                 "cố định", "uốn ván", "bác sĩ", "phác đồ", "hội chẩn", "cấp cứu", "mạch máu",
-                "biểu bì", "Vy Anh", "dị vật", "y khoa", "sơ cứu", "vô trùng", "băng bó"
+                "biểu bì", "Vy Anh", "dị vật", "y khoa", "sơ cứu", "vô trùng", "băng bó",
+                "chính xác", "điều kiện", "bắt buộc", "hồ sơ", "ghi nhận", "đầy đủ",
+                "nguyên nhân", "xử trí", "sai lầm", "trước đó", "bệnh nhân"
             ];
             medicalTerms.sort((a, b) => b.length - a.length);
             const regexes = medicalTerms.map(term => ({
