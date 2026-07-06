@@ -716,7 +716,8 @@
         }
         .drop-slot {
             flex: 1;
-            height: 75px;
+            min-height: 85px;
+            height: auto;
             border: 2px dashed rgba(0, 119, 182, 0.25);
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.5);
@@ -726,7 +727,7 @@
             font-size: 14px;
             color: var(--text-muted);
             text-align: center;
-            padding: 5px;
+            padding: 8px;
         }
         .drag-step-card {
             width: 100%;
@@ -1177,7 +1178,8 @@
             gap: 10px;
         }
         .arranger-slot {
-            height: 95px;
+            min-height: 100px;
+            height: auto;
             border: 2px dashed rgba(0, 119, 182, 0.25);
             border-radius: 8px;
             background: rgba(255,255,255,0.4);
@@ -1186,6 +1188,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 8px;
+            gap: 5px;
         }
         .arranger-slot-num {
             font-size: 11px;
@@ -1200,8 +1203,9 @@
             margin-top: 15px;
         }
         .arranger-drag-card {
-            width: 180px;
-            height: 70px;
+            width: 280px;
+            min-height: 85px;
+            height: auto;
             background: white;
             border: 1px solid rgba(0, 119, 182, 0.2);
             border-radius: 6px;
@@ -1212,12 +1216,20 @@
             font-weight: 600;
             text-align: center;
             cursor: grab;
-            padding: 5px;
+            padding: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.03);
             transition: border-color 0.2s ease;
         }
         .arranger-drag-card:hover {
             border-color: var(--secondary);
+        }
+        .drop-slot .arranger-drag-card,
+        .arranger-slot .arranger-drag-card {
+            width: 100% !important;
+            height: auto !important;
+            min-height: 100% !important;
+            margin: 0 !important;
+            box-shadow: none !important;
         }
 
         /* 17. Game 5: Phân loại T-Chart */
