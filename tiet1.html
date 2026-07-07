@@ -1,0 +1,3193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7.6: Vì sao cảm xúc thay đổi mạnh? - Tiết 1</title>
+    <style>
+        /* MÀU SẮC CHỦ ĐẠO CHUẨN Y KHOA VÀ TRUYỆN TRANH POP ART */
+        :root {
+            --primary: #dc2f02;
+            --primary-light: #ffba08;
+            --primary-dark: #370617;
+            --secondary: #10b981;
+            --accent: #d90429;
+            --accent-yellow: #f59e0b;
+            --bg-glass: rgba(255, 255, 255, 0.92);
+            --border-glass: rgba(220, 47, 2, 0.2);
+            --text-main: #370617;
+            --text-muted: #6d5959;
+            --sidebar-width: 280px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            font-family: 'Outfit', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff8f8;
+            color: var(--text-main);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+        }
+
+        /* HÌNH NỀN PHÒNG CẤP CỨU CẢM XÚC */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+            opacity: 0.95;
+            z-index: -2;
+        }
+
+        /* LAYOUT CHÍNH */
+        .app-container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* SIDEBAR ĐIỀU HƯỚNG BÊN TRÁI */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            border-right: 2px solid rgba(220, 47, 2, 0.15);
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            padding: 20px 15px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            font-weight: 800;
+            font-size: 18px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-light);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .sidebar-stage-group {
+            margin-bottom: 12px;
+        }
+
+        .sidebar-stage-title {
+            padding: 8px 12px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--primary);
+            background: rgba(220, 47, 2, 0.05);
+            border-left: 3px solid var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .slide-list {
+            list-style: none;
+            padding: 4px 6px;
+        }
+
+        .slide-item {
+            padding: 8px 10px;
+            margin-bottom: 3px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+            line-height: 1.3;
+            border: 1px solid transparent;
+        }
+
+        .slide-item:hover {
+            background: rgba(220, 47, 2, 0.08);
+            color: var(--primary);
+        }
+
+        .slide-item.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(220, 47, 2, 0.2);
+        }
+
+        .slide-badge {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.1);
+            color: inherit;
+        }
+
+        .slide-item.active .slide-badge {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* PHẦN TRÌNH CHIẾU CHÍNH */
+        .presentation-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 100vh;
+        }
+
+        /* HEADER THÔNG TIN Y KHOA */
+        .presentation-header {
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(220, 47, 2, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+            z-index: 5;
+        }
+
+        .header-title {
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-stage-badge {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-role-badge {
+            background: rgba(220, 47, 2, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(220, 47, 2, 0.3);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            display: none;
+            box-shadow: 0 0 10px rgba(220, 47, 2, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        /* KHUNG CHỨA SLIDE DẠNG GLASSMORPHISM */
+        .slide-viewport {
+            flex: 1;
+            position: relative;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-frame {
+            width: 100%;
+            max-width: 1180px;
+            max-height: 620px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(8px);
+            border: 2px solid var(--border-glass);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(220, 47, 2, 0.12);
+            padding: 40px;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            animation: slideFadeIn 0.4s ease;
+            flex-shrink: 0;
+        }
+
+        .slide-frame.active {
+            display: flex;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(30px);
+        }
+
+        @keyframes slideFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* NÚT ĐIỀU HƯỚNG PHÍA DƯỚI */
+        .presentation-footer {
+            height: auto; min-height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(220, 47, 2, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            z-index: 5;
+        }
+
+        /* CÁC LOẠI NÚT BẤM CHUẨN Y KHOA */
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .btn-nav {
+            background: white;
+            color: var(--primary-dark);
+            border: 1px solid rgba(220, 47, 2, 0.3);
+        }
+
+        .btn-nav:hover {
+            background: rgba(220, 47, 2, 0.05);
+            border-color: var(--primary);
+        }
+
+        .btn-action {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+        }
+
+        .btn-action:hover {
+            box-shadow: 0 4px 12px rgba(220, 47, 2, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), #d90429);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-disabled {
+            background: #e2e8f0 !important;
+            color: #a0aec0 !important;
+            border-color: #cbd5e0 !important;
+            cursor: not-allowed !important;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Nút phụ chỉ dẫn giáo viên */
+        .next-stage-indicator {
+            position: absolute;
+            bottom: 25px;
+            right: 40px;
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 600;
+            background: rgba(220, 47, 2, 0.1);
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid rgba(220, 47, 2, 0.2);
+            animation: pulse-border 2s infinite;
+        }
+
+        @keyframes pulse-border {
+            0% { border-color: rgba(220, 47, 2, 0.2); }
+            50% { border-color: rgba(220, 47, 2, 0.6); }
+            100% { border-color: rgba(220, 47, 2, 0.2); }
+        }
+
+        /* CÁC MẪU TEMPLATE QUY CHUẨN MỸ THUẬT POP ART */
+
+        /* 1. MĐ01: Bìa mở đầu */
+        .template-md01 {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            padding: 20px;
+            background: radial-gradient(circle, #ffebeb 0%, #fff 70%);
+            border-radius: 12px;
+            border: 3px solid var(--primary-dark);
+            box-shadow: 8px 8px 0px var(--primary-dark);
+        }
+        .md01-code {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .md01-title {
+            font-size: 46px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            min-height: 60px;
+            text-transform: uppercase;
+        }
+
+        /* 2. MT01: Mục tiêu */
+        .template-mt01 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .mt01-header {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--primary-dark);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .mt01-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            flex: 1;
+        }
+        .mt01-col {
+            background: white;
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 6px 6px 0px var(--primary-dark);
+        }
+        .mt01-col:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 6px 6px 0px var(--primary);
+        }
+        .mt01-col-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+        }
+        .mt01-col-desc {
+            font-size: 17px;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* 3. QS01: Câu hỏi cốt lõi */
+        .template-qs01 {
+            text-align: center;
+        }
+        .qs01-box {
+            border: 3px solid var(--primary-dark);
+            background: #ffe3a8;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 8px 8px 0px var(--primary-dark);
+        }
+        .qs01-header {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .qs01-question {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.5;
+        }
+
+        /* 4. PV01: Phân vai */
+        .template-pv01 {
+            text-align: center;
+        }
+        .pv01-box {
+            border: 3px solid var(--primary-dark);
+            background: #e6f7ff;
+            border-radius: 16px;
+            padding: 35px;
+            max-width: 850px;
+            margin: 0 auto;
+            box-shadow: 8px 8px 0px var(--primary-dark);
+        }
+        .pv01-title {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .pv01-desc {
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        /* 5. BĐ01: Báo động đỏ */
+        .template-bd01 {
+            text-align: center;
+            padding: 20px;
+        }
+        .bd01-box {
+            border: 3px solid var(--accent);
+            background: rgba(230, 57, 70, 0.08);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 850px;
+            margin: 0 auto;
+            box-shadow: 8px 8px 0px var(--accent);
+            animation: pulse-shadow 1.5s infinite;
+        }
+        .bd01-title {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .bd01-content {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.6;
+        }
+
+        /* 6. CB01: Chuẩn bị */
+        .template-cb01 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .cb01-header {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+        .cb01-split {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            flex: 1;
+        }
+        .cb01-card {
+            background: white;
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 6px 6px 0px var(--primary-dark);
+        }
+        .cb01-card-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            border-bottom: 3px solid var(--primary-dark);
+            padding-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .cb01-list {
+            list-style-position: inside;
+            line-height: 1.8;
+            font-size: 18px;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+        /* Câu thoại gợi ý viền sáng dưới màn hình */
+        .cb01-tips {
+            margin-top: 20px;
+            background: #fff;
+            border: 2px solid var(--primary);
+            box-shadow: 0px 0px 12px rgba(220, 47, 2, 0.2);
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 16px;
+            color: var(--text-main);
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        /* 7. HD01: Quy trình nằm ngang */
+        .template-hd01 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .hd01-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+        }
+        .hd01-steps {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex: 1;
+            padding: 0 20px;
+        }
+        .hd01-step {
+            background: white;
+            border: 3px solid var(--primary-dark);
+            border-radius: 10px;
+            padding: 15px;
+            flex: 1;
+            text-align: center;
+            box-shadow: 5px 5px 0px var(--primary-dark);
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        .hd01-step:hover {
+            transform: scale(1.03);
+            border-color: var(--primary);
+        }
+        .hd01-step-num {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .hd01-step-text {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+        .hd01-arrow {
+            color: var(--primary-light);
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* 8. TH01: Thực hiện hoạt động (Game) */
+        .template-th01 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .th01-title {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .th01-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 4px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .th01-timer-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid var(--primary-dark);
+            padding: 8px 20px;
+            border-radius: 8px;
+            align-self: center;
+            box-shadow: 4px 4px 0px var(--primary-dark);
+        }
+        .timer-display {
+            font-family: monospace;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+        .timer-controls {
+            display: flex;
+            gap: 5px;
+        }
+        .btn-timer {
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.1);
+            background: white;
+            cursor: pointer;
+        }
+        .btn-timer:hover {
+            background: #f7fafc;
+        }
+
+        /* Game 1: Chọn dụng cụ & xếp bước */
+        .game-toolbox-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 20px;
+            flex: 1;
+        }
+        .toolbox-selection {
+            background: rgba(255, 255, 255, 0.7);
+            border: 3px solid var(--primary-dark);
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            box-shadow: 4px 4px 0px var(--primary-dark);
+        }
+        .toolbox-item-card {
+            padding: 10px 14px;
+            background: white;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+        .toolbox-item-card:hover {
+            border-color: var(--primary);
+            background: rgba(220, 47, 2, 0.03);
+        }
+        .toolbox-item-card.selected {
+            background: rgba(220, 47, 2, 0.1);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .game-arrange-drop {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .game-drop-slots {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .drop-slot {
+            flex: 1;
+            height: 75px;
+            border: 3px dashed var(--primary-dark);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 5px;
+        }
+        .drag-step-card {
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            color: white;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: grab;
+            padding: 5px;
+            text-align: center;
+        }
+
+        /* 9. ĐA01: Đáp án */
+        .template-da01 {
+            text-align: center;
+        }
+        .da01-box {
+            background: rgba(16, 185, 129, 0.05);
+            border: 3px solid var(--secondary);
+            border-radius: 16px;
+            padding: 35px;
+            max-width: 850px;
+            margin: 0 auto;
+            box-shadow: 8px 8px 0px var(--secondary);
+        }
+        .da01-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .da01-content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-main);
+            font-weight: 600;
+            text-align: left;
+        }
+
+        /* 10. TK01: Tổng kết */
+        .template-tk01 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .tk01-header {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .tk01-list-container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            flex: 1;
+            background: white;
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 6px 6px 0px var(--primary-dark);
+        }
+        .tk01-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            list-style: none;
+        }
+        .tk01-item {
+            font-size: 19px;
+            line-height: 1.6;
+            color: var(--text-main);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-weight: 600;
+        }
+        .tk01-item::before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: 900;
+            font-size: 22px;
+        }
+
+        /* 11. GT01: Giới thiệu giai đoạn */
+        .template-gt01 {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .gt01-title {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+        .gt01-subtitle {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+        }
+        .gt01-desc {
+            font-size: 22px;
+            color: var(--text-muted);
+            max-width: 750px;
+            line-height: 1.6;
+        }
+
+        /* 12. NV01: Giao nhiệm vụ (Hộp thư bệnh án điện tử) */
+        .template-nv01 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .nv01-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+        .nv01-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            flex: 1;
+        }
+        .nv01-tablet-card {
+            background: white;
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+            box-shadow: 5px 5px 0px var(--primary-dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+        .nv01-tablet-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 5px 5px 0px var(--primary);
+        }
+        .nv01-avatar {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .nv01-patient-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .nv01-patient-bed {
+            font-size: 13px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* MODAL POPUP CỦA NV01 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(55, 6, 23, 0.5);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            width: 90%;
+            max-width: 650px;
+            background: white;
+            border-radius: 16px;
+            border: 3px solid var(--primary-dark);
+            box-shadow: 10px 10px 0px var(--primary-dark);
+            overflow: hidden;
+            animation: modalScaleIn 0.3s ease;
+        }
+        @keyframes modalScaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--primary-dark);
+        }
+        .modal-title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .btn-modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .modal-body {
+            padding: 24px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text-main);
+        }
+
+        /* 13. Game 2: Gạch chân từ khóa triệu chứng */
+        .cases-grid-s13 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            flex: 1;
+        }
+        .case-card-s13 {
+            background: white;
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 5px 5px 0px var(--primary-dark);
+        }
+        .case-card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--primary-dark);
+            padding-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .case-card-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+        /* Clickable word highlighter */
+        .interactive-word {
+            cursor: pointer;
+            padding: 1px 3px;
+            border-radius: 4px;
+            transition: all 0.15s ease;
+        }
+        .interactive-word:hover {
+            background: rgba(255, 183, 3, 0.2);
+        }
+        .interactive-word.highlighted {
+            background: #ffe3a8;
+            border-bottom: 2px solid var(--accent-yellow);
+            color: #1d3557;
+            font-weight: 600;
+        }
+
+        /* 14. Game 3: Kéo thả chẩn đoán */
+        .diag-game-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 20px;
+            flex: 1;
+        }
+        .diag-options-pool {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(220, 47, 2, 0.15);
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .diag-drag-card {
+            padding: 8px 12px;
+            background: white;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 6px;
+            cursor: grab;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .diag-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .diag-table th, .diag-table td {
+            border: 1px solid rgba(220, 47, 2, 0.15);
+            padding: 8px;
+            text-align: left;
+        }
+        .diag-table th {
+            background: rgba(220, 47, 2, 0.05);
+            color: var(--primary-dark);
+        }
+        .diag-drop-target {
+            height: auto; min-height: 80px;
+            border: 1px dashed rgba(220, 47, 2, 0.3);
+            border-radius: 4px;
+            background: rgba(255,255,255,0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .selected-drag-card {
+            outline: 3px solid var(--accent-yellow) !important;
+            box-shadow: 0 0 15px rgba(255, 183, 3, 0.6) !important;
+            transform: scale(1.03);
+        }
+
+        /* 15. CK01: Bản cam kết / Lời thề y đức */
+        .template-ck01 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .ck01-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .ck01-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .ck01-box {
+            background: rgba(255, 255, 255, 0.7);
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 750px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 8px 8px 0px var(--primary-dark);
+        }
+        .ck01-box.parchment {
+            background: #fdfaf2;
+            border: 3px solid var(--primary-dark);
+            box-shadow: 8px 8px 0px var(--primary-dark);
+        }
+        .ck01-terms {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .ck01-term {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 17px;
+            line-height: 1.5;
+            color: var(--text-main);
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .ck01-term input {
+            margin-top: 3px;
+        }
+        .ck01-signature-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid var(--primary-dark);
+            padding-top: 15px;
+        }
+        .ck01-signature-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ck01-signature-box label {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .ck01-signature-input {
+            padding: 6px 12px;
+            border: 2px solid var(--primary-dark);
+            border-radius: 4px;
+            font-size: 18px;
+        }
+        /* Stamp overlay graphic */
+        .stamp-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 20;
+        }
+        .stamp-overlay.stamped {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .stamp-graphic {
+            border: 4px solid var(--accent);
+            color: var(--accent);
+            font-size: 26px;
+            font-weight: 900;
+            padding: 8px 18px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transform: rotate(-12deg);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .stamp-graphic.gold-stamp {
+            border-color: #d4af37;
+            color: #d4af37;
+        }
+        .stamp-graphic.green-stamp {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        /* 16. Game 4: Sắp xếp quy trình (Arranger) */
+        .arranger-game-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            flex: 1;
+        }
+        .arranger-slots {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+        .arranger-slot {
+            height: 120px;
+            border: 3px dashed var(--primary-dark);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.05);
+        }
+        .arranger-slot-num {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .arranger-card-pool {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .arranger-drag-card {
+            width: 180px;
+            height: auto; min-height: 80px;
+            background: white;
+            border: 3px solid var(--primary-dark);
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            cursor: grab;
+            padding: 5px;
+            box-shadow: 4px 4px 0px var(--primary-dark);
+            transition: border-color 0.2s ease;
+        }
+        .arranger-drag-card:hover {
+            border-color: var(--primary);
+        }
+
+        /* 17. Game 5: Phân loại T-Chart */
+        .tchart-layout {
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            gap: 20px;
+            flex: 1;
+        }
+        .tchart-tables {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .tchart-col {
+            background: rgba(255, 255, 255, 0.6);
+            border: 3px solid var(--primary-dark);
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 5px 5px 0px var(--primary-dark);
+        }
+        .tchart-col-header {
+            font-size: 16px;
+            font-weight: 800;
+            text-align: center;
+            padding-bottom: 8px;
+            border-bottom: 3px solid transparent;
+            text-transform: uppercase;
+        }
+        .tchart-col-should {
+            border-bottom-color: var(--secondary);
+            color: var(--secondary);
+        }
+        .tchart-col-shouldnt {
+            border-bottom-color: var(--accent);
+            color: var(--accent);
+        }
+        .tchart-dropzone {
+            flex: 1;
+            min-height: 250px;
+            border: 2px dashed rgba(0,0,0,0.15);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 8px;
+        }
+        .tchart-pool {
+            background: rgba(255, 255, 255, 0.7);
+            border: 3px solid var(--primary-dark);
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            max-height: 350px;
+            box-shadow: 4px 4px 0px var(--primary-dark);
+        }
+        .tchart-drag-card {
+            padding: 8px 12px;
+            background: white;
+            border: 2px solid var(--primary-dark);
+            border-radius: 6px;
+            cursor: grab;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 3px 3px 0px var(--primary-dark);
+        }
+
+        /* 18. VD01: Vinh danh / Bằng khen */
+        .template-vd01 {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            height: 100%;
+        }
+        .certificate-box {
+            border: 6px double #d4af37;
+            background: #fffdf5;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 750px;
+            width: 100%;
+            box-shadow: 8px 8px 0px var(--primary-dark);
+            position: relative;
+        }
+        .cert-header {
+            font-size: 26px;
+            font-weight: 700;
+            color: #d4af37;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .cert-title {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .cert-awarded-to {
+            font-size: 22px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .cert-name-display {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-dark);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            display: inline-block;
+            min-width: 250px;
+            height: 45px;
+        }
+        .cert-body {
+            font-size: 22px;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .cert-input-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .cert-input {
+            padding: 8px 12px;
+            border: 3px solid var(--primary-dark);
+            border-radius: 6px;
+            font-size: 18px;
+            width: 240px;
+        }
+
+        /* Pháo hoa Confetti canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99;
+            display: none;
+        }
+
+        /* CSS Rung màn hình khi đóng dấu */
+        .shake {
+            animation: shake-anim 0.2s ease-in-out;
+        }
+        @keyframes shake-anim {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-4px, 4px); }
+            50% { transform: translate(4px, -4px); }
+            75% { transform: translate(-2px, -2px); }
+        }
+
+        /* Rung nhấp nháy đỏ báo động */
+        .flash-red {
+            animation: flash-red-anim 0.5s infinite;
+        }
+        @keyframes flash-red-anim {
+            0%, 100% { background-color: #fff8f8; }
+            50% { background-color: #ffcccc; }
+        }
+
+        /* CSS cho Game 1 và Game 2 của slide mới */
+        .choice-btn {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 18px;
+            text-align: left;
+            border: 3px solid var(--primary-dark);
+            box-shadow: 4px 4px 0px var(--primary-dark);
+            background: white;
+            color: var(--text-main);
+            transition: all 0.2s ease;
+        }
+        .choice-btn:hover {
+            background: #ffe3a8;
+            transform: translateY(-2px);
+            box-shadow: 6px 6px 0px var(--primary-dark);
+        }
+        
+        /* Game 2: Kéo thả chẩn đoán Minh Anh, Kem, Bảo Vy */
+        .patients-columns-s14 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            flex: 1;
+        }
+        .patient-drop-column {
+            background: white;
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 5px 5px 0px var(--primary-dark);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 220px;
+        }
+        .patient-col-name {
+            font-size: 16px;
+            font-weight: 800;
+            text-align: center;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--primary-dark);
+            color: var(--primary-dark);
+        }
+        .patient-slot-box {
+            background: #f7fafc;
+            border: 2px dashed rgba(0,0,0,0.15);
+            border-radius: 8px;
+            min-height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 8px;
+        }
+        .diag-label-card {
+            padding: 8px 12px;
+            background: #fffdf5;
+            border: 2px solid var(--primary-dark);
+            border-radius: 6px;
+            cursor: grab;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 3px 3px 0px var(--primary-dark);
+            transition: transform 0.2s ease;
+        }
+        .diag-label-card:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- SIDEBAR ĐIỀU HƯỚNG BÊN TRÁI -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                BÁC SĨ CẢM XÚC
+            </div>
+            <ul class="slide-list" id="sidebar-list">
+                <!-- Sẽ được điền tự động bằng Javascript -->
+            </ul>
+        </div>
+
+        <!-- PHẦN DIỆN TÍCH TRÌNH CHIẾU -->
+        <div class="presentation-area" id="presentation-area">
+            
+            <!-- HEADER THÔNG TIN Y KHOA -->
+            <div class="presentation-header">
+                <div class="header-title" id="header-slide-info">
+                    BÀI 7.6: VÌ SAO CẢM XÚC THAY ĐỔI MẠNH?
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <button class="btn btn-nav" style="padding: 6px 12px; font-size: 14px;" onclick="window.location.href='index.html'">CHỌN TIẾT 🏠</button>
+                    <div class="header-role-badge" id="header-role-badge">🩺 BÁC SĨ THỰC TẬP</div>
+                    <div class="header-stage-badge" id="header-stage-badge">GIAI ĐOẠN: KHỞI ĐỘNG</div>
+                </div>
+            </div>
+
+            <!-- VIEWPORT CHỨA CÁC SLIDES -->
+            <div class="slide-viewport">
+
+                <!-- SLIDE 1 (MĐ01) -->
+                <div class="slide-frame active" id="slide-1">
+                    <div class="template-md01">
+                        <div class="md01-code">7.6</div>
+                        <div class="md01-title" id="slide1-title"></div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2 (MT01) -->
+                <div class="slide-frame" id="slide-2">
+                    <div class="template-mt01">
+                        <div class="mt01-header">MỤC TIÊU BÀI HỌC</div>
+                        <div class="mt01-columns">
+                            <div class="mt01-col">
+                                <div class="mt01-col-title">🧪 Kiến thức</div>
+                                <div class="mt01-col-desc">Nhận diện biểu hiện sinh lý của 4 cảm xúc mạnh; hiểu cơ chế mất cân bằng giữa hạch hạnh nhân và vỏ não trước trán do quá trình myelin hóa chưa hoàn thiện ở tuổi dậy thì.</div>
+                            </div>
+                            <div class="mt01-col">
+                                <div class="mt01-col-title">🩹 Kỹ năng</div>
+                                <div class="mt01-col-desc">Gọi tên chính xác cảm xúc qua bánh xe cảm xúc; thực hành thở sâu Box Breathing điều hòa "Cabin não bộ"; phân loại hành vi Nên/Không nên qua bảng T-Chart.</div>
+                            </div>
+                            <div class="mt01-col">
+                                <div class="mt01-col-title">❤️ Thái độ</div>
+                                <div class="mt01-col-desc">Bình tĩnh đón nhận sự thay đổi sinh lý tự nhiên; có trách nhiệm với hành vi của bản thân khi đối diện cảm xúc mạnh.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3 (QS01) -->
+                <div class="slide-frame" id="slide-3">
+                    <div class="template-qs01">
+                        <div class="qs01-box">
+                            <div class="qs01-header">CÂU HỎI LỚN</div>
+                            <div class="qs01-question">Vì sao cảm xúc của chúng ta thay đổi mạnh và làm thế nào để chẩn đoán, điều hòa chúng đúng cách?</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4 (PV01) -->
+                <div class="slide-frame" id="slide-4">
+                    <div class="template-pv01">
+                        <div class="pv01-box">
+                            <div class="pv01-title">PHÂN VAI BÁC SĨ TẬP SỰ</div>
+                            <div class="pv01-desc">
+                                Hội đồng tâm lý Nova Hospital chính thức thành lập. Các chuyên gia có nhiệm vụ lắng nghe tâm sự, giải mã cảm xúc và gỡ rối các ca bệnh tổn thương tinh thần.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 5 (BĐ01) -->
+                <div class="slide-frame" id="slide-5">
+                    <div class="template-bd01">
+                        <div class="bd01-box">
+                            <div class="bd01-title">CẢNH BÁO KHẨN CẤP</div>
+                            <div class="bd01-content">
+                                Bệnh nhân Su đang bùng nổ cơn giận dữ dữ dội, cãi nhau với mẹ, đập bàn học và đóng sầm cửa phòng. Nhịp tim tăng vọt lên 120 bpm! Kíp trực cần sơ cứu khẩn cấp để ngăn chặn biến chứng nhiễm độc hành vi!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 6 (CB01) -->
+                <div class="slide-frame" id="slide-6">
+                    <div class="template-cb01">
+                        <div class="cb01-header">CHUẨN BỊ THĂM KHÁM</div>
+                        <div class="cb01-split">
+                            <div class="cb01-card">
+                                <div class="cb01-card-title">💊 Thẻ Dụng cụ</div>
+                                <ul class="cb01-list">
+                                    <li>Sổ tay bệnh án của Su</li>
+                                    <li>Tủ thuốc tâm lý ảo (chứa các liệu pháp thở sâu, viết nhật ký, đập phá đồ đạc, đóng sầm cửa, tranh cãi, tạm dừng phản ứng)</li>
+                                </ul>
+                            </div>
+                            <div class="cb01-card">
+                                <div class="cb01-card-title">👥 Thẻ Hình thức tổ chức</div>
+                                <ul class="cb01-list">
+                                    <li>Lập kíp trực cấp cứu nhanh gồm 4 bác sĩ</li>
+                                    <li>Chuẩn bị sẵn giấy nháp và bút ghi chép</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 7 (HD01) -->
+                <div class="slide-frame" id="slide-7">
+                    <div class="template-hd01">
+                        <div class="hd01-title">Quy trình khám bệnh</div>
+                        <div class="hd01-steps">
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 1</div>
+                                <div class="hd01-step-text">Quan sát ca bệnh khẩn cấp</div>
+                            </div>
+                            <div class="hd01-arrow">➔</div>
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 2</div>
+                                <div class="hd01-step-text">Thảo luận nhanh tìm triệu chứng</div>
+                            </div>
+                            <div class="hd01-arrow">➔</div>
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 3</div>
+                                <div class="hd01-step-text">Đưa ra nhận định phác đồ ban đầu</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 8 (TH01 - TRẮC NGHIỆM PHẢN ỨNG NHANH) -->
+                <div class="slide-frame" id="slide-8">
+                    <div class="template-th01">
+                        <div class="th01-title">MỞ KHÓA CA BỆNH KHẨN CẤP</div>
+                        <div class="th01-subtitle">Kíp trực lựa chọn phản ứng tức thời cho bệnh nhân Su</div>
+                        
+                        <div class="th01-timer-row">
+                            <span class="timer-display" id="timer-display-8">03:00</span>
+                            <div class="timer-controls">
+                                <button class="btn-timer" onclick="startTimer(8, 180)">BẮT ĐẦU</button>
+                                <button class="btn-timer" onclick="pauseTimer(8)">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="resetTimer(8, 180)">LÀM LẠI</button>
+                            </div>
+                        </div>
+
+                        <div style="font-size: 16px; text-align: center; margin-top: 15px; font-weight: bold; color: var(--primary-dark);">
+                            Tình huống: Mẹ vừa trách mắng vì chiếc áo chưa kịp khô, hạch hạnh nhân của Su bùng nổ! Hãy click chọn 1 phản ứng tức thời mà bạn thường thấy nhất:
+                        </div>
+
+                        <div class="game-choices-layout" style="margin-top: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                            <button class="choice-btn" onclick="triggerNhiemDoc('A')">A. Cãi lại mẹ và đóng cửa rầm</button>
+                            <button class="choice-btn" onclick="triggerNhiemDoc('B')">B. Đập phá một món đồ trên bàn</button>
+                            <button class="choice-btn" onclick="triggerNhiemDoc('C')">C. Im lặng bỏ đi và nhịn ăn sáng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 8B (ĐA01) -->
+                <div class="slide-frame" id="slide-8B">
+                    <div class="template-da01">
+                        <div class="da01-box" style="border-color: var(--accent); background: rgba(217, 4, 41, 0.05);">
+                            <div class="da01-title" style="color: var(--accent);">BIẾN CHỨNG</div>
+                            <div class="da01-content">
+                                <p style="color: var(--accent); font-size: 20px; text-align: center; margin-bottom: 15px;">⚠️ BỆNH NHÂN BỊ NHIỄM ĐỘC HÀNH VI NẶNG SAU 24 GIỜ!</p>
+                                <p style="text-align: center; font-size: 18px; line-height: 1.6;">Nguyên nhân cốt lõi: Kíp trực đã bỏ sót hành động sống còn: **Chưa áp dụng quy tắc tạm dừng để vô trùng tâm lý**. Việc hành động ngay theo bản năng giận dữ (đập phá, cãi vã) đã phá hủy hoàn toàn mối quan hệ.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 8C (TK01) -->
+                <div class="slide-frame" id="slide-8C">
+                    <div class="template-tk01">
+                        <div class="tk01-header">TỔNG KẾT GIAI ĐOẠN 1</div>
+                        <div class="tk01-list-container">
+                            <ul class="tk01-list">
+                                <li class="tk01-item">Tạm dừng phản ứng bản năng là bước vô trùng bắt buộc đầu tiên khi đối mặt cảm xúc mạnh.</li>
+                                <li class="tk01-item">Không phản ứng ngay lập tức khi nhịp tim đang ở mức báo động (trên 100 bpm).</li>
+                                <li class="tk01-item">Áp dụng kỹ thuật thở hạ nhiệt và tách mình khỏi kích thích có hại để bảo vệ bản thân.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 9 (GT01) -->
+                <div class="slide-frame" id="slide-9">
+                    <div class="template-gt01">
+                        <div class="gt01-title">Giai đoạn 2</div>
+                        <div class="gt01-subtitle">Nhận ca bệnh lâm sàng</div>
+                        <div class="gt01-desc">Sử dụng vòng quay dữ liệu Case Shuffler bốc thăm nhận ngẫu nhiên thêm 3 ca bệnh đặc trưng (Minh Anh, Kem, Bảo Vy) để tiến hành nghiên cứu.</div>
+                        <button class="btn btn-action" style="margin-top: 15px;" onclick="spinCaseShuffler()">BẤM NHẬN CA BỆNH 🎡</button>
+                        <div id="shuffler-result" style="margin-top: 15px; font-size: 24px; font-weight: bold; color: var(--primary);"></div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 10 (NV01) -->
+                <div class="slide-frame" id="slide-10">
+                    <div class="template-nv01">
+                        <div class="nv01-title">Hồ sơ bệnh án</div>
+                        <div style="font-size: 16px; text-align: center; margin-bottom: 15px; font-weight: bold;">
+                            Nhiệm vụ kíp trực: Đọc và phân tích 3 ca bệnh đặc trưng tuổi dậy thì: Bệnh nhân Minh Anh (u sầu, muốn khóc không rõ lý do), Bệnh nhân Kem (toát mồ hôi, tim đập nhanh, đầu óc trống rỗng trước giờ thi), Bệnh nhân Bảo Vy (trùm mũ kín mít, lảng tránh ánh mắt vì tự ti mụn trứng cá).
+                        </div>
+                        <div class="nv01-grid">
+                            <div class="nv01-tablet-card" onclick="openPatientModal('su')">
+                                <div class="nv01-avatar">🤬</div>
+                                <div class="nv01-patient-name">Bệnh nhân Su</div>
+                                <div class="nv01-patient-bed">Giường cấp cứu</div>
+                                <button class="btn-timer" style="padding: 4px 10px;">XEM HỒ SƠ 🔎</button>
+                            </div>
+                            <div class="nv01-tablet-card" onclick="openPatientModal('minh_anh')">
+                                <div class="nv01-avatar">😢</div>
+                                <div class="nv01-patient-name">Bệnh nhân Minh Anh</div>
+                                <div class="nv01-patient-bed">Giường 01</div>
+                                <button class="btn-timer" style="padding: 4px 10px;">XEM HỒ SƠ 🔎</button>
+                            </div>
+                            <div class="nv01-tablet-card" onclick="openPatientModal('kem')">
+                                <div class="nv01-avatar">😰</div>
+                                <div class="nv01-patient-name">Bệnh nhân Kem</div>
+                                <div class="nv01-patient-bed">Giường 02</div>
+                                <button class="btn-timer" style="padding: 4px 10px;">XEM HỒ SƠ 🔎</button>
+                            </div>
+                            <div class="nv01-tablet-card" onclick="openPatientModal('bao_vy')">
+                                <div class="nv01-avatar">🥺</div>
+                                <div class="nv01-patient-name">Bệnh nhân Bảo Vy</div>
+                                <div class="nv01-patient-bed">Giường 03</div>
+                                <button class="btn-timer" style="padding: 4px 10px;">XEM HỒ SƠ 🔎</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 11 (GT01) -->
+                <div class="slide-frame" id="slide-11">
+                    <div class="template-gt01">
+                        <div class="gt01-title">Giai đoạn 3</div>
+                        <div class="gt01-subtitle">Khám bệnh lâm sàng</div>
+                        <div class="gt01-desc">Tiến hành rà soát các chỉ số sinh lý và phát hiện dấu hiệu bất thường trên các hồ sơ ca bệnh đặc trưng.</div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 12 (CB01) -->
+                <div class="slide-frame" id="slide-12">
+                    <div class="template-cb01">
+                        <div class="cb01-header">CHUẨN BỊ KHÁM BỆNH</div>
+                        <div class="cb01-split">
+                            <div class="cb01-card">
+                                <div class="cb01-card-title">💊 Thẻ Dụng cụ</div>
+                                <ul class="cb01-list">
+                                    <li>Phiếu giải mã "Ngôn ngữ cơ thể" (bản in giấy)</li>
+                                    <li>Sơ đồ Bánh xe cảm xúc phát trên bàn</li>
+                                </ul>
+                            </div>
+                            <div class="cb01-card">
+                                <div class="cb01-card-title">👥 Thẻ Hình thức tổ chức</div>
+                                <ul class="cb01-list">
+                                    <li>Kíp trực thảo luận nhóm 4 bác sĩ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 13 (HD01) -->
+                <div class="slide-frame" id="slide-13">
+                    <div class="template-hd01">
+                        <div class="hd01-title">QUY TRÌNH KHÁM BỆNH LÂM SÀNG</div>
+                        <div class="hd01-steps">
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 1</div>
+                                <div class="hd01-step-text">Đọc kỹ hồ sơ bệnh án</div>
+                            </div>
+                            <div class="hd01-arrow">➔</div>
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 2</div>
+                                <div class="hd01-step-text">Đối chiếu "Bánh xe cảm xúc" để gọi tên chính xác loại cảm xúc mạnh (Giận dữ, Lo âu, Buồn bã, Tự ti)</div>
+                            </div>
+                            <div class="hd01-arrow">➔</div>
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 3</div>
+                                <div class="hd01-step-text">Thống nhất các triệu chứng sinh lý biểu hiện trên cơ thể nhân vật để tham gia trò chơi hội chẩn</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 14 (TH01 - GAME KÉO THẢ CHẨN ĐOÁN MỚI) -->
+                <div class="slide-frame" id="slide-14">
+                    <div class="template-th01">
+                        <div class="th01-title">GAME KÉO THẢ HỘI CHẨN LÂM SÀNG</div>
+                        <div class="th01-subtitle">Kéo thả các nhãn Triệu chứng cơ thể và Tên cảm xúc vào đúng hồ sơ của 3 bệnh nhân</div>
+                        
+                        <div class="th01-timer-row">
+                            <span class="timer-display" id="timer-display-14">06:00</span>
+                            <div class="timer-controls">
+                                <button class="btn-timer" onclick="startTimer(14, 360)">BẮT ĐẦU</button>
+                                <button class="btn-timer" onclick="pauseTimer(14)">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="resetTimer(14, 360)">LÀM LẠI</button>
+                            </div>
+                        </div>
+
+                        <div class="diag-game-layout" style="margin-top: 10px;">
+                            <!-- Bên trái: Danh sách các nhãn để kéo thả -->
+                            <div class="diag-options-pool" id="diag-pool" style="overflow-y: auto; max-height: 350px;">
+                                <div class="diag-label-card" draggable="true" ondragstart="dragCard(event)" id="lbl-c-sad" onclick="selectCardTouch(this)">Buồn bã</div>
+                                <div class="diag-label-card" draggable="true" ondragstart="dragCard(event)" id="lbl-c-anxious" onclick="selectCardTouch(this)">Lo âu</div>
+                                <div class="diag-label-card" draggable="true" ondragstart="dragCard(event)" id="lbl-c-shy" onclick="selectCardTouch(this)">Tự ti</div>
+                                <div class="diag-label-card" draggable="true" ondragstart="dragCard(event)" id="lbl-t-sad" onclick="selectCardTouch(this)">U sầu, muốn khóc</div>
+                                <div class="diag-label-card" draggable="true" ondragstart="dragCard(event)" id="lbl-t-anxious" onclick="selectCardTouch(this)">Toát mồ hôi, đầu óc trống rỗng</div>
+                                <div class="diag-label-card" draggable="true" ondragstart="dragCard(event)" id="lbl-t-shy" onclick="selectCardTouch(this)">Trùm mũ kín mít, lảng tránh ánh mắt</div>
+                            </div>
+
+                            <!-- Bên phải: 3 cột ô của bệnh nhân -->
+                            <div class="patients-columns-s14">
+                                <div class="patient-drop-column" id="pcol-minh_anh">
+                                    <div class="patient-col-name">😢 Minh Anh</div>
+                                    <div class="patient-slot-box" id="pslot-ma-c" ondrop="dropPatientDiag(event, 'minh_anh', 'c')" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'pdiag', 'ma-c')">Thả nhãn cảm xúc</div>
+                                    <div class="patient-slot-box" id="pslot-ma-t" ondrop="dropPatientDiag(event, 'minh_anh', 't')" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'pdiag', 'ma-t')">Thả nhãn triệu chứng</div>
+                                </div>
+                                <div class="patient-drop-column" id="pcol-kem">
+                                    <div class="patient-col-name">😰 Kem</div>
+                                    <div class="patient-slot-box" id="pslot-kem-c" ondrop="dropPatientDiag(event, 'kem', 'c')" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'pdiag', 'kem-c')">Thả nhãn cảm xúc</div>
+                                    <div class="patient-slot-box" id="pslot-kem-t" ondrop="dropPatientDiag(event, 'kem', 't')" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'pdiag', 'kem-t')">Thả nhãn triệu chứng</div>
+                                </div>
+                                <div class="patient-drop-column" id="pcol-bao_vy">
+                                    <div class="patient-col-name">🥺 Bảo Vy</div>
+                                    <div class="patient-slot-box" id="pslot-vy-c" ondrop="dropPatientDiag(event, 'bao_vy', 'c')" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'pdiag', 'vy-c')">Thả nhãn cảm xúc</div>
+                                    <div class="patient-slot-box" id="pslot-vy-t" ondrop="dropPatientDiag(event, 'bao_vy', 't')" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'pdiag', 'vy-t')">Thả nhãn triệu chứng</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-action" style="align-self: flex-end; margin-top: 5px;" onclick="checkPatientDiagGame()">Kiểm tra chẩn đoán</button>
+                    </div>
+                </div>
+
+                <!-- SLIDE 14B (TK01) -->
+                <div class="slide-frame" id="slide-14B">
+                    <div class="template-tk01">
+                        <div class="tk01-header">Ý NGHĨA CỦA TRIỆU CHỨNG SINH LÝ</div>
+                        <div class="tk01-list-container">
+                            <ul class="tk01-list">
+                                <li class="tk01-item">Triệu chứng sinh lý cơ thể (nhịp tim, mồ hôi, căng cơ) là tín hiệu cảnh báo não bộ đang có phản ứng cảm xúc mạnh.</li>
+                                <li class="tk01-item">Phản ứng sai lầm bản năng (đập đồ, trốn tránh, gào khóc) là do hạch hạnh nhân kích hoạt cơ chế sinh học "chiến hay biến".</li>
+                                <li class="tk01-item">Bác sĩ cảm xúc cần nhận diện sớm triệu chứng để chặn trước biến chứng hành vi độc hại.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 15 (CB01) -->
+                <div class="slide-frame" id="slide-15">
+                    <div class="template-cb01">
+                        <div class="cb01-header">CHUẨN BỊ HỘI CHẨN CHUYÊN MÔN</div>
+                        <div class="cb01-split">
+                            <div class="cb01-card">
+                                <div class="cb01-card-title">💊 Thẻ Dụng cụ</div>
+                                <ul class="cb01-list">
+                                    <li>Phiếu chẩn đoán "Cơ chế Cabin não bộ" (bản in giấy) đã thảo luận điền xong</li>
+                                </ul>
+                            </div>
+                            <div class="cb01-card">
+                                <div class="cb01-card-title">👥 Thẻ Hình thức tổ chức</div>
+                                <ul class="cb01-list">
+                                    <li>Kíp trực sẵn sàng đại diện lên stage giải mã nguyên nhân sinh lý</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Câu thoại gợi ý viền phát sáng chạy ngang -->
+                        <div class="cb01-tips">
+                            <span>GỢI Ý THUYẾT TRÌNH:</span><br>
+                            - Câu gợi ý 1: "Khi bệnh nhân đối diện với bão cảm xúc, bộ phận Hạch hạnh nhân trong não bộ sẽ..."<br>
+                            - Câu gợi ý 2: "Trong khi đó, vùng Vỏ não trước trán đóng vai trò kiểm soát logic lại chưa hoàn thiện quá trình..."<br>
+                            - Câu gợi ý 3: "Vì vậy, chúng tôi chẩn đoán đây là hiện tượng biến đổi sinh lý tự nhiên ở tuổi dậy thì."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 16 (TB01) -->
+                <div class="slide-frame" id="slide-16">
+                    <div class="template-pv01">
+                        <div class="pv01-box" style="border-color: var(--primary); background: rgba(220, 47, 2, 0.04);">
+                            <div class="pv01-title" style="color: var(--primary);">PHIÊN HỘI CHẨN LÂM SÀNG</div>
+                            <div class="pv01-desc">
+                                <p style="font-weight: bold; font-size: 22px; margin-bottom: 15px; color: var(--primary-dark);">Đại diện các kíp trực lên giải mã cơ chế khoa học đứng sau các biểu hiện cơ thể của nhân vật</p>
+                                <p style="font-size: 18px; margin-bottom: 10px;">Cả lớp phản biện, chất vấn chéo dựa trên lăng kính sinh lý học.</p>
+                                <div class="th01-timer-row" style="margin-top: 15px;">
+                                    <span class="timer-display" id="timer-display-16">06:00</span>
+                                    <div class="timer-controls">
+                                        <button class="btn-timer" onclick="startTimer(16, 360)">BẮT ĐẦU</button>
+                                        <button class="btn-timer" onclick="pauseTimer(16)">TẠM DỪNG</button>
+                                        <button class="btn-timer" onclick="resetTimer(16, 360)">LÀM LẠI</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 17 (ĐA01) -->
+                <div class="slide-frame" id="slide-17">
+                    <div class="template-da01">
+                        <div class="da01-box" style="border-color: var(--accent); background: rgba(217, 4, 41, 0.05); position: relative; min-height: 380px;">
+                            <div class="da01-title" style="color: var(--accent);">KẾT QUẢ HỘI CHẨN CHUẨN Y KHOA</div>
+                            <div class="da01-content" style="font-size: 17px; line-height: 1.7; text-align: left;">
+                                <p><strong>Sự mất cân bằng sinh lý tuổi dậy thì:</strong> Hormone tăng vọt làm nhạy cảm hóa hệ thống rìa, khiến <strong>Hạch hạnh nhân</strong> (xử lý cảm xúc bản năng "chiến hay biến") hoạt động quá mức. Trong khi đó, <strong>Vỏ não trước trán</strong> (kiểm soát logic, lý trí) chưa hoàn thiện quá trình myelin hóa nên không kịp "phanh" cảm xúc mạnh.</p>
+                                <p style="margin-top: 10px;"><strong>Biểu hiện cơ thể:</strong> Gây ra hiện tượng tim đập nhanh, bốc hỏa, căng vai, nghẹn cổ họng do phản ứng "chiến hay biến" tự vệ.</p>
+                            </div>
+                            <div class="stamp-overlay stamped" id="stamp-pledge-17">
+                                <div class="stamp-graphic" style="border-color: var(--accent); color: var(--accent);">ĐÃ PHÊ DUYỆT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 18 (GT01) -->
+                <div class="slide-frame" id="slide-18">
+                    <div class="template-gt01">
+                        <div class="gt01-title">Giai đoạn 6</div>
+                        <div class="gt01-subtitle">Kê đơn và lập kế hoạch chăm sóc</div>
+                        <div class="gt01-desc">Thảo luận hội đồng chuyên môn để lập kế hoạch kê đơn điều hòa tâm lý đúng cách cho bệnh nhân.</div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 19 (CB01) -->
+                <div class="slide-frame" id="slide-19">
+                    <div class="template-cb01">
+                        <div class="cb01-header">CHUẨN BỊ KÊ ĐƠN ĐIỀU TRỊ</div>
+                        <div class="cb01-split">
+                            <div class="cb01-card">
+                                <div class="cb01-card-title">💊 Thẻ Dụng cụ</div>
+                                <ul class="cb01-list">
+                                    <li>Sổ tay kê đơn cảm xúc bằng giấy phát trên bàn học</li>
+                                </ul>
+                            </div>
+                            <div class="cb01-card">
+                                <div class="cb01-card-title">👥 Thẻ Hình thức tổ chức</div>
+                                <ul class="cb01-list">
+                                    <li>Kíp trực thực hành phòng phác đồ điều hòa</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 20 (HD01) -->
+                <div class="slide-frame" id="slide-20">
+                    <div class="template-hd01">
+                        <div class="hd01-title">QUY TRÌNH THỰC HIỆN KÊ ĐƠN</div>
+                        <div class="hd01-steps">
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 1</div>
+                                <div class="hd01-step-text">Theo dõi nhịp thở mô phỏng trên slide</div>
+                            </div>
+                            <div class="hd01-arrow">➔</div>
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 2</div>
+                                <div class="hd01-step-text">Cả lớp thực hành thở sâu Box Breathing đồng bộ để hạ nhiệt nhân vật giận dữ trên màn hình</div>
+                            </div>
+                            <div class="hd01-arrow">➔</div>
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 3</div>
+                                <div class="hd01-step-text">Điền câu Thông điệp tôi mẫu chuẩn y khoa vào Sổ tay giấy</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 21 (TH01 - GAME HẠ NHIỆT MÔ PHỎNG MỚI) -->
+                <div class="slide-frame" id="slide-21">
+                    <div class="template-th01" id="haly-cooling-container" style="transition: background-color 0.5s ease; padding: 25px; border-radius: 12px;">
+                        <div class="th01-title">THỰC HÀNH KỸ THUẬT SƠ CỨU TÂM LÝ</div>
+                        <div class="th01-subtitle">Sắp xếp quy trình Arranger trên slide & thực hành thở sâu Box Breathing</div>
+                        
+                        <div class="th01-timer-row">
+                            <span class="timer-display" id="timer-display-21">05:00</span>
+                            <div class="timer-controls">
+                                <button class="btn-timer" onclick="startTimer21(300)">BẮT ĐẦU</button>
+                                <button class="btn-timer" onclick="pauseTimer21()">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="resetTimer21(300)">LÀM LẠI</button>
+                            </div>
+                        </div>
+
+                        <div class="cooling-game-layout" style="display: grid; grid-template-columns: 280px 1fr; gap: 20px; flex: 1; margin-top: 15px; text-align: left;">
+                            <!-- Bên trái: Nhân vật bốc hỏa + Thanh năng lượng -->
+                            <div class="patient-cooling-panel" style="border: 3px solid var(--primary-dark); border-radius: 12px; padding: 15px; background: white; text-align: center; display: flex; flex-direction: column; justify-content: space-between; align-items: center; box-shadow: 4px 4px 0px var(--primary-dark);">
+                                <div style="font-size: 15px; font-weight: 800; color: var(--primary-dark); text-transform: uppercase;">Nhân vật Su bốc hỏa</div>
+                                
+                                <div class="patient-avatar-box" style="position: relative; width: 100%; height: 100px; margin: 10px 0; display: flex; justify-content: center; align-items: center;">
+                                    <div id="su-avatar-hot" style="font-size: 80px; transition: opacity 0.5s ease; position: absolute; opacity: 1;">🤬</div>
+                                    <div id="su-avatar-calm" style="font-size: 80px; transition: opacity 0.5s ease; position: absolute; opacity: 0;">😊</div>
+                                </div>
+
+                                <div style="width: 100%;">
+                                    <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; margin-bottom: 5px;">
+                                        <span>Cơn "Giận dữ"</span>
+                                        <span id="anger-percent">100%</span>
+                                    </div>
+                                    <div style="width: 100%; height: 16px; background: #e2e8f0; border-radius: 8px; border: 2px solid var(--primary-dark); overflow: hidden;">
+                                        <div id="anger-bar" style="width: 100%; height: 100%; background: var(--accent); transition: width 0.5s ease;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bên phải: Sơ đồ thở + Game Arranger -->
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <!-- Hướng dẫn thở Box Breathing -->
+                                <div style="display: flex; align-items: center; gap: 20px; background: #fffdf5; border: 2px solid var(--primary-dark); border-radius: 10px; padding: 10px 15px; box-shadow: 3px 3px 0px var(--primary-dark);">
+                                    <div id="breathing-circle" style="width: 65px; height: 65px; border-radius: 50%; background: var(--primary-light); border: 3px solid var(--primary-dark); display: flex; justify-content: center; align-items: center; font-size: 9px; font-weight: 900; transition: transform 4s linear; text-align: center; line-height: 1.1; padding: 4px;">HÍT VÀO</div>
+                                    <div style="flex: 1;">
+                                        <div style="font-size: 14px; font-weight: 800; color: var(--primary-dark);" id="breathing-instruction">Cùng thở Box Breathing theo nhịp co giãn của vòng tròn!</div>
+                                        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Hít vào 4s ➔ Giữ 4s ➔ Thở ra 4s ➔ Giữ 4s để hạ nhiệt nhịp sinh học</div>
+                                    </div>
+                                </div>
+
+                                <!-- Game Arranger -->
+                                <div class="arranger-game-layout">
+                                    <div class="arranger-slots" style="grid-template-columns: repeat(5, 1fr); gap: 6px;">
+                                        <div class="arranger-slot" id="aslot-1" ondrop="dropArranger(event, 1)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 1)" style="height: 90px; padding: 4px;">
+                                            <span class="arranger-slot-num" style="font-size: 10px;">Bước 1</span>
+                                        </div>
+                                        <div class="arranger-slot" id="aslot-2" ondrop="dropArranger(event, 2)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 2)" style="height: 90px; padding: 4px;">
+                                            <span class="arranger-slot-num" style="font-size: 10px;">Bước 2</span>
+                                        </div>
+                                        <div class="arranger-slot" id="aslot-3" ondrop="dropArranger(event, 3)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 3)" style="height: 90px; padding: 4px;">
+                                            <span class="arranger-slot-num" style="font-size: 10px;">Bước 3</span>
+                                        </div>
+                                        <div class="arranger-slot" id="aslot-4" ondrop="dropArranger(event, 4)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 4)" style="height: 90px; padding: 4px;">
+                                            <span class="arranger-slot-num" style="font-size: 10px;">Bước 4</span>
+                                        </div>
+                                        <div class="arranger-slot" id="aslot-5" ondrop="dropArranger(event, 5)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 5)" style="height: 90px; padding: 4px;">
+                                            <span class="arranger-slot-num" style="font-size: 10px;">Bước 5</span>
+                                        </div>
+                                    </div>
+                                    <div class="arranger-card-pool" id="arranger-pool" style="margin-top: 10px; gap: 8px;">
+                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-2" onclick="selectCardTouch(this)" style="width: 155px; min-height: 60px; font-size: 12px;">Bánh xe gọi tên cảm xúc</div>
+                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-1" onclick="selectCardTouch(this)" style="width: 155px; min-height: 60px; font-size: 12px;">Lắng nghe cơ thể</div>
+                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-3" onclick="selectCardTouch(this)" style="width: 155px; min-height: 60px; font-size: 12px;">Tạm dừng phản ứng (thở sâu)</div>
+                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-5" onclick="selectCardTouch(this)" style="width: 155px; min-height: 60px; font-size: 12px;">Phản tư cuối ngày</div>
+                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-4" onclick="selectCardTouch(this)" style="width: 155px; min-height: 60px; font-size: 12px;">Thiết lập thông điệp tôi</div>
+                                    </div>
+                                    <button class="btn btn-action" style="align-self: flex-end; margin-top: 5px;" onclick="checkArrangerGame()">Kiểm tra phác đồ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 22 (ĐA01) -->
+                <div class="slide-frame" id="slide-22">
+                    <div class="template-da01">
+                        <div class="da01-box" style="position: relative; min-height: 420px;">
+                            <div class="da01-title">ĐÁP ÁN: ĐƠN THUỐC VÀ PHÁC ĐỒ ĐIỀU HÒA CHUẨN</div>
+                            <div class="da01-content" style="font-size: 16px; line-height: 1.6; text-align: left;">
+                                <p><strong>Phác đồ 5 bước chuẩn y khoa:</strong> Lắng nghe cơ thể -> Bánh xe gọi tên cảm xúc -> Tạm dừng phản ứng (Thở hạ nhịp tim Box Breathing) -> Thiết lập "Thông điệp tôi" -> Phản tư cuối ngày.</p>
+                                <br>
+                                <p><strong>Câu Thông điệp tôi mẫu chữa trị cho Su:</strong> "Con cảm thấy buồn và tủi thân vì con đã thức đêm học bài nhưng mẹ lại trách con chỉ chơi điện thoại. Con mong mẹ sẽ động viên con."</p>
+                            </div>
+                            <div class="stamp-overlay stamped" id="stamp-pledge-22">
+                                <div class="stamp-graphic green-stamp" style="border-color: var(--secondary); color: var(--secondary);">ĐẠT CHUẨN ĐIỀU HÒA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 23 (ĐA01 - BẢNG PHÂN LOẠI T-CHART CŨ LÀ SLIDE 21) -->
+                <div class="slide-frame" id="slide-23">
+                    <div class="template-th01">
+                        <div class="th01-title">TỔNG KẾT: LƯU HỒ SƠ BỆNH ÁN</div>
+                        <div class="th01-subtitle">Trò chơi tương tác click kéo thả 8 thẻ hành vi vào 2 cột trên bảng T-Chart</div>
+                        
+                        <div class="tchart-layout" style="margin-top: 10px;">
+                            <div class="tchart-tables">
+                                <div class="tchart-col">
+                                    <div class="tchart-col-header tchart-col-should" style="border-bottom: 3px solid var(--secondary);">NÊN LÀM</div>
+                                    <div class="tchart-dropzone" id="tzone-should" ondrop="dropTChart(event, 'should')" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'tchart', 'should')"></div>
+                                </div>
+                                <div class="tchart-col">
+                                    <div class="tchart-col-header tchart-col-shouldnt" style="border-bottom: 3px solid var(--accent);">KHÔNG NÊN LÀM</div>
+                                    <div class="tchart-dropzone" id="tzone-shouldnt" ondrop="dropTChart(event, 'shouldnt')" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'tchart', 'shouldnt')"></div>
+                                </div>
+                            </div>
+                            <div class="tchart-pool" id="tchart-pool">
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-1" onclick="selectCardTouch(this)">Tách mình khỏi không gian xung quanh</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-2" onclick="selectCardTouch(this)">Đập phá đồ đạc</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-3" onclick="selectCardTouch(this)">Thực hành thở sâu hạ nhiệt</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-4" onclick="selectCardTouch(this)">Nói lời xúc phạm người khác</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-5" onclick="selectCardTouch(this)">Gọi tên cảm xúc bằng thông điệp tôi</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-6" onclick="selectCardTouch(this)">Tự làm đau bản thân</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-7" onclick="selectCardTouch(this)">Viết nhật ký giải tỏa cảm xúc</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-8" onclick="selectCardTouch(this)">Âm thầm chịu đựng một mình</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-action" style="align-self: flex-end; margin-top: 5px;" onclick="checkTChartGame()">Kiểm tra bảng phân loại</button>
+                    </div>
+                </div>
+
+                <!-- SLIDE 24 (CK01) -->
+                <div class="slide-frame" id="slide-24">
+                    <div class="template-ck01">
+                        <div class="ck01-title">BẢN CAM KẾT HÀNH ĐỘNG</div>
+                        <div class="ck01-subtitle">Hãy là những Bác sĩ Cảm xúc làm chủ hành vi của bản thân!</div>
+                        <div class="ck01-box parchment">
+                            <div class="ck01-terms">
+                                <label class="ck01-term"><input type="checkbox" id="ck24-1"> Tôi cam kết luôn thực hiện bước tạm dừng để vô trùng tâm lý trước khi phản ứng khi có cảm xúc mạnh.</label>
+                                <label class="ck01-term"><input type="checkbox" id="ck24-2"> Tôi cam kết không thực hiện các hành vi gây hại (đập phá, xúc phạm người khác, tự làm đau bản thân).</label>
+                                <label class="ck01-term"><input type="checkbox" id="ck24-3"> Tôi cam kết thực hành phác đồ điều hòa 5 bước để tự thấu cảm và làm chủ hành vi của mình.</label>
+                            </div>
+                            <div class="ck01-signature-row">
+                                <div class="ck01-signature-box">
+                                    <label>Kíp trực:</label>
+                                    <input type="text" class="ck01-signature-input" id="sig-24" placeholder="Tên nhóm/bác sĩ...">
+                                </div>
+                                <button class="btn btn-action" onclick="signPledge(24)">BẤM CAM KẾT</button>
+                                <div class="stamp-overlay" id="stamp-pledge-24">
+                                    <div class="stamp-graphic gold-stamp">ĐÃ CAM KẾT</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 25 (VD01) -->
+                <div class="slide-frame" id="slide-25">
+                    <div class="template-vd01">
+                        <div class="certificate-box">
+                            <div class="cert-header">CHỨNG NHẬN HOÀN THÀNH NHIỆM VỤ</div>
+                            <div class="cert-title">CHUYÊN GIA ĐIỀU HÒA CẢM XÚC</div>
+                            <div class="cert-awarded-to">Vinh danh kíp trực cấp cứu xuất sắc vì sự thấu cảm và nỗ lực làm chủ hành vi cảm xúc!</div>
+                            <div class="cert-name-display" id="cert-name-display">KÍP TRỰC CẤP CỨU</div>
+                            <div class="cert-body">
+                                Đã hoàn thành xuất sắc khóa khám bệnh lâm sàng, chẩn đoán thành công cơ chế não bộ tuổi dậy thì và làm chủ kỹ thuật sơ cứu phác đồ 5 bước.
+                            </div>
+                            <div class="cert-input-row">
+                                <input type="text" class="cert-input" id="cert-input-name" placeholder="Nhập tên kíp trực/Lớp của bạn..." oninput="syncCertName(this.value)">
+                                <button class="btn btn-action" onclick="celebrateAchievement()">HOÀN THÀNH</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 26 (VD01) -->
+                <div class="slide-frame" id="slide-26">
+                    <div class="template-vd01">
+                        <div class="certificate-box" style="border-color: var(--secondary); background: #f6fffb;">
+                            <div class="cert-header" style="color: var(--secondary);">LỄ VINH DANH BÁC SĨ CHÍNH THỨC</div>
+                            <div class="cert-title" style="color: var(--primary-dark); font-size: 26px;">"Chúc mừng các bạn đã xuất sắc vượt qua thử thách bác sĩ thực tập và chính thức trở thành bác sĩ chính của Nova Hospital!"</div>
+                            <div class="cert-awarded-to" style="font-weight: 800; font-size: 28px; color: var(--primary-dark);">Tập thể Lớp 7A2 - Nova Hospital</div>
+                            <div class="cert-body" style="font-size: 19px; line-height: 1.7; text-align: left; max-width: 600px; margin: 15px auto;">
+                                <p style="font-weight: bold;">Nhiệm vụ về nhà: Thực hành viết nhật ký phản tư cảm xúc mỗi tối để duy trì thói quen khỏe mạnh.</p>
+                            </div>
+                            <div class="stamp-overlay stamped" id="stamp-pledge-26">
+                                <div class="stamp-graphic green-stamp" style="border-color: var(--secondary); color: var(--secondary); transform: rotate(-10deg) scale(1);">BÁC SĨ CHÍNH THỨC</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- NÚT ĐIỀU HƯỚNG PHÍA DƯỚI -->
+            <div class="presentation-footer">
+                <button class="btn btn-nav" id="btn-prev" onclick="prevSlide()">◀ TRƯỚC</button>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn btn-accent" id="btn-answer-trigger" style="display: none;" onclick="showAnswerSlide()">XEM ĐÁP ÁN 🔑</button>
+                    <button class="btn btn-action" id="btn-next" onclick="nextSlide()">TIẾP THEO ▶</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Hộp thoại Modal Popup cho Hồ sơ bệnh án -->
+    <div class="modal-overlay" id="patient-modal" onclick="closePatientModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div class="modal-title" id="modal-patient-title">BỆNH ÁN CHI TIẾT</div>
+                <button class="btn-modal-close" onclick="closePatientModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-patient-body">
+                Nội dung hồ sơ bệnh án...
+            </div>
+        </div>
+    </div>
+
+    <!-- Hộp thoại Modal Popup Cảnh báo Nhiễm độc hành vi -->
+    <div class="modal-overlay" id="danger-modal" onclick="closeDangerModal()">
+        <div class="modal-content" style="border-color: var(--accent); box-shadow: 10px 10px 0px var(--accent);" onclick="event.stopPropagation()">
+            <div class="modal-header" style="background: linear-gradient(135deg, var(--accent), #ffba08);">
+                <div class="modal-title">🚨 CẢNH BÁO: NHIỄM ĐỘC HÀNH VI!</div>
+                <button class="btn-modal-close" onclick="closeDangerModal()">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: center; padding: 30px;">
+                <div style="font-size: 70px; margin-bottom: 15px;">🥵 ⛈️ 💔</div>
+                <div style="font-size: 20px; font-weight: 800; color: var(--accent); margin-bottom: 15px;" id="danger-modal-headline">
+                    Phản ứng tức thời sai lầm!
+                </div>
+                <p style="font-size: 16px; line-height: 1.6; margin-bottom: 25px;">
+                    Cơn giận dữ bùng nổ! Su mệt mỏi, mây khói đen u ám phủ quanh, mối quan hệ mẹ con rạn nứt nghiêm trọng. Nhận ra hậu quả bản năng để bắt đầu bài học Tạm dừng phản ứng.
+                </p>
+                <button class="btn btn-accent" style="margin: 0 auto;" onclick="goToSlide('8B'); closeDangerModal();">XEM BIẾN CHỨNG CHI TIẾT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Canvas pháo hoa -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- TRÌNH ĐIỀU KHIỂN LOGIC SỐ HÓA VÀ ÂM THANH NHÂN TẠO -->
+    <script>
+        // DANH SÁCH SLIDES (28 frames chi tiết)
+        const slidesConfig = [
+            { id: 1, type: "MĐ01", title: "Slide Bìa bài học", stage: "KHỞI ĐỘNG" },
+            { id: 2, type: "MT01", title: "Mục tiêu bài học", stage: "MỤC TIÊU" },
+            { id: 3, type: "QS01", title: "Câu hỏi lớn", stage: "MỤC TIÊU" },
+            { id: 4, type: "PV01", title: "Phân vai bác sĩ tập sự", stage: "MỤC TIÊU" },
+            { id: 5, type: "BĐ01", title: "Cảnh báo khẩn cấp", stage: "MỞ KHÓA CA BỆNH" },
+            { id: 6, type: "CB01", title: "Chuẩn bị thăm khám", stage: "MỞ KHÓA CA BỆNH" },
+            { id: 7, type: "HD01", title: "Quy trình khám bệnh", stage: "MỞ KHÓA CA BỆNH" },
+            { id: 8, type: "TH01", title: "Phản ứng nhanh ban đầu", stage: "MỞ KHÓA CA BỆNH" },
+            { id: "8B", type: "ĐA01", title: "Biến chứng nhiễm độc hành vi", stage: "MỞ KHÓA CA BỆNH" },
+            { id: "8C", type: "TK01", title: "Nguyên tắc vô trùng tâm lý", stage: "MỞ KHÓA CA BỆNH" },
+            { id: 9, type: "GT01", title: "Bốc thăm ca bệnh", stage: "KHÁM BỆNH" },
+            { id: 10, type: "NV01", title: "Nhiệm vụ hồ sơ bệnh án", stage: "KHÁM BỆNH" },
+            { id: 11, type: "CB01", title: "Chuẩn bị khám bệnh", stage: "KHÁM BỆNH" },
+            { id: 12, type: "HD01", title: "Quy trình khám bệnh", stage: "KHÁM BỆNH" },
+            { id: 14, type: "TH01", title: "Hội chẩn lâm sàng", stage: "KHÁM BỆNH" },
+            { id: "14B", type: "TK01", title: "Tổng kết triệu chứng sinh lý", stage: "KHÁM BỆNH" },
+            { id: 15, type: "CB01", title: "Chuẩn bị chẩn đoán cơ chế", stage: "CHẨN ĐOÁN & HỘI CHẨN" },
+            { id: 16, type: "TB01", title: "Phiên hội chẩn y khoa", stage: "CHẨN ĐOÁN & HỘI CHẨN" },
+            { id: 17, type: "ĐA01", title: "Kết quả hội chẩn", stage: "CHẨN ĐOÁN & HỘI CHẨN" },
+            { id: 18, type: "GT01", title: "Giới thiệu phác đồ kê đơn", stage: "KÊ ĐƠN & CHĂM SÓC" },
+            { id: 19, type: "CB01", title: "Chuẩn bị phác đồ kê đơn", stage: "KÊ ĐƠN & CHĂM SÓC" },
+            { id: 20, type: "HD01", title: "Hướng dẫn phác đồ 5 bước", stage: "KÊ ĐƠN & CHĂM SÓC" },
+            { id: 21, type: "TH01", title: "Mô phỏng hạ nhiệt cảm xúc", stage: "KÊ ĐƠN & CHĂM SÓC" },
+            { id: 22, type: "ĐA01", title: "Đơn thuốc chuẩn y khoa", stage: "KÊ ĐƠN & CHĂM SÓC" },
+            { id: 23, type: "ĐA01", title: "Game phân loại T-Chart", stage: "NHẬT KÝ BÁC SĨ" },
+            { id: 24, type: "CK01", title: "Cam kết y đức bác sĩ", stage: "NHẬT KÝ BÁC SĨ" },
+            { id: 25, type: "VD01", title: "Chứng nhận vinh danh", stage: "THÓI QUEN KHỎE MẠNH" },
+            { id: 26, type: "VD01", title: "Vinh danh thăng chức bác sĩ", stage: "THÓI QUEN KHỎE MẠNH" }
+        ];
+
+        let currentSlideIndex = 0;
+        let timers = {};
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        // 1. TỰ ĐỘNG KHỞI TẠO DANH SÁCH SIDEBAR
+        function buildSidebar() {
+            const sidebar = document.querySelector(".sidebar");
+            const header = sidebar.querySelector(".sidebar-header");
+            sidebar.innerHTML = "";
+            sidebar.appendChild(header);
+
+            const groups = {};
+            slidesConfig.forEach(slide => {
+                if (!groups[slide.stage]) {
+                    groups[slide.stage] = [];
+                }
+                groups[slide.stage].push(slide);
+            });
+
+            for (let stage in groups) {
+                const groupDiv = document.createElement("div");
+                groupDiv.className = "sidebar-stage-group";
+
+                const titleDiv = document.createElement("div");
+                titleDiv.className = "sidebar-stage-title";
+                titleDiv.innerText = stage;
+                groupDiv.appendChild(titleDiv);
+
+                const ul = document.createElement("ul");
+                ul.className = "slide-list";
+
+                groups[stage].forEach(slide => {
+                    const li = document.createElement("li");
+                    li.className = "slide-item";
+                    li.setAttribute("data-slide-id", slide.id);
+                    li.onclick = () => goToSlide(slide.id);
+                    li.innerHTML = `
+                        <span class="slide-badge">${slide.type}</span>
+                        <span>S${slide.id}: ${slide.title.toUpperCase()}</span>
+                    `;
+                    ul.appendChild(li);
+                });
+
+                groupDiv.appendChild(ul);
+                sidebar.appendChild(groupDiv);
+            }
+        }
+
+        // 2. KHỞI TẠO HIỆU ỨNG CHỮ CHẠY ĐÁNH MÁY CHO SLIDE 1
+        let typewriterTimeout = null;
+        function typeWriterEffect() {
+            const titleEl = document.getElementById("slide1-title");
+            const text = "Bài 7.6: VÌ SAO CẢM XÚC THAY ĐỔI MẠNH?";
+            if (typewriterTimeout) {
+                clearTimeout(typewriterTimeout);
+            }
+            titleEl.textContent = "";
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    titleEl.textContent += text.charAt(i);
+                    i++;
+                    typewriterTimeout = setTimeout(type, 80);
+                } else {
+                    typewriterTimeout = null;
+                }
+            }
+            type();
+        }
+
+        // 3. ĐIỀU HƯỚNG SLIDE & QUẢN LÝ NÚT PHỤ
+        
+        // TỰ ĐỘNG PHÓNG TO / THU NHỎ KHUNG NỘI DUNG (DYNAMIC SLIDE SCALING)
+        function adjustSlideScale() {
+            const activeFrame = document.querySelector('.slide-frame.active');
+            if (!activeFrame) return;
+
+            const viewport = document.querySelector('.slide-viewport');
+            if (!viewport) return;
+
+            activeFrame.style.transform = 'none';
+            activeFrame.style.width = '100%';
+            activeFrame.style.maxWidth = '1180px';
+            activeFrame.style.height = 'auto';
+
+            const fWidth = activeFrame.offsetWidth;
+            const fHeight = activeFrame.offsetHeight;
+
+            const vWidth = viewport.clientWidth - 40;
+            const vHeight = viewport.clientHeight - 40;
+
+            const scaleX = vWidth / fWidth;
+            const scaleY = vHeight / fHeight;
+            const scale = Math.min(scaleX, scaleY);
+
+            activeFrame.style.transform = `scale(${scale})`;
+            activeFrame.style.transformOrigin = 'center center';
+            viewport.style.overflow = 'hidden';
+
+            activeFrame.style.visibility = 'visible';
+        }
+
+        function updateSlideUI() {
+            for (let id in timers) {
+                if (timers[id]) {
+                    if (id == 21) {
+                        pauseTimer21();
+                    } else {
+                        pauseTimer(id);
+                    }
+                }
+            }
+
+            const frames = document.querySelectorAll(".slide-frame");
+            frames.forEach(f => f.classList.remove("active"));
+
+            const currentSlide = slidesConfig[currentSlideIndex];
+            const activeFrame = document.getElementById(`slide-${currentSlide.id}`);
+            if (activeFrame) {
+                activeFrame.style.visibility = "hidden";
+                activeFrame.classList.add("active");
+            }
+
+            const items = document.querySelectorAll(".slide-item");
+            items.forEach(item => {
+                const slideId = item.getAttribute("data-slide-id");
+                if (slideId == currentSlide.id) {
+                    item.classList.add("active");
+                } else {
+                    item.classList.remove("active");
+                }
+            });
+
+            document.getElementById("header-slide-info").innerHTML = `Slide ${currentSlide.id}: ${currentSlide.title.toUpperCase()}`;
+            document.getElementById("header-stage-badge").innerText = `GIAI ĐOẠN: ${currentSlide.stage.toUpperCase()}`;
+
+            const roleBadge = document.getElementById("header-role-badge");
+            if (roleBadge) {
+                const sId = currentSlide.id;
+                const isPractitioner = (sId >= 2 && sId <= 8) || sId === "8B";
+                const isUpgrade = sId === "8C";
+                const isOfficial = (sId >= 9 && sId <= 26) || sId === "14B" || sId === "22" || sId === "23" || sId === "24";
+
+                if (currentSlideIndex === 0) {
+                    roleBadge.style.display = "none";
+                } else {
+                    roleBadge.style.display = "block";
+                    if (isPractitioner) {
+                        roleBadge.innerText = "🩺 BÁC SĨ THỰC TẬP";
+                        roleBadge.style.background = "rgba(220, 47, 2, 0.1)";
+                        roleBadge.style.color = "var(--primary)";
+                        roleBadge.style.borderColor = "rgba(220, 47, 2, 0.3)";
+                        roleBadge.style.boxShadow = "0 0 10px rgba(220, 47, 2, 0.2)";
+                    } else if (isUpgrade) {
+                        roleBadge.innerText = "⚡ NÂNG CẤP BÁC SĨ";
+                        roleBadge.style.background = "rgba(245, 158, 11, 0.12)";
+                        roleBadge.style.color = "#f59e0b";
+                        roleBadge.style.borderColor = "rgba(245, 158, 11, 0.3)";
+                        roleBadge.style.boxShadow = "0 0 10px rgba(245, 158, 11, 0.2)";
+                    } else if (isOfficial) {
+                        roleBadge.innerText = "🎖️ BÁC SĨ CHÍNH THỨC";
+                        roleBadge.style.background = "rgba(16, 185, 129, 0.12)";
+                        roleBadge.style.color = "#10b981";
+                        roleBadge.style.borderColor = "rgba(16, 185, 129, 0.3)";
+                        roleBadge.style.boxShadow = "0 0 10px rgba(16, 185, 129, 0.2)";
+                    }
+                }
+            }
+
+            document.getElementById("btn-prev").className = `btn btn-nav ${currentSlideIndex === 0 ? 'btn-disabled' : ''}`;
+            document.getElementById("btn-next").className = `btn btn-action ${currentSlideIndex === slidesConfig.length - 1 ? 'btn-disabled' : ''}`;
+
+            if (currentSlide.id === 5) {
+                document.getElementById("presentation-area").classList.add("flash-red");
+                playSiren();
+                setTimeout(() => {
+                    document.getElementById("presentation-area").classList.remove("flash-red");
+                }, 1200);
+            }
+
+            if (currentSlide.id === 1) {
+                typeWriterEffect();
+            }
+
+            // Slide 26 LỄ VINH DANH TỰ ĐỘNG CHẠY CONFETTI & NHẠC KỊCH
+            if (currentSlide.id === 26) {
+                setTimeout(() => {
+                    startConfetti();
+                    playApplause();
+                }, 300);
+            }
+
+            manageAnswerButton();
+            preventCompoundWordWrapping();
+            adjustSlideScale();
+        }
+
+        function manageAnswerButton() {
+            const currentSlide = slidesConfig[currentSlideIndex];
+            const btnAns = document.getElementById("btn-answer-trigger");
+            
+            const triggerSlides = [8, 14, 21, 23];
+            if (triggerSlides.includes(currentSlide.id)) {
+                btnAns.style.display = "flex";
+                let nextIndicator = activeFrameIndicatorText(currentSlide.id);
+                showTeacherIndicator(nextIndicator);
+            } else {
+                btnAns.style.display = "none";
+                removeTeacherIndicator();
+            }
+        }
+
+        function activeFrameIndicatorText(slideId) {
+            switch(slideId) {
+                case 8: return "CHUẨN BỊ HIỆN: BIẾN CHỨNG HÀNH VI";
+                case 14: return "CHUẨN BỊ HIỆN: ĐÁP ÁN TRIỆU CHỨNG LÂM SÀNG";
+                case 21: return "CHUẨN BỊ HIỆN: ĐƠN THUỐC CHUẨN";
+                case 23: return "CHUẨN BỊ HIỆN: BẢN CAM KẾT HÀNH ĐỘNG";
+                default: return "";
+            }
+        }
+
+        function showTeacherIndicator(text) {
+            const currentSlide = slidesConfig[currentSlideIndex];
+            const activeFrame = document.getElementById(`slide-${currentSlide.id}`);
+            if (activeFrame) {
+                let indicator = activeFrame.querySelector(".next-stage-indicator");
+                if (!indicator) {
+                    indicator = document.createElement("div");
+                    indicator.className = "next-stage-indicator";
+                    activeFrame.appendChild(indicator);
+                }
+                indicator.innerHTML = `⚠️ ${text.toUpperCase()}`;
+            }
+        }
+
+        function removeTeacherIndicator() {
+            const currentSlide = slidesConfig[currentSlideIndex];
+            const activeFrame = document.getElementById(`slide-${currentSlide.id}`);
+            if (activeFrame) {
+                const indicator = activeFrame.querySelector(".next-stage-indicator");
+                if (indicator) indicator.remove();
+            }
+        }
+
+        function showAnswerSlide() {
+            const currentSlide = slidesConfig[currentSlideIndex];
+            if (currentSlide.id === 8) goToSlide("8B");
+            else if (currentSlide.id === 14) goToSlide("14B");
+            else if (currentSlide.id === 21) goToSlide(22);
+            else if (currentSlide.id === 23) goToSlide(24);
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < slidesConfig.length - 1) {
+                currentSlideIndex++;
+                updateSlideUI();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                updateSlideUI();
+            }
+        }
+
+        function goToSlide(id) {
+            const targetIndex = slidesConfig.findIndex(s => s.id == id);
+            if (targetIndex !== -1) {
+                currentSlideIndex = targetIndex;
+                updateSlideUI();
+            }
+        }
+
+        // 4. BỘ ĐẾM NGƯỢC THỜI GIAN
+        function startTimer(slideId, seconds) {
+            if (timers[slideId]) return;
+            let display = document.getElementById(`timer-display-${slideId}`);
+            let duration = seconds;
+            
+            timers[slideId] = setInterval(() => {
+                let min = Math.floor(duration / 60);
+                let sec = duration % 60;
+                display.innerText = `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
+                
+                if (--duration < 0) {
+                    clearInterval(timers[slideId]);
+                    timers[slideId] = null;
+                    playBell();
+                    document.getElementById(`slide-${slideId}`).style.background = "rgba(230, 57, 70, 0.2)";
+                    setTimeout(() => {
+                        document.getElementById(`slide-${slideId}`).style.background = "var(--bg-glass)";
+                    }, 2000);
+                }
+            }, 1000);
+        }
+
+        document.addEventListener('click', () => {
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        });
+
+        function pauseTimer(slideId) {
+            if (timers[slideId]) {
+                clearInterval(timers[slideId]);
+                timers[slideId] = null;
+            }
+        }
+
+        function resetTimer(slideId, seconds) {
+            pauseTimer(slideId);
+            let display = document.getElementById(`timer-display-${slideId}`);
+            let min = Math.floor(seconds / 60);
+            let sec = seconds % 60;
+            display.innerText = `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
+        }
+
+        // 5. GAME 1: TRẮC NGHIỆM PHẢN ỨNG NHANH CỦA SLIDE 8
+        function triggerNhiemDoc(optionLetter) {
+            playSiren();
+            const frame = document.getElementById("slide-8");
+            frame.classList.add("shake");
+            document.getElementById("presentation-area").classList.add("flash-red");
+            
+            let headline = "";
+            if (optionLetter === 'A') headline = "Bạn đã chọn: Cãi lại mẹ và đóng cửa rầm!";
+            else if (optionLetter === 'B') headline = "Bạn đã chọn: Đập phá một món đồ trên bàn!";
+            else if (optionLetter === 'C') headline = "Bạn đã chọn: Im lặng bỏ đi và nhịn ăn sáng!";
+            
+            document.getElementById("danger-modal-headline").innerText = headline;
+            document.getElementById("danger-modal").style.display = "flex";
+            
+            setTimeout(() => {
+                frame.classList.remove("shake");
+                document.getElementById("presentation-area").classList.remove("flash-red");
+            }, 800);
+        }
+
+        function closeDangerModal() {
+            document.getElementById("danger-modal").style.display = "none";
+        }
+
+        // 6. GAME 2: BỐC THĂM BỆNH ÁN NGẪU NHIÊN CỦA NV01 (CASE SHUFFLER)
+        const patientData = {
+            su: {
+                title: "Bệnh án bệnh nhân Su - Giường Cấp cứu",
+                body: "Mẹ Su trách móc Su ham chơi điện tử ngay khi vừa đi học về. Su lập tức bùng nổ cơn giận dữ, quát lớn, đập bàn học kêu rầm rầm rồi chạy vội về phòng ngủ, đóng sầm cửa lại để cô lập bản thân."
+            },
+            minh_anh: {
+                title: "Bệnh án bệnh nhân Minh Anh - Giường 01",
+                body: "Minh Anh cảm thấy u sầu, buồn chán cực độ trong 3 ngày qua mà không rõ lý do. Cô bé trốn trong góc phòng, ngồi bó gối một mình và chỉ muốn khóc nghẹn cổ họng mỗi khi có ai chạm vào hỏi han."
+            },
+            kem: {
+                title: "Bệnh án bệnh nhân Kem - Giường 02",
+                body: "Đứng trước cửa phòng thi học kỳ toán, Kem đột ngột toát mồ hôi ướt sũng lưng áo, tim đập thình thịch liên hồi làm lồng ngực đau nhói, run lẩy bẩy cả chân tay và đầu óc trống rỗng không thể nhớ nổi một công thức nào."
+            },
+            bao_vy: {
+                title: "Bệnh án bệnh nhân Bảo Vy - Giường 03",
+                body: "Vy phát hiện mặt mình nổi vài nốt mụn trứng cá dậy thì. Cô bé hoảng sợ tự ti, trùm mũ áo khoác kín mít để che mặt, luôn lảng tránh ánh mắt của bạn bè khi nói chuyện và lo sợ mọi người đang phán xét vẻ ngoài của mình."
+            }
+        };
+
+        function spinCaseShuffler() {
+            playStamp();
+            const resultBox = document.getElementById("shuffler-result");
+            resultBox.innerText = "ĐANG BỐC THĂM...";
+            let count = 0;
+            const keys = Object.keys(patientData);
+            const interval = setInterval(() => {
+                const randomKey = keys[Math.floor(Math.random() * keys.length)];
+                resultBox.innerText = patientData[randomKey].title.toUpperCase();
+                count++;
+                if (count > 10) {
+                    clearInterval(interval);
+                    playApplause();
+                    setTimeout(() => {
+                        goToSlide(10);
+                    }, 1000);
+                }
+            }, 100);
+        }
+
+        function openPatientModal(patientKey) {
+            playDocumentSound();
+            const data = patientData[patientKey];
+            document.getElementById("modal-patient-title").innerText = data.title;
+            document.getElementById("modal-patient-body").innerText = data.body;
+            document.getElementById("patient-modal").style.display = "flex";
+        }
+
+        function closePatientModal() {
+            document.getElementById("patient-modal").style.display = "none";
+        }
+
+        // 7. GAME 3: KÉO THẢ HỘI CHẨN LÂM SÀNG CỦA SLIDE 14
+        let patientDiagData = {
+            "minh_anh": { c: null, t: null },
+            "kem": { c: null, t: null },
+            "bao_vy": { c: null, t: null }
+        };
+
+        let selectedCardId = null;
+        function selectCardTouch(cardElement) {
+            document.querySelectorAll(".selected-drag-card").forEach(el => {
+                if (el !== cardElement) {
+                    el.classList.remove("selected-drag-card");
+                }
+            });
+            if (cardElement.classList.contains("selected-drag-card")) {
+                cardElement.classList.remove("selected-drag-card");
+                selectedCardId = null;
+            } else {
+                cardElement.classList.add("selected-drag-card");
+                selectedCardId = cardElement.id;
+                playDocumentSound();
+            }
+        }
+
+        function handleSlotTouch(slotElement, gameType, slotParam) {
+            if (!selectedCardId) return;
+            const card = document.getElementById(selectedCardId);
+            if (!card) return;
+            
+            if (gameType === 'pdiag') {
+                slotElement.innerHTML = "";
+                slotElement.appendChild(card);
+                
+                const parts = slotParam.split('-'); // ma-c, ma-t, kem-c, kem-t, vy-c, vy-t
+                const pKey = parts[0] === 'ma' ? 'minh_anh' : (parts[0] === 'kem' ? 'kem' : 'bao_vy');
+                const field = parts[1];
+                patientDiagData[pKey][field] = selectedCardId;
+            } else if (gameType === 'arranger') {
+                slotElement.appendChild(card);
+                arrangerData[slotParam] = selectedCardId;
+            } else if (gameType === 'tchart') {
+                slotElement.appendChild(card);
+                tchartData[selectedCardId] = slotParam;
+            }
+            
+            card.classList.remove("selected-drag-card");
+            selectedCardId = null;
+            playStamp();
+        }
+
+        function dropPatientDiag(ev, patientKey, field) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            const card = document.getElementById(data);
+            const slotId = field === 'c' ? `pslot-${patientKey === 'minh_anh' ? 'ma' : (patientKey === 'kem' ? 'kem' : 'vy')}-c` : `pslot-${patientKey === 'minh_anh' ? 'ma' : (patientKey === 'kem' ? 'kem' : 'vy')}-t`;
+            const slot = document.getElementById(slotId);
+            
+            slot.innerHTML = "";
+            slot.appendChild(card);
+            patientDiagData[patientKey][field] = data;
+            playStamp();
+        }
+
+        function checkPatientDiagGame() {
+            const correctAns = {
+                "minh_anh": { c: "lbl-c-sad", t: "lbl-t-sad" },
+                "kem": { c: "lbl-c-anxious", t: "lbl-t-anxious" },
+                "bao_vy": { c: "lbl-c-shy", t: "lbl-t-shy" }
+            };
+
+            let correct = true;
+            for (let p in correctAns) {
+                if (patientDiagData[p].c !== correctAns[p].c || patientDiagData[p].t !== correctAns[p].t) {
+                    correct = false;
+                }
+            }
+
+            if (correct) {
+                playApplause();
+                alert("Chúc mừng! Kíp trực đã chẩn đoán chính xác triệu chứng và cảm xúc của 3 bệnh nhân.");
+                goToSlide("14B");
+            } else {
+                playSiren();
+                alert("Chẩn đoán chưa đúng! Vui lòng đối chiếu Bánh xe cảm xúc và rà soát kỹ lại hồ sơ.");
+            }
+        }
+
+        // 8. ĐÓNG DẤU CAM KẾT (STAMP ANIMATION)
+        function signPledge(slideId) {
+            const sig = document.getElementById(`sig-${slideId}`).value;
+            const cb1 = document.getElementById(`ck${slideId}-1`).checked;
+            const cb2 = document.getElementById(`ck${slideId}-2`).checked;
+            const cb3 = document.getElementById(`ck${slideId}-3`);
+            
+            let isCheck = cb1 && cb2;
+            if (cb3) isCheck = isCheck && cb3.checked;
+
+            if (!sig.trim() || !isCheck) {
+                alert("Vui lòng tích chọn đầy đủ các điều khoản cam kết y đức và ký tên kíp trực!");
+                return;
+            }
+
+            playStamp();
+            const frame = document.getElementById(`slide-${slideId}`);
+            frame.classList.add("shake");
+            document.getElementById(`stamp-pledge-${slideId}`).classList.add("stamped");
+            
+            setTimeout(() => {
+                frame.classList.remove("shake");
+            }, 500);
+        }
+
+        // 9. GAME 4 (SLIDE 21): SẮP XẾP PHÁC ĐỒ & THỞ BOX BREATHING MÔ PHỎNG HẠ NHIỆT CẢM XÚC
+        let arrangerData = {};
+        let breathingTimer = null;
+        let breathingPhase = 0; // 0: hít, 1: giữ, 2: thở, 3: giữ
+        let angerLevel = 100;
+        let angerInterval = null;
+
+        function dropArranger(ev, slotNum) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            const card = document.getElementById(data);
+            const slot = document.getElementById(`aslot-${slotNum}`);
+            
+            if (slot.innerHTML.indexOf("acard-") === -1) {
+                slot.appendChild(card);
+                arrangerData[slotNum] = data;
+                playStamp();
+            }
+        }
+
+        function checkArrangerGame() {
+            let correct = true;
+            for(let i=1; i<=5; i++) {
+                if (arrangerData[i] !== `acard-${i}`) {
+                    correct = false;
+                }
+            }
+
+            if (correct && angerLevel <= 0) {
+                playApplause();
+                for(let i=1; i<=5; i++) {
+                    document.getElementById(`aslot-${i}`).style.borderColor = "var(--secondary)";
+                    document.getElementById(`aslot-${i}`).style.background = "rgba(16, 185, 129, 0.1)";
+                }
+                alert("Chúc mừng! Bạn đã sắp xếp đúng phác đồ điều hòa và thực hành thở hạ nhiệt thành công ca bệnh!");
+                goToSlide(22);
+            } else if (!correct) {
+                playSiren();
+                alert("Thao tác sắp xếp phác đồ chưa đúng quy chuẩn y khoa! Vui lòng hội chẩn lại.");
+            } else if (angerLevel > 0) {
+                alert("Bệnh nhân Su vẫn còn đang giận dữ! Hãy duy trì nhịp thở Box Breathing để thanh năng lượng tụt về 0%.");
+            }
+        }
+
+        function startTimer21(seconds) {
+            if (timers[21]) return;
+            startTimer(21, seconds);
+
+            const circle = document.getElementById("breathing-circle");
+            const instruction = document.getElementById("breathing-instruction");
+
+            function runBreathingCycle() {
+                if (breathingPhase === 0) {
+                    circle.style.transform = "scale(1.5)";
+                    circle.innerText = "HÍT VÀO\n(4s)";
+                    circle.style.background = "#ffba08";
+                    instruction.innerText = "Hít sâu bằng mũi, căng lồng ngực...";
+                    playBreatheTone(440, 550, 4);
+                    breathingPhase = 1;
+                } else if (breathingPhase === 1) {
+                    circle.style.transform = "scale(1.5)";
+                    circle.innerText = "GIỮ HƠI\n(4s)";
+                    circle.style.background = "#dc2f02";
+                    instruction.innerText = "Nín thở, giữ cơ thể bình tĩnh...";
+                    playBreatheTone(550, 550, 4);
+                    breathingPhase = 2;
+                } else if (breathingPhase === 2) {
+                    circle.style.transform = "scale(1.0)";
+                    circle.innerText = "THỞ RA\n(4s)";
+                    circle.style.background = "#10b981";
+                    instruction.innerText = "Thở ra chậm rãi bằng miệng...";
+                    playBreatheTone(550, 330, 4);
+                    breathingPhase = 3;
+                } else if (breathingPhase === 3) {
+                    circle.style.transform = "scale(1.0)";
+                    circle.innerText = "GIỮ HƠI\n(4s)";
+                    circle.style.background = "#6d5959";
+                    instruction.innerText = "Nín thở, thả lỏng toàn thân...";
+                    playBreatheTone(330, 330, 4);
+                    breathingPhase = 0;
+                }
+            }
+
+            breathingPhase = 0;
+            runBreathingCycle();
+            breathingTimer = setInterval(runBreathingCycle, 4000);
+
+            const angerBar = document.getElementById("anger-bar");
+            const angerPercent = document.getElementById("anger-percent");
+            const avatarHot = document.getElementById("su-avatar-hot");
+            const avatarCalm = document.getElementById("su-avatar-calm");
+            const container = document.getElementById("haly-cooling-container");
+
+            angerInterval = setInterval(() => {
+                if (angerLevel > 0) {
+                    angerLevel -= 2; // Giảm 2% mỗi giây
+                    if (angerLevel < 0) angerLevel = 0;
+                    angerBar.style.width = `${angerLevel}%`;
+                    angerPercent.innerText = `${angerLevel}%`;
+
+                    const opacityCalm = (100 - angerLevel) / 100;
+                    avatarHot.style.opacity = 1 - opacityCalm;
+                    avatarCalm.style.opacity = opacityCalm;
+
+                    // Chuyển nền dần từ đỏ sang xanh mint
+                    const r = Math.floor(255 - (15 * opacityCalm));
+                    const g = Math.floor(248 - (248 * 0.05 * opacityCalm)); // Về xanh mint nhạt
+                    const b = Math.floor(248 - (248 * 0.03 * opacityCalm));
+                    container.style.backgroundColor = `rgba(${r}, ${g + 20}, ${b + 10}, 0.96)`;
+                } else {
+                    clearInterval(angerInterval);
+                    angerInterval = null;
+                }
+            }, 1000);
+        }
+
+        function playBreatheTone(startFreq, endFreq, duration) {
+            if (!audioCtx) return;
+            try {
+                let osc = audioCtx.createOscillator();
+                let gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(startFreq, audioCtx.currentTime);
+                osc.frequency.linearRampToValueAtTime(endFreq, audioCtx.currentTime + duration);
+                gain.gain.setValueAtTime(0.015, audioCtx.currentTime);
+                gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + duration);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + duration);
+            } catch(e) {}
+        }
+
+        function pauseTimer21() {
+            pauseTimer(21);
+            if (breathingTimer) {
+                clearInterval(breathingTimer);
+                breathingTimer = null;
+            }
+            if (angerInterval) {
+                clearInterval(angerInterval);
+                angerInterval = null;
+            }
+        }
+
+        function resetTimer21(seconds) {
+            pauseTimer21();
+            resetTimer(21, seconds);
+            angerLevel = 100;
+            document.getElementById("anger-bar").style.width = "100%";
+            document.getElementById("anger-percent").innerText = "100%";
+            document.getElementById("su-avatar-hot").style.opacity = 1;
+            document.getElementById("su-avatar-calm").style.opacity = 0;
+            document.getElementById("haly-cooling-container").style.backgroundColor = "transparent";
+            document.getElementById("breathing-circle").style.transform = "scale(1.0)";
+            document.getElementById("breathing-circle").innerText = "HÍT VÀO";
+            document.getElementById("breathing-circle").style.background = "var(--primary-light)";
+            document.getElementById("breathing-instruction").innerText = "Cùng thở Box Breathing theo nhịp co giãn của vòng tròn!";
+        }
+
+        // 10. GAME 5: PHÂN LOẠI T-CHART NÊN / KHÔNG NÊN
+        let tchartData = {};
+        function dropTChart(ev, column) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            const card = document.getElementById(data);
+            const zone = document.getElementById(`tzone-${column}`);
+            zone.appendChild(card);
+            tchartData[data] = column;
+            playStamp();
+        }
+
+        function checkTChartGame() {
+            const answers = {
+                "tc-1": "should",
+                "tc-2": "shouldnt",
+                "tc-3": "should",
+                "tc-4": "shouldnt",
+                "tc-5": "should",
+                "tc-6": "shouldnt",
+                "tc-7": "should",
+                "tc-8": "shouldnt"
+            };
+
+            let correct = true;
+            for (let id in answers) {
+                if (tchartData[id] !== answers[id]) {
+                    correct = false;
+                }
+            }
+
+            if (correct) {
+                playApplause();
+                alert("Tuyệt vời! Bảng phân loại hành vi ứng xử cảm xúc hoàn toàn chính xác.");
+                goToSlide(24);
+            } else {
+                playSiren();
+                alert("Có sai sót trong bảng phân loại hành vi! Vui lòng hội ý lại.");
+            }
+        }
+
+        // 11. LỄ VINH DANH CHỨNG NHẬN & PHÁO HOA
+        function syncCertName(val) {
+            document.getElementById("cert-name-display").innerText = val.toUpperCase() || "KÍP TRỰC CẤP CỨU";
+        }
+
+        function celebrateAchievement() {
+            const name = document.getElementById("cert-input-name").value;
+            if (!name.trim()) {
+                alert("Vui lòng điền tên kíp trực/lớp học của bạn!");
+                return;
+            }
+            playApplause();
+            startConfetti();
+        }
+
+        // 12. HỆ THỐNG ÂM THANH NHÂN TẠO (WEB AUDIO API)
+        function playSiren() {
+            let osc1 = audioCtx.createOscillator();
+            let osc2 = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+
+            osc1.type = 'sawtooth';
+            osc2.type = 'sine';
+
+            osc1.frequency.setValueAtTime(440, audioCtx.currentTime);
+            osc1.frequency.linearRampToValueAtTime(580, audioCtx.currentTime + 0.6);
+            osc1.frequency.linearRampToValueAtTime(440, audioCtx.currentTime + 1.2);
+
+            osc2.frequency.setValueAtTime(220, audioCtx.currentTime);
+
+            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 1.5);
+
+            osc1.connect(gain);
+            osc2.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc1.start();
+            osc2.start();
+            osc1.stop(audioCtx.currentTime + 1.5);
+            osc2.stop(audioCtx.currentTime + 1.5);
+        }
+
+        function playStamp() {
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(100, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(10, audioCtx.currentTime + 0.3);
+
+            gain.gain.setValueAtTime(0.8, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.3);
+        }
+
+        function playBell() {
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(980, audioCtx.currentTime);
+
+            gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 1.0);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 1.0);
+        }
+
+        function playDocumentSound() {
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(300, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(600, audioCtx.currentTime + 0.15);
+
+            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.15);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.15);
+        }
+
+        function playApplause() {
+            const bufferSize = audioCtx.sampleRate * 2.0;
+            const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+            const data = buffer.getChannelData(0);
+
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+
+            let noise = audioCtx.createBufferSource();
+            noise.buffer = buffer;
+
+            let filter = audioCtx.createBiquadFilter();
+            filter.type = 'bandpass';
+            filter.frequency.value = 1000;
+
+            let gain = audioCtx.createGain();
+            gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 2.0);
+
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            noise.start();
+            noise.stop(audioCtx.currentTime + 2.0);
+        }
+
+        // 13. THUẬT TOÁN BẮN PHÁO HOA CONFETTI
+        const canvas = document.getElementById("confetti-canvas");
+        const ctx = canvas.getContext("2d");
+        let confetti = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function createConfettiPiece() {
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height - canvas.height,
+                r: Math.random() * 6 + 4,
+                d: Math.random() * canvas.height,
+                color: `hsl(${Math.random() * 360}, 90%, 60%)`,
+                tilt: Math.random() * 10 - 5,
+                tiltAngleIncremental: Math.random() * 0.07 + 0.02,
+                tiltAngle: 0
+            };
+        }
+
+        function startConfetti() {
+            canvas.style.display = "block";
+            resizeCanvas();
+            confetti = [];
+            for (let i = 0; i < 150; i++) {
+                confetti.push(createConfettiPiece());
+            }
+            animateConfetti();
+        }
+
+        function animateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            let remaining = false;
+
+            confetti.forEach((p, idx) => {
+                p.tiltAngle += p.tiltAngleIncremental;
+                p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
+                p.x += Math.sin(p.tiltAngle);
+                p.tilt = Math.sin(p.tiltAngle - idx / 3) * 15;
+
+                if (p.y < canvas.height) {
+                    remaining = true;
+                }
+
+                ctx.beginPath();
+                ctx.lineWidth = p.r;
+                ctx.strokeStyle = p.color;
+                ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+                ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+                ctx.stroke();
+            });
+
+            if (remaining) {
+                requestAnimationFrame(animateConfetti);
+            } else {
+                canvas.style.display = "none";
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            if (typeof resizeCanvas === 'function') {
+                resizeCanvas();
+            }
+            adjustSlideScale();
+        });
+
+        // 14. NGĂN NGẮT DÒNG TIẾNG VIỆT CHO TỪ GHÉP Y KHOA
+        function preventCompoundWordWrapping() {
+            const medicalTerms = [
+                "hạch hạnh nhân", "vỏ não trước trán", "bánh xe cảm xúc", "thông điệp tôi",
+                "quá trình myelin hóa", "bão cảm xúc", "nhiễm độc hành vi", "vô trùng tâm lý",
+                "Bác sĩ Cảm xúc", "bác sĩ cảm xúc", "cơ chế não bộ", "triệu chứng sinh lý",
+                "biểu hiện cơ thể", "kíp trực cấp cứu", "Bệnh viện Cảm xúc", "sơ cứu cảm xúc"
+            ];
+            medicalTerms.sort((a, b) => b.length - a.length);
+            const regexes = medicalTerms.map(term => ({
+                regex: new RegExp(term.replace(/ /g, '[ \\t\\r\\n]+'), 'gi'),
+                replacement: term.replace(/ /g, '\u00A0')
+            }));
+
+            function traverseDOM(node) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    let text = node.nodeValue;
+                    let replaced = false;
+
+                    regexes.forEach(({ regex, replacement }) => {
+                        if (regex.test(text)) {
+                            text = text.replace(regex, replacement);
+                            replaced = true;
+                        }
+                    });
+
+                    if (replaced) {
+                        node.nodeValue = text;
+                    }
+                } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE') {
+                    for (let i = 0; i < node.childNodes.length; i++) {
+                        traverseDOM(node.childNodes[i]);
+                    }
+                }
+            }
+
+            traverseDOM(document.body);
+        }
+
+        // BẮT ĐẦU ỨNG DỤNG
+        window.onload = () => {
+            buildSidebar();
+            updateSlideUI();
+
+            document.addEventListener('keydown', (e) => {
+                const activeEl = document.activeElement;
+                if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA')) {
+                    return;
+                }
+                if (e.key === 'ArrowRight' || e.key === 'Right') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+                    prevSlide();
+                }
+            });
+        };
+    </script>
+</body>
+</html>
