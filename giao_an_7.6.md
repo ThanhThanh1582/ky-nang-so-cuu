@@ -1,74 +1,124 @@
-# GIÁO ÁN CHI TIẾT
-## BÀI 7.6: VÌ SAO CẢM XÚC THAY ĐỔI MẠNH? (CẢM XÚC TUỔI DẬY THÌ)
-* **Đối tượng:** Học sinh cấp 2 (THCS)
-* **Thời lượng:** 2 Tiết (Tiết 1: Bác sĩ Cảm xúc; Tiết 2: Bác sĩ Cộng đồng)
-* **Concept chủ đạo:** Nova Hospital - Bệnh viện Cảm xúc (Nhập vai y khoa thực chứng)
+Trường:...................
+Tổ:............................    Họ và tên giáo viên: ............................
+
+## TÊN BÀI DẠY: BÀI 7.6: VÌ SAO CẢM XÚC THAY ĐỔI MẠNH?
+Môn học/Hoạt động giáo dục: Kỹ năng sống / Giáo dục cảm xúc xã hội (SEL); Lớp: 6
+Thời gian thực hiện: 2 tiết (Tiết 1: Bác sĩ Cảm xúc; Tiết 2: Bác sĩ Cộng đồng)
 
 ---
 
-### MỤC TIÊU BÀI HỌC CHUNG
-* **Kiến thức:**
-  - Nhận biết và phân biệt biểu hiện cơ thể của 4 cảm xúc mạnh: giận dữ, lo âu, buồn bã, tự ti.
-  - Hiểu rõ cơ chế sinh lý bộ não tuổi dậy thì: sự mất cân bằng giữa hạch hạnh nhân (xử lý cảm xúc bản năng "chiến hay biến") hoạt động quá mức và vỏ não trước trán (kiểm soát logic, suy nghĩ) chưa hoàn thiện quá trình myelin hóa.
-  - Ghi nhớ phác đồ 5 bước điều hòa cảm xúc chuẩn y tế.
-* **Kỹ năng:**
-  - Thực hành thuần thục kỹ thuật thở sâu điều hòa nhịp tim giữ bình tĩnh.
-  - Thiết lập câu nói theo cấu trúc "thông điệp tôi" để giao tiếp ôn hòa khi gặp cảm xúc mạnh.
-  - Phân tích và dự báo biến chứng hành vi sai lầm khi có cảm xúc mạnh.
-  - Thiết kế và chế tạo thành công mô hình giấy Vòng quay giải tỏa cảm xúc.
-* **Thái độ:**
-  - Bình tĩnh đón nhận sự thay đổi sinh lý tự nhiên của cơ thể tuổi dậy thì.
-  - Có tinh thần trách nhiệm, sẵn sàng lắng nghe và giúp đỡ bạn bè điều hòa cảm xúc lành mạnh.
+### I. MỤC TIÊU
+#### 1. Về kiến thức:
+- Nhận biết và gọi tên chính xác biểu hiện cơ thể của 4 cảm xúc mạnh: giận dữ, lo âu, buồn bã, tự ti thông qua triệu chứng lâm sàng.
+- Hiểu rõ cơ chế sinh lý bộ não tuổi dậy thì: sự mất cân bằng giữa hạch hạnh nhân (xử lý cảm xúc bản năng) hoạt động quá mức và vỏ não trước trán (kiểm soát suy nghĩ logic) chưa hoàn thiện quá trình myelin hóa.
+- Ghi nhớ phác đồ 5 bước điều hòa cảm xúc chuẩn y tế.
+
+#### 2. Về năng lực:
+- **Năng lực đặc thù:**
+  - *Năng lực thích ứng với cuộc sống:* Nhận diện được sự thay đổi sinh lý tự nhiên của cơ thể dưới tác động của cảm xúc mạnh; kiểm soát và điều hòa được cơn bão cảm xúc của bản thân thông qua kỹ thuật thở sâu.
+  - *Năng lực giải quyết vấn đề:* Sử dụng được cấu trúc câu nói "thông điệp tôi" để diễn đạt cảm xúc một cách ôn hòa, xây dựng giải pháp ứng phó với xung đột hành vi.
+  - *Năng lực thực hành thiết kế:* Thiết kế và hoàn thiện sản phẩm thủ công Vòng quay giải tỏa cảm xúc theo đúng quy trình 4 bước kỹ thuật.
+- **Năng lực chung:**
+  - *Năng lực tự chủ và tự học:* Chủ động đọc bệnh án, tự đánh giá nhịp tim cơ thể và tự phản tư hành vi thông qua nhật ký.
+  - *Năng lực giao tiếp và hợp tác:* Làm việc nhóm hiệu quả trong kíp trực y khoa, phân công nhiệm vụ khám bệnh, hội chẩn và thiết kế chiến dịch y tế học đường.
+
+#### 3. Về phẩm chất:
+- *Trách nhiệm:* Tự giác thực hiện các cam kết y đức về an toàn học đường; có ý thức lan tỏa kiến thức sơ cứu cảm xúc lành mạnh tới cộng đồng.
+- *Trung thực:* Khách quan trong việc tự nhận diện biểu hiện cơ thể và viết nhật ký phản tư cảm xúc.
 
 ---
 
-## TIẾT 1: BÁC SĨ CẢM XÚC (HỘI CHẨN LÂM SÀNG)
-**Mục tiêu:** Nhận diện biểu hiện cơ thể của 4 cảm xúc mạnh; hiểu cơ chế mất cân bằng sinh lý não bộ tuổi dậy thì; thực hành quy trình thở sâu hạ nhịp tim.
-
-### 1. Chuẩn bị dạy học
-* **Giáo viên:** Thiết bị giảng dạy (máy tính, máy chiếu/bảng thông minh chạy tệp `tiet1.html`), in sẵn "Hồ sơ bệnh án lâm sàng" của 4 bệnh nhân (Su, Minh Anh, Kem, Bảo Vy).
-* **Học sinh:** Bút dạ quang (viết highlighter), bút viết, nháp.
-
-### 2. Tiến trình chi tiết (Tiến trình 8 giai đoạn)
-
-| Thời gian | Giai đoạn & Slide | Hoạt động của Giáo viên | Hoạt động của Học sinh | Thiết bị & Học liệu |
-| :--- | :--- | :--- | :--- | :--- |
-| **3 phút** | **Mở đầu & Mục tiêu**<br>*(Slide 1 - 4)* | - Bật slide bìa, kích hoạt hiệu ứng Typewriter tự động giới thiệu chủ đề.<br>- Giới thiệu mục tiêu bài học y khoa (Kiến thức - Kỹ năng - Thái độ).<br>- Công bố câu hỏi lớn: "Làm thế nào để chúng ta sơ cứu cảm xúc mạnh đúng kỹ thuật và phản tư hành vi lành mạnh?". | - Lắng nghe, ghi nhận mục tiêu bài học.<br>- Trả lời nhanh suy nghĩ ban đầu về "cảm xúc mạnh". | - Slide 1 - 4.<br>- Nhập vai Bác sĩ Cảm xúc. |
-| **7 phút** | **Giai đoạn 1: Mở khóa ca bệnh**<br>*(Slide 5 - 8C)* | - Báo động khẩn cấp: Phát âm thanh tiếng còi hú cứu thương và nhấp nháy đỏ màn hình (Flash animation).<br>- Yêu cầu kíp trực thảo luận chọn nhanh 3 dụng cụ/hành vi xử lý khẩn cấp một ca bệnh đang giận dữ.<br>- Nhấp nút "Sơ cứu & Chờ kết quả".<br>- Dẫn dắt sang Slide 8B (Đáp án): Giải thích tại sao ca bệnh bị nhiễm độc hành vi nặng (do lỗi phản ứng bản năng ngay lập tức).<br>- Tổng kết Slide 8C: Rút ra nguyên lý vô trùng y khoa: Tạm dừng là bước bắt buộc đầu tiên. | - Lập kíp trực y tế nhóm 4 học sinh.<br>- Thảo luận nhanh, cử đại diện lên bảng tương tác kéo thả 3 hành vi (Ví dụ: Thở sâu, Viết cảm xúc, Tách không gian).<br>- Đối chiếu kết quả y khoa chuẩn.<br>- Rút ra bài học cốt lõi: Tạm dừng phản ứng bản năng. | - Slide 5 - 8C.<br>- Web Audio API (còi hú).<br>- Game tương tác Sơ cứu. |
-| **3 phút** | **Giai đoạn 2: Nhận hồ sơ**<br>*(Slide 9 - 10)* | - Hướng dẫn bốc thăm ngẫu nhiên hồ sơ bệnh án bằng nút quay số (Case Shuffler).<br>- Phát hồ sơ bệnh án giấy in sẵn cho các nhóm tương ứng. | - Đại diện nhóm nhấn nút bốc thăm bệnh nhân (Su, Minh Anh, Kem, Bảo Vy).<br>- Nhận hồ sơ giấy của kíp trực. | - Slide 9 - 10.<br>- Hồ sơ bệnh án in sẵn. |
-| **8 phút** | **Giai đoạn 3: Khám bệnh**<br>*(Slide 11 - 14B)* | - Giao nhiệm vụ đọc bệnh án, dùng bút dạ quang gạch chân từ khóa triệu chứng sinh lý cơ thể của ca bệnh.<br>- Cho đại diện nhóm lên bảng tương tác nhấp chọn trực tiếp từ khóa triệu chứng.<br>- Tổng kết Slide 14B: Đúc kết tầm quan trọng của việc đọc chính xác triệu chứng vật lý. | - Thảo luận kíp trực, dùng bút dạ quang gạch chân triệu chứng trên giấy.<br>- Nhấp chọn từ khóa trên bảng thông minh để kích hoạt gạch chân vàng.<br>- Đối chiếu đáp án chuẩn y khoa. | - Slide 11 - 14B.<br>- Bút dạ quang.<br>- Phiếu bệnh án giấy. |
-| **8 phút** | **Giai đoạn 4: Chẩn đoán**<br>*(Slide 15 - 19)* | - Kích hoạt đồng hồ đếm ngược 06:00.<br>- Hướng dẫn học sinh thảo luận cơ chế cabin não bộ (sự mất cân bằng giữa hạch hạnh nhân và vỏ não trước trán).<br>- Cho đại diện lên kéo thả các cụm từ chẩn đoán.<br>- Giải thích cơ chế myelin hóa chưa hoàn thiện ở tuổi dậy thì. | - Thảo luận nhóm, viết chẩn đoán sinh lý vào phiếu giấy.<br>- Kéo thả phương án chẩn đoán trên slide tương tác.<br>- Đối chiếu cơ chế sinh học khoa học của bộ não dậy thì. | - Slide 15 - 19.<br>- Đồng hồ đếm ngược.<br>- Phiếu chẩn đoán giấy. |
-| **7 phút** | **Giai đoạn 5: Hội chẩn**<br>*(Slide 20 - 24)* | - Tổ chức phiên hội chẩn: Yêu cầu các nhóm thuyết trình ngắn giải thích cơ chế cabin não bộ của ca bệnh nhóm mình.<br>- Hướng dẫn học sinh đọc to bản cam kết y khoa y đức và nhấp nút "CAM KẾT". | - Đại diện kíp trực lên stage trình bày chẩn đoán cơ chế não bộ trước lớp.<br>- Ký tên kíp trực, nhấp cam kết để đóng con dấu đỏ "ĐÃ PHÊ DUYỆT" kèm tiếng đóng dấu y khoa. | - Slide 20 - 24.<br>- Con dấu phê duyệt động. |
-| **6 phút** | **Giai đoạn 6: Kê đơn & Chăm sóc**<br>*(Slide 25 - 29B)* | - Hướng dẫn phác đồ 5 bước điều hòa cảm xúc chuẩn y khoa.<br>- Cho học sinh đếm nhịp tim tự nhiên của mình.<br>- Bật game sắp xếp quy trình (Arranger) xếp 5 bước phác đồ nằm ngang.<br>- Đóng dấu xanh nghiệm thu "Đạt Chuẩn Sơ Cứu Cảm Xúc". | - Chơi game xếp 5 bước trên slide.<br>- Thực hành kỹ thuật thở điều hòa nhịp tim (nhìn vòng tròn thở Hít vào - Thở ra phồng co trên slide).<br>- Đếm lại nhịp tim để nhận diện sự giảm nhịp sinh học tự nhiên. | - Slide 25 - 29B.<br>- Vòng tròn thở động.<br>- Game Arranger 5 bước. |
-| **3 phút** | **Giai đoạn 7 & 8: Cam kết & Vinh danh**<br>*(Slide 30 - 35)* | - Cho học sinh chơi game phân loại T-Chart: Nên làm và Không nên làm khi có cảm xúc mạnh.<br>- Hướng dẫn ký tên vinh danh nhận Giấy chứng nhận bác sĩ nội trú Bệnh viện Cảm xúc.<br>- Kích hoạt hiệu ứng vinh danh chúc mừng (Pháo hoa Confetti + Tiếng vỗ tay). | - Kéo thả phân loại 8 hành vi T-Chart trên bảng.<br>- Nhập tên kíp trực lên Giấy chứng nhận ảo trên slide.<br>- Nhận nhiệm vụ về nhà: Viết nhật ký phản tư cảm xúc mỗi tối. | - Slide 30 - 35.<br>- Game T-Chart.<br>- Canvas Confetti + Web Audio vỗ tay. |
+### II. THIẾT BỊ DẠY HỌC VÀ HỌC LIỆU
+- **Giáo viên:** 
+  - Thiết bị trình chiếu (máy tính, máy chiếu/bảng tương tác thông minh Smartboard chạy tệp slide `tiet1.html` và `tiet2.html`).
+  - Phiếu hồ sơ bệnh án in sẵn cho 4 ca bệnh (Su, Minh Anh, Kem, Bảo Vy).
+  - Bản in mẫu Vòng quay giải tỏa cảm xúc 3 tầng bằng giấy cứng (tương ứng số lượng nhóm).
+  - Ghim cánh phượng hoặc đinh cúc bấm trục xoay, kéo thủ công.
+- **Học sinh:** Bút viết, bút màu, bút dạ quang highlighter, nháp.
 
 ---
 
-## TIẾT 2: BÁC SĨ CỘNG ĐỒNG (CHIẾN DỊCH VÒNG QUAY GIẢI TỎA)
-**Mục tiêu:** Khảo sát thực trạng và phân tích nguy cơ hành vi sai lầm trong cộng đồng trường học; thiết kế, chế tạo và hoàn thiện mô hình giấy Vòng quay giải tỏa cảm xúc; cam kết chủ động lan tỏa hành vi lành mạnh.
+### III. TIẾN TRÌNH DẠY HỌC
 
-### 1. Chuẩn bị dạy học
-* **Giáo viên:** Thiết bị giảng dạy (máy tính, máy chiếu/bảng thông minh chạy tệp `tiet2.html`), bộ dụng cụ chế tạo cho mỗi nhóm (mẫu in vòng quay 3 tầng bằng giấy cứng, kéo, ghim cánh phượng/đinh cúc bấm trục quay).
-* **Học sinh:** Bút viết, bút màu, keo dán.
-
-### 2. Tiến trình chi tiết (Tiến trình 8 giai đoạn)
-
-| Thời gian | Giai đoạn & Slide | Hoạt động của Giáo viên | Hoạt động của Học sinh | Thiết bị & Học liệu |
-| :--- | :--- | :--- | :--- | :--- |
-| **3 phút** | **Mở đầu & Mục tiêu**<br>*(Slide 1 - 2)* | - Bật slide bìa Tiết 2, giới thiệu bối cảnh: Chiến dịch y tế cộng đồng trường học.<br>- Công bố mục tiêu tiết học: chế tạo phác đồ đặc trị Vòng quay giải tỏa cảm xúc giấy. | - Lắng nghe, nhận vai trò Đại sứ Sức khỏe Cộng đồng.<br>- Chuẩn bị dụng cụ nhóm trên bàn. | - Slide 1 - 2.<br>- Nhập vai Bác sĩ Cộng đồng. |
-| **7 phút** | **Giai đoạn 2 & 3: Bắt bệnh & Biến chứng**<br>*(Slide 3 - 4)* | - Báo động khẩn cấp: Phát âm thanh còi hú, thông báo "Bão cảm xúc đang tấn công toàn trường!".<br>- Yêu cầu học sinh phân tích hậu quả dài hạn của các hành vi bốc đồng sai lầm.<br>- Bật game kết nối SVG: Hướng dẫn kéo thả nhãn hậu quả thả vào đúng hành vi sai lầm tương ứng. | - Thảo luận kíp trực về hậu quả dài hạn (sau 1 tuần, 1 tháng, 1 năm) của việc đập phá, xúc phạm bạn bè, tự cô lập.<br>- Chạm chọn thẻ hoặc kéo thả trên bảng tương tác kết nối hành vi sai với hậu quả biến chứng. | - Slide 3 - 4.<br>- Game kết nối SVG động.<br>- Web Audio API (còi hú). |
-| **3 phút** | **Giai đoạn 4: Phê duyệt**<br>*(Slide 5)* | - Trình bày mục tiêu chế tạo phác đồ Vòng quay giải tỏa cảm xúc bằng giấy.<br>- Yêu cầu học sinh tích chọn 2 cam kết y đức cộng đồng và nhấn "PHÊ DUYỆT". | - Tích chọn cam kết chế tạo tỉ mỉ, chính xác phác đồ đặc trị cảm xúc.<br>- Nhấp nút phê duyệt để khởi động xưởng chế tạo. | - Slide 5.<br>- Tương tác tích chọn. |
-| **5 phút** | **Giai đoạn 5: Chuẩn bị & Chia vùng thiết kế**<br>*(Slide 6 - 7)* | - Kiểm tra danh mục dụng cụ chế tạo tại bàn các nhóm.<br>- Hướng dẫn Bước 1: Chia vùng cảm xúc (Tầng 1 - Trong cùng).<br>- Yêu cầu học sinh tô màu phân vùng cảm xúc và ghi tên 4 cảm xúc mạnh: Giận dữ, Lo âu, Buồn bã, Tự ti. | - Kiểm tra dụng cụ: giấy in vòng quay, kéo, ghim cánh phượng.<br>- Thực hiện viết tên 4 cảm xúc và tô 4 màu sắc khác nhau đại diện cho 4 vùng cảm xúc trên mô hình giấy tầng 1. | - Slide 6 - 7.<br>- Bản in vòng quay giấy.<br>- Kéo, ghim cánh phượng.<br>- Bút màu. |
-| **5 phút** | **Bước 2 & 3: Điền biểu hiện & Giải pháp**<br>*(Slide 8 - 9)* | - Hướng dẫn Bước 2: Điền biểu hiện cơ thể tương ứng (Tầng 2 - Giữa) như tim đập nhanh, đỏ mặt, khóc, lảng tránh.<br>- Hướng dẫn Bước 3: Điền giải pháp điều hòa lành mạnh (Tầng 3 - Ngoài cùng) như thở sâu, nghe nhạc vẽ tranh, chia sẻ mong muốn. | - Thảo luận, điền các biểu hiện vật lý đã học ở Tiết 1 vào tầng 2 của vòng quay giấy.<br>- Thảo luận, lựa chọn và điền các giải pháp điều hòa lành mạnh vào tầng 3 của vòng quay giấy. | - Slide 8 - 9.<br>- Bản in giấy. |
-| **5 phút** | **Bước 4: Đục lỗ & Lắp ráp**<br>*(Slide 10)* | - Hướng dẫn Bước 4: Cắt tỉa các vòng tròn đồng tâm, đục lỗ định vị tâm trục quay.<br>- Hướng dẫn luồn ghim cánh phượng qua tâm và bẻ ghim cố định phía sau để tạo trục quay độc lập 3 tầng. | - Cắt rời 3 vòng tròn đồng tâm.<br>- Dùng đầu kéo hoặc bút đục nhẹ lỗ ở tâm 3 vòng tròn.<br>- Lắp ráp ghim cánh phượng để liên kết 3 tầng xoay trơn tru. | - Slide 10.<br>- Kéo, ghim cánh phượng. |
-| **10 phút** | **Giai đoạn 6: Diễn tập cộng đồng**<br>*(Slide 11)* | - Tổ chức hoạt động diễn tập: Giáo viên đóng vai học sinh gặp bão cảm xúc đột ngột.<br>- Yêu cầu kíp trực dùng Vòng quay cảm xúc vừa chế tạo để chẩn đoán biểu hiện cơ thể và xoay khớp vòng quay đưa ra giải pháp điều hòa khẩn cấp cho giáo viên. | - Thực hành nhóm: Một bạn đóng vai ca bệnh bốc đồng cảm xúc mạnh, bạn khác xoay Vòng quay cảm xúc giấy để sơ cứu.<br>- Xoay khớp các tầng tương ứng để đối chiếu biểu hiện sinh lý và giải pháp điều hòa tức thời. | - Slide 11.<br>- Vòng quay giấy đã hoàn thiện. |
-| **7 phút** | **Giai đoạn 7 & 8: Cam kết & Vinh danh**<br>*(Slide 12 - 14)* | - Hướng dẫn học sinh điền phiếu phản tư: "Nhật ký bác sĩ cộng đồng".<br>- Tổ chức cho học sinh đọc to lời cam kết y tế Đại sứ an toàn học đường Nova Hospital.<br>- Kích hoạt hiệu ứng vinh danh chúc mừng (Pháo hoa Confetti + Tiếng nhạc vinh danh). | - Điền phiếu phản tư giấy: ghi lại cảm nhận sau khi chế tạo sản phẩm y tế.<br>- Ký tên kíp trực nhóm, nhấp cam kết đóng dấu y đức.<br>- Điền tên nhóm nhận Giấy chứng nhận Đại sứ Sức khỏe Cộng đồng xuất sắc. | - Slide 12 - 14.<br>- Phiếu phản tư giấy.<br>- Con dấu động.<br>- Canvas Confetti + Web Audio vinh danh. |
+#### 1. Hoạt động 1: Xác định vấn đề/nhiệm vụ học tập/Mở đầu (10 phút)
+##### a) Mục tiêu:
+Giúp học sinh tiếp cận vai trò "Bác sĩ Cảm xúc", nhận diện khái niệm "bão cảm xúc", bước đầu phát hiện nguyên lý y khoa đầu tiên trong kiểm soát cảm xúc là "Tạm dừng phản ứng bản năng".
+##### b) Nội dung:
+Học sinh quan sát tình huống khẩn cấp, thảo luận nhóm để chọn 3 hành vi sơ cứu một ca bệnh đang giận dữ, đối chiếu kết quả y khoa thực chứng để rút ra bài học.
+##### c) Sản phẩm:
+Phương án sơ cứu được chọn trên bảng tương tác; kết luận của học sinh về hành vi sơ cứu cảm xúc đầu tiên (tạm dừng).
+##### d) Tổ chức thực hiện:
+- **Giao nhiệm vụ học tập:** Giáo viên trình chiếu Slide 5-8C, kích hoạt hiệu ứng còi hú báo động và màn hình nhấp nháy đỏ báo hiệu ca cấp cứu cảm xúc mạnh. Giáo viên yêu cầu học sinh thảo luận theo nhóm kíp trực để chọn ra 3 hành vi sơ cứu khẩn cấp giúp ca bệnh đang giận dữ không bị "nhiễm độc hành vi".
+- **Thực hiện nhiệm vụ:** Học sinh thảo luận theo kíp trực 4 người, phân tích tác hại của các hành vi bộc đồng (Ví dụ: đập phá đồ đạc, quát tháo). Đại diện nhóm lên bảng tương tác thực hiện kéo thả 3 hành vi sơ cứu (như thở sâu, tách không gian, viết cảm xúc). Giáo viên theo dõi, hướng dẫn học sinh tương tác trên bảng Smartboard.
+- **Báo cáo, thảo luận:** Học sinh đại diện kíp trực trình bày lý do lựa chọn phương án sơ cứu. Giáo viên bấm nút đối chiếu đáp án chuẩn y khoa trên slide để phân tích phản ứng bản năng (chiến hoặc biến) gây biến chứng nặng cho não bộ.
+- **Kết luận, nhận định:** Giáo viên nhận xét kết quả hoạt động, kết luận nguyên lý: Trong y khoa, bước đầu tiên khi sơ cứu vết thương là làm sạch và tạm dừng chảy máu; tương tự, trong sơ cứu cảm xúc, bước đầu tiên phải là "tạm dừng" phản ứng bản năng ngay lập tức để tránh làm tổn thương bản thân và người khác.
 
 ---
 
-## 3. Quy chuẩn Đánh giá Tiết học (Nova Hospital Assessment Matrix)
-* **Đánh giá Kiến thức (40%):** Học sinh chẩn đoán chính xác cơ chế sinh lý tuổi dậy thì (hạch hạnh nhân và vỏ não trước trán) và gọi tên đúng 4 nhóm cảm xúc.
-* **Đánh giá Kỹ năng tương tác (40%):**
-  - Thực hành đúng kỹ thuật thở điều hòa nhịp tim trong 5 phút.
-  - Chế tạo thành công mô hình giấy Vòng quay giải tỏa cảm xúc xoay trơn tru, điền thông tin chính xác y khoa.
-* **Đánh giá Thái độ nhập vai (20%):** Tinh thần trách nhiệm, chủ động nhập vai bác sĩ thấu cảm cứu chữa ca bệnh và hoàn thành đầy đủ cam kết y đức.
+#### 2. Hoạt động 2: Hình thành kiến thức mới (35 phút)
+##### a) Mục tiêu:
+- Học sinh phân tích được triệu chứng sinh lý của 4 cảm xúc mạnh: giận dữ, buồn bã, lo âu, tự ti.
+- Học sinh hiểu được cơ chế hoạt động mất cân bằng giữa hạch hạnh nhân và vỏ não trước trán của bộ não tuổi dậy thì.
+- Học sinh nắm vững phác đồ 5 bước điều hòa cảm xúc và thực hành đúng kỹ thuật thở sâu hạ nhịp tim.
+##### b) Nội dung:
+- Học sinh làm việc với phiếu bệnh án lâm sàng của 4 ca bệnh, gạch chân triệu chứng sinh lý.
+- Học sinh giải mã cơ chế bộ não bằng game kéo thả chẩn đoán sinh học và đọc cam kết y đức.
+- Học sinh sắp xếp quy trình phác đồ 5 bước điều hòa cảm xúc.
+##### c) Sản phẩm:
+- Triệu chứng sinh lý được gạch chân vàng trên bảng/phiếu.
+- Sơ đồ chẩn đoán cơ chế cabin não bộ hoàn thành chính xác.
+- Quy trình phác đồ 5 bước được sắp xếp đúng thứ tự (Lắng nghe cơ thể -> Bánh xe gọi tên -> Tạm dừng (Thở sâu) -> Thông điệp tôi -> Phản tư).
+##### d) Tổ chức thực hiện:
+- **Giao nhiệm vụ học tập:** 
+  - *Nhiệm vụ 1:* Giáo viên phát hồ sơ bệnh án giấy, yêu cầu học sinh dùng bút dạ quang gạch chân các triệu chứng sinh lý cơ thể của bệnh nhân (Su, Minh Anh, Kem, Bảo Vy). Sau đó yêu cầu đại diện nhóm lên bảng nhấp chọn trực tiếp từ khóa triệu chứng trên Slide 11-14B.
+  - *Nhiệm vụ 2:* Giáo viên bật Slide 15-19, kích hoạt đồng hồ đếm ngược 06:00, yêu cầu các nhóm chẩn đoán cơ chế sinh học của não bộ dựa trên mô hình cabin não bộ (mối quan hệ giữa hạch hạnh nhân và vỏ não trước trán).
+  - *Nhiệm vụ 3:* Giáo viên trình chiếu Slide 25-29B, yêu cầu học sinh tham gia trò chơi sắp xếp phác đồ điều hòa cảm xúc 5 bước và thực hành thở theo vòng tròn chuyển động trên màn hình.
+- **Thực hiện nhiệm vụ:** 
+  - Học sinh đọc hồ sơ bệnh án lâm sàng, nhận diện các biểu hiện vật lý như đỏ mặt, run tay, tim đập nhanh, khóc, lảng tránh.
+  - Học sinh thảo luận nhóm viết phiếu chẩn đoán bộ não dậy thì và kéo thả các phương án trên bảng tương tác.
+  - Học sinh thực hành thở sâu theo nhịp hít vào phồng ra, thở ra co lại của vòng tròn chỉ dẫn trên slide; thực hiện tự đếm nhịp tim trước và sau khi thở sâu. Giáo viên đi lại quan sát, hướng dẫn học sinh đếm mạch đập cổ tay.
+- **Báo cáo, thảo luận:**
+  - Đại diện kíp trực lên bục thuyết trình chẩn đoán lâm sàng của bệnh nhân nhóm mình. Các nhóm khác lắng nghe, nhận xét.
+  - Học sinh đọc to lời cam kết y đức và nhấn nút đóng dấu đỏ "ĐÃ PHÊ DUYỆT" trên slide.
+- **Kết luận, nhận định:** Giáo viên chốt lại kiến thức: Cảm xúc thay đổi mạnh ở tuổi dậy thì là do sự phát triển lệch pha giữa hạch hạnh nhân (cảm xúc bốc đồng) và vỏ não trước trán (kiểm soát suy nghĩ logic). Quá trình myelin hóa chưa hoàn thiện khiến các đường truyền tín hiệu chưa tối ưu. Việc áp dụng phác đồ 5 bước là cách "huấn luyện" vỏ não trước trán làm chủ hạch hạnh nhân một cách khoa học.
+
+---
+
+#### 3. Hoạt động 3: Luyện tập (35 phút)
+##### a) Mục tiêu:
+Giúp học sinh phân biệt hành vi nên và không nên làm khi gặp cảm xúc mạnh; phân tích hậu quả hành vi sai lầm; chế tạo và diễn tập sử dụng Vòng quay giải tỏa cảm xúc bằng giấy tại lớp.
+##### b) Nội dung:
+- Học sinh phân loại hành vi trên bảng tương tác T-Chart.
+- Học sinh chơi game kết nối SVG ghép cặp hành vi sai lầm với hậu quả lâu dài (1 tuần, 1 tháng, 1 năm).
+- Học sinh cắt ghép, lắp ráp mô hình giấy Vòng quay giải tỏa cảm xúc 3 tầng.
+##### c) Sản phẩm:
+- Bảng T-Chart phân loại hành vi hoàn thiện.
+- Sơ đồ kết nối SVG chính xác.
+- Sản phẩm mô hình giấy Vòng quay giải tỏa cảm xúc 3 tầng xoay trơn tru và có thông tin chính xác.
+##### d) Tổ chức thực hiện:
+- **Giao nhiệm vụ học tập:**
+  - *Nhiệm vụ 1:* Giáo viên yêu cầu học sinh thảo luận phân loại 8 hành vi nên/không nên làm khi bão cảm xúc xảy ra bằng game T-Chart.
+  - *Nhiệm vụ 2:* Giáo viên bật slide Tiết 2, yêu cầu học sinh thảo luận tác hại của hành vi sai lầm và nối hậu quả bằng đường vẽ SVG trên bảng.
+  - *Nhiệm vụ 3:* Giáo viên phát bộ dụng cụ thủ công (bản in vòng quay, kéo, ghim), hướng dẫn quy trình 4 bước thiết kế Vòng quay giải tỏa cảm xúc (Bước 1: Chia vùng cảm xúc; Bước 2: Điền biểu hiện cơ thể; Bước 3: Điền giải pháp lành mạnh; Bước 4: Cắt ráp).
+- **Thực hiện nhiệm vụ:**
+  - Học sinh tham gia trò chơi phân loại trên bảng Smartboard và kết nối các đường vẽ SVG động.
+  - Các nhóm thực hiện tô màu phân vùng cảm xúc, viết biểu hiện và các phương pháp giải tỏa tương ứng vào 3 tầng giấy của vòng quay, sau đó dùng kéo cắt rời 3 vòng tròn đồng tâm, đục lỗ ở tâm và lắp ráp ghim cánh phượng. Giáo viên đi lại quan sát, hướng dẫn học sinh đục lỗ trục quay an toàn.
+- **Báo cáo, thảo luận:**
+  - Đại diện nhóm cầm sản phẩm vòng quay đã hoàn thành lên giới thiệu trước lớp.
+  - Học sinh thực hiện diễn tập chẩn đoán y tế: Giáo viên đóng vai học sinh đang gặp bão cảm xúc đột ngột, các nhóm xoay vòng quay của mình để đưa ra chẩn đoán biểu hiện sinh lý và giải pháp sơ cứu khẩn cấp cho giáo viên.
+- **Kết luận, nhận định:** Giáo viên đánh giá tính thẩm mỹ, độ chính xác thông tin y khoa trên vòng quay cảm xúc của các nhóm. Khen ngợi tinh thần làm việc nhóm và kỹ năng thực hành lắp ráp của học sinh.
+
+---
+
+#### 4. Hoạt động 4: Vận dụng (10 phút - giao về nhà)
+##### a) Mục tiêu:
+Học sinh vận dụng phác đồ 5 bước và Vòng quay giải tỏa cảm xúc để giải quyết các tình huống cảm xúc phát sinh trong đời sống thực tế; ghi chép nhật ký phản tư định kỳ.
+##### b) Nội dung:
+Học sinh viết nhật ký phản tư cảm xúc mỗi ngày ở nhà và thực hiện cam kết Đại sứ an toàn học đường Nova Hospital.
+##### c) Sản phẩm:
+Nhật ký phản tư (phiếu giấy/nhật ký cá nhân) ghi lại ít nhất 3 lần áp dụng phác đồ sơ cứu cảm xúc thành công trong tuần.
+##### d) Tổ chức thực hiện:
+- **Giao nhiệm vụ học tập:** Giáo viên giao nhiệm vụ ngoài giờ lên lớp: Sử dụng vòng quay cảm xúc đã làm tại lớp để điều hòa cảm xúc của bản thân hoặc hỗ trợ bạn bè khi gặp tình huống thực tế; ghi lại quá trình sơ cứu vào nhật ký phản tư.
+- **Thực hiện nhiệm vụ:** Học sinh thực hiện ở nhà khi gặp cảm xúc mạnh hoặc giúp đỡ người thân/bạn bè.
+- **Báo cáo, thảo luận:** Học sinh chia sẻ câu chuyện sơ cứu cảm xúc thực tế trong giờ sinh hoạt lớp hoặc đầu tiết học sau.
+- **Kết luận, nhận định:** Giáo viên nhận xét, khen thưởng và trao Giấy chứng nhận Đại sứ Sức khỏe Cảm xúc cho học sinh tích cực hoàn thành cam kết y đức cộng đồng.
