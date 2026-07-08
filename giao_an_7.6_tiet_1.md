@@ -29,10 +29,26 @@ Thời gian thực hiện: 1 tiết (45 phút)
 ---
 
 ### II. THIẾT BỊ DẠY HỌC VÀ HỌC LIỆU
-- **Giáo viên:** 
-  - Thiết bị trình chiếu (máy tính, máy chiếu/bảng tương tác thông minh Smartboard chạy tệp slide `tiet1.html`).
-  - Phiếu hồ sơ bệnh án in sẵn cho 4 ca bệnh (Su, Minh Anh, Kem, Bảo Vy).
-- **Học sinh:** Bút viết, bút dạ quang highlighter, nháp.
+
+#### 1. Giáo viên chuẩn bị:
+- **Thiết bị điện tử:** 
+  - Máy tính cá nhân kết nối hệ thống loa âm thanh lớp học.
+  - Máy chiếu hoặc bảng tương tác thông minh (Smartboard) cài đặt sẵn và chạy mượt mà tệp slide trình chiếu tương tác `tiet1.html` (chứa âm thanh cứu thương khẩn cấp tự động và hiệu ứng hình ảnh nhấp nháy báo động).
+- **Học liệu in ấn:** 
+  - 4 bộ "Hồ sơ bệnh án lâm sàng" khổ giấy A4 tương ứng với 4 nhân vật (Su, Minh Anh, Kem, Bảo Vy) in đen trắng hoặc in màu để phát cho các kíp trực.
+  - 01 bản in "Phác đồ điều hòa cảm xúc 5 bước" khổ lớn (A1 hoặc A0) treo tại bảng chính của lớp học.
+  - Phiếu hướng dẫn tự đếm và ghi nhịp tim cơ thể trước - sau khi thở sâu (tương ứng số lượng học sinh).
+- **Văn phòng phẩm y tế giả định:** 
+  - Con dấu đỏ có khắc chữ "ĐÃ PHÊ DUYỆT" và 01 hộp mực đóng dấu đỏ (giáo viên dùng đóng dấu lên phiếu giấy của các nhóm khi phê duyệt chẩn đoán thành công).
+  - Băng dính giấy hoặc nam châm gắn bảng dùng để đính bệnh án giấy lên bảng lớn khi hội chẩn.
+
+#### 2. Học sinh chuẩn bị (mỗi học sinh hoặc mỗi nhóm):
+- **Học cụ cá nhân:** 
+  - Bút viết cá nhân (bút bi, bút chì).
+  - Bút dạ quang highlighter (màu vàng hoặc xanh sáng) để thực hiện kỹ thuật gạch chân "highlighter triệu chứng sinh lý cơ thể" trên hồ sơ bệnh án giấy.
+  - Phiếu nháp cá nhân.
+- **Thiết bị theo dõi (nếu có):** 
+  - Đồng hồ đeo tay có kim giây hoặc thiết bị đo nhịp tim đeo tay dùng trong hoạt động đo và đếm nhịp sinh học tự nhiên khi thực hành kỹ thuật thở sâu.
 
 ---
 

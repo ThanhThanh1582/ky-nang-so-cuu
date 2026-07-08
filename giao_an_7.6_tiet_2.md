@@ -29,11 +29,31 @@ Thời gian thực hiện: 1 tiết (45 phút)
 ---
 
 ### II. THIẾT BỊ DẠY HỌC VÀ HỌC LIỆU
-- **Giáo viên:** 
-  - Thiết bị trình chiếu (máy tính, máy chiếu/bảng tương tác thông minh Smartboard chạy tệp slide `tiet2.html`).
-  - Bản in mẫu Vòng quay giải tỏa cảm xúc 3 tầng bằng giấy cứng (tương ứng số lượng nhóm).
-  - Ghim cánh phượng hoặc đinh cúc bấm trục xoay, kéo thủ công.
-- **Học sinh:** Bút viết, bút màu, keo dán.
+
+#### 1. Giáo viên chuẩn bị:
+- **Thiết bị điện tử:** 
+  - Máy tính cá nhân kết nối loa âm thanh của lớp học.
+  - Máy chiếu hoặc bảng tương tác thông minh (Smartboard) chạy mượt mà tệp slide tương tác `tiet2.html` (chứa âm thanh còi cứu thương cảnh báo khẩn cấp và hiệu ứng đường vẽ nối SVG kết nối hành vi và hậu quả).
+- **Học liệu in ấn:** 
+  - Phiếu bài tập giấy ghép nối hành vi và hậu quả biến chứng (cho từng nhóm kíp trực).
+  - Phiếu phản tư cá nhân mẫu "Nhật ký bác sĩ cộng đồng" (tương ứng số lượng học sinh).
+  - Mẫu phôi in Giấy chứng nhận "Đại sứ Sức khỏe Cộng đồng" của Bệnh viện Cảm xúc Nova Hospital.
+- **Nguyên liệu chế tạo Vòng quay giải tỏa cảm xúc (chuẩn bị số bộ tương ứng số nhóm học sinh):** 
+  - Phôi in mẫu 3 tầng vòng tròn đồng tâm bằng giấy bìa cứng khổ A4 (giấy trắng định lượng từ 180gsm trở lên để đảm bảo độ bền khi xoay):
+    - Tầng 1 (Vòng tròn lớn ngoài cùng): Phân chia vùng điền giải pháp điều hòa cảm xúc.
+    - Tầng 2 (Vòng tròn trung thế): Phân chia vùng điền biểu hiện vật lý cơ thể tương ứng.
+    - Tầng 3 (Vòng tròn nhỏ trong cùng): Phân chia vùng tô màu đại diện 4 cảm xúc mạnh.
+- **Dụng cụ lắp ráp:** 
+  - Ghim cánh phượng nhựa hoặc ghim cánh phượng kim loại, đinh cúc bấm trục xoay dùng để liên kết tâm các vòng tròn giúp xoay độc lập (mỗi nhóm 01 chiếc).
+  - Kéo thủ công giáo viên chuẩn bị dự phòng thêm (2-3 chiếc).
+
+#### 2. Học sinh chuẩn bị (mỗi học sinh hoặc mỗi nhóm):
+- **Học cụ chế tạo:** 
+  - Kéo thủ công cắt giấy.
+  - Keo dán giấy (keo khô/keo nước) hoặc băng dính hai mặt.
+  - Hộp bút màu tô (màu sáp, màu chì hoặc màu dạ) dùng để tô màu nhận diện phân vùng 4 cảm xúc trên vòng quay.
+- **Học cụ viết vẽ:** 
+  - Bút viết cá nhân (bút bi, bút chì) để ghi chép thông tin y khoa và giải pháp sơ cứu lên các tầng của vòng quay cảm xúc giấy.
 
 ---
 
@@ -140,7 +160,7 @@ Mô hình giấy Vòng quay giải tỏa cảm xúc 3 tầng hoàn chỉnh xoay 
   - **Giáo viên:** Đi lại quan sát, hướng dẫn học sinh điền thông tin chính xác y khoa (Ví dụ: Vùng giận dữ $\rightarrow$ Đỏ mặt, tim đập nhanh $\rightarrow$ Thở sâu, tách không gian).
   - **Học sinh:** Thảo luận và viết thông tin triệu chứng sinh lý, giải pháp điều hòa tương ứng lên mô hình giấy; thực hiện tô màu trang trí các phân vùng cảm xúc.
 - **Giai đoạn 6: Thực hành chế tạo & Diễn tập cộng đồng**
-  - **Giáo viên:** Hướng dẫn an toàn sử dụng kéo và đục lỗ tâm; đóng vai là học sinh gặp bão cảm xúc đột ngột tại trường để thử thách kỹ năng sơ cứu của các kíp trực.
+  - **Giáo viên:** Hướng dẫn an toàn sử dụng kéo và đục lỗ tâm; đóng vai là học sinh gặp bão cảm xúc đột ngột tại trường để các nhóm chẩn đoán.
   - **Học sinh:** Tiến hành cắt rời 3 vòng tròn đồng tâm, đục lỗ ở tâm và lắp ráp ghim cánh phượng liên kết 3 tầng. Sau đó tiến hành thực hành nhóm đóng vai sơ cứu ca bệnh cho nhau.
 
 ###### * Báo cáo, thảo luận:
