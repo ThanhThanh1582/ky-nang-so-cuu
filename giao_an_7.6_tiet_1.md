@@ -33,19 +33,19 @@ Thời gian thực hiện: 1 tiết (45 phút)
 #### 1. Giáo viên chuẩn bị:
 - **Thiết bị điện tử:** 
   - Máy tính cá nhân kết nối hệ thống loa âm thanh lớp học.
-  - Máy chiếu hoặc bảng tương tác thông minh (Smartboard) cài đặt sẵn và chạy mượt mà tệp slide trình chiếu tương tác `tiet1.html` (chứa âm thanh cứu thương khẩn cấp tự động và hiệu ứng hình ảnh nhấp nháy báo động).
+  - Máy chiếu hoặc thiết bị chạy mượt mà tệp slide trình chiếu tương tác `tiet1.html` (chứa âm thanh cứu thương khẩn cấp tự động và hiệu ứng hình ảnh nhấp nháy báo động).
 - **Học liệu in ấn:** 
-  - 4 bộ "Hồ sơ bệnh án lâm sàng" khổ giấy A4 tương ứng với 4 nhân vật (Su, Minh Anh, Kem, Bảo Vy) in đen trắng hoặc in màu để phát cho các kíp trực.
+  - 4 bộ "Hồ sơ bệnh án lâm sàng" khổ giấy A4 tương ứng với 4 nhân vật (Su, Minh Anh, Kem, Bảo Vy) in phát cho các kíp trực.
   - 01 bản in "Phác đồ điều hòa cảm xúc 5 bước" khổ lớn (A1 hoặc A0) treo tại bảng chính của lớp học.
-  - Phiếu hướng dẫn tự đếm và ghi nhịp tim cơ thể trước - sau khi thở sâu (tương ứng số lượng học sinh).
+  - Phiếu hướng dẫn tự đếm và ghi nhịp tim cơ thể trước - sau khi thở sâu.
 - **Văn phòng phẩm y tế giả định:** 
-  - Con dấu đỏ có khắc chữ "ĐÃ PHÊ DUYỆT" và 01 hộp mực đóng dấu đỏ (giáo viên dùng đóng dấu lên phiếu giấy của các nhóm khi phê duyệt chẩn đoán thành công).
+  - Con dấu đỏ có khắc chữ "ĐÃ PHÊ DUYỆT" và 01 hộp mực đóng dấu đỏ.
   - Băng dính giấy hoặc nam châm gắn bảng dùng để đính bệnh án giấy lên bảng lớn khi hội chẩn.
 
 #### 2. Học sinh chuẩn bị (mỗi học sinh hoặc mỗi nhóm):
 - **Học cụ cá nhân:** 
   - Bút viết cá nhân (bút bi, bút chì).
-  - Bút dạ quang highlighter (màu vàng hoặc xanh sáng) để thực hiện kỹ thuật gạch chân "highlighter triệu chứng sinh lý cơ thể" trên hồ sơ bệnh án giấy.
+  - Bút dạ quang highlighter (màu vàng hoặc xanh sáng) để thực hiện kỹ thuật gạch chân triệu chứng sinh lý cơ thể trên hồ sơ bệnh án giấy.
   - Phiếu nháp cá nhân.
 - **Thiết bị theo dõi (nếu có):** 
   - Đồng hồ đeo tay có kim giây hoặc thiết bị đo nhịp tim đeo tay dùng trong hoạt động đo và đếm nhịp sinh học tự nhiên khi thực hành kỹ thuật thở sâu.
@@ -55,177 +55,271 @@ Thời gian thực hiện: 1 tiết (45 phút)
 ### III. TIẾN TRÌNH DẠY HỌC
 
 #### 1. Hoạt động 1: Khởi động - Nhận diện cơn bão cảm xúc và nguyên lý "Tạm dừng" (10 phút)
-##### a) Mục tiêu:
+##### a. Mục tiêu
 - Giúp học sinh tiếp cận vai trò "Bác sĩ Cảm xúc".
 - Nhận diện được khái niệm "bão cảm xúc".
-- Bước đầu phát hiện nguyên lý y khoa đầu tiên trong kiểm soát cảm xúc là "Tạm dừng phản ứng bản năng".
-##### b) Nội dung:
-Học sinh quan sát tình huống khẩn cấp, thảo luận nhóm để chọn 3 hành vi sơ cứu một ca bệnh đang giận dữ, đối chiếu kết quả y khoa thực chứng để rút ra bài học.
-##### c) Sản phẩm:
-- Phương án sơ cứu được chọn trên bảng tương tác.
+- Phát hiện nguyên lý y khoa đầu tiên trong kiểm soát cảm xúc là "Tạm dừng phản ứng bản năng".
+##### b. Nội dung
+- Học sinh quan sát tình huống báo động bão cảm xúc.
+- Học sinh thảo luận nhóm kíp trực để chọn lựa 3 hành vi sơ cứu ca bệnh giận dữ.
+- Học sinh đối chiếu kết quả chuẩn y khoa trên thiết bị để rút ra nguyên lý sơ cứu cảm xúc đầu tiên.
+##### c. Sản phẩm
+- Phương án sơ cứu được chọn trên thiết bị.
 - Kết luận của học sinh về hành vi sơ cứu cảm xúc đầu tiên (Tạm dừng).
-##### d) Tổ chức thực hiện:
+##### d. Tổ chức thực hiện
 
-###### **Giai đoạn 1: Mở khóa ca bệnh**
-- **Giao nhiệm vụ:**
-  - **Giáo viên:** Trình chiếu Slide 5-8C, kích hoạt hiệu ứng còi cứu thương khẩn cấp (Web Audio API) và màn hình nhấp nháy đỏ báo động bão cảm xúc. Giáo viên yêu cầu học sinh thảo luận theo nhóm kíp trực để lựa chọn ra 3 hành vi sơ cứu khẩn cấp giúp ca bệnh đang giận dữ không bị nhiễm độc hành vi nặng.
-  - **Học sinh:** Lắng nghe âm thanh cảnh báo, quan sát màn hình tình huống khẩn cấp của bệnh nhân và tiếp nhận nhiệm vụ thảo luận nhóm.
-- **Thực hiện:**
-  - **Giáo viên:** Theo dõi, gợi ý học sinh phân biệt giữa hành vi bộc đồng (Ví dụ: đập phá đồ đạc, quát tháo) và hành vi sơ cứu lành mạnh (Ví dụ: thở sâu, viết cảm xúc, tách không gian).
-  - **Học sinh:** Thảo luận nhóm kíp trực 4 học sinh, đưa ra lựa chọn 3 hành vi sơ cứu và cử đại diện lên bảng tương tác thực hiện thao tác kéo thả hoặc tích chọn các phương án.
-- **Báo cáo:**
-  - **Giáo viên:** Tổ chức cho học sinh báo cáo nhanh lý do chọn 3 phương án sơ cứu. Giáo viên bấm nút đối chiếu đáp án chuẩn y khoa trên slide.
-  - **Học sinh:** Trình bày ngắn gọn lý do kíp trực lựa chọn phương án sơ cứu; đối chiếu với kết quả chuẩn y khoa hiển thị trên bảng.
-- **Kết luận:**
-  - **Giáo viên:** Nhận xét sản phẩm chọn lựa của các nhóm kíp trực; kết luận nguyên lý: Trong y khoa, bước đầu tiên khi sơ cứu vết thương là làm sạch và tạm dừng chảy máu; tương tự, trong sơ cứu cảm xúc, bước đầu tiên phải là "tạm dừng" phản ứng bản năng ngay lập tức để tránh làm tổn thương bản thân và người khác.
-  - **Học sinh:** Ghi nhận nguyên lý "Tạm dừng" vào vở ghi.
+* Giai đoạn 1: Mở khóa ca bệnh
+- Giao nhiệm vụ:
++ Giáo viên:
+  - Trình chiếu Slide 5-8C, kích hoạt hiệu ứng còi cứu thương khẩn cấp và màn hình nhấp nháy đỏ báo động bão cảm xúc.
+  - Yêu cầu học sinh thảo luận theo nhóm kíp trực để lựa chọn ra 3 hành vi sơ cứu khẩn cấp giúp ca bệnh đang giận dữ.
++ Học sinh:
+  - Lắng nghe âm thanh cảnh báo, quan sát màn hình tình huống khẩn cấp của bệnh nhân.
+  - Tiếp nhận nhiệm vụ thảo luận nhóm.
+- Thực hiện:
++ Giáo viên:
+  - Theo dõi, gợi ý học sinh phân biệt giữa hành vi bộc đồng (đập phá đồ đạc, quát tháo) và hành vi sơ cứu lành mạnh (thở sâu, viết cảm xúc, tách không gian).
++ Học sinh:
+  - Thảo luận nhóm kíp trực 4 học sinh để đưa ra lựa chọn 3 hành vi sơ cứu.
+  - Cử đại diện thực hiện thao tác kéo thả hoặc tích chọn các phương án trên thiết bị.
+- Báo cáo:
++ Giáo viên:
+  - Tổ chức cho học sinh báo cáo nhanh lý do chọn 3 phương án sơ cứu.
+  - Kích hoạt hiển thị đáp án chuẩn y khoa trên thiết bị.
++ Học sinh:
+  - Trình bày ngắn gọn lý do kíp trực lựa chọn phương án sơ cứu.
+  - Đối chiếu với kết quả chuẩn y khoa hiển thị trên thiết bị.
+- Kết luận:
++ Giáo viên:
+  - Nhận xét và chốt nguyên lý sơ cứu cảm xúc đầu tiên: Trong sơ cứu cảm xúc, bước đầu tiên phải là "tạm dừng" phản ứng bản năng ngay lập tức để tránh làm tổn thương bản thân và người khác.
++ Học sinh:
+  - Ghi nhận nguyên lý "Tạm dừng" vào vở ghi.
 
 ---
 
 #### 2. Hoạt động 2: Khám phá kiến thức - Đọc vị triệu chứng sinh lý và chẩn đoán cơ chế sinh học bộ não dậy thì (20 phút)
-##### a) Mục tiêu:
-- Học sinh phân tích được triệu chứng sinh lý của 4 cảm xúc mạnh: giận dữ, buồn bã, lo âu, tự ti.
-- Học sinh hiểu được cơ chế hoạt động mất cân bằng giữa hạch hạnh nhân và vỏ não trước trán của bộ não tuổi dậy thì.
-- Học sinh nắm vững phác đồ 5 bước điều hòa cảm xúc và thực hành đúng kỹ thuật thở sâu hạ nhịp tim.
-##### b) Nội dung:
-- Học sinh làm việc với phiếu bệnh án lâm sàng của 4 ca bệnh, gạch chân triệu chứng sinh lý.
-- Học sinh giải mã cơ chế bộ não bằng game kéo thả chẩn đoán sinh học và đọc cam kết y đức.
-- Học sinh sắp xếp quy trình phác đồ 5 bước điều hòa cảm xúc.
-##### c) Sản phẩm:
+##### a. Mục tiêu
+- Phân tích triệu chứng sinh lý của 4 cảm xúc mạnh: giận dữ, buồn bã, lo âu, tự ti.
+- Chẩn đoán cơ chế mất cân bằng sinh lý não bộ tuổi dậy thì (hạch hạnh nhân hoạt động quá mức trong khi vỏ não trước trán chưa hoàn thiện myelin hóa).
+- Nắm vững phác đồ 5 bước điều hòa cảm xúc và thực hành đúng kỹ thuật thở sâu hạ nhịp tim.
+##### b. Nội dung
+- Học sinh đọc bệnh án, gạch chân triệu chứng sinh lý và nhấp chọn từ khóa trên thiết bị.
+- Học sinh thảo luận cabin não bộ dậy thì bằng game kéo thả chẩn đoán sinh học.
+- Học sinh tham gia trò chơi sắp xếp phác đồ điều hòa cảm xúc 5 bước và thực hành thở sâu theo vòng tròn động.
+##### c. Sản phẩm
 - Dấu hiệu cơ thể khi có các cảm xúc mạnh được xác định chính xác.
 - Sơ đồ chẩn đoán cơ chế cabin não bộ hoàn thành chính xác.
 - Quy trình phác đồ 5 bước được sắp xếp đúng thứ tự (Lắng nghe cơ thể -> Bánh xe gọi tên -> Tạm dừng (Thở sâu) -> Thông điệp tôi -> Phản tư).
-##### d) Tổ chức thực hiện:
+##### d. Tổ chức thực hiện
 
-###### **Giai đoạn 2: Nhận hồ sơ bệnh án**
-- **Giao nhiệm vụ:**
-  - **Giáo viên:** Phát hồ sơ bệnh án giấy in sẵn cho 4 nhóm kíp trực (Su, Minh Anh, Kem, Bảo Vy). Hướng dẫn học sinh nhấn nút quay số trên Slide 9-10 để bốc thăm ca bệnh ngẫu nhiên.
-  - **Học sinh:** Thực hiện bốc thăm ca bệnh và sẵn sàng nhận bệnh án.
-- **Chuẩn bị:**
-  - **Giáo viên:** Phát phiếu hồ sơ bệnh án giấy tương ứng cho các nhóm kíp trực.
-  - **Học sinh:** Tiếp nhận bệnh án giấy và phân công vị trí đọc bệnh án trong nhóm.
-- **Thực hiện:**
-  - **Giáo viên:** Quan sát quá trình phân chia nhiệm vụ trong các nhóm.
-  - **Học sinh:** Các kíp trực phân công các vai trò đọc hồ sơ bệnh án giấy.
+* Giai đoạn 2: Nhận hồ sơ bệnh án
+- Giao nhiệm vụ:
++ Giáo viên:
+  - Phát hồ sơ bệnh án giấy in sẵn cho 4 nhóm kíp trực (Su, Minh Anh, Kem, Bảo Vy).
+  - Hướng dẫn học sinh nhấn nút quay số trên Slide 9-10 để bốc thăm ca bệnh ngẫu nhiên.
++ Học sinh:
+  - Thực hiện nhấn nút bốc thăm ca bệnh trên thiết bị và sẵn sàng nhận bệnh án.
+- Chuẩn bị:
++ Giáo viên:
+  - Chuẩn bị phiếu "Hồ sơ bệnh án" cho 4 ca bệnh để phát cho các kíp trực.
++ Học sinh:
+  - Thực hiện chia nhóm 4 học sinh.
+  - Chuẩn bị sẵn bút đánh dấu (bút dạ quang).
+- Thực hiện:
++ Giáo viên:
+  - Quan sát quá trình chia sẻ bệnh án và phân công nhiệm vụ của học sinh.
++ Học sinh:
+  - Các kíp trực phân công các vai trò đọc hồ sơ bệnh án giấy trong nhóm.
 
-###### **Giai đoạn 3: Khám bệnh (Đọc triệu chứng vật lý)**
-- **Giao nhiệm vụ:**
-  - **Giáo viên:** Yêu cầu học sinh đọc kỹ hồ sơ bệnh án giấy, dùng bút dạ quang gạch chân triệu chứng sinh lý cơ thể của nhân vật. Sau đó yêu cầu học sinh lên bảng Smartboard nhấp chọn từ khóa trên Slide 11-14B.
-  - **Học sinh:** Đọc và tiếp nhận nhiệm vụ gạch chân triệu chứng sinh lý cơ thể trên phiếu giấy.
-- **Hướng dẫn:**
-  - **Giáo viên:** Hướng dẫn học sinh nhận diện các từ chỉ phản ứng sinh lý vật lý cơ thể (như đỏ bừng mặt, tim đập nhanh, run tay, khóc nghẹn, trốn tránh).
-  - **Học sinh:** Lắng nghe định hướng triệu chứng.
-- **Thực hiện:**
-  - **Giáo viên:** Quan sát học sinh làm việc nhóm, hỗ trợ kỹ thuật gạch chân vàng trên bảng.
-  - **Học sinh:** Làm việc nhóm gạch chân triệu chứng trên giấy, đại diện kíp trực lên bảng nhấp chọn từ khóa tương ứng để kích hoạt gạch chân vàng trên màn hình.
-- **Báo cáo:**
-  - **Giáo viên:** Tổ chức đối chiếu đáp án triệu chứng trên bảng.
-  - **Học sinh:** Nhóm đối chiếu các triệu chứng vật lý đã xác định được với kết quả chuẩn.
-- **Kết luận:**
-  - **Giáo viên:** Chốt các triệu chứng vật lý đặc trưng của từng cảm xúc.
-  - **Học sinh:** Ghi chú triệu chứng sinh lý của ca bệnh vào phiếu.
+* Giai đoạn 3: Khám bệnh (Đọc triệu chứng vật lý)
+- Giao nhiệm vụ:
++ Giáo viên:
+  - Yêu cầu học sinh đọc kỹ hồ sơ bệnh án giấy, dùng bút dạ quang gạch chân triệu chứng sinh lý cơ thể của nhân vật.
+  - Yêu cầu học sinh lên thiết bị nhấp chọn từ khóa triệu chứng trên Slide 11-14B.
++ Học sinh:
+  - Đọc hồ sơ bệnh án giấy được giao.
+  - Tiếp nhận nhiệm vụ gạch chân triệu chứng sinh lý cơ thể trên phiếu giấy.
+- Hướng dẫn:
++ Giáo viên:
+  - Hướng dẫn học sinh nhận diện các từ chỉ phản ứng sinh lý vật lý cơ thể (như đỏ bừng mặt, tim đập nhanh, run tay, khóc nghẹn, trốn tránh).
++ Học sinh:
+  - Lắng nghe giáo viên định hướng các nhóm từ khóa triệu chứng.
+- Thực hiện:
++ Giáo viên:
+  - Quan sát học sinh làm việc nhóm, hỗ trợ kỹ thuật gạch chân vàng trên thiết bị.
++ Học sinh:
+  - Làm việc nhóm gạch chân triệu chứng trên giấy.
+  - Đại diện kíp trực lên thiết bị nhấp chọn từ khóa triệu chứng để kích hoạt gạch chân vàng trên màn hình.
+- Báo cáo:
++ Giáo viên:
+  - Tổ chức đối chiếu đáp án triệu chứng trên thiết bị.
++ Học sinh:
+  - Nhóm đối chiếu các triệu chứng vật lý đã xác định được với kết quả chuẩn.
+- Kết luận:
++ Giáo viên:
+  - Chốt các triệu chứng vật lý đặc trưng của từng cảm xúc.
++ Học sinh:
+  - Ghi nhận triệu chứng sinh lý của ca bệnh vào phiếu.
 
-###### **Giai đoạn 4: Chẩn đoán (Cơ chế sinh lý não bộ)**
-- **Giao nhiệm vụ:**
-  - **Giáo viên:** Bật Slide 15-19, kích hoạt đồng hồ đếm ngược 06:00, yêu cầu các nhóm thảo luận chẩn đoán cơ chế cabin não bộ.
-  - **Học sinh:** Tiếp nhận nhiệm vụ chẩn đoán cơ chế não bộ.
-- **Hướng dẫn:**
-  - **Giáo viên:** Hướng dẫn học sinh về cấu trúc cabin não bộ dậy thì: mối quan hệ giữa hạch hạnh nhân (cảm xúc bốc đồng) và vỏ não trước trán (suy nghĩ logic) chưa hoàn thiện quá trình myelin hóa.
-  - **Học sinh:** Lắng nghe hướng dẫn khoa học.
-- **Thực hiện:**
-  - **Giáo viên:** Theo dõi đồng hồ đếm ngược, hỗ trợ các nhóm giải thích các khái niệm khoa học như quá trình myelin hóa chưa hoàn thiện ở tuổi dậy thì.
-  - **Học sinh:** Thảo luận kíp trực viết phiếu chẩn đoán bộ não dậy thì và kéo thả các phương án chẩn đoán trên bảng tương tác.
-- **Báo cáo:**
-  - **Giáo viên:** Tổ chức phản hồi chẩn đoán trên slide.
-  - **Học sinh:** Đối chiếu cơ chế chẩn đoán chuẩn trên màn hình.
+* Giai đoạn 4: Chẩn đoán (Cơ chế sinh lý não bộ)
+- Giao nhiệm vụ:
++ Giáo viên:
+  - Bật Slide 15-19, kích hoạt đồng hồ đếm ngược 06:00.
+  - Yêu cầu các nhóm thảo luận chẩn đoán cơ chế cabin não bộ.
++ Học sinh:
+  - Quan sát mô hình cabin não bộ trên slide.
+  - Tiếp nhận yêu cầu thảo luận nhóm chẩn đoán cơ chế.
+- Hướng dẫn:
++ Giáo viên:
+  - Hướng dẫn học sinh về cấu trúc cabin não bộ dậy thì: mối quan hệ giữa hạch hạnh nhân (cảm xúc bốc đồng) và vỏ não trước trán (suy nghĩ logic) chưa hoàn thiện quá trình myelin hóa.
++ Học sinh:
+  - Lắng nghe hướng dẫn cơ chế sinh học bộ não.
+- Thực hiện:
++ Giáo viên:
+  - Theo dõi đồng hồ đếm ngược, hỗ trợ các nhóm giải thích quá trình myelin hóa chưa hoàn thiện ở tuổi dậy thì.
++ Học sinh:
+  - Thảo luận kíp trực viết phiếu chẩn đoán bộ não dậy thì và kéo thả các phương án chẩn đoán trên thiết bị.
+- Báo cáo:
++ Giáo viên:
+  - Tổ chức đối chiếu kết quả chẩn đoán sinh học trên thiết bị.
++ Học sinh:
+  - Đối chiếu cơ chế chẩn đoán chuẩn trên màn hình thiết bị.
 
-###### **Giai đoạn 5: Hội chẩn**
-- **Giao nhiệm vụ:**
-  - **Giáo viên:** Yêu cầu các nhóm cử đại diện thuyết trình chẩn đoán lâm sàng của bệnh nhân và hướng dẫn học sinh ký cam kết y đức.
-  - **Học sinh:** Tiếp nhận yêu cầu thuyết trình.
-- **Thực hiện:**
-  - **Giáo viên:** Đóng vai trò điều hành hội đồng y khoa, quan sát học sinh tương tác cam kết y đức.
-  - **Học sinh:** Ký tên kíp trực, nhấp nút cam kết y đức để đóng con dấu đỏ "ĐÃ PHÊ DUYỆT" trên slide.
-- **Báo cáo:**
-  - **Giáo viên:** Điều hành phiên hội chẩn của lớp.
-  - **Học sinh:** Đại diện các kíp trực lên bục thuyết trình giải thích cơ chế cabin não bộ của ca bệnh nhóm mình. Các nhóm khác nhận xét và đặt câu hỏi.
-- **Kết luận:**
-  - **Giáo viên:** Nhận xét quá trình hội chẩn; chốt lại kiến thức khoa học: Cảm xúc tuổi dậy thì thay đổi mạnh mẽ là biểu hiện sinh lý hoàn toàn tự nhiên do sự phát triển lệch pha giữa hạch hạnh nhân và vỏ não trước trán. Quá trình myelin hóa chưa hoàn thiện khiến các đường truyền tín hiệu chưa tối ưu.
-  - **Học sinh:** Ghi nhận kiến thức cơ chế não bộ vào vở ghi.
+* Giai đoạn 5: Hội chẩn
+- Giao nhiệm vụ:
++ Giáo viên:
+  - Yêu cầu các nhóm cử đại diện thuyết trình chẩn đoán lâm sàng của bệnh nhân.
+  - Hướng dẫn học sinh thực hiện ký cam kết y đức trên slide.
++ Học sinh:
+  - Tiếp nhận yêu cầu thuyết trình hội chẩn.
+- Thực hiện:
++ Giáo viên:
+  - Đóng vai trò điều hành hội đồng y khoa, quan sát học sinh tương tác cam kết y đức.
++ Học sinh:
+  - Ký tên kíp trực, nhấp nút cam kết y đức để đóng con dấu đỏ "ĐÃ PHÊ DUYỆT" trên thiết bị.
+- Báo cáo:
++ Giáo viên:
+  - Điều hành phiên hội chẩn của lớp.
++ Học sinh:
+  - Đại diện các kíp trực lên bục thuyết trình giải thích cơ chế cabin não bộ của ca bệnh nhóm mình trước lớp.
+  - Các nhóm khác nhận xét, đặt câu hỏi thảo luận phản biện.
+- Kết luận:
++ Giáo viên:
+  - Chốt lại kiến thức khoa học: Cảm xúc tuổi dậy thì thay đổi mạnh mẽ là biểu hiện sinh lý hoàn toàn tự nhiên do sự phát triển lệch pha giữa hạch hạnh nhân và vỏ não trước trán. Quá trình myelin hóa chưa hoàn thiện khiến các đường truyền tín hiệu chưa tối ưu.
++ Học sinh:
+  - Ghi nhận kiến thức cơ chế não bộ vào vở ghi.
 
-###### **Giai đoạn 6: Kê đơn & Chăm sóc (Phác đồ 5 bước)**
-- **Giao nhiệm vụ:**
-  - **Giáo viên:** Bật Slide 25-29B, yêu cầu học sinh tham gia trò chơi sắp xếp phác đồ điều hòa cảm xúc 5 bước và thực hành thở theo vòng tròn chuyển động trên màn hình.
-  - **Học sinh:** Tiếp nhận yêu cầu trò chơi sắp xếp và chuẩn bị thực hành thở sâu.
-- **Chuẩn bị:**
-  - **Giáo viên:** Hướng dẫn học sinh đếm nhịp tim tự nhiên của bản thân trong 30 giây (nhân đôi để ra nhịp tim/phút) và ghi lại.
-  - **Học sinh:** Thực hiện đếm và ghi nhịp tim ban đầu.
-- **Hướng dẫn:**
-  - **Giáo viên:** Chỉ dẫn tư thế ngồi thẳng lưng và kỹ thuật hít vào phồng bụng - thở ra xẹp bụng theo chuyển động của vòng tròn thở động trên slide.
-  - **Học sinh:** Quan sát và thực hành nhịp thở.
-- **Thực hiện:**
-  - **Giáo viên:** Bật nhạc nền nhẹ nhàng, theo dõi và chỉnh sửa tư thế thở cho học sinh; hướng dẫn học sinh tự đo lại nhịp tim sau 3 phút thở sâu.
-  - **Học sinh:** Chơi game sắp xếp thứ tự 5 bước phác đồ; thực hành kỹ thuật thở điều hòa nhịp tim sâu trong 3 phút; tự theo dõi sự thay đổi nhịp tim của cơ thể.
-- **Báo cáo:**
-  - **Giáo viên:** Yêu cầu học sinh chia sẻ sự thay đổi chỉ số nhịp tim trước và sau khi thở.
-  - **Học sinh:** Trình bày kết quả đo nhịp tim, thảo luận về tác dụng của kỹ thuật thở sâu đối với việc làm dịu hạch hạnh nhân hoạt động quá mức.
-- **Kết luận:**
-  - **Giáo viên:** Nhấn mạnh: Việc thở sâu là giải pháp khoa học thực chứng làm dịu hạch hạnh nhân, cung cấp oxy cho vỏ não trước trán giúp kiểm soát hành vi.
-  - **Học sinh:** Ghi nhận phác đồ 5 bước điều hòa cảm xúc vào vở.
+* Giai đoạn 6: Kê đơn & Chăm sóc (Phác đồ 5 bước)
+- Giao nhiệm vụ:
++ Giáo viên:
+  - Bật Slide 25-29B, yêu cầu học sinh tham gia trò chơi sắp xếp phác đồ điều hòa cảm xúc 5 bước.
+  - Yêu cầu chuẩn bị thực hành thở theo vòng tròn chuyển động trên màn hình.
++ Học sinh:
+  - Tiếp nhận yêu cầu trò chơi sắp xếp và chuẩn bị thực hành thở sâu.
+- Chuẩn bị:
++ Giáo viên:
+  - Hướng dẫn học sinh đếm nhịp tim tự nhiên của bản thân trong 30 giây (nhân đôi để ra nhịp tim/phút) và ghi nhận lại.
++ Học sinh:
+  - Thực hiện tự đo nhịp cổ tay và ghi lại chỉ số nhịp tim ban đầu.
+- Hướng dẫn:
++ Giáo viên:
+  - Chỉ dẫn tư thế ngồi thẳng lưng và kỹ thuật hít vào phồng bụng - thở ra xẹp bụng theo chuyển động của vòng tròn thở động trên slide.
++ Học sinh:
+  - Quan sát và thực hành nhịp thở theo giáo viên hướng dẫn.
+- Thực hiện:
++ Giáo viên:
+  - Bật nhạc nền nhẹ nhàng, theo dõi và chỉnh sửa tư thế thở cho học sinh.
+  - Hướng dẫn học sinh tự đo lại nhịp tim sau 3 phút thực hành thở sâu.
++ Học sinh:
+  - Chơi game sắp xếp thứ tự 5 bước phác đồ trên thiết bị.
+  - Thực hành kỹ thuật thở điều hòa nhịp tim sâu trong 3 phút theo vòng tròn động.
+  - Tự đếm và ghi nhận sự thay đổi nhịp tim của cơ thể sau khi thở.
+- Báo cáo:
++ Giáo viên:
+  - Yêu cầu học sinh chia sẻ sự thay đổi chỉ số nhịp tim trước và sau khi thở.
++ Học sinh:
+  - Trình bày kết quả đo nhịp tim trước - sau.
+  - Thảo luận về tác dụng của kỹ thuật thở sâu đối với việc làm dịu hạch hạnh nhân hoạt động quá mức.
+- Kết luận:
++ Giáo viên:
+  - Nhấn mạnh: Việc thở sâu là giải pháp khoa học thực chứng làm dịu hạch hạnh nhân, cung cấp oxy cho vỏ não trước trán giúp kiểm soát hành vi.
++ Học sinh:
+  - Ghi nhận phác đồ 5 bước điều hòa cảm xúc vào vở.
 
 ---
 
-#### 3. Hoạt động 3: Tìm giải pháp - Phân loại hành vi ứng phó lành mạnh/rủi ro trên bảng T-Chart (10 phút)
-##### a) Mục tiêu:
+#### 3. Hoạt động 3: Tìm giải pháp - Phân loại những hành động nên và không nên làm khi có cảm xúc mạnh (10 phút)
+##### a. Mục tiêu
 - Giúp học sinh phân biệt được hành vi nên làm (lành mạnh) và không nên làm (rủi ro) khi gặp bão cảm xúc.
 - Rèn luyện kỹ năng lựa chọn giải pháp điều hòa cảm xúc thích ứng.
-##### b) Nội dung:
-Học sinh thảo luận nhóm để phân loại 8 hành vi ứng phó trên bảng T-Chart.
-##### c) Sản phẩm:
-- Bảng T-Chart phân loại hành vi hoàn thiện chính xác.
+##### b. Nội dung
+- Học sinh thảo luận nhóm để phân loại 8 hành vi ứng phó trên bảng phân loại.
+##### c. Sản phẩm
+- Bảng phân loại hành vi hoàn thiện chính xác.
 - Quyết định hành vi lành mạnh được học sinh tự xác định và ghi nhận.
-##### d) Tổ chức thực hiện:
+##### d. Tổ chức thực hiện
 
-###### **Giai đoạn 7: Nhật ký bác sĩ (Phân loại hành vi T-Chart)**
-- **Giao nhiệm vụ:**
-  - **Giáo viên:** Trình chiếu Slide 30-34, yêu cầu học sinh thảo luận phân loại các hành vi ứng phó khi gặp cảm xúc mạnh thành hai nhóm: "Nên làm" và "Không nên làm" trên bảng T-Chart.
-  - **Học sinh:** Quan sát bảng T-Chart và nhận diện các hành vi cần phân loại.
-- **Thực hiện:**
-  - **Giáo viên:** Theo dõi, gợi ý học sinh phân tích hậu quả của việc dồn nén cảm xúc hoặc đập phá đồ đạc.
-  - **Học sinh:** Thảo luận, kéo thả phân loại các thẻ hành vi trên bảng Smartboard (Ví dụ: Nên làm: Thở sâu, Chia sẻ với người tin cậy; Không nên làm: Đập phá đồ đạc, Viết bài nói xấu trên mạng).
-- **Báo cáo:**
-  - **Giáo viên:** Nhận xét kết quả phân loại T-Chart.
-  - **Học sinh:** Đối chiếu kết quả phân loại chuẩn y khoa.
-- **Kết luận:**
-  - **Giáo viên:** Nhận xét kết quả làm bài tập của các nhóm; nhắc nhở học sinh luôn đối chiếu hành vi thực tế với phác đồ điều hòa lành mạnh để tránh biến chứng.
-  - **Học sinh:** Thu dọn tài liệu học tập của Tiết 1.
+* Giai đoạn 7: Nhật ký bác sĩ (Phân loại hành vi trên bảng phân loại)
+- Giao nhiệm vụ:
++ Giáo viên:
+  - Trình chiếu Slide 30-34, yêu cầu học sinh thảo luận phân loại các hành vi ứng phó khi gặp cảm xúc mạnh thành hai nhóm: "Nên làm" và "Không nên làm" trên bảng phân loại.
++ Học sinh:
+  - Quan sát bảng phân loại trên thiết bị và nhận diện các hành vi cần phân loại.
+- Thực hiện:
++ Giáo viên:
+  - Theo dõi, gợi ý học sinh phân tích hậu quả của việc dồn nén cảm xúc hoặc đập phá đồ đạc.
++ Học sinh:
+  - Thảo luận kíp trực 4 học sinh phân tích các hành vi.
+  - Đại diện thực hiện kéo thả phân loại các thẻ hành vi trên thiết bị (Ví dụ: Nên làm: Thở sâu, Chia sẻ với người tin cậy; Không nên làm: Đập phá đồ đạc, Viết bài nói xấu trên mạng).
+- Báo cáo:
++ Giáo viên:
+  - Nhận xét và công bố kết quả phân loại chuẩn y khoa trên thiết bị.
++ Học sinh:
+  - Nhóm báo cáo và đối chiếu kết quả phân loại chuẩn y khoa.
+- Kết luận:
++ Giáo viên:
+  - Nhận xét kết quả làm bài tập của các nhóm; nhắc nhở học sinh luôn đối chiếu hành vi thực tế với phác đồ điều hòa lành mạnh để tránh biến chứng.
++ Học sinh:
+  - Thu dọn tài liệu học tập của Tiết 1.
 
 ---
 
 #### 4. Hoạt động 4: Tổng kết, đánh giá - Tự theo dõi cảm xúc cá nhân hàng ngày thông qua nhật ký phản tư (5 phút - giao về nhà)
-##### a) Mục tiêu:
+##### a. Mục tiêu
 - Học sinh hình thành thói quen tự phản tư và tự theo dõi cảm xúc cá nhân hàng ngày.
 - Đánh giá năng lực tự chủ điều hòa cảm xúc của học sinh ngoài giờ lên lớp.
-##### b) Nội dung:
-Học sinh viết nhật ký phản tư cảm xúc mỗi tối ở nhà.
-##### c) Sản phẩm:
+##### b. Nội dung
+- Học sinh nhận phiếu nhật ký phản tư cảm xúc mẫu.
+- Học sinh tự theo dõi và ghi chép cảm xúc cá nhân mỗi tối tại nhà.
+##### c. Sản phẩm
 - Phiếu nhật ký phản tư cảm xúc mẫu được hoàn thành phần ngày đầu tiên.
 - Nhật ký ghi lại quá trình điều hòa cảm xúc thực tế của học sinh.
-##### d) Tổ chức thực hiện:
+##### d. Tổ chức thực hiện
 
-###### **Giai đoạn 8: Thói quen khỏe mạnh**
-- **Giao nhiệm vụ:**
-  - **Giáo viên:** Trình chiếu Slide 35, giao nhiệm vụ viết nhật ký phản tư cảm xúc mỗi tối ở nhà và phát phiếu giấy nhật ký phản tư cảm xúc mẫu.
-  - **Học sinh:** Nhận phiếu giấy nhật ký phản tư cảm xúc.
-- **Thực hiện:**
-  - **Giáo viên:** Theo dõi học sinh nhận phiếu, nhắc nhở thời gian hoàn thành.
-  - **Học sinh:** Nhận phiếu và thực hiện ghi chép cảm xúc mỗi tối ở nhà.
-- **Báo cáo:**
-  - **Giáo viên:** Nêu rõ yêu cầu học sinh sẽ chia sẻ nhật ký trong tiết học sau (Tiết 2).
-  - **Học sinh:** Ghi nhận lịch báo cáo kết quả.
-- **Kết luận:**
-  - **Giáo viên:** Khép lại tiết học bằng việc trao vinh danh bác sĩ thực tập cho cả lớp; nhấn mạnh việc hình thành thói quen tự phản tư là chìa khóa để điều hòa cảm xúc lâu dài.
-  - **Học sinh:** Lắng nghe và chào giáo viên kết thúc tiết học.
+* Giai đoạn 8: Thói quen khỏe mạnh
+- Giao nhiệm vụ:
++ Giáo viên:
+  - Trình chiếu Slide 35, giao nhiệm vụ viết nhật ký phản tư cảm xúc mỗi tối ở nhà.
+  - Phát phiếu giấy nhật ký phản tư cảm xúc mẫu cho từng học sinh.
++ Học sinh:
+  - Nhận phiếu giấy nhật ký phản tư cảm xúc.
+  - Tiếp nhận nhiệm vụ viết nhật ký phản tư tại nhà của giáo viên.
+- Thực hiện:
++ Giáo viên:
+  - Theo dõi học sinh nhận phiếu, nhắc nhở thời gian và độ chân thật khi hoàn thành.
++ Học sinh:
+  - Thực hiện ghi chép cảm xúc cá nhân định kỳ mỗi tối tại nhà.
+- Báo cáo:
++ Giáo viên:
+  - Nêu rõ yêu cầu học sinh sẽ chia sẻ nhật ký trong tiết học sau (Tiết 2).
++ Học sinh:
+  - Ghi nhận lịch báo cáo kết quả nhật ký phản tư.
+- Kết luận:
++ Giáo viên:
+  - Khép lại tiết học bằng việc trao vinh danh bác sĩ thực tập cho cả lớp.
+  - Nhấn mạnh việc hình thành thói quen tự phản tư là chìa khóa để điều hòa cảm xúc lâu dài.
++ Học sinh:
+  - Lắng nghe và kết thúc tiết học.
 
 ---
 
