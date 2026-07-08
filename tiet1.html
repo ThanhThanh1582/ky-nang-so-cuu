@@ -40,12 +40,14 @@
         body::before {
             content: "";
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
-            opacity: 0.95;
+            top: -5%;
+            left: -5%;
+            width: 110%;
+            height: 110%;
+            background: url('assets/hospital_bg.png') no-repeat center center;
+            background-size: cover;
+            filter: blur(20px);
+            opacity: 0.85;
             z-index: -2;
         }
 
@@ -226,8 +228,8 @@
 
         .slide-frame.active {
             display: flex;
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(30px);
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(25px);
         }
 
         @keyframes slideFadeIn {
@@ -1170,7 +1172,7 @@
             color: var(--secondary);
         }
 
-        /* 16. Game 4: Sắp xếp quy trình (Arranger) */
+        /* 16. Game 4: Sắp xếp quy trình */
         .arranger-game-layout {
             display: flex;
             flex-direction: column;
@@ -1179,7 +1181,7 @@
         }
         .arranger-slots {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
         }
         .arranger-slot {
@@ -1192,7 +1194,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 8px;
-            box-shadow: 4px 4px 0px rgba(0,0,0,0.05);
+            box-shadow: 4px 4px 0px var(--primary-dark);
         }
         .arranger-slot-num {
             font-size: 11px;
@@ -1510,11 +1512,11 @@
             <!-- VIEWPORT CHỨA CÁC SLIDES -->
             <div class="slide-viewport">
 
-                <!-- SLIDE 1 (MĐ01) -->
-                <div class="slide-frame active" id="slide-1">
-                    <div class="template-md01">
+                <!-- SLIDE 1 (MĐ01) TÍCH HỢP ẢNH BÌA AI MỚI -->
+                <div class="slide-frame active" id="slide-1" style="background: url('assets/cover.png') no-repeat center center; background-size: cover; border: 4px solid var(--primary-dark); box-shadow: 10px 10px 0px var(--primary-dark);">
+                    <div class="template-md01" style="background: rgba(255, 255, 255, 0.88); margin-top: auto; margin-bottom: 20px; border: 3px solid var(--primary-dark); box-shadow: 5px 5px 0px var(--primary-dark); padding: 15px 30px; width: auto; max-width: 80%;">
                         <div class="md01-code">7.6</div>
-                        <div class="md01-title" id="slide1-title"></div>
+                        <div class="md01-title" id="slide1-title" style="font-size: 32px; min-height: 40px;"></div>
                     </div>
                 </div>
 
@@ -1525,15 +1527,15 @@
                         <div class="mt01-columns">
                             <div class="mt01-col">
                                 <div class="mt01-col-title">🧪 Kiến thức</div>
-                                <div class="mt01-col-desc">Nhận diện biểu hiện sinh lý của 4 cảm xúc mạnh; hiểu cơ chế mất cân bằng giữa hạch hạnh nhân và vỏ não trước trán do quá trình myelin hóa chưa hoàn thiện ở tuổi dậy thì.</div>
+                                <div class="mt01-col-desc">Nhận biết biểu hiện cơ thể của 4 cảm xúc mạnh.</div>
                             </div>
                             <div class="mt01-col">
                                 <div class="mt01-col-title">🩹 Kỹ năng</div>
-                                <div class="mt01-col-desc">Gọi tên chính xác cảm xúc qua bánh xe cảm xúc; thực hành thở sâu Box Breathing điều hòa "Cabin não bộ"; phân loại hành vi Nên/Không nên qua bảng T-Chart.</div>
+                                <div class="mt01-col-desc">Gọi tên đúng cảm xúc; Ghi nhớ quy trình giải tỏa cảm xúc; Phân biệt được hành vi nên và không nên làm khi có cảm xúc mạnh; Thực hành hít thở sâu giữ bình tĩnh.</div>
                             </div>
                             <div class="mt01-col">
                                 <div class="mt01-col-title">❤️ Thái độ</div>
-                                <div class="mt01-col-desc">Bình tĩnh đón nhận sự thay đổi sinh lý tự nhiên; có trách nhiệm với hành vi của bản thân khi đối diện cảm xúc mạnh.</div>
+                                <div class="mt01-col-desc">Bình tĩnh đón nhận sự thay đổi của cơ thể; có trách nhiệm với hành động của mình.</div>
                             </div>
                         </div>
                     </div>
@@ -1544,7 +1546,7 @@
                     <div class="template-qs01">
                         <div class="qs01-box">
                             <div class="qs01-header">CÂU HỎI LỚN</div>
-                            <div class="qs01-question">Vì sao cảm xúc của chúng ta thay đổi mạnh và làm thế nào để chẩn đoán, điều hòa chúng đúng cách?</div>
+                            <div class="qs01-question">Vì sao cảm xúc của chúng ta thay đổi mạnh và làm thế nào để nhận diện, điều hòa chúng đúng cách?</div>
                         </div>
                     </div>
                 </div>
@@ -1555,20 +1557,18 @@
                         <div class="pv01-box">
                             <div class="pv01-title">PHÂN VAI BÁC SĨ TẬP SỰ</div>
                             <div class="pv01-desc">
-                                Hội đồng tâm lý Nova Hospital chính thức thành lập. Các chuyên gia có nhiệm vụ lắng nghe tâm sự, giải mã cảm xúc và gỡ rối các ca bệnh tổn thương tinh thần.
+                                Hội đồng tâm lý Nova Hospital chính thức thành lập. Các chuyên gia có nhiệm vụ lắng nghe tâm sự, giải mã cảm xúc và gỡ rối các ca bệnh tổn thương tinh thần tuổi dậy thì.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- SLIDE 5 (BĐ01) -->
-                <div class="slide-frame" id="slide-5">
-                    <div class="template-bd01">
-                        <div class="bd01-box">
-                            <div class="bd01-title">CẢNH BÁO KHẨN CẤP</div>
-                            <div class="bd01-content">
-                                Bệnh nhân Su đang bùng nổ cơn giận dữ dữ dội, cãi nhau với mẹ, đập bàn học và đóng sầm cửa phòng. Nhịp tim tăng vọt lên 120 bpm! Kíp trực cần sơ cứu khẩn cấp để ngăn chặn biến chứng nhiễm độc hành vi!
-                            </div>
+                <!-- SLIDE 5 (BĐ01) TÍCH HỢP ẢNH SU GIẬN DỮ MỚI -->
+                <div class="slide-frame" id="slide-5" style="background: url('assets/su_angry.png') no-repeat center center; background-size: cover; border: 4px solid var(--accent); box-shadow: 10px 10px 0px var(--accent);">
+                    <div class="template-bd01" style="background: rgba(255, 255, 255, 0.92); border: 3px solid var(--accent); border-radius: 12px; padding: 20px; max-width: 700px; margin: auto; box-shadow: 5px 5px 0px var(--accent);">
+                        <div class="bd01-title" style="font-size: 30px; margin-bottom: 10px;">CẢNH BÁO KHẨN CẤP</div>
+                        <div class="bd01-content" style="font-size: 18px; line-height: 1.5; color: var(--accent);">
+                            Bệnh nhân Su đang bùng nổ cơn giận dữ dữ dội vì chiếc áo đồng phục chưa khô. Su cãi lời mẹ, đập bàn học và đóng sầm cửa phòng. Nhịp tim tăng vọt lên 120 nhịp/phút! Kíp trực cần xử lý khẩn cấp!
                         </div>
                     </div>
                 </div>
@@ -1582,14 +1582,13 @@
                                 <div class="cb01-card-title">💊 Thẻ Dụng cụ</div>
                                 <ul class="cb01-list">
                                     <li>Sổ tay bệnh án của Su</li>
-                                    <li>Tủ thuốc tâm lý ảo (chứa các liệu pháp thở sâu, viết nhật ký, đập phá đồ đạc, đóng sầm cửa, tranh cãi, tạm dừng phản ứng)</li>
+                                    <li>Tủ thuốc tâm lý ảo</li>
                                 </ul>
                             </div>
                             <div class="cb01-card">
                                 <div class="cb01-card-title">👥 Thẻ Hình thức tổ chức</div>
                                 <ul class="cb01-list">
-                                    <li>Lập kíp trực cấp cứu nhanh gồm 4 bác sĩ</li>
-                                    <li>Chuẩn bị sẵn giấy nháp và bút ghi chép</li>
+                                    <li>Tập hợp nhóm kíp trực cấp cứu gồm 4 bác sĩ</li>
                                 </ul>
                             </div>
                         </div>
@@ -1599,21 +1598,21 @@
                 <!-- SLIDE 7 (HD01) -->
                 <div class="slide-frame" id="slide-7">
                     <div class="template-hd01">
-                        <div class="hd01-title">Quy trình khám bệnh</div>
+                        <div class="hd01-title">Quy trình thực hiện</div>
                         <div class="hd01-steps">
                             <div class="hd01-step">
                                 <div class="hd01-step-num">Bước 1</div>
-                                <div class="hd01-step-text">Quan sát ca bệnh khẩn cấp</div>
+                                <div class="hd01-step-text">Xem tình huống khẩn cấp</div>
                             </div>
                             <div class="hd01-arrow">➔</div>
                             <div class="hd01-step">
                                 <div class="hd01-step-num">Bước 2</div>
-                                <div class="hd01-step-text">Thảo luận nhanh tìm triệu chứng</div>
+                                <div class="hd01-step-text">Thảo luận nhanh chọn cách xử lý</div>
                             </div>
                             <div class="hd01-arrow">➔</div>
                             <div class="hd01-step">
                                 <div class="hd01-step-num">Bước 3</div>
-                                <div class="hd01-step-text">Đưa ra nhận định phác đồ ban đầu</div>
+                                <div class="hd01-step-text">Đón nhận kết quả</div>
                             </div>
                         </div>
                     </div>
@@ -1630,7 +1629,7 @@
                             <div class="timer-controls">
                                 <button class="btn-timer" onclick="startTimer(8, 180)">BẮT ĐẦU</button>
                                 <button class="btn-timer" onclick="pauseTimer(8)">TẠM DỪNG</button>
-                                <button class="btn-timer" onclick="resetTimer(8, 180)">LÀM LẠI</button>
+                                <button class="btn-timer" onclick="resetGame8()">LÀM LẠI</button>
                             </div>
                         </div>
 
@@ -1639,9 +1638,9 @@
                         </div>
 
                         <div class="game-choices-layout" style="margin-top: 20px; display: flex; flex-direction: column; gap: 12px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                            <button class="choice-btn" onclick="triggerNhiemDoc('A')">A. Cãi lại mẹ và đóng cửa rầm</button>
+                            <button class="choice-btn" onclick="triggerNhiemDoc('A')">A. Cãi lại mẹ đến cùng và đóng sầm cửa</button>
                             <button class="choice-btn" onclick="triggerNhiemDoc('B')">B. Đập phá một món đồ trên bàn</button>
-                            <button class="choice-btn" onclick="triggerNhiemDoc('C')">C. Im lặng bỏ đi và nhịn ăn sáng</button>
+                            <button class="choice-btn" onclick="triggerNhiemDoc('C')">C. Im lặng bỏ đi, nhịn ăn sáng để biểu tình</button>
                         </div>
                     </div>
                 </div>
@@ -1653,7 +1652,7 @@
                             <div class="da01-title" style="color: var(--accent);">BIẾN CHỨNG</div>
                             <div class="da01-content">
                                 <p style="color: var(--accent); font-size: 20px; text-align: center; margin-bottom: 15px;">⚠️ BỆNH NHÂN BỊ NHIỄM ĐỘC HÀNH VI NẶNG SAU 24 GIỜ!</p>
-                                <p style="text-align: center; font-size: 18px; line-height: 1.6;">Nguyên nhân cốt lõi: Kíp trực đã bỏ sót hành động sống còn: **Chưa áp dụng quy tắc tạm dừng để vô trùng tâm lý**. Việc hành động ngay theo bản năng giận dữ (đập phá, cãi vã) đã phá hủy hoàn toàn mối quan hệ.</p>
+                                <p style="text-align: center; font-size: 18px; line-height: 1.6;">Nguyên nhân cốt lõi: Kíp trực đã bỏ sót hành động sống còn: **Chưa áp dụng quy tắc tạm dừng để bình tĩnh lại**. Việc hành động ngay theo bản năng giận dữ (đập phá, cãi vã) đã phá hủy hoàn toàn mối quan hệ.</p>
                             </div>
                         </div>
                     </div>
@@ -1665,8 +1664,8 @@
                         <div class="tk01-header">TỔNG KẾT GIAI ĐOẠN 1</div>
                         <div class="tk01-list-container">
                             <ul class="tk01-list">
-                                <li class="tk01-item">Tạm dừng phản ứng bản năng là bước vô trùng bắt buộc đầu tiên khi đối mặt cảm xúc mạnh.</li>
-                                <li class="tk01-item">Không phản ứng ngay lập tức khi nhịp tim đang ở mức báo động (trên 100 bpm).</li>
+                                <li class="tk01-item">Tạm dừng phản ứng bản năng là bước bắt buộc đầu tiên để bình tĩnh lại khi đối mặt cảm xúc mạnh.</li>
+                                <li class="tk01-item">Không phản ứng ngay lập tức khi nhịp tim đang ở mức báo động (trên 100 nhịp/phút).</li>
                                 <li class="tk01-item">Áp dụng kỹ thuật thở hạ nhiệt và tách mình khỏi kích thích có hại để bảo vệ bản thân.</li>
                             </ul>
                         </div>
@@ -1677,8 +1676,8 @@
                 <div class="slide-frame" id="slide-9">
                     <div class="template-gt01">
                         <div class="gt01-title">Giai đoạn 2</div>
-                        <div class="gt01-subtitle">Nhận ca bệnh lâm sàng</div>
-                        <div class="gt01-desc">Sử dụng vòng quay dữ liệu Case Shuffler bốc thăm nhận ngẫu nhiên thêm 3 ca bệnh đặc trưng (Minh Anh, Kem, Bảo Vy) để tiến hành nghiên cứu.</div>
+                        <div class="gt01-subtitle">Bốc thăm nhận ca bệnh mới</div>
+                        <div class="gt01-desc">Sử dụng vòng quay ca bệnh bốc thăm nhận ngẫu nhiên thêm 3 ca bệnh đặc trưng (Minh Anh, Kem, Bảo Vy) để tiến hành nghiên cứu.</div>
                         <button class="btn btn-action" style="margin-top: 15px;" onclick="spinCaseShuffler()">BẤM NHẬN CA BỆNH 🎡</button>
                         <div id="shuffler-result" style="margin-top: 15px; font-size: 24px; font-weight: bold; color: var(--primary);"></div>
                     </div>
@@ -1689,7 +1688,7 @@
                     <div class="template-nv01">
                         <div class="nv01-title">Hồ sơ bệnh án</div>
                         <div style="font-size: 16px; text-align: center; margin-bottom: 15px; font-weight: bold;">
-                            Nhiệm vụ kíp trực: Đọc và phân tích 3 ca bệnh đặc trưng tuổi dậy thì: Bệnh nhân Minh Anh (u sầu, muốn khóc không rõ lý do), Bệnh nhân Kem (toát mồ hôi, tim đập nhanh, đầu óc trống rỗng trước giờ thi), Bệnh nhân Bảo Vy (trùm mũ kín mít, lảng tránh ánh mắt vì tự ti mụn trứng cá).
+                            Nhiệm vụ kíp trực: Đọc và phân tích 3 ca bệnh đặc trưng
                         </div>
                         <div class="nv01-grid">
                             <div class="nv01-tablet-card" onclick="openPatientModal('su')">
@@ -1725,7 +1724,7 @@
                     <div class="template-gt01">
                         <div class="gt01-title">Giai đoạn 3</div>
                         <div class="gt01-subtitle">Khám bệnh lâm sàng</div>
-                        <div class="gt01-desc">Tiến hành rà soát các chỉ số sinh lý và phát hiện dấu hiệu bất thường trên các hồ sơ ca bệnh đặc trưng.</div>
+                        <div class="gt01-desc">Tiến hành rà soát các chỉ số cơ thể để phát hiện dấu hiệu bất thường trên các hồ sơ bệnh nhân.</div>
                     </div>
                 </div>
 
@@ -1737,14 +1736,13 @@
                             <div class="cb01-card">
                                 <div class="cb01-card-title">💊 Thẻ Dụng cụ</div>
                                 <ul class="cb01-list">
-                                    <li>Phiếu giải mã "Ngôn ngữ cơ thể" (bản in giấy)</li>
-                                    <li>Sơ đồ Bánh xe cảm xúc phát trên bàn</li>
+                                    <li>Phiếu giải mã "Ngôn ngữ cơ thể" và Sơ đồ Bánh xe cảm xúc (đã phát bản giấy sẵn trên bàn nhóm)</li>
                                 </ul>
                             </div>
                             <div class="cb01-card">
                                 <div class="cb01-card-title">👥 Thẻ Hình thức tổ chức</div>
                                 <ul class="cb01-list">
-                                    <li>Kíp trực thảo luận nhóm 4 bác sĩ</li>
+                                    <li>Các kíp trực thảo luận nhóm 4 bác sĩ</li>
                                 </ul>
                             </div>
                         </div>
@@ -1754,21 +1752,21 @@
                 <!-- SLIDE 13 (HD01) -->
                 <div class="slide-frame" id="slide-13">
                     <div class="template-hd01">
-                        <div class="hd01-title">QUY TRÌNH KHÁM BỆNH LÂM SÀNG</div>
+                        <div class="hd01-title">QUY TRÌNH THỰC HIỆN KHÁM BỆNH</div>
                         <div class="hd01-steps">
                             <div class="hd01-step">
                                 <div class="hd01-step-num">Bước 1</div>
-                                <div class="hd01-step-text">Đọc kỹ hồ sơ bệnh án</div>
+                                <div class="hd01-step-text">Đọc kỹ hồ sơ bệnh án giấy</div>
                             </div>
                             <div class="hd01-arrow">➔</div>
                             <div class="hd01-step">
                                 <div class="hd01-step-num">Bước 2</div>
-                                <div class="hd01-step-text">Đối chiếu "Bánh xe cảm xúc" để gọi tên chính xác loại cảm xúc mạnh (Giận dữ, Lo âu, Buồn bã, Tự ti)</div>
+                                <div class="hd01-step-text">Xem Bánh xe cảm xúc để gọi tên đúng cảm xúc mạnh (Giận dữ, Lo âu, Buồn bã, Tự ti)</div>
                             </div>
                             <div class="hd01-arrow">➔</div>
                             <div class="hd01-step">
                                 <div class="hd01-step-num">Bước 3</div>
-                                <div class="hd01-step-text">Thống nhất các triệu chứng sinh lý biểu hiện trên cơ thể nhân vật để tham gia trò chơi hội chẩn</div>
+                                <div class="hd01-step-text">Tìm ra các biểu hiện cơ thể của nhân vật để chơi game hội chẩn</div>
                             </div>
                         </div>
                     </div>
@@ -1777,7 +1775,7 @@
                 <!-- SLIDE 14 (TH01 - GAME KÉO THẢ CHẨN ĐOÁN MỚI) -->
                 <div class="slide-frame" id="slide-14">
                     <div class="template-th01">
-                        <div class="th01-title">GAME KÉO THẢ HỘI CHẨN LÂM SÀNG</div>
+                        <div class="th01-title">TRÒ CHƠI HỘI CHẨN LÂM SÀNG (ĐỒNG ĐỘI KÉO THẢ)</div>
                         <div class="th01-subtitle">Kéo thả các nhãn Triệu chứng cơ thể và Tên cảm xúc vào đúng hồ sơ của 3 bệnh nhân</div>
                         
                         <div class="th01-timer-row">
@@ -1785,7 +1783,7 @@
                             <div class="timer-controls">
                                 <button class="btn-timer" onclick="startTimer(14, 360)">BẮT ĐẦU</button>
                                 <button class="btn-timer" onclick="pauseTimer(14)">TẠM DỪNG</button>
-                                <button class="btn-timer" onclick="resetTimer(14, 360)">LÀM LẠI</button>
+                                <button class="btn-timer" onclick="resetGame14()">LÀM LẠI</button>
                             </div>
                         </div>
 
@@ -1823,15 +1821,26 @@
                     </div>
                 </div>
 
-                <!-- SLIDE 14B (TK01) -->
+                <!-- SLIDE 14B (TK01) TÍCH HỢP BÁNH XE CẢM XÚC TRỰC QUAN -->
                 <div class="slide-frame" id="slide-14B">
-                    <div class="template-tk01">
-                        <div class="tk01-header">Ý NGHĨA CỦA TRIỆU CHỨNG SINH LÝ</div>
-                        <div class="tk01-list-container">
+                    <div class="template-tk01" style="display: grid; grid-template-columns: 360px 1fr; gap: 20px; align-items: center; height: 100%;">
+                        <!-- Cột bên trái: Bánh xe cảm xúc Plutchik -->
+                        <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                            <div style="border: 3px solid var(--primary-dark); border-radius: 12px; overflow: hidden; box-shadow: 5px 5px 0px var(--primary-dark); background: white; width: 100%; height: 280px; display: flex; justify-content: center; align-items: center; padding: 10px;">
+                                <img src="assets/emotion_wheel.png" style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="Bánh xe cảm xúc Plutchik">
+                            </div>
+                            <div style="background: #ffe3a8; border: 2px solid var(--primary-dark); border-radius: 8px; padding: 10px; font-size: 14px; font-weight: 700; color: var(--primary-dark); text-align: center; box-shadow: 3px 3px 0px var(--primary-dark); width: 100%;">
+                                💡 Hướng dẫn: Vòng trong cùng trong bánh xe là các cảm xúc mạnh
+                            </div>
+                        </div>
+
+                        <!-- Cột bên phải: Ý nghĩa triệu chứng -->
+                        <div class="tk01-list-container" style="margin: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                            <div class="tk01-header" style="font-size: 26px; margin-bottom: 20px; text-align: left;">Ý NGHĨA CỦA TRIỆU CHỨNG SINH LÝ</div>
                             <ul class="tk01-list">
-                                <li class="tk01-item">Triệu chứng sinh lý cơ thể (nhịp tim, mồ hôi, căng cơ) là tín hiệu cảnh báo não bộ đang có phản ứng cảm xúc mạnh.</li>
-                                <li class="tk01-item">Phản ứng sai lầm bản năng (đập đồ, trốn tránh, gào khóc) là do hạch hạnh nhân kích hoạt cơ chế sinh học "chiến hay biến".</li>
-                                <li class="tk01-item">Bác sĩ cảm xúc cần nhận diện sớm triệu chứng để chặn trước biến chứng hành vi độc hại.</li>
+                                <li class="tk01-item" style="font-size: 16px;">Triệu chứng sinh lý cơ thể (nhịp tim, mồ hôi, căng cơ) là tín hiệu cảnh báo não bộ đang có phản ứng cảm xúc mạnh.</li>
+                                <li class="tk01-item" style="font-size: 16px;">Phản ứng sai lầm bản năng (đập đồ, trốn tránh, gào khóc) là do hạch hạnh nhân kích hoạt cơ chế sinh học "chiến hay biến".</li>
+                                <li class="tk01-item" style="font-size: 16px;">Bác sĩ cảm xúc cần nhận diện sớm triệu chứng để chặn trước biến chứng hành vi độc hại.</li>
                             </ul>
                         </div>
                     </div>
@@ -1840,39 +1849,39 @@
                 <!-- SLIDE 15 (CB01) -->
                 <div class="slide-frame" id="slide-15">
                     <div class="template-cb01">
-                        <div class="cb01-header">CHUẨN BỊ HỘI CHẨN CHUYÊN MÔN</div>
+                        <div class="cb01-header">CHUẨN BỊ BÁO CÁO CHẨN ĐOÁN</div>
                         <div class="cb01-split">
                             <div class="cb01-card">
                                 <div class="cb01-card-title">💊 Thẻ Dụng cụ</div>
                                 <ul class="cb01-list">
-                                    <li>Phiếu chẩn đoán "Cơ chế Cabin não bộ" (bản in giấy) đã thảo luận điền xong</li>
+                                    <li>Phiếu chẩn đoán cơ thể (bản giấy đã điền xong)</li>
                                 </ul>
                             </div>
                             <div class="cb01-card">
                                 <div class="cb01-card-title">👥 Thẻ Hình thức tổ chức</div>
                                 <ul class="cb01-list">
-                                    <li>Kíp trực sẵn sàng đại diện lên stage giải mã nguyên nhân sinh lý</li>
+                                    <li>Cử đại diện lên bục phát biểu chẩn đoán</li>
                                 </ul>
                             </div>
                         </div>
                         <!-- Câu thoại gợi ý viền phát sáng chạy ngang -->
                         <div class="cb01-tips">
-                            <span>GỢI Ý THUYẾT TRÌNH:</span><br>
-                            - Câu gợi ý 1: "Khi bệnh nhân đối diện với bão cảm xúc, bộ phận Hạch hạnh nhân trong não bộ sẽ..."<br>
-                            - Câu gợi ý 2: "Trong khi đó, vùng Vỏ não trước trán đóng vai trò kiểm soát logic lại chưa hoàn thiện quá trình..."<br>
-                            - Câu gợi ý 3: "Vì vậy, chúng tôi chẩn đoán đây là hiện tượng biến đổi sinh lý tự nhiên ở tuổi dậy thì."
+                            <span>PHAO CỨU TRỢ CHUYÊN MÔN:</span><br>
+                            - *"Khi đối diện với bão cảm xúc, cơ thể của các bệnh nhân sẽ xuất hiện các phản ứng tự vệ tự nhiên..."*<br>
+                            - *"Bộ não điều khiển làm nhịp tim đập nhanh, gây căng cơ, nóng người hoặc run rẩy..."*<br>
+                            - *"Vì vậy, chúng tôi chẩn đoán đây là hiện tượng biến đổi thể chất hoàn toàn bình thường ở tuổi dậy thì."*
                         </div>
                     </div>
                 </div>
 
                 <!-- SLIDE 16 (TB01) -->
                 <div class="slide-frame" id="slide-16">
-                    <div class="template-pv01">
-                        <div class="pv01-box" style="border-color: var(--primary); background: rgba(220, 47, 2, 0.04);">
+                    <div class="template-pv01" style="background: url('assets/presentation_arguing') no-repeat center center; background-size: cover;">
+                        <div class="pv01-box" style="border-color: var(--primary); background: rgba(255, 255, 255, 0.92); box-shadow: 6px 6px 0px var(--primary);">
                             <div class="pv01-title" style="color: var(--primary);">PHIÊN HỘI CHẨN LÂM SÀNG</div>
                             <div class="pv01-desc">
-                                <p style="font-weight: bold; font-size: 22px; margin-bottom: 15px; color: var(--primary-dark);">Đại diện các kíp trực lên giải mã cơ chế khoa học đứng sau các biểu hiện cơ thể của nhân vật</p>
-                                <p style="font-size: 18px; margin-bottom: 10px;">Cả lớp phản biện, chất vấn chéo dựa trên lăng kính sinh lý học.</p>
+                                <p style="font-weight: bold; font-size: 22px; margin-bottom: 15px; color: var(--primary-dark);">Đại diện các kíp trực lên thuyết trình nhanh chẩn đoán lý do vì sao cơ thể nhân vật lại phản ứng mạnh</p>
+                                <p style="font-size: 18px; margin-bottom: 10px;">Cả lớp tiến hành phản biện, chất vấn chéo dựa trên câu hỏi gợi ý của giáo viên.</p>
                                 <div class="th01-timer-row" style="margin-top: 15px;">
                                     <span class="timer-display" id="timer-display-16">06:00</span>
                                     <div class="timer-controls">
@@ -1888,12 +1897,15 @@
 
                 <!-- SLIDE 17 (ĐA01) -->
                 <div class="slide-frame" id="slide-17">
-                    <div class="template-da01">
-                        <div class="da01-box" style="border-color: var(--accent); background: rgba(217, 4, 41, 0.05); position: relative; min-height: 380px;">
-                            <div class="da01-title" style="color: var(--accent);">KẾT QUẢ HỘI CHẨN CHUẨN Y KHOA</div>
-                            <div class="da01-content" style="font-size: 17px; line-height: 1.7; text-align: left;">
-                                <p><strong>Sự mất cân bằng sinh lý tuổi dậy thì:</strong> Hormone tăng vọt làm nhạy cảm hóa hệ thống rìa, khiến <strong>Hạch hạnh nhân</strong> (xử lý cảm xúc bản năng "chiến hay biến") hoạt động quá mức. Trong khi đó, <strong>Vỏ não trước trán</strong> (kiểm soát logic, lý trí) chưa hoàn thiện quá trình myelin hóa nên không kịp "phanh" cảm xúc mạnh.</p>
-                                <p style="margin-top: 10px;"><strong>Biểu hiện cơ thể:</strong> Gây ra hiện tượng tim đập nhanh, bốc hỏa, căng vai, nghẹn cổ họng do phản ứng "chiến hay biến" tự vệ.</p>
+                    <div class="template-da01" style="display: grid; grid-template-columns: 420px 1fr; gap: 20px; align-items: center; height: 100%;">
+                        <div style="border: 3px solid var(--primary-dark); border-radius: 12px; overflow: hidden; box-shadow: 6px 6px 0px var(--primary-dark); height: 100%; max-height: 380px;">
+                            <img src="assets/brain_cockpit.png" style="width: 100%; height: 100%; object-fit: cover; display: block;" alt="Sơ đồ cabin não bộ AI">
+                        </div>
+                        <div class="da01-box" style="border-color: var(--accent); background: rgba(217, 4, 41, 0.05); position: relative; min-height: 380px; width: 100%; margin: 0;">
+                            <div class="da01-title" style="color: var(--accent); font-size: 24px; margin-bottom: 12px;">KẾT QUẢ CHẨN ĐOÁN: CƠ CHẾ NÃO BỘ</div>
+                            <div class="da01-content" style="font-size: 16px; line-height: 1.6; text-align: left;">
+                                <p><strong>Cơ chế não bộ:</strong> Do sự thay đổi hormone tuổi dậy thì phát triển mạnh mẽ, hệ thống cảm xúc trong cơ thể trở nên nhạy cảm hơn bình thường. Vùng vỏ não trước trán kiểm soát logic lý trí chưa hoàn thiện quá trình myelin hóa nên không kịp "phanh" cảm xúc mạnh bùng nổ.</p>
+                                <p style="margin-top: 8px;"><strong>Hậu quả:</strong> Bộ não ngay lập tức phát lệnh báo động đỏ, tự động kích hoạt chế độ tự vệ khẩn cấp mang tên <strong>"Chiến hay Biến"</strong> trên toàn bộ cơ thể.</p>
                             </div>
                             <div class="stamp-overlay stamped" id="stamp-pledge-17">
                                 <div class="stamp-graphic" style="border-color: var(--accent); color: var(--accent);">ĐÃ PHÊ DUYỆT</div>
@@ -1902,71 +1914,103 @@
                     </div>
                 </div>
 
-                <!-- SLIDE 18 (GT01) -->
+                <!-- SLIDE 18 (TK01 - MỚI: GIẢI MÃ Y KHOA: VÌ SAO CƠ THỂ PHẢN ỨNG MẠNH?) -->
                 <div class="slide-frame" id="slide-18">
-                    <div class="template-gt01">
-                        <div class="gt01-title">Giai đoạn 6</div>
-                        <div class="gt01-subtitle">Kê đơn và lập kế hoạch chăm sóc</div>
-                        <div class="gt01-desc">Thảo luận hội đồng chuyên môn để lập kế hoạch kê đơn điều hòa tâm lý đúng cách cho bệnh nhân.</div>
+                    <div class="template-tk01" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                        <div class="tk01-header" style="margin-bottom: 15px; font-size: 28px;">GIẢI MÃ Y KHOA: VÌ SAO CƠ THỂ PHẢN ỨNG MẠNH?</div>
+                        <div style="font-size: 16px; text-align: center; margin-bottom: 20px; font-weight: 700; color: var(--text-muted);">
+                            Khi chế độ tự vệ "Chiến hay Biến" được bật lên, cơ thể học sinh sẽ có 3 biến đổi thể chất khẩn cấp:
+                        </div>
+                        <div class="tk01-list-container" style="max-width: 950px; padding: 20px; margin: 0 auto; width: 100%;">
+                            <ul class="tk01-list" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                                <li style="background: white; border: 3px solid var(--primary-dark); border-radius: 12px; padding: 15px; box-shadow: 4px 4px 0px var(--primary-dark); list-style: none; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                                    <div style="font-size: 40px; margin-bottom: 8px;">❤️‍🔥</div>
+                                    <div style="font-size: 15px; font-weight: 800; color: var(--primary); text-transform: uppercase; margin-bottom: 6px;">Tim đập nhanh hơn</div>
+                                    <div style="font-size: 13px; line-height: 1.5; color: var(--text-main);">Để bơm máu thật nhanh đến các cơ bắp, chuẩn bị năng lượng sẵn sàng đối phó với tình huống căng thẳng.</div>
+                                </li>
+                                <li style="background: white; border: 3px solid var(--primary-dark); border-radius: 12px; padding: 15px; box-shadow: 4px 4px 0px var(--primary-dark); list-style: none; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                                    <div style="font-size: 40px; margin-bottom: 8px;">🔥</div>
+                                    <div style="font-size: 15px; font-weight: 800; color: var(--primary); text-transform: uppercase; margin-bottom: 6px;">Cơ thể nóng lên</div>
+                                    <div style="font-size: 13px; line-height: 1.5; color: var(--text-main);">Do dòng máu lưu thông tốc độ cao đột ngột và các bó cơ siết chặt, sinh ra nhiệt lượng lớn.</div>
+                                </li>
+                                <li style="background: white; border: 3px solid var(--primary-dark); border-radius: 12px; padding: 15px; box-shadow: 4px 4px 0px var(--primary-dark); list-style: none; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                                    <div style="font-size: 40px; margin-bottom: 8px;">🥶</div>
+                                    <div style="font-size: 15px; font-weight: 800; color: var(--primary); text-transform: uppercase; margin-bottom: 6px;">Người run lên</div>
+                                    <div style="font-size: 13px; line-height: 1.5; color: var(--text-main);">Các cơ bị căng cứng khẩn cấp và nạp quá nhiều năng lượng cùng một lúc gây ra hiện tượng run rẩy.</div>
+                                </li>
+                            </ul>
+                            <div style="background: rgba(16, 185, 129, 0.06); border: 2px solid var(--secondary); border-radius: 8px; padding: 10px; font-size: 14px; font-weight: 700; color: var(--primary-dark); text-align: center; margin-top: 15px; box-shadow: 4px 4px 0px var(--secondary);">
+                                ✨ Thông điệp cốt lõi: Đây là phản ứng bảo vệ tự nhiên của cơ thể dậy thì, hoàn toàn bình thường, không phải là cơ thể em bị bệnh hay bị lỗi!
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- SLIDE 19 (CB01) -->
+                <!-- SLIDE 19 (GT01) -->
                 <div class="slide-frame" id="slide-19">
+                    <div class="template-gt01">
+                        <div class="gt01-title">Giai đoạn 6</div>
+                        <div class="gt01-subtitle">Kê đơn thuốc và phác đồ điều hòa cảm xúc</div>
+                        <div class="gt01-desc">Thảo luận hội đồng chuyên môn để tìm ra phương pháp giúp cơ thể lấy lại trạng thái cân bằng đúng cách.</div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 20 (CB01) -->
+                <div class="slide-frame" id="slide-20">
                     <div class="template-cb01">
-                        <div class="cb01-header">CHUẨN BỊ KÊ ĐƠN ĐIỀU TRỊ</div>
+                        <div class="cb01-header">CHUẨN BỊ KÊ ĐƠN</div>
                         <div class="cb01-split">
                             <div class="cb01-card">
                                 <div class="cb01-card-title">💊 Thẻ Dụng cụ</div>
                                 <ul class="cb01-list">
-                                    <li>Sổ tay kê đơn cảm xúc bằng giấy phát trên bàn học</li>
+                                    <li>Sổ tay kê đơn cảm xúc (bản giấy in sẵn đã phát trên bàn)</li>
                                 </ul>
                             </div>
                             <div class="cb01-card">
                                 <div class="cb01-card-title">👥 Thẻ Hình thức tổ chức</div>
                                 <ul class="cb01-list">
-                                    <li>Kíp trực thực hành phòng phác đồ điều hòa</li>
+                                    <li>Cả lớp cùng tham gia thực hành phòng phác đồ điều trị</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- SLIDE 20 (HD01) -->
-                <div class="slide-frame" id="slide-20">
+                <!-- SLIDE 21 (HD01) -->
+                <div class="slide-frame" id="slide-21">
                     <div class="template-hd01">
                         <div class="hd01-title">QUY TRÌNH THỰC HIỆN KÊ ĐƠN</div>
                         <div class="hd01-steps">
                             <div class="hd01-step">
                                 <div class="hd01-step-num">Bước 1</div>
-                                <div class="hd01-step-text">Theo dõi nhịp thở mô phỏng trên slide</div>
+                                <div class="hd01-step-text">Theo dõi vòng tròn hướng dẫn nhịp thở trên slide</div>
                             </div>
                             <div class="hd01-arrow">➔</div>
                             <div class="hd01-step">
                                 <div class="hd01-step-num">Bước 2</div>
-                                <div class="hd01-step-text">Cả lớp thực hành thở sâu Box Breathing đồng bộ để hạ nhiệt nhân vật giận dữ trên màn hình</div>
+                                <div class="hd01-step-text">Cả lớp thực hành thở sâu giữ bình tĩnh để giúp nhân vật hạ nhiệt cơn giận</div>
                             </div>
                             <div class="hd01-arrow">➔</div>
                             <div class="hd01-step">
                                 <div class="hd01-step-num">Bước 3</div>
-                                <div class="hd01-step-text">Điền câu Thông điệp tôi mẫu chuẩn y khoa vào Sổ tay giấy</div>
+                                <div class="hd01-step-text">Điền phác đồ và câu Thông điệp tôi chuẩn xác vào Sổ tay giấy</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- SLIDE 21 (TH01 - GAME HẠ NHIỆT MÔ PHỎNG MỚI) -->
-                <div class="slide-frame" id="slide-21">
+                <!-- SLIDE 22 (TH01 - GAME HẠ NHIỆT MÔ PHỎNG - TRƯỚC LÀ SLIDE 21) -->
+                <div class="slide-frame" id="slide-22">
                     <div class="template-th01" id="haly-cooling-container" style="transition: background-color 0.5s ease; padding: 25px; border-radius: 12px;">
-                        <div class="th01-title">THỰC HÀNH KỸ THUẬT SƠ CỨU TÂM LÝ</div>
-                        <div class="th01-subtitle">Sắp xếp quy trình Arranger trên slide & thực hành thở sâu Box Breathing</div>
+                        <div class="th01-title">TRÒ CHƠI MÔ PHỎNG: THỰC HÀNH HÍT THỞ SÂU GIỮ BÌNH TĨNH</div>
+                        <div class="th01-subtitle">Sắp xếp quy trình trên slide và thực hành thở sâu giữ bình tĩnh</div>
                         
                         <div class="th01-timer-row">
-                            <span class="timer-display" id="timer-display-21">05:00</span>
+                            <span class="timer-display" id="timer-display-22">05:00</span>
                             <div class="timer-controls">
-                                <button class="btn-timer" onclick="startTimer21(300)">BẮT ĐẦU</button>
-                                <button class="btn-timer" onclick="pauseTimer21()">TẠM DỪNG</button>
-                                <button class="btn-timer" onclick="resetTimer21(300)">LÀM LẠI</button>
+                                <button class="btn-timer" onclick="startTimer22(300)">BẮT ĐẦU</button>
+                                <button class="btn-timer" onclick="pauseTimer22()">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="resetTimer22(300)">LÀM LẠI</button>
                             </div>
                         </div>
 
@@ -1993,18 +2037,18 @@
 
                             <!-- Bên phải: Sơ đồ thở + Game Arranger -->
                             <div style="display: flex; flex-direction: column; gap: 15px;">
-                                <!-- Hướng dẫn thở Box Breathing -->
+                                <!-- Hướng dẫn thở sâu -->
                                 <div style="display: flex; align-items: center; gap: 20px; background: #fffdf5; border: 2px solid var(--primary-dark); border-radius: 10px; padding: 10px 15px; box-shadow: 3px 3px 0px var(--primary-dark);">
                                     <div id="breathing-circle" style="width: 65px; height: 65px; border-radius: 50%; background: var(--primary-light); border: 3px solid var(--primary-dark); display: flex; justify-content: center; align-items: center; font-size: 9px; font-weight: 900; transition: transform 4s linear; text-align: center; line-height: 1.1; padding: 4px;">HÍT VÀO</div>
                                     <div style="flex: 1;">
-                                        <div style="font-size: 14px; font-weight: 800; color: var(--primary-dark);" id="breathing-instruction">Cùng thở Box Breathing theo nhịp co giãn của vòng tròn!</div>
-                                        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Hít vào 4s ➔ Giữ 4s ➔ Thở ra 4s ➔ Giữ 4s để hạ nhiệt nhịp sinh học</div>
+                                        <div style="font-size: 14px; font-weight: 800; color: var(--primary-dark);" id="breathing-instruction">Cùng thở sâu giữ bình tĩnh theo nhịp co giãn của vòng tròn!</div>
+                                        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Hít vào 4 giây ➔ Giữ 4 giây ➔ Thở ra 4 giây ➔ Giữ 4 giây để hạ nhiệt nhịp sinh học</div>
                                     </div>
                                 </div>
 
-                                <!-- Game Arranger -->
+                                <!-- Game Arranger 4 bước -->
                                 <div class="arranger-game-layout">
-                                    <div class="arranger-slots" style="grid-template-columns: repeat(5, 1fr); gap: 6px;">
+                                    <div class="arranger-slots" style="grid-template-columns: repeat(4, 1fr); gap: 6px;">
                                         <div class="arranger-slot" id="aslot-1" ondrop="dropArranger(event, 1)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 1)" style="height: 90px; padding: 4px;">
                                             <span class="arranger-slot-num" style="font-size: 10px;">Bước 1</span>
                                         </div>
@@ -2017,16 +2061,12 @@
                                         <div class="arranger-slot" id="aslot-4" ondrop="dropArranger(event, 4)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 4)" style="height: 90px; padding: 4px;">
                                             <span class="arranger-slot-num" style="font-size: 10px;">Bước 4</span>
                                         </div>
-                                        <div class="arranger-slot" id="aslot-5" ondrop="dropArranger(event, 5)" ondragover="allowDrop(event)" onclick="handleSlotTouch(this, 'arranger', 5)" style="height: 90px; padding: 4px;">
-                                            <span class="arranger-slot-num" style="font-size: 10px;">Bước 5</span>
-                                        </div>
                                     </div>
                                     <div class="arranger-card-pool" id="arranger-pool" style="margin-top: 10px; gap: 8px;">
-                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-2" onclick="selectCardTouch(this)" style="width: 155px; min-height: 60px; font-size: 12px;">Bánh xe gọi tên cảm xúc</div>
-                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-1" onclick="selectCardTouch(this)" style="width: 155px; min-height: 60px; font-size: 12px;">Lắng nghe cơ thể</div>
-                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-3" onclick="selectCardTouch(this)" style="width: 155px; min-height: 60px; font-size: 12px;">Tạm dừng phản ứng (thở sâu)</div>
-                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-5" onclick="selectCardTouch(this)" style="width: 155px; min-height: 60px; font-size: 12px;">Phản tư cuối ngày</div>
-                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-4" onclick="selectCardTouch(this)" style="width: 155px; min-height: 60px; font-size: 12px;">Thiết lập thông điệp tôi</div>
+                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-2" onclick="selectCardTouch(this)" style="width: 175px; min-height: 70px; font-size: 11px;">Viết hoặc nói ra cảm xúc của bản thân (Mẫu câu: Tôi cảm thấy ... vì ... )</div>
+                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-1" onclick="selectCardTouch(this)" style="width: 175px; min-height: 70px; font-size: 11px;">Nhận diện và gọi tên cảm xúc</div>
+                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-3" onclick="selectCardTouch(this)" style="width: 175px; min-height: 70px; font-size: 11px;">Chọn và thực hiện một hoạt động giúp thư giãn (VD: Thở sâu, giữ bình tĩnh ; Nghe nhạc, Vẽ tranh, ...)</div>
+                                        <div class="arranger-drag-card" draggable="true" ondragstart="dragCard(event)" id="acard-4" onclick="selectCardTouch(this)" style="width: 175px; min-height: 70px; font-size: 11px;">Chia sẻ mong muốn của bản thân</div>
                                     </div>
                                     <button class="btn btn-action" style="align-self: flex-end; margin-top: 5px;" onclick="checkArrangerGame()">Kiểm tra phác đồ</button>
                                 </div>
@@ -2035,28 +2075,32 @@
                     </div>
                 </div>
 
-                <!-- SLIDE 22 (ĐA01) -->
-                <div class="slide-frame" id="slide-22">
-                    <div class="template-da01">
-                        <div class="da01-box" style="position: relative; min-height: 420px;">
-                            <div class="da01-title">ĐÁP ÁN: ĐƠN THUỐC VÀ PHÁC ĐỒ ĐIỀU HÒA CHUẨN</div>
-                            <div class="da01-content" style="font-size: 16px; line-height: 1.6; text-align: left;">
-                                <p><strong>Phác đồ 5 bước chuẩn y khoa:</strong> Lắng nghe cơ thể -> Bánh xe gọi tên cảm xúc -> Tạm dừng phản ứng (Thở hạ nhịp tim Box Breathing) -> Thiết lập "Thông điệp tôi" -> Phản tư cuối ngày.</p>
-                                <br>
-                                <p><strong>Câu Thông điệp tôi mẫu chữa trị cho Su:</strong> "Con cảm thấy buồn và tủi thân vì con đã thức đêm học bài nhưng mẹ lại trách con chỉ chơi điện thoại. Con mong mẹ sẽ động viên con."</p>
-                            </div>
-                            <div class="stamp-overlay stamped" id="stamp-pledge-22">
-                                <div class="stamp-graphic green-stamp" style="border-color: var(--secondary); color: var(--secondary);">ĐẠT CHUẨN ĐIỀU HÒA</div>
-                            </div>
+                <!-- SLIDE 23 (ĐA01 - ĐÁP ÁN ĐƠN THUỐC VÀ QUY TRÌNH GIẢI TỎA) -->
+                <div class="slide-frame" id="slide-23" style="background: url('assets/prescription_pad.png') no-repeat center center; background-size: cover; border: 4px solid var(--primary-dark); box-shadow: 10px 10px 0px var(--primary-dark);">
+                    <div class="template-da01" style="background: rgba(255, 255, 255, 0.92); padding: 25px; border-radius: 12px; border: 3px solid var(--primary-dark); max-width: 80%; margin: auto; position: relative; min-height: 420px; box-shadow: 5px 5px 0px var(--primary-dark);">
+                        <div class="da01-title">ĐÁP ÁN: ĐƠN THUỐC VÀ QUY TRÌNH GIẢI TOẢ CHUẨN</div>
+                        <div class="da01-content" style="font-size: 16px; line-height: 1.6; text-align: left;">
+                            <p><strong>Quy trình giải tỏa cảm xúc 4 bước chuẩn bắt buộc ghi nhớ:</strong></p>
+                            <p style="margin-left: 15px; margin-top: 5px; line-height: 1.5;">
+                                1. <strong>Bước 1:</strong> Nhận diện và gọi tên cảm xúc<br>
+                                2. <strong>Bước 2:</strong> Viết hoặc nói ra cảm xúc của bản thân (Mẫu câu: Tôi cảm thấy ... vì ... )<br>
+                                3. <strong>Bước 3:</strong> Chọn và thực hiện một hoạt động giúp thư giãn (VD: Thở sâu, giữ bình tĩnh ; Nghe nhạc, Vẽ tranh, ...)<br>
+                                4. <strong>Bước 4:</strong> Chia sẻ mong muốn của bản thân
+                            </p>
+                            <br>
+                            <p><strong>Đơn thuốc điều trị (Câu nói mẫu cứu chữa cho Su):</strong> "Con cảm thấy buồn và tủi thân vì con đã thức đêm học bài nhưng mẹ lại trách con chỉ chơi điện thoại. Con mong mẹ sẽ động viên con."</p>
+                        </div>
+                        <div class="stamp-overlay stamped" id="stamp-pledge-23">
+                            <div class="stamp-graphic green-stamp" style="border-color: var(--secondary); color: var(--secondary);">ĐẠT CHUẨN ĐIỀU HÒA</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- SLIDE 23 (ĐA01 - BẢNG PHÂN LOẠI T-CHART CŨ LÀ SLIDE 21) -->
-                <div class="slide-frame" id="slide-23">
+                <!-- SLIDE 24 (TH01 - GAME PHÂN LOẠI T-CHART) -->
+                <div class="slide-frame" id="slide-24">
                     <div class="template-th01">
                         <div class="th01-title">TỔNG KẾT: LƯU HỒ SƠ BỆNH ÁN</div>
-                        <div class="th01-subtitle">Trò chơi tương tác click kéo thả 8 thẻ hành vi vào 2 cột trên bảng T-Chart</div>
+                        <div class="th01-subtitle">Trò chơi tương tác click kéo thả 8 thẻ hành vi vào 2 cột trên bảng phân loại</div>
                         
                         <div class="tchart-layout" style="margin-top: 10px;">
                             <div class="tchart-tables">
@@ -2070,38 +2114,41 @@
                                 </div>
                             </div>
                             <div class="tchart-pool" id="tchart-pool">
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-1" onclick="selectCardTouch(this)">Tách mình khỏi không gian xung quanh</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-1" onclick="selectCardTouch(this)">Tách mình khỏi không gian giận dữ</div>
                                 <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-2" onclick="selectCardTouch(this)">Đập phá đồ đạc</div>
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-3" onclick="selectCardTouch(this)">Thực hành thở sâu hạ nhiệt</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-3" onclick="selectCardTouch(this)">Thực hành thở sâu, giữ bình tĩnh</div>
                                 <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-4" onclick="selectCardTouch(this)">Nói lời xúc phạm người khác</div>
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-5" onclick="selectCardTouch(this)">Gọi tên cảm xúc bằng thông điệp tôi</div>
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-6" onclick="selectCardTouch(this)">Tự làm đau bản thân</div>
-                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-7" onclick="selectCardTouch(this)">Viết nhật ký giải tỏa cảm xúc</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-5" onclick="selectCardTouch(this)">Nói câu thông điệp tôi</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-6" onclick="selectCardTouch(this)">Tự làm đau mình</div>
+                                <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-7" onclick="selectCardTouch(this)">Viết nhật ký</div>
                                 <div class="tchart-drag-card" draggable="true" ondragstart="dragCard(event)" id="tc-8" onclick="selectCardTouch(this)">Âm thầm chịu đựng một mình</div>
                             </div>
                         </div>
-                        <button class="btn btn-action" style="align-self: flex-end; margin-top: 5px;" onclick="checkTChartGame()">Kiểm tra bảng phân loại</button>
+                        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 5px;">
+                            <button class="btn btn-nav" onclick="resetGame24()">LÀM LẠI</button>
+                            <button class="btn btn-action" onclick="checkTChartGame()">Kiểm tra bảng phân loại</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- SLIDE 24 (CK01) -->
-                <div class="slide-frame" id="slide-24">
+                <!-- SLIDE 25 (CK01 - BẢN CAM KẾT HÀNH ĐỘNG) -->
+                <div class="slide-frame" id="slide-25" style="background: url('assets/oath_board') no-repeat center center; background-size: cover;">
                     <div class="template-ck01">
                         <div class="ck01-title">BẢN CAM KẾT HÀNH ĐỘNG</div>
                         <div class="ck01-subtitle">Hãy là những Bác sĩ Cảm xúc làm chủ hành vi của bản thân!</div>
-                        <div class="ck01-box parchment">
+                        <div class="ck01-box parchment" style="background: rgba(253, 250, 242, 0.94);">
                             <div class="ck01-terms">
-                                <label class="ck01-term"><input type="checkbox" id="ck24-1"> Tôi cam kết luôn thực hiện bước tạm dừng để vô trùng tâm lý trước khi phản ứng khi có cảm xúc mạnh.</label>
-                                <label class="ck01-term"><input type="checkbox" id="ck24-2"> Tôi cam kết không thực hiện các hành vi gây hại (đập phá, xúc phạm người khác, tự làm đau bản thân).</label>
-                                <label class="ck01-term"><input type="checkbox" id="ck24-3"> Tôi cam kết thực hành phác đồ điều hòa 5 bước để tự thấu cảm và làm chủ hành vi của mình.</label>
+                                <label class="ck01-term"><input type="checkbox" id="ck25-1"> Tôi cam kết luôn thực hiện bước tạm dừng để giữ bình tĩnh trước khi phản ứng khi có cảm xúc mạnh.</label>
+                                <label class="ck01-term"><input type="checkbox" id="ck25-2"> Tôi cam kết không thực hiện các hành vi gây hại (đập phá, xúc phạm người khác, tự làm đau bản thân).</label>
+                                <label class="ck01-term"><input type="checkbox" id="ck25-3"> Tôi cam kết thực hành quy trình giải tỏa 5 bước để tự thấu cảm và rèn luyện thói quen tích cực.</label>
                             </div>
                             <div class="ck01-signature-row">
                                 <div class="ck01-signature-box">
                                     <label>Kíp trực:</label>
-                                    <input type="text" class="ck01-signature-input" id="sig-24" placeholder="Tên nhóm/bác sĩ...">
+                                    <input type="text" class="ck01-signature-input" id="sig-25" placeholder="Tên nhóm/bác sĩ...">
                                 </div>
-                                <button class="btn btn-action" onclick="signPledge(24)">BẤM CAM KẾT</button>
-                                <div class="stamp-overlay" id="stamp-pledge-24">
+                                <button class="btn btn-action" onclick="signPledge(25)">BẤM CAM KẾT</button>
+                                <div class="stamp-overlay" id="stamp-pledge-25">
                                     <div class="stamp-graphic gold-stamp">ĐÃ CAM KẾT</div>
                                 </div>
                             </div>
@@ -2109,27 +2156,25 @@
                     </div>
                 </div>
 
-                <!-- SLIDE 25 (VD01) -->
-                <div class="slide-frame" id="slide-25">
-                    <div class="template-vd01">
-                        <div class="certificate-box">
-                            <div class="cert-header">CHỨNG NHẬN HOÀN THÀNH NHIỆM VỤ</div>
-                            <div class="cert-title">CHUYÊN GIA ĐIỀU HÒA CẢM XÚC</div>
-                            <div class="cert-awarded-to">Vinh danh kíp trực cấp cứu xuất sắc vì sự thấu cảm và nỗ lực làm chủ hành vi cảm xúc!</div>
-                            <div class="cert-name-display" id="cert-name-display">KÍP TRỰC CẤP CỨU</div>
-                            <div class="cert-body">
-                                Đã hoàn thành xuất sắc khóa khám bệnh lâm sàng, chẩn đoán thành công cơ chế não bộ tuổi dậy thì và làm chủ kỹ thuật sơ cứu phác đồ 5 bước.
-                            </div>
-                            <div class="cert-input-row">
-                                <input type="text" class="cert-input" id="cert-input-name" placeholder="Nhập tên kíp trực/Lớp của bạn..." oninput="syncCertName(this.value)">
-                                <button class="btn btn-action" onclick="celebrateAchievement()">HOÀN THÀNH</button>
-                            </div>
+                <!-- SLIDE 26 (VD01 - CHỨNG NHẬN KÍP TRỰC XUẤT SẮC) -->
+                <div class="slide-frame" id="slide-26" style="background: url('assets/cert.png') no-repeat center center; background-size: cover; border: 4px double #d4af37; box-shadow: 10px 10px 0px var(--primary-dark);">
+                    <div class="template-vd01" style="background: rgba(255, 255, 255, 0.9); padding: 25px; border-radius: 12px; border: 3px solid var(--primary-dark); box-shadow: 5px 5px 0px var(--primary-dark); max-width: 80%; margin: auto;">
+                        <div class="cert-header" style="font-size: 22px;">CHỨNG NHẬN HOÀN THÀNH NHIỆM VỤ</div>
+                        <div class="cert-title" style="font-size: 32px; margin-bottom: 10px;">CHUYÊN GIA ĐIỀU HÒA CẢM XÚC</div>
+                        <div class="cert-awarded-to" style="font-size: 18px; margin-bottom: 5px;">Vinh danh kíp trực cấp cứu xuất sắc vì sự thấu cảm và nỗ lực làm chủ hành vi cảm xúc!</div>
+                        <div class="cert-name-display" id="cert-name-display" style="font-size: 30px; margin-bottom: 10px;">KÍP TRỰC CẤP CỨU</div>
+                        <div class="cert-body" style="font-size: 16px; margin-bottom: 15px; line-height: 1.5;">
+                            Đã hoàn thành xuất sắc khóa khám bệnh lâm sàng, chẩn đoán thành công cơ chế não bộ tuổi dậy thì và làm chủ kỹ thuật sơ cứu phác đồ 5 bước.
+                        </div>
+                        <div class="cert-input-row">
+                            <input type="text" class="cert-input" id="cert-input-name" placeholder="Nhập tên kíp trực/Lớp của bạn..." oninput="syncCertName(this.value)" style="font-size: 16px; padding: 6px 10px;">
+                            <button class="btn btn-action" onclick="celebrateAchievement()" style="padding: 8px 16px; font-size: 14px;">HOÀN THÀNH</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- SLIDE 26 (VD01) -->
-                <div class="slide-frame" id="slide-26">
+                <!-- SLIDE 27 (VD01 - LỄ VINH DANH BÁC SĨ CHÍNH THỨC) -->
+                <div class="slide-frame" id="slide-27">
                     <div class="template-vd01">
                         <div class="certificate-box" style="border-color: var(--secondary); background: #f6fffb;">
                             <div class="cert-header" style="color: var(--secondary);">LỄ VINH DANH BÁC SĨ CHÍNH THỨC</div>
@@ -2138,7 +2183,7 @@
                             <div class="cert-body" style="font-size: 19px; line-height: 1.7; text-align: left; max-width: 600px; margin: 15px auto;">
                                 <p style="font-weight: bold;">Nhiệm vụ về nhà: Thực hành viết nhật ký phản tư cảm xúc mỗi tối để duy trì thói quen khỏe mạnh.</p>
                             </div>
-                            <div class="stamp-overlay stamped" id="stamp-pledge-26">
+                            <div class="stamp-overlay stamped" id="stamp-pledge-27">
                                 <div class="stamp-graphic green-stamp" style="border-color: var(--secondary); color: var(--secondary); transform: rotate(-10deg) scale(1);">BÁC SĨ CHÍNH THỨC</div>
                             </div>
                         </div>
@@ -2198,36 +2243,38 @@
 
     <!-- TRÌNH ĐIỀU KHIỂN LOGIC SỐ HÓA VÀ ÂM THANH NHÂN TẠO -->
     <script>
-        // DANH SÁCH SLIDES (28 frames chi tiết)
+        // DANH SÁCH SLIDES (27 slide chính cùng các slide phụ)
         const slidesConfig = [
             { id: 1, type: "MĐ01", title: "Slide Bìa bài học", stage: "KHỞI ĐỘNG" },
             { id: 2, type: "MT01", title: "Mục tiêu bài học", stage: "MỤC TIÊU" },
-            { id: 3, type: "QS01", title: "Câu hỏi lớn", stage: "MỤC TIÊU" },
-            { id: 4, type: "PV01", title: "Phân vai bác sĩ tập sự", stage: "MỤC TIÊU" },
-            { id: 5, type: "BĐ01", title: "Cảnh báo khẩn cấp", stage: "MỞ KHÓA CA BỆNH" },
+            { id: 3, type: "QS01", title: "Câu hỏi lớn của bài", stage: "MỤC TIÊU" },
+            { id: 4, type: "PV01", title: "Phân vai học sinh", stage: "MỤC TIÊU" },
+            { id: 5, type: "BĐ01", title: "Tiếp nhận ca bệnh khẩn cấp", stage: "MỞ KHÓA CA BỆNH" },
             { id: 6, type: "CB01", title: "Chuẩn bị thăm khám", stage: "MỞ KHÓA CA BỆNH" },
-            { id: 7, type: "HD01", title: "Quy trình khám bệnh", stage: "MỞ KHÓA CA BỆNH" },
-            { id: 8, type: "TH01", title: "Phản ứng nhanh ban đầu", stage: "MỞ KHÓA CA BỆNH" },
+            { id: 7, type: "HD01", title: "Quy trình thực hiện", stage: "MỞ KHÓA CA BỆNH" },
+            { id: 8, type: "TH01", title: "Thử thách chọn phản ứng ban đầu", stage: "MỞ KHÓA CA BỆNH" },
             { id: "8B", type: "ĐA01", title: "Biến chứng nhiễm độc hành vi", stage: "MỞ KHÓA CA BỆNH" },
-            { id: "8C", type: "TK01", title: "Nguyên tắc vô trùng tâm lý", stage: "MỞ KHÓA CA BỆNH" },
-            { id: 9, type: "GT01", title: "Bốc thăm ca bệnh", stage: "KHÁM BỆNH" },
-            { id: 10, type: "NV01", title: "Nhiệm vụ hồ sơ bệnh án", stage: "KHÁM BỆNH" },
-            { id: 11, type: "CB01", title: "Chuẩn bị khám bệnh", stage: "KHÁM BỆNH" },
-            { id: 12, type: "HD01", title: "Quy trình khám bệnh", stage: "KHÁM BỆNH" },
-            { id: 14, type: "TH01", title: "Hội chẩn lâm sàng", stage: "KHÁM BỆNH" },
-            { id: "14B", type: "TK01", title: "Tổng kết triệu chứng sinh lý", stage: "KHÁM BỆNH" },
-            { id: 15, type: "CB01", title: "Chuẩn bị chẩn đoán cơ chế", stage: "CHẨN ĐOÁN & HỘI CHẨN" },
-            { id: 16, type: "TB01", title: "Phiên hội chẩn y khoa", stage: "CHẨN ĐOÁN & HỘI CHẨN" },
-            { id: 17, type: "ĐA01", title: "Kết quả hội chẩn", stage: "CHẨN ĐOÁN & HỘI CHẨN" },
-            { id: 18, type: "GT01", title: "Giới thiệu phác đồ kê đơn", stage: "KÊ ĐƠN & CHĂM SÓC" },
-            { id: 19, type: "CB01", title: "Chuẩn bị phác đồ kê đơn", stage: "KÊ ĐƠN & CHĂM SÓC" },
-            { id: 20, type: "HD01", title: "Hướng dẫn phác đồ 5 bước", stage: "KÊ ĐƠN & CHĂM SÓC" },
-            { id: 21, type: "TH01", title: "Mô phỏng hạ nhiệt cảm xúc", stage: "KÊ ĐƠN & CHĂM SÓC" },
-            { id: 22, type: "ĐA01", title: "Đơn thuốc chuẩn y khoa", stage: "KÊ ĐƠN & CHĂM SÓC" },
-            { id: 23, type: "ĐA01", title: "Game phân loại T-Chart", stage: "NHẬT KÝ BÁC SĨ" },
-            { id: 24, type: "CK01", title: "Cam kết y đức bác sĩ", stage: "NHẬT KÝ BÁC SĨ" },
-            { id: 25, type: "VD01", title: "Chứng nhận vinh danh", stage: "THÓI QUEN KHỎE MẠNH" },
-            { id: 26, type: "VD01", title: "Vinh danh thăng chức bác sĩ", stage: "THÓI QUEN KHỎE MẠNH" }
+            { id: "8C", type: "TK01", title: "Nguyên tắc bình tĩnh lại", stage: "MỞ KHÓA CA BỆNH" },
+            { id: 9, type: "GT01", title: "Giới thiệu giai đoạn 2", stage: "KHÁM BỆNH" },
+            { id: 10, type: "NV01", title: "Hồ sơ 3 bệnh nhân mới", stage: "KHÁM BỆNH" },
+            { id: 11, type: "GT01", title: "Giới thiệu giai đoạn 3", stage: "KHÁM BỆNH" },
+            { id: 12, type: "CB01", title: "Chuẩn bị khám bệnh", stage: "KHÁM BỆNH" },
+            { id: 13, type: "HD01", title: "Quy trình thực hiện khám bệnh", stage: "KHÁM BỆNH" },
+            { id: 14, type: "TH01", title: "Trò chơi hội chẩn lâm sàng", stage: "KHÁM BỆNH" },
+            { id: "14B", type: "TK01", title: "Ý nghĩa của triệu chứng sinh lý", stage: "KHÁM BỆNH" },
+            { id: 15, type: "CB01", title: "Chuẩn bị báo cáo chẩn đoán", stage: "CHẨN ĐOÁN & HỘI CHẨN" },
+            { id: 16, type: "TB01", title: "Phiên hội chẩn toàn lớp", stage: "CHẨN ĐOÁN & HỘI CHẨN" },
+            { id: 17, type: "ĐA01", title: "Kết quả chẩn đoán cơ chế", stage: "CHẨN ĐOÁN & HỘI CHẨN" },
+            { id: 18, type: "TK01", title: "Giải mã y khoa: Triệu chứng sinh lý", stage: "CHẨN ĐOÁN & HỘI CHẨN" },
+            { id: 19, type: "GT01", title: "Giới thiệu giai đoạn 6", stage: "KÊ ĐƠN & CHĂM SÓC" },
+            { id: 20, type: "CB01", title: "Chuẩn bị kê đơn", stage: "KÊ ĐƠN & CHĂM SÓC" },
+            { id: 21, type: "HD01", title: "Quy trình thực hiện kê đơn", stage: "KÊ ĐƠN & CHĂM SÓC" },
+            { id: 22, type: "TH01", title: "Thực hành hít thở sâu giữ bình tĩnh", stage: "KÊ ĐƠN & CHĂM SÓC" },
+            { id: 23, type: "ĐA01", title: "Đơn thuốc và quy trình giải tỏa chuẩn", stage: "KÊ ĐƠN & CHĂM SÓC" },
+            { id: 24, type: "TH01", title: "Trò chơi lưu hồ sơ bệnh án", stage: "NHẬT KÝ BÁC SĨ" },
+            { id: 25, type: "CK01", title: "Bản cam kết y đức hành động", stage: "NHẬT KÝ BÁC SĨ" },
+            { id: 26, type: "VD01", title: "Chứng nhận kíp trực xuất sắc", stage: "THÓI QUEN KHỎE MẠNH" },
+            { id: 27, type: "VD01", title: "Lễ vinh danh bác sĩ chính thức", stage: "THÓI QUEN KHỎE MẠNH" }
         ];
 
         let currentSlideIndex = 0;
@@ -2335,8 +2382,8 @@
         function updateSlideUI() {
             for (let id in timers) {
                 if (timers[id]) {
-                    if (id == 21) {
-                        pauseTimer21();
+                    if (id == 22) {
+                        pauseTimer22();
                     } else {
                         pauseTimer(id);
                     }
@@ -2371,7 +2418,7 @@
                 const sId = currentSlide.id;
                 const isPractitioner = (sId >= 2 && sId <= 8) || sId === "8B";
                 const isUpgrade = sId === "8C";
-                const isOfficial = (sId >= 9 && sId <= 26) || sId === "14B" || sId === "22" || sId === "23" || sId === "24";
+                const isOfficial = (sId >= 9 && sId <= 27) || sId === "14B" || sId === "23" || sId === "24" || sId === "25";
 
                 if (currentSlideIndex === 0) {
                     roleBadge.style.display = "none";
@@ -2414,8 +2461,15 @@
                 typeWriterEffect();
             }
 
-            // Slide 26 LỄ VINH DANH TỰ ĐỘNG CHẠY CONFETTI & NHẠC KỊCH
-            if (currentSlide.id === 26) {
+            // Slide 17, 23, 25, 27 tự động phát hiệu ứng đóng dấu cộp kịch tính
+            if (currentSlide.id === 17 || currentSlide.id === 23 || currentSlide.id === 27) {
+                setTimeout(() => {
+                    playStamp();
+                }, 400);
+            }
+
+            // Slide 27 LỄ VINH DANH TỰ ĐỘNG CHẠY CONFETTI & NHẠC KỊCH
+            if (currentSlide.id === 27) {
                 setTimeout(() => {
                     startConfetti();
                     playApplause();
@@ -2430,8 +2484,9 @@
         function manageAnswerButton() {
             const currentSlide = slidesConfig[currentSlideIndex];
             const btnAns = document.getElementById("btn-answer-trigger");
+            const activeFrame = document.getElementById(`slide-${currentSlide.id}`);
             
-            const triggerSlides = [8, 14, 21, 23];
+            const triggerSlides = [8, 14, 22, 24];
             if (triggerSlides.includes(currentSlide.id)) {
                 btnAns.style.display = "flex";
                 let nextIndicator = activeFrameIndicatorText(currentSlide.id);
@@ -2445,13 +2500,14 @@
         function activeFrameIndicatorText(slideId) {
             switch(slideId) {
                 case 8: return "CHUẨN BỊ HIỆN: BIẾN CHỨNG HÀNH VI";
-                case 14: return "CHUẨN BỊ HIỆN: ĐÁP ÁN TRIỆU CHỨNG LÂM SÀNG";
-                case 21: return "CHUẨN BỊ HIỆN: ĐƠN THUỐC CHUẨN";
-                case 23: return "CHUẨN BỊ HIỆN: BẢN CAM KẾT HÀNH ĐỘNG";
+                case 14: return "CHUẨN BỊ HIỆN: Ý NGHĨA TRIỆU CHỨNG SINH LÝ";
+                case 22: return "CHUẨN BỊ HIỆN: ĐƠN THUỐC VÀ QUY TRÌNH CHUẨN";
+                case 24: return "CHUẨN BỊ HIỆN: BẢN CAM KẾT HÀNH ĐỘNG";
                 default: return "";
             }
         }
 
+        // Tự động thêm chỉ dẫn đỏ phía trên cho giáo viên dễ quan sát
         function showTeacherIndicator(text) {
             const currentSlide = slidesConfig[currentSlideIndex];
             const activeFrame = document.getElementById(`slide-${currentSlide.id}`);
@@ -2479,15 +2535,8 @@
             const currentSlide = slidesConfig[currentSlideIndex];
             if (currentSlide.id === 8) goToSlide("8B");
             else if (currentSlide.id === 14) goToSlide("14B");
-            else if (currentSlide.id === 21) goToSlide(22);
-            else if (currentSlide.id === 23) goToSlide(24);
-        }
-
-        function nextSlide() {
-            if (currentSlideIndex < slidesConfig.length - 1) {
-                currentSlideIndex++;
-                updateSlideUI();
-            }
+            else if (currentSlide.id === 22) goToSlide(23);
+            else if (currentSlide.id === 24) goToSlide(25);
         }
 
         function prevSlide() {
@@ -2497,10 +2546,17 @@
             }
         }
 
-        function goToSlide(id) {
-            const targetIndex = slidesConfig.findIndex(s => s.id == id);
-            if (targetIndex !== -1) {
-                currentSlideIndex = targetIndex;
+        function nextSlide() {
+            if (currentSlideIndex < slidesConfig.length - 1) {
+                currentSlideIndex++;
+                updateSlideUI();
+            }
+        }
+
+        function goToSlide(slideId) {
+            const idx = slidesConfig.findIndex(slide => slide.id == slideId);
+            if (idx !== -1) {
+                currentSlideIndex = idx;
                 updateSlideUI();
             }
         }
@@ -2549,7 +2605,7 @@
             display.innerText = `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
         }
 
-        // 5. GAME 1: TRẮC NGHIỆM PHẢN ỨNG NHANH CỦA SLIDE 8
+        // 5. GAME 1 (SLIDE 8): TRẮC NGHIỆM PHẢN ỨNG NHANH & RESET
         function triggerNhiemDoc(optionLetter) {
             playSiren();
             const frame = document.getElementById("slide-8");
@@ -2557,9 +2613,9 @@
             document.getElementById("presentation-area").classList.add("flash-red");
             
             let headline = "";
-            if (optionLetter === 'A') headline = "Bạn đã chọn: Cãi lại mẹ và đóng cửa rầm!";
+            if (optionLetter === 'A') headline = "Bạn đã chọn: Cãi lại mẹ đến cùng và đóng sầm cửa!";
             else if (optionLetter === 'B') headline = "Bạn đã chọn: Đập phá một món đồ trên bàn!";
-            else if (optionLetter === 'C') headline = "Bạn đã chọn: Im lặng bỏ đi và nhịn ăn sáng!";
+            else if (optionLetter === 'C') headline = "Bạn đã chọn: Im lặng bỏ đi, nhịn ăn sáng để biểu tình!";
             
             document.getElementById("danger-modal-headline").innerText = headline;
             document.getElementById("danger-modal").style.display = "flex";
@@ -2568,6 +2624,14 @@
                 frame.classList.remove("shake");
                 document.getElementById("presentation-area").classList.remove("flash-red");
             }, 800);
+        }
+
+        function resetGame8() {
+            resetTimer(8, 180);
+            closeDangerModal();
+            document.getElementById("presentation-area").classList.remove("flash-red");
+            document.getElementById("slide-8").classList.remove("shake");
+            alert("Đã khởi động lại thử thách phản ứng nhanh!");
         }
 
         function closeDangerModal() {
@@ -2626,7 +2690,7 @@
             document.getElementById("patient-modal").style.display = "none";
         }
 
-        // 7. GAME 3: KÉO THẢ HỘI CHẨN LÂM SÀNG CỦA SLIDE 14
+        // 7. GAME 3 (SLIDE 14): KÉO THẢ HỘI CHẨN LÂM SÀNG & RESET
         let patientDiagData = {
             "minh_anh": { c: null, t: null },
             "kem": { c: null, t: null },
@@ -2659,11 +2723,12 @@
                 slotElement.innerHTML = "";
                 slotElement.appendChild(card);
                 
-                const parts = slotParam.split('-'); // ma-c, ma-t, kem-c, kem-t, vy-c, vy-t
+                const parts = slotParam.split('-');
                 const pKey = parts[0] === 'ma' ? 'minh_anh' : (parts[0] === 'kem' ? 'kem' : 'bao_vy');
                 const field = parts[1];
                 patientDiagData[pKey][field] = selectedCardId;
             } else if (gameType === 'arranger') {
+                slotElement.innerHTML = "";
                 slotElement.appendChild(card);
                 arrangerData[slotParam] = selectedCardId;
             } else if (gameType === 'tchart') {
@@ -2689,6 +2754,14 @@
             playStamp();
         }
 
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function dragCard(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
         function checkPatientDiagGame() {
             const correctAns = {
                 "minh_anh": { c: "lbl-c-sad", t: "lbl-t-sad" },
@@ -2705,12 +2778,37 @@
 
             if (correct) {
                 playApplause();
-                alert("Chúc mừng! Kíp trực đã chẩn đoán chính xác triệu chứng và cảm xúc của 3 bệnh nhân.");
+                alert("Khám bệnh chính xác! Các kíp trực đã nhận diện đầy đủ triệu chứng sinh lý của 4 ca bệnh.");
                 goToSlide("14B");
             } else {
                 playSiren();
                 alert("Chẩn đoán chưa đúng! Vui lòng đối chiếu Bánh xe cảm xúc và rà soát kỹ lại hồ sơ.");
             }
+        }
+
+        function resetGame14() {
+            resetTimer(14, 360);
+            const pool = document.getElementById("diag-pool");
+            const labels = ["lbl-c-sad", "lbl-c-anxious", "lbl-c-shy", "lbl-t-sad", "lbl-t-anxious", "lbl-t-shy"];
+            labels.forEach(id => {
+                const card = document.getElementById(id);
+                if (card) {
+                    pool.appendChild(card);
+                    card.classList.remove("selected-drag-card");
+                }
+            });
+            patientDiagData = {
+                "minh_anh": { c: null, t: null },
+                "kem": { c: null, t: null },
+                "bao_vy": { c: null, t: null }
+            };
+            document.getElementById("pslot-ma-c").innerHTML = "Thả nhãn cảm xúc";
+            document.getElementById("pslot-ma-t").innerHTML = "Thả nhãn triệu chứng";
+            document.getElementById("pslot-kem-c").innerHTML = "Thả nhãn cảm xúc";
+            document.getElementById("pslot-kem-t").innerHTML = "Thả nhãn triệu chứng";
+            document.getElementById("pslot-vy-c").innerHTML = "Thả nhãn cảm xúc";
+            document.getElementById("pslot-vy-t").innerHTML = "Thả nhãn triệu chứng";
+            alert("Đã làm sạch phiếu chẩn đoán lâm sàng!");
         }
 
         // 8. ĐÓNG DẤU CAM KẾT (STAMP ANIMATION)
@@ -2738,7 +2836,7 @@
             }, 500);
         }
 
-        // 9. GAME 4 (SLIDE 21): SẮP XẾP PHÁC ĐỒ & THỞ BOX BREATHING MÔ PHỎNG HẠ NHIỆT CẢM XÚC
+        // 9. GAME 4 (SLIDE 22): SẮP XẾP PHÁC ĐỒ & THỞ MÔ PHỎNG & RESET
         let arrangerData = {};
         let breathingTimer = null;
         let breathingPhase = 0; // 0: hít, 1: giữ, 2: thở, 3: giữ
@@ -2760,7 +2858,7 @@
 
         function checkArrangerGame() {
             let correct = true;
-            for(let i=1; i<=5; i++) {
+            for(let i=1; i<=4; i++) {
                 if (arrangerData[i] !== `acard-${i}`) {
                     correct = false;
                 }
@@ -2768,37 +2866,37 @@
 
             if (correct && angerLevel <= 0) {
                 playApplause();
-                for(let i=1; i<=5; i++) {
+                for(let i=1; i<=4; i++) {
                     document.getElementById(`aslot-${i}`).style.borderColor = "var(--secondary)";
                     document.getElementById(`aslot-${i}`).style.background = "rgba(16, 185, 129, 0.1)";
                 }
                 alert("Chúc mừng! Bạn đã sắp xếp đúng phác đồ điều hòa và thực hành thở hạ nhiệt thành công ca bệnh!");
-                goToSlide(22);
+                goToSlide(23);
             } else if (!correct) {
                 playSiren();
                 alert("Thao tác sắp xếp phác đồ chưa đúng quy chuẩn y khoa! Vui lòng hội chẩn lại.");
             } else if (angerLevel > 0) {
-                alert("Bệnh nhân Su vẫn còn đang giận dữ! Hãy duy trì nhịp thở Box Breathing để thanh năng lượng tụt về 0%.");
+                alert("Bệnh nhân Su vẫn còn đang giận dữ! Hãy duy trì nhịp thở sâu giữ bình tĩnh để thanh năng lượng tụt về 0%.");
             }
         }
 
-        function startTimer21(seconds) {
-            if (timers[21]) return;
-            startTimer(21, seconds);
+        function startTimer22(seconds) {
+            if (timers[22]) return;
+            startTimer(22, seconds);
 
             const circle = document.getElementById("breathing-circle");
             const instruction = document.getElementById("breathing-instruction");
 
             function runBreathingCycle() {
                 if (breathingPhase === 0) {
-                    circle.style.transform = "scale(1.5)";
+                    circle.style.transform = "scale(1.4)";
                     circle.innerText = "HÍT VÀO\n(4s)";
                     circle.style.background = "#ffba08";
                     instruction.innerText = "Hít sâu bằng mũi, căng lồng ngực...";
                     playBreatheTone(440, 550, 4);
                     breathingPhase = 1;
                 } else if (breathingPhase === 1) {
-                    circle.style.transform = "scale(1.5)";
+                    circle.style.transform = "scale(1.4)";
                     circle.innerText = "GIỮ HƠI\n(4s)";
                     circle.style.background = "#dc2f02";
                     instruction.innerText = "Nín thở, giữ cơ thể bình tĩnh...";
@@ -2833,7 +2931,7 @@
 
             angerInterval = setInterval(() => {
                 if (angerLevel > 0) {
-                    angerLevel -= 2; // Giảm 2% mỗi giây
+                    angerLevel -= 2;
                     if (angerLevel < 0) angerLevel = 0;
                     angerBar.style.width = `${angerLevel}%`;
                     angerPercent.innerText = `${angerLevel}%`;
@@ -2842,9 +2940,8 @@
                     avatarHot.style.opacity = 1 - opacityCalm;
                     avatarCalm.style.opacity = opacityCalm;
 
-                    // Chuyển nền dần từ đỏ sang xanh mint
                     const r = Math.floor(255 - (15 * opacityCalm));
-                    const g = Math.floor(248 - (248 * 0.05 * opacityCalm)); // Về xanh mint nhạt
+                    const g = Math.floor(248 - (248 * 0.05 * opacityCalm));
                     const b = Math.floor(248 - (248 * 0.03 * opacityCalm));
                     container.style.backgroundColor = `rgba(${r}, ${g + 20}, ${b + 10}, 0.96)`;
                 } else {
@@ -2871,8 +2968,8 @@
             } catch(e) {}
         }
 
-        function pauseTimer21() {
-            pauseTimer(21);
+        function pauseTimer22() {
+            pauseTimer(22);
             if (breathingTimer) {
                 clearInterval(breathingTimer);
                 breathingTimer = null;
@@ -2883,9 +2980,10 @@
             }
         }
 
-        function resetTimer21(seconds) {
-            pauseTimer21();
-            resetTimer(21, seconds);
+        // Tự động reset game 22
+        function resetTimer22(seconds) {
+            pauseTimer22();
+            resetTimer(22, seconds);
             angerLevel = 100;
             document.getElementById("anger-bar").style.width = "100%";
             document.getElementById("anger-percent").innerText = "100%";
@@ -2895,10 +2993,23 @@
             document.getElementById("breathing-circle").style.transform = "scale(1.0)";
             document.getElementById("breathing-circle").innerText = "HÍT VÀO";
             document.getElementById("breathing-circle").style.background = "var(--primary-light)";
-            document.getElementById("breathing-instruction").innerText = "Cùng thở Box Breathing theo nhịp co giãn của vòng tròn!";
+            document.getElementById("breathing-instruction").innerText = "Cùng thở sâu giữ bình tĩnh theo nhịp co giãn của vòng tròn!";
+            
+            const pool = document.getElementById("arranger-pool");
+            for (let i = 1; i <= 4; i++) {
+                const card = document.getElementById(`acard-${i}`);
+                if (card) {
+                    pool.appendChild(card);
+                    card.classList.remove("selected-drag-card");
+                }
+                const slot = document.getElementById(`aslot-${i}`);
+                slot.innerHTML = `<span class="arranger-slot-num">Bước ${i}</span>`;
+            }
+            arrangerData = {};
+            alert("Đã đặt lại game hạ nhiệt cảm xúc!");
         }
 
-        // 10. GAME 5: PHÂN LOẠI T-CHART NÊN / KHÔNG NÊN
+        // 10. GAME 5 (SLIDE 24): PHÂN LOẠI T-CHART NÊN / KHÔNG NÊN & RESET (TRƯỚC LÀ SLIDE 23)
         let tchartData = {};
         function dropTChart(ev, column) {
             ev.preventDefault();
@@ -2932,11 +3043,24 @@
             if (correct) {
                 playApplause();
                 alert("Tuyệt vời! Bảng phân loại hành vi ứng xử cảm xúc hoàn toàn chính xác.");
-                goToSlide(24);
+                goToSlide(25);
             } else {
                 playSiren();
                 alert("Có sai sót trong bảng phân loại hành vi! Vui lòng hội ý lại.");
             }
+        }
+
+        function resetGame24() {
+            const pool = document.getElementById("tchart-pool");
+            for (let i = 1; i <= 8; i++) {
+                const card = document.getElementById(`tc-${i}`);
+                if (card) {
+                    pool.appendChild(card);
+                    card.classList.remove("selected-drag-card");
+                }
+            }
+            tchartData = {};
+            alert("Đã dọn sạch bảng phân loại. Kíp trực có thể kéo xếp lại từ đầu!");
         }
 
         // 11. LỄ VINH DANH CHỨNG NHẬN & PHÁO HOA
@@ -3136,7 +3260,7 @@
         function preventCompoundWordWrapping() {
             const medicalTerms = [
                 "hạch hạnh nhân", "vỏ não trước trán", "bánh xe cảm xúc", "thông điệp tôi",
-                "quá trình myelin hóa", "bão cảm xúc", "nhiễm độc hành vi", "vô trùng tâm lý",
+                "quá trình myelin hóa", "bão cảm xúc", "nhiễm độc hành vi", "bình tĩnh lại",
                 "Bác sĩ Cảm xúc", "bác sĩ cảm xúc", "cơ chế não bộ", "triệu chứng sinh lý",
                 "biểu hiện cơ thể", "kíp trực cấp cứu", "Bệnh viện Cảm xúc", "sơ cứu cảm xúc"
             ];
