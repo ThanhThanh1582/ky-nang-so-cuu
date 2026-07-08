@@ -69,6 +69,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
 ##### d. Tổ chức thực hiện
 
 * Giai đoạn 1: Mở khóa ca bệnh
+- Mục tiêu:
+  - Giúp học sinh nhận diện khái niệm "bão cảm xúc" và phát hiện ra nguyên lý sơ cứu cảm xúc đầu tiên là "Tạm dừng".
 - Giao nhiệm vụ:
 + Giáo viên:
   - Trình chiếu Slide 5-8C, kích hoạt hiệu ứng còi cứu thương khẩn cấp và màn hình nhấp nháy đỏ báo động bão cảm xúc.
@@ -113,6 +115,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
 ##### d. Tổ chức thực hiện
 
 * Giai đoạn 2: Nhận hồ sơ bệnh án
+- Mục tiêu:
+  - Giúp học sinh bốc thăm ngẫu nhiên hồ sơ bệnh án và chuẩn bị kíp trực để phân tích ca bệnh.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Phát hồ sơ bệnh án giấy in sẵn cho 4 nhóm kíp trực (Su, Minh Anh, Kem, Bảo Vy).
@@ -132,6 +136,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
   - Các kíp trực phân công các vai trò đọc hồ sơ bệnh án giấy trong nhóm.
 
 * Giai đoạn 3: Khám bệnh (Đọc triệu chứng vật lý)
+- Mục tiêu:
+  - Giúp học sinh nhận diện và phân tích chính xác các biểu hiện cơ thể khi có cảm xúc mạnh.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Yêu cầu học sinh đọc kỹ hồ sơ bệnh án giấy, dùng bút dạ quang gạch chân triệu chứng sinh lý cơ thể của nhân vật.
@@ -162,6 +168,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
   - Ghi nhận triệu chứng sinh lý của ca bệnh vào phiếu.
 
 * Giai đoạn 4: Chẩn đoán (Cơ chế sinh lý não bộ)
+- Mục tiêu:
+  - Giúp học sinh giải thích được cơ chế cabin não bộ mất cân bằng sinh lý ở tuổi dậy thì.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Bật Slide 15-19, kích hoạt đồng hồ đếm ngược 06:00.
@@ -186,6 +194,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
   - Đối chiếu cơ chế chẩn đoán chuẩn trên màn hình thiết bị.
 
 * Giai đoạn 5: Hội chẩn
+- Mục tiêu:
+  - Giúp học sinh củng cố kỹ năng trình bày khoa học và cam kết thực thi y đức.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Yêu cầu các nhóm cử đại diện thuyết trình chẩn đoán lâm sàng của bệnh nhân.
@@ -210,6 +220,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
   - Ghi nhận kiến thức cơ chế não bộ vào vở ghi.
 
 * Giai đoạn 6: Kê đơn & Chăm sóc (Phác đồ 5 bước)
+- Mục tiêu:
+  - Giúp học sinh thực hành thành thạo phác đồ 5 bước và thực hiện đúng kỹ thuật thở sâu.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Bật Slide 25-29B, yêu cầu học sinh tham gia trò chơi sắp xếp phác đồ điều hòa cảm xúc 5 bước.
@@ -260,6 +272,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
 ##### d. Tổ chức thực hiện
 
 * Giai đoạn 7: Nhật ký bác sĩ (Phân loại hành vi trên bảng phân loại)
+- Mục tiêu:
+  - Giúp học sinh tự phân loại các hành động an toàn/rủi ro để áp dụng giải pháp sơ cứu thích hợp.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Trình chiếu Slide 30-34, yêu cầu học sinh thảo luận phân loại các hành vi ứng phó khi gặp cảm xúc mạnh thành hai nhóm: "Nên làm" và "Không nên làm" trên bảng phân loại.
@@ -297,6 +311,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
 ##### d. Tổ chức thực hiện
 
 * Giai đoạn 8: Thói quen khỏe mạnh
+- Mục tiêu:
+  - Giúp học sinh củng cố thói quen tự phản tư và đánh giá cảm xúc bản thân hàng ngày.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Trình chiếu Slide 35, giao nhiệm vụ viết nhật ký phản tư cảm xúc mỗi tối ở nhà.

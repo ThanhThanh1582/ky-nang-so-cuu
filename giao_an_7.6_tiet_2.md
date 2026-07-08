@@ -71,12 +71,14 @@ Thời gian thực hiện: 1 tiết (45 phút)
 ##### d. Tổ chức thực hiện
 
 * Giai đoạn 1: Khởi động & Ôn tập
+- Mục tiêu:
+  - Giúp học sinh ôn tập kiến thức và chuẩn bị dụng cụ chế tạo Vòng quay giải tỏa cảm xúc.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Bật slide bìa Tiết 2, giới thiệu bối cảnh chiến dịch y tế học đường.
   - Yêu cầu các nhóm trưởng kiểm tra dụng cụ và ôn lại nguyên tắc "Tạm dừng" đã học ở Tiết 1.
 + Học sinh:
-  - Lắng nghe, nhận nhiệm vụ và chuẩn bị dụng cụ học tập của nhóm.
+  - Lắng nghe, nhận nhiệm vụ và kiểm tra dụng cụ học tập của nhóm.
 - Thực hiện:
 + Giáo viên:
   - Quan sát quá trình kiểm tra dụng cụ của học sinh.
@@ -111,6 +113,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
 ##### d. Tổ chức thực hiện
 
 * Giai đoạn 2: Bắt bệnh học đường
+- Mục tiêu:
+  - Giúp học sinh nhận diện các ca bệnh bốc đồng thường gặp trong môi trường học đường.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Trình chiếu Slide 3, phát âm thanh báo động còi hú khẩn cấp thông báo "Bão cảm xúc đang tấn công toàn trường".
@@ -125,6 +129,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
   - Theo dõi các hình ảnh ca bệnh trên bảng tương tác và thảo luận nhanh về biểu hiện của nhân vật.
 
 * Giai đoạn 3: Dự đoán biến chứng
+- Mục tiêu:
+  - Giúp học sinh dự đoán được những biến chứng hậu quả lâu dài của các hành vi rủi ro bộc đồng.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Trình chiếu Slide 4, yêu cầu học sinh thảo luận theo nhóm để nối các hành vi bộc đồng sai lầm với hậu quả biến chứng tương ứng.
@@ -152,6 +158,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
   - Ghi nhận tác hại của hành vi bộc đồng vào phiếu học tập.
 
 * Giai đoạn 4: Phê duyệt chiến dịch
+- Mục tiêu:
+  - Giúp học sinh cam kết thực thi sứ mệnh Đại sứ Sức khỏe Cộng đồng.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Trình chiếu Slide 5, yêu cầu các nhóm đọc to cam kết y đức và nhấn nút phê duyệt để khởi động xưởng sản xuất.
@@ -179,6 +187,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
 ##### d. Tổ chức thực hiện
 
 * Giai đoạn 5: Chia vùng thiết kế Vòng quay cảm xúc
+- Mục tiêu:
+  - Giúp học sinh điền chính xác thông tin triệu chứng và giải pháp điều hòa tương ứng lên 3 tầng vòng quay cảm xúc.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Trình chiếu Slide 6-10 hướng dẫn các bước chế tạo Vòng quay giải tỏa cảm xúc.
@@ -202,9 +212,11 @@ Thời gian thực hiện: 1 tiết (45 phút)
   - Thảo luận và viết thông tin triệu chứng sinh lý, giải pháp điều hòa tương ứng lên mô hình giấy; thực hiện tô màu trang trí các phân vùng cảm xúc.
 
 * Giai đoạn 6: Thực hành chế tạo & Diễn tập cộng đồng
+- Mục tiêu:
+  - Giúp học sinh lắp ráp hoàn thiện vòng quay cảm xúc và diễn tập sơ cứu ca bệnh học đường giả định.
 - Giao nhiệm vụ:
 + Giáo viên:
-  - Trình chiếu Slide 11, yêu cầu các nhóm hoàn thành cắt ráp vòng quay bằng ghim cánh phượng.
+  - Trình chiếu Slide 11, yêu cầu các nhóm hoàn thành Bước 4 (cắt ráp vòng quay bằng ghim cánh phượng).
   - Yêu cầu chuẩn bị diễn tập chẩn đoán sơ cứu ca bệnh học đường bằng vòng quay giấy.
 + Học sinh:
   - Tiếp nhận yêu cầu hoàn thiện sản phẩm và chuẩn bị tham gia hoạt động diễn tập nhóm.
@@ -245,6 +257,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
 ##### d. Tổ chức thực hiện
 
 * Giai đoạn 7: Nhật ký bác sĩ cộng đồng
+- Mục tiêu:
+  - Giúp học sinh tự phản tư và tự đánh giá bài học kinh nghiệm thu hoạch được sau chiến dịch cộng đồng.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Trình chiếu Slide 12, yêu cầu học sinh viết phản tư hành trình chế tạo vòng quay cảm xúc và phát phiếu phản tư giấy.
@@ -262,6 +276,8 @@ Thời gian thực hiện: 1 tiết (45 phút)
   - Phát biểu cảm nhận cá nhân trước lớp.
 
 * Giai đoạn 8: Cam kết hành động & Vinh danh
+- Mục tiêu:
+  - Giúp học sinh cam kết lan tỏa thói quen sơ cứu cảm xúc và vinh danh những nỗ lực y đức.
 - Giao nhiệm vụ:
 + Giáo viên:
   - Trình chiếu Slide 13-14, hướng dẫn các nhóm ký cam kết hành động lan tỏa cẩm nang sơ cứu cảm xúc cho học sinh các lớp khác trong trường; hướng dẫn đăng ký nhận Giấy chứng nhận vinh danh.
