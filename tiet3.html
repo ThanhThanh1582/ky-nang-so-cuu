@@ -198,6 +198,7 @@
             transition: all 0.3s ease;
         }
 
+        
         /* KHUNG CHỨA SLIDE DẠNG GLASSMORPHISM */
         .slide-viewport {
             flex: 1;
@@ -211,32 +212,57 @@
         .slide-frame {
             width: 100%;
             max-width: 1180px;
-            max-height: 620px;
-            background: var(--bg-glass);
-            backdrop-filter: blur(8px);
-            border: 2px solid var(--border-glass);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.12);
-            padding: 40px;
+            height: 100%;
+            max-height: 640px;
             display: none;
             flex-direction: column;
-            justify-content: center;
             position: relative;
-            overflow: hidden;
             animation: slideFadeIn 0.4s ease;
             flex-shrink: 0;
         }
 
         .slide-frame.active {
             display: flex;
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(25px);
+            background: transparent !important;
+            backdrop-filter: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+
+        .slide-header-box {
+            background: var(--bg-glass);
+            backdrop-filter: blur(5px);
+            border: 2px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 15px 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 119, 182, 0.05);
+            margin-bottom: 15px;
+            flex-shrink: 0;
+            width: 100%;
+        }
+
+        .slide-content-box {
+            background: var(--bg-glass);
+            backdrop-filter: blur(5px);
+            border: 2px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 119, 182, 0.08);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: auto;
+            width: 100%;
         }
 
         @keyframes slideFadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
 
         /* NÚT ĐIỀU HƯỚNG PHÍA DƯỚI */
         .presentation-footer {
@@ -1036,11 +1062,10 @@
             </div>
 
             <!-- VIEWPORT CHỨA CÁC SLIDES -->
-            <div class="slide-viewport">
-
+            <div class="slide-viewport">\n
                 <!-- SLIDE 1: BÌA BÀI HỌC (MĐ01) -->
-                <div class="slide-frame active" id="slide-1" style="background: url('assets/cover.png') no-repeat center center; background-size: cover; border: 4px solid var(--primary-dark); box-shadow: 10px 10px 0px var(--primary-dark);">
-                    <div class="template-md01" style="background: rgba(255, 255, 255, 0.88); margin-top: auto; margin-bottom: 20px; border: 3px solid var(--primary-dark); box-shadow: 5px 5px 0px var(--primary-dark); padding: 15px 30px; width: auto; max-width: 80%;">
+                <div class="slide-frame active" id="slide-1" style="background: url('assets/cover.png') no-repeat center center; background-size: cover; border: 4px solid var(--primary-dark); box-shadow: 10px 10px 0px var(--primary-dark); border-radius: 12px; overflow: hidden;">
+                    <div class="slide-content-box" style="background: rgba(255, 255, 255, 0.88); margin-top: auto; margin-bottom: 20px; border: 3px solid var(--primary-dark); box-shadow: 5px 5px 0px var(--primary-dark); padding: 15px 30px; width: auto; max-width: 80%; align-self: center;">
                         <div class="md01-code">BÀI 7.6</div>
                         <h1 class="md01-title" id="slide1-title" style="font-size: 32px; min-height: 40px; text-transform: uppercase;">VÌ SAO CẢM XÚC THAY ĐỔI MẠNH?</h1>
                         <div class="md01-subtitle" id="slide1-subtitle" style="font-size: 18px; font-style: italic; font-weight: 700; color: var(--text-muted); margin-top: -15px;">TIẾT 3: LAN TỎA CHIẾN DỊCH SỨC KHỎE</div>
@@ -1049,8 +1074,10 @@
 
                 <!-- SLIDE 2: MỤC TIÊU BÀI HỌC (MT01) -->
                 <div class="slide-frame" id="slide-2">
-                    <div class="template-mt01">
-                        <div class="mt01-header">MỤC TIÊU TIẾT 3</div>
+                    <div class="slide-header-box">
+                        <div class="mt01-header" style="margin-bottom: 0;">MỤC TIÊU TIẾT 3</div>
+                    </div>
+                    <div class="slide-content-box">
                         <div class="mt01-columns">
                             <div class="mt01-col">
                                 <div class="mt01-col-title">🧪 Kiến thức</div>
@@ -1070,7 +1097,7 @@
 
                 <!-- SLIDE 3: GIỚI THIỆU GIAI ĐOẠN 1 (GT01) -->
                 <div class="slide-frame" id="slide-3">
-                    <div class="template-gt01">
+                    <div class="slide-content-box" style="text-align: center; justify-content: center; max-width: 80%; align-self: center;">
                         <div class="gt01-title">GIAI ĐOẠN 1</div>
                         <div class="gt01-subtitle">MỞ KHÓA NHIỆM VỤ TUYÊN TRUYỀN</div>
                         <div class="gt01-desc">Ôn kiến thức, tạo hứng thú trước khi bước vào ngày hội truyền thông chính thức.</div>
@@ -1079,11 +1106,12 @@
 
                 <!-- SLIDE 4: THỰC HIỆN HOẠT ĐỘNG - ÔN KIẾN THỨC (TH01) -->
                 <div class="slide-frame" id="slide-4">
-                    <div class="template-th01">
+                    <div class="slide-header-box">
                         <div class="th01-title">CẤP CỨU THÔNG TIN Y TẾ</div>
                         <div class="th01-subtitle">SẮP XẾP CHỮ THÀNH CÂU MÔ TẢ QUY TẮC GIẢI TỎA CẢM XÚC ĐÚNG</div>
-                        
-                        <div class="th01-timer-row" style="align-self: center; margin-bottom: 5px; padding: 4px 15px;">
+                    </div>
+                    <div class="slide-content-box">
+                        <div class="th01-timer-row" style="align-self: center; margin-bottom: 15px; padding: 4px 15px;">
                             <span class="timer-display" id="timer-display-4">05:00</span>
                             <div class="timer-controls">
                                 <button class="btn-timer" id="btn-start-4" onclick="startTimer4()">BẮT ĐẦU</button>
@@ -1103,7 +1131,7 @@
                                 <button class="btn btn-action" style="align-self: center; margin-top: 5px;" onclick="checkGame4()">KIỂM TRA CÂU</button>
                             </div>
                             <div class="image-card-s4">
-                                <img src="assets/brain_cockpit.png" style="width: 100%; max-height: 180px; object-fit: contain; border-radius: 8px;" alt="Brain Cockpit">
+                                <img src="assets/brain_cockpit.png" style="width: 100%; max-height: 160px; object-fit: contain; border-radius: 8px;" alt="Brain Cockpit">
                                 <div style="font-size: 13px; font-weight: bold; color: var(--primary-dark); margin-top: 8px; line-height: 1.3;">
                                     CƠ CHẾ NÃO BỘ: HẠCH HẠNH NHÂN VÀ VỎ NÃO TRƯỚC TRÁN
                                 </div>
@@ -1114,7 +1142,7 @@
 
                 <!-- SLIDE 5: GIỚI THIỆU GIAI ĐOẠN 2 (GT01) -->
                 <div class="slide-frame" id="slide-5">
-                    <div class="template-gt01">
+                    <div class="slide-content-box" style="text-align: center; justify-content: center; max-width: 80%; align-self: center;">
                         <div class="gt01-title">GIAI ĐOẠN 2</div>
                         <div class="gt01-subtitle">NHẬN NHIỆM VỤ TUYÊN TRUYỀN</div>
                         <div class="gt01-desc">Hiểu khán giả (Audience) và xác định mục tiêu truyền thông cốt lõi của chiến dịch y tế học đường.</div>
@@ -1123,9 +1151,11 @@
 
                 <!-- SLIDE 6: PHÂN VAI CHUYÊN GIA (PV01) -->
                 <div class="slide-frame" id="slide-6">
-                    <div class="template-pv01">
-                        <div class="pv01-header">PHÂN VAI CHUYÊN GIA</div>
-                        <div class="pv01-content">
+                    <div class="slide-header-box">
+                        <div class="pv01-header" style="margin-bottom: 0;">PHÂN VAI CHUYÊN GIA</div>
+                    </div>
+                    <div class="slide-content-box">
+                        <div class="pv01-content" style="font-size: 24px; line-height: 1.6; color: var(--text-main); font-weight: 600; text-align: center;">
                             Hội đồng Y tế Công cộng Emotion Hospital chính thức bổ nhiệm! Hôm nay, các bác sĩ sẽ nhận vai trò là các Chuyên gia Tuyên truyền Sức khỏe. Nhiệm vụ tối cao của các bạn là thấu hiểu tâm lý người nghe, thẩm định thông điệp khoa học để đưa sản phẩm poster và vòng quay giải tỏa cảm xúc tiếp cận, thuyết phục mọi học sinh trong trường học!
                         </div>
                     </div>
@@ -1133,7 +1163,7 @@
 
                 <!-- SLIDE 7: GIỚI THIỆU GIAI ĐOẠN 3 (GT01) -->
                 <div class="slide-frame" id="slide-7">
-                    <div class="template-gt01">
+                    <div class="slide-content-box" style="text-align: center; justify-content: center; max-width: 80%; align-self: center;">
                         <div class="gt01-title">GIAI ĐOẠN 3</div>
                         <div class="gt01-subtitle">KIỂM TRA THÔNG ĐIỆP</div>
                         <div class="gt01-desc">Thẩm định tính chính xác của các kiến thức y khoa trên poster để loại bỏ ngộ nhận sai lầm.</div>
@@ -1142,8 +1172,10 @@
 
                 <!-- SLIDE 8: CHUẨN BỊ THỰC HÀNH (CB01) -->
                 <div class="slide-frame" id="slide-8">
-                    <div class="template-cb01">
-                        <div class="cb01-header">CHUẨN BỊ THẨM ĐỊNH</div>
+                    <div class="slide-header-box">
+                        <div class="cb01-header" style="margin-bottom: 0;">CHUẨN BỊ THẨM ĐỊNH</div>
+                    </div>
+                    <div class="slide-content-box">
                         <div class="cb01-split">
                             <div class="cb01-card">
                                 <div class="cb01-card-title">📝 DỤNG CỤ THẨM ĐỊNH</div>
@@ -1166,8 +1198,10 @@
 
                 <!-- SLIDE 9: QUY TRÌNH THỰC HIỆN (HD01) -->
                 <div class="slide-frame" id="slide-9">
-                    <div class="template-hd01">
-                        <div class="hd01-header">QUY TRÌNH RÀ SOÁT</div>
+                    <div class="slide-header-box">
+                        <div class="hd01-header" style="margin-bottom: 0;">QUY TRÌNH RÀ SOÁT</div>
+                    </div>
+                    <div class="slide-content-box">
                         <div class="hd01-steps">
                             <div class="hd01-step">
                                 <div class="hd01-step-num">Bước 1</div>
@@ -1187,11 +1221,12 @@
 
                 <!-- SLIDE 10: THỰC HÀNH THẨM ĐỊNH (TH01) -->
                 <div class="slide-frame" id="slide-10">
-                    <div class="template-th01">
+                    <div class="slide-header-box">
                         <div class="th01-title">THẨM ĐỊNH Y KHOA CẢM XÚC</div>
                         <div class="th01-subtitle">RÀ SOÁT NỘI DUNG VÀ ĐỐI CHIẾU TIÊU CHÍ AN TOÀN TRONG 7 PHÚT</div>
-                        
-                        <div class="th01-timer-row" style="align-self: center; margin-bottom: 10px; padding: 4px 15px;">
+                    </div>
+                    <div class="slide-content-box">
+                        <div class="th01-timer-row" style="align-self: center; margin-bottom: 15px; padding: 4px 15px;">
                             <span class="timer-display" id="timer-display-10">07:00</span>
                             <div class="timer-controls">
                                 <button class="btn-timer" id="btn-start-10" onclick="startTimer10()">BẮT ĐẦU</button>
@@ -1213,7 +1248,7 @@
 
                 <!-- SLIDE 11: GIỚI THIỆU GIAI ĐOẠN 4 (GT01) -->
                 <div class="slide-frame" id="slide-11">
-                    <div class="template-gt01">
+                    <div class="slide-content-box" style="text-align: center; justify-content: center; max-width: 80%; align-self: center;">
                         <div class="gt01-title">GIAI ĐOẠN 4</div>
                         <div class="gt01-subtitle">HOÀN THIỆN THÔNG ĐIỆP</div>
                         <div class="gt01-desc">Chỉnh sửa lỗi đồ họa và làm nổi bật Slogan y tế cảm xúc trước giờ xuất bản.</div>
@@ -1221,8 +1256,8 @@
                 </div>
 
                 <!-- SLIDE 12: CẢNH BÁO BÁO ĐỘNG KỊCH TÍNH (BĐ01) -->
-                <div class="slide-frame" id="slide-12" style="background: url('assets/hospital_bg.png') no-repeat center center; background-size: cover; border: 4px solid var(--accent); box-shadow: 10px 10px 0px var(--accent);">
-                    <div class="template-th01" style="background: rgba(255, 255, 255, 0.88); padding: 30px; border-radius: 12px; height: 100%; justify-content: center; text-align: center;">
+                <div class="slide-frame" id="slide-12" style="border: 4px solid var(--accent); box-shadow: 10px 10px 0px var(--accent); border-radius: 12px; overflow: hidden;">
+                    <div class="slide-content-box" style="background: rgba(255, 255, 255, 0.88); padding: 30px; height: 100%; justify-content: center; text-align: center; border: none; border-radius: 0;">
                         <h1 style="font-size: 40px; color: var(--accent); margin-bottom: 20px; font-weight: 800; text-transform: uppercase;">⚠️ CẢNH BÁO KHẨN CẤP</h1>
                         <p style="font-size: 26px; color: var(--primary-dark); font-weight: bold; line-height: 1.6; max-width: 800px; margin: 0 auto;">
                             Xe phát thanh tuyên truyền chuẩn bị lăn bánh! Chỉ còn một cơ hội cuối cùng để chỉnh sửa các lỗi đồ họa và làm nổi bật Slogan trước khi tiếp cận người dân!
@@ -1232,10 +1267,11 @@
 
                 <!-- SLIDE 13: THỰC HÀNH TỐI ƯU SLOGAN (TH01) -->
                 <div class="slide-frame" id="slide-13">
-                    <div class="template-th01">
+                    <div class="slide-header-box">
                         <div class="th01-title">TỐI ƯU HÓA POSTER TRUYỀN THÔNG</div>
                         <div class="th01-subtitle">TÔ MÀU, VIẾT SLOGAN VÀ HOÀN THIỆN ĐỒ HỌA TRONG 7 PHÚT</div>
-                        
+                    </div>
+                    <div class="slide-content-box">
                         <div class="th01-timer-row" style="align-self: center; margin-bottom: 10px; padding: 4px 15px;">
                             <span class="timer-display" id="timer-display-13">07:00</span>
                             <div class="timer-controls">
@@ -1258,7 +1294,7 @@
 
                 <!-- SLIDE 14: GIỚI THIỆU GIAI ĐOẠN 5 (GT01) -->
                 <div class="slide-frame" id="slide-14">
-                    <div class="template-gt01">
+                    <div class="slide-content-box" style="text-align: center; justify-content: center; max-width: 80%; align-self: center;">
                         <div class="gt01-title">GIAI ĐOẠN 5</div>
                         <div class="gt01-subtitle">DUYỆT & DIỄN TẬP CHIẾN DỊCH</div>
                         <div class="gt01-desc">Phân công vai trò, diễn tập nói trước poster để đạt hiệu quả thuyết phục cao nhất.</div>
@@ -1267,8 +1303,10 @@
 
                 <!-- SLIDE 15: QUY TRÌNH DIỄN TẬP (HD01) -->
                 <div class="slide-frame" id="slide-15">
-                    <div class="template-hd01">
-                        <div class="hd01-header">QUY TRÌNH DIỄN TẬP</div>
+                    <div class="slide-header-box">
+                        <div class="hd01-header" style="margin-bottom: 0;">QUY TRÌNH DIỄN TẬP</div>
+                    </div>
+                    <div class="slide-content-box">
                         <div class="hd01-steps">
                             <div class="hd01-step">
                                 <div class="hd01-step-num">Bước 1</div>
@@ -1288,10 +1326,11 @@
 
                 <!-- SLIDE 16: THỰC HÀNH DIỄN TẬP (TH01) -->
                 <div class="slide-frame" id="slide-16">
-                    <div class="template-th01">
+                    <div class="slide-header-box">
                         <div class="th01-title">DIỄN TẬP TRONG NHÓM</div>
                         <div class="th01-subtitle">CÙNG NHAU DIỄN TẬP TRONG THỜI GIAN 8 PHÚT</div>
-                        
+                    </div>
+                    <div class="slide-content-box">
                         <div class="th01-timer-row" style="align-self: center; margin-bottom: 10px; padding: 4px 15px;">
                             <span class="timer-display" id="timer-display-16">08:00</span>
                             <div class="timer-controls">
@@ -1315,7 +1354,7 @@
 
                 <!-- SLIDE 17: GIỚI THIỆU GIAI ĐOẠN 6 (GT01) -->
                 <div class="slide-frame" id="slide-17">
-                    <div class="template-gt01">
+                    <div class="slide-content-box" style="text-align: center; justify-content: center; max-width: 80%; align-self: center;">
                         <div class="gt01-title">GIAI ĐOẠN 6</div>
                         <div class="gt01-subtitle">TUYÊN TRUYỀN SỨC KHỎE</div>
                         <div class="gt01-desc">Báo cáo chiến dịch truyền thông trước hội đồng và phản biện chéo toàn lớp.</div>
@@ -1324,9 +1363,10 @@
 
                 <!-- SLIDE 18: DIỄN ĐÀN TRUYỀN THÔNG (TB01) -->
                 <div class="slide-frame" id="slide-18">
-                    <div class="template-tb01">
-                        <div class="tb01-header" style="font-size: 32px; font-weight: 800; color: var(--primary-dark); text-align: center; text-transform: uppercase;">BÁC BÁO CÁO CHIẾN DỊCH TRUYỀN THÔNG</div>
-                        
+                    <div class="slide-header-box">
+                        <div class="tb01-header" style="font-size: 32px; font-weight: 800; color: var(--primary-dark); text-align: center; text-transform: uppercase; margin-bottom: 0;">BÁO CÁO CHIẾN DỊCH TRUYỀN THÔNG</div>
+                    </div>
+                    <div class="slide-content-box">
                         <div class="th01-timer-row" style="align-self: center; margin: 10px 0; padding: 4px 15px;">
                             <span class="timer-display" id="timer-display-18">10:00</span>
                             <div class="timer-controls">
@@ -1348,26 +1388,26 @@
 
                 <!-- SLIDE 19: CHUẨN HOÁ CHIẾN DỊCH (ĐA01) -->
                 <div class="slide-frame" id="slide-19">
-                    <div class="template-da01">
-                        <div class="da01-box" style="position: relative;">
-                            <div class="da01-title">KẾT QUẢ CHIẾN DỊCH CHUẨN</div>
-                            <div class="da01-content" style="font-size: 18px; line-height: 1.6; padding: 10px 20px;">
-                                <p style="margin-bottom: 8px;"><strong>1. Slogan y đức cảm xúc:</strong> Cần ngắn gọn, hành động cụ thể (ví dụ: *"Bình tĩnh 4 giây - Làm chủ hạch hạnh nhân"*).</p>
-                                <p style="margin-bottom: 8px;"><strong>2. Quy chuẩn sơ cứu:</strong> Tuyệt đối không trút giận (gây nhiễm độc hành vi) hay đè nén (gây ức chế tâm lý sinh lý).</p>
-                                <p style="margin-bottom: 8px;"><strong>3. Công cụ cốt lõi:</strong> Hướng dẫn chi tiết kỹ thuật hít thở **Box Breathing 4-4-4-4** để trực tiếp điều hòa nhịp tim.</p>
-                                <p><strong>4. Thay đổi thói quen:</strong> Sử dụng cấu trúc **Thông điệp tôi** làm kênh giao tiếp ôn hòa hàng ngày.</p>
-                            </div>
-                            <!-- Con dấu phê duyệt -->
-                            <div class="stamp-overlay" id="stamp-s19" style="display: block; right: 20px; bottom: 20px;">
-                                <div class="stamp-graphic" style="color: var(--secondary); border-color: var(--secondary);">ĐÃ PHÊ DUYỆT</div>
-                            </div>
+                    <div class="slide-header-box">
+                        <div class="da01-title" style="margin-bottom: 0;">KẾT QUẢ CHIẾN DỊCH CHUẨN</div>
+                    </div>
+                    <div class="slide-content-box" style="position: relative;">
+                        <div class="da01-content" style="font-size: 18px; line-height: 1.6; padding: 10px 20px;">
+                            <p style="margin-bottom: 8px;"><strong>1. Slogan y đức cảm xúc:</strong> Cần ngắn gọn, hành động cụ thể (ví dụ: *"Bình tĩnh 4 giây - Làm chủ hạch hạnh nhân"*).</p>
+                            <p style="margin-bottom: 8px;"><strong>2. Quy chuẩn sơ cứu:</strong> Tuyệt đối không trút giận (gây nhiễm độc hành vi) hay đè nén (gây ức chế tâm lý sinh lý).</p>
+                            <p style="margin-bottom: 8px;"><strong>3. Công cụ cốt lõi:</strong> Hướng dẫn chi tiết kỹ thuật hít thở **Box Breathing 4-4-4-4** để trực tiếp điều hòa nhịp tim.</p>
+                            <p><strong>4. Thay đổi thói quen:</strong> Sử dụng cấu trúc **Thông điệp tôi** làm kênh giao tiếp ôn hòa hàng ngày.</p>
+                        </div>
+                        <!-- Con dấu phê duyệt -->
+                        <div class="stamp-overlay" id="stamp-s19" style="display: block; right: 20px; bottom: 20px; z-index: 10;">
+                            <div class="stamp-graphic" style="color: var(--secondary); border-color: var(--secondary);">ĐÃ PHÊ DUYỆT</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- SLIDE 20: GIỚI THIỆU GIAI ĐOẠN 7 & 8 (GT01) -->
                 <div class="slide-frame" id="slide-20">
-                    <div class="template-gt01">
+                    <div class="slide-content-box" style="text-align: center; justify-content: center; max-width: 80%; align-self: center;">
                         <div class="gt01-title">TỔNG KẾT & SỨ MỆNH</div>
                         <div class="gt01-subtitle">NHẬT KÝ CHUYÊN GIA & SỨ MỆNH BÁC SĨ</div>
                         <div class="gt01-desc">Nhìn nhận lại năng lực bản thân, tuyên thệ lời thề y đức cảm xúc và vinh danh thăng cấp chính thức.</div>
@@ -1376,8 +1416,10 @@
 
                 <!-- SLIDE 21: TỔNG KẾT BÀI HỌC (TK01) -->
                 <div class="slide-frame" id="slide-21">
-                    <div class="template-tk01">
-                        <div class="tk01-header">TỔNG KẾT NHẬT KÝ BÁC SĨ</div>
+                    <div class="slide-header-box">
+                        <div class="tk01-header" style="margin-bottom: 0;">TỔNG KẾT NHẬT KÝ BÁC SĨ</div>
+                    </div>
+                    <div class="slide-content-box">
                         <div class="tk01-list-container" style="max-height: 400px; overflow-y: auto;">
                             <ul class="tk01-list">
                                 <li class="tk01-item">Cảm xúc mạnh là phản ứng sinh học tự nhiên của hạch hạnh nhân tuổi dậy thì do vỏ não trước trán chưa myelin hóa xong.</li>
@@ -1391,10 +1433,12 @@
 
                 <!-- SLIDE 22: SỨ MỆNH BÁC SĨ - CAM KẾT HÀNH ĐỘNG (CK01) -->
                 <div class="slide-frame" id="slide-22">
-                    <div class="template-ck01">
+                    <div class="slide-header-box">
                         <div class="ck01-title">LỜI THỀ Y ĐỨC CẢM XÚC</div>
-                        <div class="ck01-subtitle">BẢN CAM KẾT HÀNH ĐỘNG VÌ SỨC KHỎE CỘNG ĐỒNG</div>
-                        <div class="ck01-box">
+                        <div class="ck01-subtitle" style="margin-bottom: 0;">BẢN CAM KẾT HÀNH ĐỘNG VÌ SỨC KHỎE CỘNG ĐỒNG</div>
+                    </div>
+                    <div class="slide-content-box">
+                        <div class="ck01-box" style="border: none; box-shadow: none; background: transparent; padding: 0;">
                             <div class="ck01-terms">
                                 <label class="ck01-term"><input type="checkbox" id="ck22-1"> Tôi cam kết luôn kiểm soát hơi thở và nhịp tim bằng phác đồ Box Breathing khi có bão cảm xúc.</label>
                                 <label class="ck01-term"><input type="checkbox" id="ck22-2"> Tôi cam kết sử dụng Thông điệp tôi để chia sẻ ôn hòa, văn minh và không gây tổn thương cho cộng đồng.</label>
@@ -1406,7 +1450,7 @@
                                     <input type="text" class="ck01-signature-input" id="sig-22" placeholder="Nhập tên nhóm...">
                                 </div>
                                 <button class="btn btn-action" onclick="signPledge22()">CAM KẾT</button>
-                                <div class="stamp-overlay" id="stamp-pledge-22">
+                                <div class="stamp-overlay" id="stamp-pledge-22" style="z-index: 10;">
                                     <div class="stamp-graphic" style="color: var(--accent); border-color: var(--accent);">ĐÃ CAM KẾT</div>
                                 </div>
                             </div>
@@ -1415,49 +1459,42 @@
                 </div>
 
                 <!-- SLIDE 23: CHỨNG NHẬN TRANG TRỌNG (VD01) -->
-                <div class="slide-frame" id="slide-23">
-                    <div class="template-vd01">
-                        <div class="vd01-cert-box">
-                            <div class="vd01-cert-header">CHỨNG NHẬN HOÀN THÀNH NHIỆM VỤ</div>
-                            <div class="vd01-cert-title">VINH DANH CHUYÊN GIA TRUYỀN THÔNG Y TẾ XUẤT SẮC</div>
-                            
-                            <div style="font-size: 20px; font-weight: 600; color: var(--text-main); margin: 15px 0;">Chứng nhận kíp trực đạt giải Poster ấn tượng nhất:</div>
-                            
-                            <div class="vd01-input-container" style="display: flex; gap: 10px; justify-content: center; align-items: center; margin-bottom: 20px; z-index: 100; position: relative;">
-                                <input type="text" id="cert-group-name" placeholder="Nhập tên kíp trực..." style="padding: 10px 15px; font-size: 20px; border: 2px solid var(--primary); border-radius: 8px; width: 320px; outline: none; font-weight: bold; text-align: center;">
-                                <button class="btn btn-action" style="margin: 0; padding: 10px 25px;" onclick="issueCertificate()">CẤP BẰNG</button>
-                            </div>
-
-                            <div class="vd01-cert-recipient" id="cert-recipient-name" style="display: none; margin: 10px 0; font-size: 40px; color: var(--accent); font-weight: 900; text-transform: uppercase;"></div>
-                            
-                            <div class="vd01-cert-footer" style="font-size: 16px; margin-top: 15px;">Hội đồng y khoa Emotion Hospital phê duyệt</div>
+                <div class="slide-frame" id="slide-23" style="background: url('assets/cert.png') no-repeat center center; background-size: cover; border: 4px double #d4af37; box-shadow: 10px 10px 0px var(--primary-dark); border-radius: 12px; overflow: hidden;">
+                    <div class="slide-content-box" style="background: rgba(255, 255, 255, 0.9); padding: 25px; border: none; border-radius: 0; height: 100%;">
+                        <div class="vd01-cert-header" style="font-size: 24px; color: #d4af37; font-weight: 800; text-align: center;">CHỨNG NHẬN HOÀN THÀNH NHIỆM VỤ</div>
+                        <div class="vd01-cert-title" style="font-size: 26px; font-weight: 800; color: var(--primary-dark); text-align: center; margin: 10px 0;">VINH DANH CHUYÊN GIA TRUYỀN THÔNG Y TẾ XUẤT SẮC</div>
+                        
+                        <div style="font-size: 20px; font-weight: 600; color: var(--text-main); margin: 15px 0; text-align: center;">Chứng nhận kíp trực đạt giải Poster ấn tượng nhất:</div>
+                        
+                        <div class="vd01-input-container" style="display: flex; gap: 10px; justify-content: center; align-items: center; margin-bottom: 20px; z-index: 100; position: relative;">
+                            <input type="text" id="cert-group-name" placeholder="Nhập tên kíp trực..." style="padding: 10px 15px; font-size: 20px; border: 2px solid var(--primary); border-radius: 8px; width: 320px; outline: none; font-weight: bold; text-align: center;">
+                            <button class="btn btn-action" style="margin: 0; padding: 10px 25px;" onclick="issueCertificate()">CẤP BẰNG</button>
                         </div>
+
+                        <div class="vd01-cert-recipient" id="cert-recipient-name" style="display: none; margin: 10px 0; font-size: 40px; color: var(--accent); font-weight: 900; text-transform: uppercase; text-align: center;"></div>
+                        
+                        <div class="vd01-cert-footer" style="font-size: 16px; margin-top: 15px; text-align: center;">Hội đồng y khoa Emotion Hospital phê duyệt</div>
                     </div>
                 </div>
 
                 <!-- SLIDE 24: BẾ MẠC & VINH DANH CHÍNH THỨC (VD01) -->
-                <div class="slide-frame" id="slide-24">
-                    <div class="template-vd01">
-                        <div class="vd01-cert-box" style="background: linear-gradient(135deg, #fffefe, #f0fdf4); border-color: var(--secondary);">
-                            <div class="vd01-cert-header" style="color: var(--secondary); font-size: 32px;">LỄ VINH DANH BÁC SĨ CHÍNH THỨC</div>
-                            <div class="vd01-cert-title" style="font-size: 26px; line-height: 1.4; max-width: 800px; margin: 20px auto; color: var(--primary-dark);">
-                                Chúc mừng toàn thể các bạn học sinh đã xuất sắc vượt qua mọi thử thách, bảo vệ thành công sức khỏe tâm lý cộng đồng và chính thức trở thành các Bác sĩ chính thức của Emotion Hospital!
-                            </div>
-                            
-                            <div style="font-size: 32px; font-weight: 800; color: var(--accent); margin: 10px 0; text-transform: uppercase;">
-                                🎉 TẬP THỂ LỚP HỌC ĐẠT CHUẨN Y KHOA 🎉
-                            </div>
+                <div class="slide-frame" id="slide-24" style="border: 4px solid var(--secondary); box-shadow: 10px 10px 0px var(--secondary); border-radius: 12px; overflow: hidden;">
+                    <div class="slide-content-box" style="background: linear-gradient(135deg, #fffefe, #f0fdf4); padding: 25px; border: none; border-radius: 0; height: 100%;">
+                        <div class="vd01-cert-header" style="color: var(--secondary); font-size: 32px; font-weight: 800; text-align: center;">LỄ VINH DANH BÁC SĨ CHÍNH THỨC</div>
+                        <div class="vd01-cert-title" style="font-size: 24px; line-height: 1.4; max-width: 800px; margin: 20px auto; color: var(--primary-dark); text-align: center;">
+                            Chúc mừng toàn thể các bạn học sinh đã xuất sắc vượt qua mọi thử thách, bảo vệ thành công sức khỏe tâm lý cộng đồng và chính thức trở thành các Bác sĩ chính thức của Emotion Hospital!
+                        </div>
+                        
+                        <div style="font-size: 32px; font-weight: 800; color: var(--accent); margin: 10px 0; text-transform: uppercase; text-align: center;">
+                            🎉 TẬP THỂ LỚP HỌC ĐẠT CHUẨN Y KHOA 🎉
+                        </div>
 
-                            <div style="font-size: 16px; font-style: italic; color: var(--text-muted); margin-top: 20px; font-weight: 700;">
-                                * Nhiệm vụ tại nhà: Duy trì thói quen viết Nhật ký Phản tư cảm xúc mỗi tối trước khi đi ngủ.
-                            </div>
+                        <div style="font-size: 16px; font-style: italic; color: var(--text-muted); margin-top: 20px; font-weight: 700; text-align: center;">
+                            * Nhiệm vụ tại nhà: Duy trì thói quen viết Nhật ký Phản tư cảm xúc mỗi tối trước khi đi ngủ.
                         </div>
                     </div>
                 </div>
-
-            </div>
-
-            <!-- NÚT ĐIỀU HƯỚNG PHÍA DƯỚI -->
+\n            </div>\n\n            <!-- NÚT ĐIỀU HƯỚNG PHÍA DƯỚI -->
             <div class="presentation-footer">
                 <button class="btn btn-nav" id="btn-prev" onclick="prevSlide()">◀ TRƯỚC</button>
                 <div style="display: flex; gap: 10px;">
