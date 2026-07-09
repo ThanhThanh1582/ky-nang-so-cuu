@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7.6: Vì sao cảm xúc thay đổi mạnh? - Tiết 3</title>
+    <style>
+        /* MÀU SẮC CHỦ ĐẠO CHUẨN Y KHOA VÀ TRUYỆN TRANH POP ART */
+        :root {
+            --primary: #0077b6; /* Xanh mint của Bác sĩ Cộng đồng */
+            --primary-light: #90e0ef;
+            --primary-dark: #03045e;
+            --secondary: #00a896; /* Xanh Cyan truyền thông */
+            --accent: #e63946;
+            --accent-yellow: #ffb703;
+            --bg-glass: rgba(255, 255, 255, 0.92);
+            --border-glass: rgba(16, 185, 129, 0.2);
+            --text-main: #03045e;
+            --text-muted: #4b5563;
+            --sidebar-width: 280px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            font-family: 'Outfit', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0fdf4;
+            color: var(--text-main);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+        }
+
+        /* HÌNH NỀN PHÒNG CẤP CỨU CẢM XÚC */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -5%;
+            left: -5%;
+            width: 110%;
+            height: 110%;
+            background: url('assets/hospital_bg.png') no-repeat center center;
+            background-size: cover;
+            filter: blur(20px);
+            opacity: 0.85;
+            z-index: -2;
+        }
+
+        /* LAYOUT CHÍNH */
+        .app-container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* SIDEBAR ĐIỀU HƯỚNG BÊN TRÁI */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            border-right: 2px solid rgba(16, 185, 129, 0.15);
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            padding: 20px 15px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            font-weight: 800;
+            font-size: 18px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-light);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .sidebar-stage-group {
+            margin-bottom: 12px;
+        }
+
+        .sidebar-stage-title {
+            padding: 8px 12px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--primary);
+            background: rgba(16, 185, 129, 0.05);
+            border-left: 3px solid var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .slide-list {
+            list-style: none;
+            padding: 4px 6px;
+        }
+
+        .slide-item {
+            padding: 8px 10px;
+            margin-bottom: 3px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+            line-height: 1.3;
+            border: 1px solid transparent;
+        }
+
+        .slide-item:hover {
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--primary);
+        }
+
+        .slide-item.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(16, 185, 129, 0.2);
+        }
+
+        .slide-badge {
+            font-size: 9px;
+            padding: 2px 4px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.1);
+            color: inherit;
+            flex-shrink: 0;
+        }
+
+        .slide-item.active .slide-badge {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* PHẦN TRÌNH CHIẾU CHÍNH */
+        .presentation-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 100vh;
+        }
+
+        /* HEADER THÔNG TIN Y KHOA */
+        .presentation-header {
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+            z-index: 5;
+        }
+
+        .header-title {
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-stage-badge {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-role-badge {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            display: none;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        /* KHUNG CHỨA SLIDE DẠNG GLASSMORPHISM */
+        .slide-viewport {
+            flex: 1;
+            position: relative;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-frame {
+            width: 100%;
+            max-width: 1180px;
+            max-height: 620px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(8px);
+            border: 2px solid var(--border-glass);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.12);
+            padding: 40px;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            animation: slideFadeIn 0.4s ease;
+            flex-shrink: 0;
+        }
+
+        .slide-frame.active {
+            display: flex;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(25px);
+        }
+
+        @keyframes slideFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* NÚT ĐIỀU HƯỚNG PHÍA DƯỚI */
+        .presentation-footer {
+            height: auto; min-height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(16, 185, 129, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            z-index: 5;
+        }
+
+        /* CÁC LOẠI NÚT BẤM CHUẨN Y KHOA */
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .btn-nav {
+            background: white;
+            color: var(--primary-dark);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-nav:hover {
+            background: rgba(16, 185, 129, 0.05);
+            border-color: var(--primary);
+        }
+
+        .btn-action {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+        }
+
+        .btn-action:hover {
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), #d90429);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-disabled {
+            background: #e2e8f0 !important;
+            color: #a0aec0 !important;
+            border-color: #cbd5e0 !important;
+            cursor: not-allowed !important;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .next-stage-indicator {
+            position: absolute;
+            bottom: 25px;
+            right: 40px;
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 600;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            animation: pulse-border 2s infinite;
+        }
+
+        @keyframes pulse-border {
+            0% { border-color: rgba(16, 185, 129, 0.2); }
+            50% { border-color: rgba(16, 185, 129, 0.6); }
+            100% { border-color: rgba(16, 185, 129, 0.2); }
+        }
+
+        /* TEMPLATE PHONG CÁCH TRUYỆN TRANH POP ART */
+        .template-md01 {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            padding: 20px;
+            background: radial-gradient(circle, #e8fcf4 0%, #fff 70%);
+            border-radius: 12px;
+            border: 3px solid var(--primary-dark);
+            box-shadow: 8px 8px 0px var(--primary-dark);
+        }
+        .md01-code {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .md01-title {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            min-height: 60px;
+            text-transform: uppercase;
+        }
+
+        /* MT01: Mục tiêu */
+        .template-mt01 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .mt01-header {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--primary-dark);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .mt01-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            flex: 1;
+        }
+        .mt01-col {
+            background: white;
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 6px 6px 0px var(--primary-dark);
+        }
+        .mt01-col:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 6px 6px 0px var(--primary);
+        }
+        .mt01-col-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+        }
+        .mt01-col-desc {
+            font-size: 16px;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* CB01: Chuẩn bị */
+        .template-cb01 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .cb01-header {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        /* TH01: Thực hiện hoạt động (Game) */
+        .template-th01 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .th01-title {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .th01-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 4px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .th01-timer-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid var(--primary-dark);
+            padding: 8px 20px;
+            border-radius: 8px;
+            align-self: center;
+            box-shadow: 4px 4px 0px var(--primary-dark);
+        }
+        .timer-display {
+            font-family: monospace;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+        .timer-controls {
+            display: flex;
+            gap: 5px;
+        }
+        .btn-timer {
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.1);
+            background: white;
+            cursor: pointer;
+        }
+        .btn-timer:hover {
+            background: #f7fafc;
+        }
+
+        /* CK01: Bản cam kết / Lời thề y đức */
+        .template-ck01 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .ck01-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .ck01-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .ck01-box {
+            background: rgba(255, 255, 255, 0.7);
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 750px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 8px 8px 0px var(--primary-dark);
+        }
+        .ck01-box.parchment {
+            background: #fdfaf2;
+            border: 3px solid var(--primary-dark);
+            box-shadow: 8px 8px 0px var(--primary-dark);
+        }
+        .ck01-terms {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .ck01-term {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 17px;
+            line-height: 1.5;
+            color: var(--text-main);
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .ck01-term input {
+            margin-top: 3px;
+        }
+        .ck01-signature-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid var(--primary-dark);
+            padding-top: 15px;
+        }
+        .ck01-signature-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ck01-signature-box label {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .ck01-signature-input {
+            padding: 6px 12px;
+            border: 2px solid var(--primary-dark);
+            border-radius: 4px;
+            font-size: 18px;
+        }
+        .stamp-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 20;
+        }
+        .stamp-overlay.stamped {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .stamp-graphic {
+            border: 4px solid var(--accent);
+            color: var(--accent);
+            font-size: 26px;
+            font-weight: 900;
+            padding: 8px 18px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transform: rotate(-12deg);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .stamp-graphic.gold-stamp {
+            border-color: #d4af37;
+            color: #d4af37;
+        }
+        .stamp-graphic.green-stamp {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Game: T-Chart */
+        .tchart-layout {
+            display: grid;
+            grid-template-columns: 1fr 220px;
+            gap: 20px;
+            flex: 1;
+        }
+        .tchart-tables {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .tchart-col {
+            background: rgba(255, 255, 255, 0.6);
+            border: 3px solid var(--primary-dark);
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 5px 5px 0px var(--primary-dark);
+        }
+        .tchart-col-header {
+            font-size: 16px;
+            font-weight: 800;
+            text-align: center;
+            padding-bottom: 8px;
+            border-bottom: 3px solid transparent;
+            text-transform: uppercase;
+        }
+        .tchart-col-should {
+            border-bottom-color: var(--primary);
+            color: var(--primary);
+        }
+        .tchart-col-shouldnt {
+            border-bottom-color: var(--accent);
+            color: var(--accent);
+        }
+        .tchart-dropzone {
+            flex: 1;
+            min-height: 220px;
+            border: 2px dashed rgba(0,0,0,0.15);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 8px;
+        }
+        .tchart-pool {
+            background: rgba(255, 255, 255, 0.7);
+            border: 3px solid var(--primary-dark);
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            max-height: 310px;
+            box-shadow: 4px 4px 0px var(--primary-dark);
+        }
+        .tchart-drag-card {
+            padding: 8px 12px;
+            background: white;
+            border: 2px solid var(--primary-dark);
+            border-radius: 6px;
+            cursor: grab;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 3px 3px 0px var(--primary-dark);
+        }
+        .selected-drag-card {
+            outline: 3px solid var(--accent-yellow) !important;
+            box-shadow: 0 0 15px rgba(255, 183, 3, 0.6) !important;
+            transform: scale(1.03);
+        }
+
+        /* VD01: Vinh danh */
+        .template-vd01 {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            height: 100%;
+        }
+        .cert-header {
+            font-size: 26px;
+            font-weight: 700;
+            color: #d4af37;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .cert-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .cert-awarded-to {
+            font-size: 22px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .cert-name-display {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-dark);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            display: inline-block;
+            min-width: 250px;
+            height: 45px;
+        }
+        .cert-body {
+            font-size: 22px;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .cert-input-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .cert-input {
+            padding: 8px 12px;
+            border: 3px solid var(--primary-dark);
+            border-radius: 6px;
+            font-size: 18px;
+            width: 240px;
+        }
+
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99;
+            display: none;
+        }
+
+        .shake {
+            animation: shake-anim 0.2s ease-in-out;
+        }
+        @keyframes shake-anim {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-4px, 4px); }
+            50% { transform: translate(4px, -4px); }
+            75% { transform: translate(-2px, -2px); }
+        }
+
+        .flash-red {
+            animation: flash-red-anim 0.5s infinite;
+        }
+        @keyframes flash-red-anim {
+            0%, 100% { background-color: #f0fdf4; }
+            50% { background-color: #ffcccc; }
+        }
+
+        /* THIẾT KẾ VÒNG QUAY CẢM XÚC 3 VÒNG ĐỒNG TÂM */
+        .wheel-outer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            background: white;
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 6px 6px 0px var(--primary-dark);
+        }
+        .wheel-wrapper {
+            position: relative;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .wheel-pointer {
+            position: absolute;
+            top: 10px;
+            z-index: 10;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 25px solid var(--accent);
+            filter: drop-shadow(0px 3px 2px rgba(0,0,0,0.3));
+        }
+        .wheel-ring {
+            border-radius: 50%;
+            border: 3px solid var(--primary-dark);
+            position: absolute;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .wheel-ring-3 {
+            width: 360px;
+            height: 360px;
+            background: conic-gradient(
+                #ffadad 0deg 45deg,
+                #caffbf 45deg 135deg,
+                #9bf6ff 135deg 225deg,
+                #fdffb6 225deg 315deg,
+                #ffadad 315deg 360deg
+            );
+            z-index: 1;
+        }
+        .wheel-ring-2 {
+            width: 250px;
+            height: 250px;
+            background: conic-gradient(
+                #ffadad 0deg 45deg,
+                #caffbf 45deg 135deg,
+                #9bf6ff 135deg 225deg,
+                #fdffb6 225deg 315deg,
+                #ffadad 315deg 360deg
+            );
+            z-index: 2;
+        }
+        .wheel-ring-1 {
+            width: 140px;
+            height: 140px;
+            background: conic-gradient(
+                #ffadad 0deg 45deg,
+                #caffbf 45deg 135deg,
+                #9bf6ff 135deg 225deg,
+                #fdffb6 225deg 315deg,
+                #ffadad 315deg 360deg
+            );
+            z-index: 3;
+        }
+        .wheel-item-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 50px;
+            margin-top: -25px;
+            margin-left: -50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            pointer-events: none;
+            line-height: 1.2;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+            word-break: keep-all;
+            white-space: normal;
+        }
+        .wheel-ring-3 .wheel-item-text {
+            font-size: 13px;
+            width: 110px;
+            margin-left: -55px;
+        }
+        .wheel-ring-2 .wheel-item-text {
+            font-size: 13px;
+            width: 90px;
+            margin-left: -45px;
+        }
+        .wheel-ring-1 .wheel-item-text {
+            font-size: 15px;
+            width: 80px;
+            margin-left: -40px;
+        }
+
+        /* Vạch chia ranh giới góc quay */
+        .wheel-divider {
+            position: absolute;
+            background: var(--primary-dark);
+            pointer-events: none;
+            opacity: 0.4;
+        }
+        .wheel-ring-3 .wheel-divider {
+            width: 2px;
+            height: 360px;
+        }
+        .wheel-ring-3 .wheel-divider:nth-child(5) { transform: rotate(45deg); }
+        .wheel-ring-3 .wheel-divider:nth-child(6) { transform: rotate(135deg); }
+        .wheel-ring-3 .wheel-divider:nth-child(7) { transform: rotate(90deg); }
+        .wheel-ring-3 .wheel-divider:nth-child(8) { transform: rotate(0deg); }
+
+        .wheel-ring-2 .wheel-divider {
+            width: 2px;
+            height: 250px;
+        }
+        .wheel-ring-2 .wheel-divider:nth-child(5) { transform: rotate(45deg); }
+        .wheel-ring-2 .wheel-divider:nth-child(6) { transform: rotate(135deg); }
+        .wheel-ring-2 .wheel-divider:nth-child(7) { transform: rotate(90deg); }
+        .wheel-ring-2 .wheel-divider:nth-child(8) { transform: rotate(0deg); }
+
+        /* Nút chọn cảm xúc Pop Art */
+        .feel-btn {
+            background: white;
+            border: 2px solid var(--primary-dark);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            box-shadow: 3px 3px 0px var(--primary-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.15s ease;
+        }
+        .feel-btn:hover {
+            background: #e6f7ff;
+            transform: translateY(-1px);
+            box-shadow: 4px 4px 0px var(--primary-dark);
+        }
+
+        /* SVG SƠ ĐỒ QUY TRÌNH POP ART */
+        .svg-flow-container {
+            width: 100%;
+            height: 250px;
+            background: white;
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            box-shadow: 5px 5px 0px var(--primary-dark);
+            padding: 10px;
+        }
+    
+        /* Game 1: Sắp xếp câu ôn tập */
+        .unscramble-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .unscramble-slots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            min-height: 70px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.4);
+            border: 2px dashed var(--primary);
+            border-radius: 8px;
+            align-items: center;
+            justify-content: center;
+        }
+        .unscramble-word-pool {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            padding: 10px;
+        }
+        .word-block {
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary-dark);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 24px !important;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        .word-block:hover {
+            transform: translateY(-2px);
+            background: var(--primary-light);
+            border-color: var(--primary-dark);
+        }
+        .word-block.used {
+            opacity: 0.4;
+            pointer-events: none;
+            transform: none;
+        }
+        .game-layout-s4 {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 20px;
+            align-items: center;
+            flex: 1;
+        }
+        .image-card-s4 {
+            background: white;
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 6px 6px 0px var(--primary-dark);
+        }
+</style>
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- SIDEBAR ĐIỀU HƯỚNG BÊN TRÁI -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                BÁC SĨ CỘNG ĐỒNG
+            </div>
+            <ul class="slide-list" id="sidebar-list">
+                <!-- Được tạo tự động bằng Javascript -->
+            </ul>
+        </div>
+
+        <!-- PHẦN DIỆN TÍCH TRÌNH CHIẾU -->
+        <div class="presentation-area" id="presentation-area">
+            
+            <!-- HEADER THÔNG TIN Y KHOA -->
+            <div class="presentation-header">
+                <div class="header-title" id="header-slide-info">
+                    BÀI 7.6: CHIẾN DỊCH SỨC KHỎE - BÁC SĨ CỘNG ĐỒNG
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <button class="btn btn-nav" style="padding: 6px 12px; font-size: 14px;" onclick="window.location.href='index.html'">CHỌN TIẾT 🏠</button>
+                    <div class="header-role-badge" id="header-role-badge">🩺 BÁC SĨ THỰC TẬP</div>
+                    <div class="header-stage-badge" id="header-stage-badge">GIAI ĐOẠN: KHỞI ĐỘNG</div>
+                </div>
+            </div>
+
+            <!-- VIEWPORT CHỨA CÁC SLIDES -->
+            <div class="slide-viewport">
+
+                <!-- SLIDE 1: BÌA BÀI HỌC (MĐ01) -->
+                <div class="slide-frame active" id="slide-1" style="background: url('assets/cover.png') no-repeat center center; background-size: cover; border: 4px solid var(--primary-dark); box-shadow: 10px 10px 0px var(--primary-dark);">
+                    <div class="template-md01" style="background: rgba(255, 255, 255, 0.88); margin-top: auto; margin-bottom: 20px; border: 3px solid var(--primary-dark); box-shadow: 5px 5px 0px var(--primary-dark); padding: 15px 30px; width: auto; max-width: 80%;">
+                        <div class="md01-code">BÀI 7.6</div>
+                        <h1 class="md01-title" id="slide1-title" style="font-size: 32px; min-height: 40px; text-transform: uppercase;">VÌ SAO CẢM XÚC THAY ĐỔI MẠNH?</h1>
+                        <div class="md01-subtitle" id="slide1-subtitle" style="font-size: 18px; font-style: italic; font-weight: 700; color: var(--text-muted); margin-top: -15px;">TIẾT 3: LAN TỎA CHIẾN DỊCH SỨC KHỎE</div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2: MỤC TIÊU BÀI HỌC (MT01) -->
+                <div class="slide-frame" id="slide-2">
+                    <div class="template-mt01">
+                        <div class="mt01-header">MỤC TIÊU TIẾT 3</div>
+                        <div class="mt01-columns">
+                            <div class="mt01-col">
+                                <div class="mt01-col-title">🧪 Kiến thức</div>
+                                <div class="mt01-col-desc">Thẩm định tính chính xác khoa học của các thông điệp giải tỏa cảm xúc.</div>
+                            </div>
+                            <div class="mt01-col">
+                                <div class="mt01-col-title">🩹 Kỹ năng</div>
+                                <div class="mt01-col-desc">Hoàn thiện sản phẩm poster truyền thông, diễn tập phát thanh và thuyết trình thuyết phục.</div>
+                            </div>
+                            <div class="mt01-col">
+                                <div class="mt01-col-title">❤️ Thái độ</div>
+                                <div class="mt01-col-desc">Tự tin chia sẻ và lan tỏa năng lượng tích cực, kỹ năng điều hòa cảm xúc đến cộng đồng trường học.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3: GIỚI THIỆU GIAI ĐOẠN 1 (GT01) -->
+                <div class="slide-frame" id="slide-3">
+                    <div class="template-gt01">
+                        <div class="gt01-title">GIAI ĐOẠN 1</div>
+                        <div class="gt01-subtitle">MỞ KHÓA NHIỆM VỤ TUYÊN TRUYỀN</div>
+                        <div class="gt01-desc">Ôn kiến thức, tạo hứng thú trước khi bước vào ngày hội truyền thông chính thức.</div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4: THỰC HIỆN HOẠT ĐỘNG - ÔN KIẾN THỨC (TH01) -->
+                <div class="slide-frame" id="slide-4">
+                    <div class="template-th01">
+                        <div class="th01-title">CẤP CỨU THÔNG TIN Y TẾ</div>
+                        <div class="th01-subtitle">SẮP XẾP CHỮ THÀNH CÂU MÔ TẢ QUY TẮC GIẢI TỎA CẢM XÚC ĐÚNG</div>
+                        
+                        <div class="th01-timer-row" style="align-self: center; margin-bottom: 5px; padding: 4px 15px;">
+                            <span class="timer-display" id="timer-display-4">05:00</span>
+                            <div class="timer-controls">
+                                <button class="btn-timer" id="btn-start-4" onclick="startTimer4()">BẮT ĐẦU</button>
+                                <button class="btn-timer" onclick="pauseTimer(4)">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="resetGame4()">LÀM LẠI</button>
+                            </div>
+                        </div>
+
+                        <div class="game-layout-s4">
+                            <div class="unscramble-container">
+                                <div class="unscramble-slots" id="unscramble-slots">
+                                    <span style="color: var(--text-muted); font-size: 20px; font-weight: bold; font-style: italic;" id="unscramble-placeholder">Click vào các thẻ từ bên dưới để ghép câu...</span>
+                                </div>
+                                <div class="unscramble-word-pool" id="unscramble-pool">
+                                    <!-- Words will be dynamically generated by JS -->
+                                </div>
+                                <button class="btn btn-action" style="align-self: center; margin-top: 5px;" onclick="checkGame4()">KIỂM TRA CÂU</button>
+                            </div>
+                            <div class="image-card-s4">
+                                <img src="assets/brain_cockpit.png" style="width: 100%; max-height: 180px; object-fit: contain; border-radius: 8px;" alt="Brain Cockpit">
+                                <div style="font-size: 13px; font-weight: bold; color: var(--primary-dark); margin-top: 8px; line-height: 1.3;">
+                                    CƠ CHẾ NÃO BỘ: HẠCH HẠNH NHÂN VÀ VỎ NÃO TRƯỚC TRÁN
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 5: GIỚI THIỆU GIAI ĐOẠN 2 (GT01) -->
+                <div class="slide-frame" id="slide-5">
+                    <div class="template-gt01">
+                        <div class="gt01-title">GIAI ĐOẠN 2</div>
+                        <div class="gt01-subtitle">NHẬN NHIỆM VỤ TUYÊN TRUYỀN</div>
+                        <div class="gt01-desc">Hiểu khán giả (Audience) và xác định mục tiêu truyền thông cốt lõi của chiến dịch y tế học đường.</div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 6: PHÂN VAI CHUYÊN GIA (PV01) -->
+                <div class="slide-frame" id="slide-6">
+                    <div class="template-pv01">
+                        <div class="pv01-header">PHÂN VAI CHUYÊN GIA</div>
+                        <div class="pv01-content">
+                            Hội đồng Y tế Công cộng Emotion Hospital chính thức bổ nhiệm! Hôm nay, các bác sĩ sẽ nhận vai trò là các Chuyên gia Tuyên truyền Sức khỏe. Nhiệm vụ tối cao của các bạn là thấu hiểu tâm lý người nghe, thẩm định thông điệp khoa học để đưa sản phẩm poster và vòng quay giải tỏa cảm xúc tiếp cận, thuyết phục mọi học sinh trong trường học!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 7: GIỚI THIỆU GIAI ĐOẠN 3 (GT01) -->
+                <div class="slide-frame" id="slide-7">
+                    <div class="template-gt01">
+                        <div class="gt01-title">GIAI ĐOẠN 3</div>
+                        <div class="gt01-subtitle">KIỂM TRA THÔNG ĐIỆP</div>
+                        <div class="gt01-desc">Thẩm định tính chính xác của các kiến thức y khoa trên poster để loại bỏ ngộ nhận sai lầm.</div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 8: CHUẨN BỊ THỰC HÀNH (CB01) -->
+                <div class="slide-frame" id="slide-8">
+                    <div class="template-cb01">
+                        <div class="cb01-header">CHUẨN BỊ THẨM ĐỊNH</div>
+                        <div class="cb01-split">
+                            <div class="cb01-card">
+                                <div class="cb01-card-title">📝 DỤNG CỤ THẨM ĐỊNH</div>
+                                <ul class="cb01-list">
+                                    <li>Poster đã vẽ phác thảo ở tiết 2</li>
+                                    <li>Vòng quay giải tỏa cảm xúc giấy</li>
+                                    <li>Phiếu thẩm định thông điệp y tế</li>
+                                </ul>
+                            </div>
+                            <div class="cb01-card">
+                                <div class="cb01-card-title">👥 HÌNH THỨC NHÓM</div>
+                                <ul class="cb01-list">
+                                    <li>Hội đồng chuyên môn thảo luận</li>
+                                    <li>Bác sĩ nhí rà soát chéo thông điệp</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 9: QUY TRÌNH THỰC HIỆN (HD01) -->
+                <div class="slide-frame" id="slide-9">
+                    <div class="template-hd01">
+                        <div class="hd01-header">QUY TRÌNH RÀ SOÁT</div>
+                        <div class="hd01-steps">
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 1</div>
+                                <div class="hd01-step-text">Rà soát lại các kiến thức cốt lõi</div>
+                            </div>
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 2</div>
+                                <div class="hd01-step-text">Đối chiếu thông tin trên poster</div>
+                            </div>
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 3</div>
+                                <div class="hd01-step-text">Đánh dấu điểm cần chỉnh sửa</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 10: THỰC HÀNH THẨM ĐỊNH (TH01) -->
+                <div class="slide-frame" id="slide-10">
+                    <div class="template-th01">
+                        <div class="th01-title">THẨM ĐỊNH Y KHOA CẢM XÚC</div>
+                        <div class="th01-subtitle">RÀ SOÁT NỘI DUNG VÀ ĐỐI CHIẾU TIÊU CHÍ AN TOÀN TRONG 7 PHÚT</div>
+                        
+                        <div class="th01-timer-row" style="align-self: center; margin-bottom: 10px; padding: 4px 15px;">
+                            <span class="timer-display" id="timer-display-10">07:00</span>
+                            <div class="timer-controls">
+                                <button class="btn-timer" id="btn-start-10" onclick="startTimer10()">BẮT ĐẦU</button>
+                                <button class="btn-timer" onclick="pauseTimer(10)">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="resetTimer10()">LÀM LẠI</button>
+                            </div>
+                        </div>
+
+                        <div class="da01-box" style="width: 100%; max-width: 800px; margin: 0 auto; padding: 20px;">
+                            <div class="da01-title" style="font-size: 24px; margin-bottom: 15px;">🔍 TIÊU CHÍ DUYỆT THÔNG ĐIỆP</div>
+                            <div class="da01-content" style="font-size: 18px; line-height: 1.6;">
+                                <p style="margin-bottom: 8px;">✔️ <strong>Chính xác y khoa:</strong> Phải có cơ chế não bộ (hạch hạnh nhân, vỏ não).</p>
+                                <p style="margin-bottom: 8px;">✔️ <strong>Đầy đủ phác đồ:</strong> Đủ 5 bước điều hòa cảm xúc, làm rõ nhịp thở Box Breathing.</p>
+                                <p>✔️ <strong>Không có ngộ nhận:</strong> Loại bỏ các hành vi bộc phát tiêu cực (la hét, ném đồ) và kìm nén độc hại.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 11: GIỚI THIỆU GIAI ĐOẠN 4 (GT01) -->
+                <div class="slide-frame" id="slide-11">
+                    <div class="template-gt01">
+                        <div class="gt01-title">GIAI ĐOẠN 4</div>
+                        <div class="gt01-subtitle">HOÀN THIỆN THÔNG ĐIỆP</div>
+                        <div class="gt01-desc">Chỉnh sửa lỗi đồ họa và làm nổi bật Slogan y tế cảm xúc trước giờ xuất bản.</div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 12: CẢNH BÁO BÁO ĐỘNG KỊCH TÍNH (BĐ01) -->
+                <div class="slide-frame" id="slide-12" style="background: url('assets/hospital_bg.png') no-repeat center center; background-size: cover; border: 4px solid var(--accent); box-shadow: 10px 10px 0px var(--accent);">
+                    <div class="template-th01" style="background: rgba(255, 255, 255, 0.88); padding: 30px; border-radius: 12px; height: 100%; justify-content: center; text-align: center;">
+                        <h1 style="font-size: 40px; color: var(--accent); margin-bottom: 20px; font-weight: 800; text-transform: uppercase;">⚠️ CẢNH BÁO KHẨN CẤP</h1>
+                        <p style="font-size: 26px; color: var(--primary-dark); font-weight: bold; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+                            Xe phát thanh tuyên truyền chuẩn bị lăn bánh! Chỉ còn một cơ hội cuối cùng để chỉnh sửa các lỗi đồ họa và làm nổi bật Slogan trước khi tiếp cận người dân!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SLIDE 13: THỰC HÀNH TỐI ƯU SLOGAN (TH01) -->
+                <div class="slide-frame" id="slide-13">
+                    <div class="template-th01">
+                        <div class="th01-title">TỐI ƯU HÓA POSTER TRUYỀN THÔNG</div>
+                        <div class="th01-subtitle">TÔ MÀU, VIẾT SLOGAN VÀ HOÀN THIỆN ĐỒ HỌA TRONG 7 PHÚT</div>
+                        
+                        <div class="th01-timer-row" style="align-self: center; margin-bottom: 10px; padding: 4px 15px;">
+                            <span class="timer-display" id="timer-display-13">07:00</span>
+                            <div class="timer-controls">
+                                <button class="btn-timer" id="btn-start-13" onclick="startTimer13()">BẮT ĐẦU</button>
+                                <button class="btn-timer" onclick="pauseTimer(13)">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="resetTimer13()">LÀM LẠI</button>
+                            </div>
+                        </div>
+
+                        <div class="da01-box" style="width: 100%; max-width: 800px; margin: 0 auto; padding: 20px;">
+                            <div class="da01-title" style="font-size: 24px; margin-bottom: 15px; color: var(--accent);">🎨 NHIỆM VỤ CUỐI CÙNG</div>
+                            <div class="da01-content" style="font-size: 18px; line-height: 1.6;">
+                                <p style="margin-bottom: 8px;">• Viết Slogan to, rõ ràng, dễ nhớ bằng bút màu đậm.</p>
+                                <p style="margin-bottom: 8px;">• Trang trí thêm các biểu tượng cảm xúc y khoa sinh động.</p>
+                                <p>• Kiểm tra tính thẩm mỹ tổng thể, đảm bảo học sinh từ xa vẫn nhìn rõ.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 14: GIỚI THIỆU GIAI ĐOẠN 5 (GT01) -->
+                <div class="slide-frame" id="slide-14">
+                    <div class="template-gt01">
+                        <div class="gt01-title">GIAI ĐOẠN 5</div>
+                        <div class="gt01-subtitle">DUYỆT & DIỄN TẬP CHIẾN DỊCH</div>
+                        <div class="gt01-desc">Phân công vai trò, diễn tập nói trước poster để đạt hiệu quả thuyết phục cao nhất.</div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 15: QUY TRÌNH DIỄN TẬP (HD01) -->
+                <div class="slide-frame" id="slide-15">
+                    <div class="template-hd01">
+                        <div class="hd01-header">QUY TRÌNH DIỄN TẬP</div>
+                        <div class="hd01-steps">
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 1</div>
+                                <div class="hd01-step-text">Phân chia người thuyết trình và hỗ trợ cầm poster</div>
+                            </div>
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 2</div>
+                                <div class="hd01-step-text">Nói thử theo cấu trúc thông điệp tôi gợi ý</div>
+                            </div>
+                            <div class="hd01-step">
+                                <div class="hd01-step-num">Bước 3</div>
+                                <div class="hd01-step-text">Góp ý cải thiện tư thế, giọng nói to rõ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 16: THỰC HÀNH DIỄN TẬP (TH01) -->
+                <div class="slide-frame" id="slide-16">
+                    <div class="template-th01">
+                        <div class="th01-title">DIỄN TẬP TRONG NHÓM</div>
+                        <div class="th01-subtitle">CÙNG NHAU DIỄN TẬP TRONG THỜI GIAN 8 PHÚT</div>
+                        
+                        <div class="th01-timer-row" style="align-self: center; margin-bottom: 10px; padding: 4px 15px;">
+                            <span class="timer-display" id="timer-display-16">08:00</span>
+                            <div class="timer-controls">
+                                <button class="btn-timer" id="btn-start-16" onclick="startTimer16()">BẮT ĐẦU</button>
+                                <button class="btn-timer" onclick="pauseTimer(16)">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="resetTimer16()">LÀM LẠI</button>
+                            </div>
+                        </div>
+
+                        <div class="da01-box" style="width: 100%; max-width: 800px; margin: 0 auto; padding: 20px;">
+                            <div class="da01-title" style="font-size: 24px; margin-bottom: 15px;">🎙️ GỢI Ý CẤU TRÚC PHÁT BIỂU</div>
+                            <div class="da01-content" style="font-size: 18px; line-height: 1.6;">
+                                <p style="margin-bottom: 8px;"><strong>1. Đặt vấn đề:</strong> Bạn có hay bị "bão cảm xúc" ghé thăm bất ngờ?</p>
+                                <p style="margin-bottom: 8px;"><strong>2. Cơ chế:</strong> Đó là do hạch hạnh nhân bùng nổ khi vỏ não chưa hoàn thiện.</p>
+                                <p style="margin-bottom: 8px;"><strong>3. Giải pháp:</strong> Hãy áp dụng phác đồ thở sâu Box Breathing và dùng Thông điệp tôi.</p>
+                                <p><strong>4. Lan tỏa:</strong> Mời các bạn cùng trải nghiệm Vòng quay cảm xúc của chúng tớ!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 17: GIỚI THIỆU GIAI ĐOẠN 6 (GT01) -->
+                <div class="slide-frame" id="slide-17">
+                    <div class="template-gt01">
+                        <div class="gt01-title">GIAI ĐOẠN 6</div>
+                        <div class="gt01-subtitle">TUYÊN TRUYỀN SỨC KHỎE</div>
+                        <div class="gt01-desc">Báo cáo chiến dịch truyền thông trước hội đồng và phản biện chéo toàn lớp.</div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 18: DIỄN ĐÀN TRUYỀN THÔNG (TB01) -->
+                <div class="slide-frame" id="slide-18">
+                    <div class="template-tb01">
+                        <div class="tb01-header" style="font-size: 32px; font-weight: 800; color: var(--primary-dark); text-align: center; text-transform: uppercase;">BÁO CÁO CHIẾN DỊCH TRUYỀN THÔNG</div>
+                        
+                        <div class="th01-timer-row" style="align-self: center; margin: 10px 0; padding: 4px 15px;">
+                            <span class="timer-display" id="timer-display-18">10:00</span>
+                            <div class="timer-controls">
+                                <button class="btn-timer" id="btn-start-18" onclick="startTimer18()">BẮT ĐẦU</button>
+                                <button class="btn-timer" onclick="pauseTimer(18)">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="resetTimer18()">LÀM LẠI</button>
+                            </div>
+                        </div>
+
+                        <div class="da01-box" style="width: 100%; max-width: 800px; margin: 0 auto; padding: 20px;">
+                            <div class="da01-content" style="font-size: 18px; line-height: 1.7; text-align: center;">
+                                <p style="margin-bottom: 10px; font-weight: bold; color: var(--primary);">🩺 DIỄN ĐÀN BÁC SĨ TRUYỀN THÔNG</p>
+                                <p style="margin-bottom: 10px;">Đại diện kíp trực tiến hành thuyết trình sản phẩm poster, giải thích thông điệp sức khỏe và cách điều hòa cảm xúc nhằm thuyết phục người nghe.</p>
+                                <p>Cả lớp đóng vai những người dân/học sinh khối dưới lắng nghe, đưa ra nhận xét y khoa và đặt câu hỏi chất vấn chéo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 19: CHUẨN HOÁ CHIẾN DỊCH (ĐA01) -->
+                <div class="slide-frame" id="slide-19">
+                    <div class="template-da01">
+                        <div class="da01-box" style="position: relative;">
+                            <div class="da01-title">KẾT QUẢ CHIẾN DỊCH CHUẨN</div>
+                            <div class="da01-content" style="font-size: 18px; line-height: 1.6; padding: 10px 20px;">
+                                <p style="margin-bottom: 8px;"><strong>1. Slogan y đức cảm xúc:</strong> Cần ngắn gọn, hành động cụ thể (ví dụ: *"Bình tĩnh 4 giây - Làm chủ hạch hạnh nhân"*).</p>
+                                <p style="margin-bottom: 8px;"><strong>2. Quy chuẩn sơ cứu:</strong> Tuyệt đối không trút giận (gây nhiễm độc hành vi) hay đè nén (gây ức chế tâm lý sinh lý).</p>
+                                <p style="margin-bottom: 8px;"><strong>3. Công cụ cốt lõi:</strong> Hướng dẫn chi tiết kỹ thuật hít thở **Box Breathing 4-4-4-4** để trực tiếp điều hòa nhịp tim.</p>
+                                <p><strong>4. Thay đổi thói quen:</strong> Sử dụng cấu trúc **Thông điệp tôi** làm kênh giao tiếp ôn hòa hàng ngày.</p>
+                            </div>
+                            <!-- Con dấu phê duyệt -->
+                            <div class="stamp-overlay" id="stamp-s19" style="display: block; right: 20px; bottom: 20px;">
+                                <div class="stamp-graphic" style="color: var(--secondary); border-color: var(--secondary);">ĐÃ PHÊ DUYỆT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 20: GIỚI THIỆU GIAI ĐOẠN 7 & 8 (GT01) -->
+                <div class="slide-frame" id="slide-20">
+                    <div class="template-gt01">
+                        <div class="gt01-title">TỔNG KẾT & SỨ MỆNH</div>
+                        <div class="gt01-subtitle">NHẬT KÝ CHUYÊN GIA & SỨ MỆNH BÁC SĨ</div>
+                        <div class="gt01-desc">Nhìn nhận lại năng lực bản thân, tuyên thệ lời thề y đức cảm xúc và vinh danh thăng cấp chính thức.</div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 21: TỔNG KẾT BÀI HỌC (TK01) -->
+                <div class="slide-frame" id="slide-21">
+                    <div class="template-tk01">
+                        <div class="tk01-header">TỔNG KẾT NHẬT KÝ BÁC SĨ</div>
+                        <div class="tk01-list-container" style="max-height: 400px; overflow-y: auto;">
+                            <ul class="tk01-list">
+                                <li class="tk01-item">Cảm xúc mạnh là phản ứng sinh học tự nhiên của hạch hạnh nhân tuổi dậy thì do vỏ não trước trán chưa myelin hóa xong.</li>
+                                <li class="tk01-item">Các triệu chứng cơ thể (tim đập nhanh, đỏ mặt, run rẩy, khó thở) là dấu hiệu cảnh báo y tế về biến động tâm lý.</li>
+                                <li class="tk01-item">Quy trình điều hòa 5 bước: Nhận diện cơ thể ➔ Tạm dừng hành vi ➔ Thở sâu Box Breathing ➔ Nhận thức lại (Thông điệp tôi) ➔ Thói quen phản tư.</li>
+                                <li class="tk01-item">Lan tỏa thông điệp điều hòa cảm xúc y khoa giúp ngăn chặn bão cảm xúc và bài trừ nhiễm độc hành vi trong học đường.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 22: SỨ MỆNH BÁC SĨ - CAM KẾT HÀNH ĐỘNG (CK01) -->
+                <div class="slide-frame" id="slide-22">
+                    <div class="template-ck01">
+                        <div class="ck01-title">LỜI THỀ Y ĐỨC CẢM XÚC</div>
+                        <div class="ck01-subtitle">BẢN CAM KẾT HÀNH ĐỘNG VÌ SỨC KHỎE CỘNG ĐỒNG</div>
+                        <div class="ck01-box">
+                            <div class="ck01-terms">
+                                <label class="ck01-term"><input type="checkbox" id="ck22-1"> Tôi cam kết luôn kiểm soát hơi thở và nhịp tim bằng phác đồ Box Breathing khi có bão cảm xúc.</label>
+                                <label class="ck01-term"><input type="checkbox" id="ck22-2"> Tôi cam kết sử dụng Thông điệp tôi để chia sẻ ôn hòa, văn minh và không gây tổn thương cho cộng đồng.</label>
+                                <label class="ck01-term"><input type="checkbox" id="ck22-3"> Tôi cam kết chủ động hỗ trợ và hướng dẫn bạn bè xung quanh điều hòa cảm xúc theo phác đồ y khoa.</label>
+                            </div>
+                            <div class="ck01-signature-row">
+                                <div class="ck01-signature-box">
+                                    <label>Tên kíp trực:</label>
+                                    <input type="text" class="ck01-signature-input" id="sig-22" placeholder="Nhập tên nhóm...">
+                                </div>
+                                <button class="btn btn-action" onclick="signPledge22()">CAM KẾT</button>
+                                <div class="stamp-overlay" id="stamp-pledge-22">
+                                    <div class="stamp-graphic" style="color: var(--accent); border-color: var(--accent);">ĐÃ CAM KẾT</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 23: CHỨNG NHẬN TRANG TRỌNG (VD01) -->
+                <div class="slide-frame" id="slide-23">
+                    <div class="template-vd01">
+                        <div class="vd01-cert-box">
+                            <div class="vd01-cert-header">CHỨNG NHẬN HOÀN THÀNH NHIỆM VỤ</div>
+                            <div class="vd01-cert-title">VINH DANH CHUYÊN GIA TRUYỀN THÔNG Y TẾ XUẤT SẮC</div>
+                            
+                            <div style="font-size: 20px; font-weight: 600; color: var(--text-main); margin: 15px 0;">Chứng nhận kíp trực đạt giải Poster ấn tượng nhất:</div>
+                            
+                            <!-- Nhập tên trực tiếp -->
+                            <div class="vd01-input-container" style="display: flex; gap: 10px; justify-content: center; align-items: center; margin-bottom: 20px; z-index: 100; position: relative;">
+                                <input type="text" id="cert-group-name" placeholder="Nhập tên kíp trực..." style="padding: 10px 15px; font-size: 20px; border: 2px solid var(--primary); border-radius: 8px; width: 320px; outline: none; font-weight: bold; text-align: center;">
+                                <button class="btn btn-action" style="margin: 0; padding: 10px 25px;" onclick="issueCertificate()">CẤP BẰNG</button>
+                            </div>
+
+                            <div class="vd01-cert-recipient" id="cert-recipient-name" style="display: none; margin: 10px 0; font-size: 40px; color: var(--accent); font-weight: 900; text-transform: uppercase;"></div>
+                            
+                            <div class="vd01-cert-footer" style="font-size: 16px; margin-top: 15px;">Hội đồng y khoa Emotion Hospital phê duyệt</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 24: BẾ MẠC & VINH DANH CHÍNH THỨC (VD01) -->
+                <div class="slide-frame" id="slide-24">
+                    <div class="template-vd01">
+                        <div class="vd01-cert-box" style="background: linear-gradient(135deg, #fffefe, #f0fdf4); border-color: var(--secondary);">
+                            <div class="vd01-cert-header" style="color: var(--secondary); font-size: 32px;">LỄ VINH DANH BÁC SĨ CHÍNH THỨC</div>
+                            <div class="vd01-cert-title" style="font-size: 26px; line-height: 1.4; max-width: 800px; margin: 20px auto; color: var(--primary-dark);">
+                                Chúc mừng toàn thể các bạn học sinh đã xuất sắc vượt qua mọi thử thách, bảo vệ thành công sức khỏe tâm lý cộng đồng và chính thức trở thành các Bác sĩ chính thức của Emotion Hospital!
+                            </div>
+                            
+                            <div style="font-size: 32px; font-weight: 800; color: var(--accent); margin: 10px 0; text-transform: uppercase;">
+                                🎉 TẬP THỂ LỚP HỌC ĐẠT CHUẨN Y KHOA 🎉
+                            </div>
+
+                            <div style="font-size: 16px; font-style: italic; color: var(--text-muted); margin-top: 20px; font-weight: 700;">
+                                * Nhiệm vụ tại nhà: Duy trì thói quen viết Nhật ký Phản tư cảm xúc mỗi tối trước khi đi ngủ.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- NÚT ĐIỀU HƯỚNG PHÍA DƯỚI -->
+            <div class="presentation-footer">
+                <button class="btn btn-nav" id="btn-prev" onclick="prevSlide()">◀ TRƯỚC</button>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn btn-accent" id="btn-answer-trigger" style="display: none;" onclick="showAnswerSlide()">XEM ĐÁP ÁN 🔑</button>
+                    <button class="btn btn-action" id="btn-next" onclick="nextSlide()">TIẾP THEO ▶</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Canvas pháo hoa -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- TRÌNH ĐIỀU KHIỂN LOGIC SỐ HÓA VÀ ÂM THANH NHÂN TẠO -->
+    <script>
+        const slidesConfig = [
+            { id: 1, type: "MĐ01", title: "Slide Bìa bài học", stage: "KHỞI ĐỘNG" },
+            { id: 2, type: "MT01", title: "Mục tiêu bài học", stage: "MỤC TIÊU" },
+            { id: 3, type: "GT01", title: "Giới thiệu Giai đoạn 1", stage: "MỞ KHÓA NHIỆM VỤ" },
+            { id: 4, type: "TH01", title: "Cấp cứu thông tin y tế", stage: "MỞ KHÓA NHIỆM VỤ" },
+            { id: 5, type: "GT01", title: "Giới thiệu Giai đoạn 2", stage: "NHẬN NHIỆM VỤ" },
+            { id: 6, type: "PV01", title: "Phân vai chuyên gia", stage: "NHẬN NHIỆM VỤ" },
+            { id: 7, type: "GT01", title: "Giới thiệu Giai đoạn 3", stage: "KIỂM TRA POSTER" },
+            { id: 8, type: "CB01", title: "Chuẩn bị rà soát", stage: "KIỂM TRA POSTER" },
+            { id: 9, type: "HD01", title: "Quy trình rà soát", stage: "KIỂM TRA POSTER" },
+            { id: 10, type: "TH01", title: "Thực hành rà soát", stage: "KIỂM TRA POSTER" },
+            { id: 11, type: "GT01", title: "Giới thiệu Giai đoạn 4", stage: "HOÀN THIỆN POSTER" },
+            { id: 12, type: "BĐ01", title: "Cảnh báo khẩn cấp", stage: "HOÀN THIỆN POSTER" },
+            { id: 13, type: "TH01", title: "Tối ưu hóa slogan", stage: "HOÀN THIỆN POSTER" },
+            { id: 14, type: "GT01", title: "Giới thiệu Giai đoạn 5", stage: "DIỄN TẬP PHÁT THANH" },
+            { id: 15, type: "HD01", title: "Quy trình diễn tập", stage: "DIỄN TẬP PHÁT THANH" },
+            { id: 16, type: "TH01", title: "Thực hành diễn tập", stage: "DIỄN TẬP PHÁT THANH" },
+            { id: 17, type: "GT01", title: "Giới thiệu Giai đoạn 6", stage: "PHÁT THANH TRUYỀN THÔNG" },
+            { id: 18, type: "TB01", title: "Báo cáo chiến dịch", stage: "PHÁT THANH TRUYỀN THÔNG" },
+            { id: 19, type: "ĐA01", title: "Bộ thông điệp chuẩn", stage: "PHÁT THANH TRUYỀN THÔNG" },
+            { id: 20, type: "GT01", title: "Tổng kết & Sứ mệnh", stage: "TỔNG KẾT & SỨ MỆNH" },
+            { id: 21, type: "TK01", title: "Nhật ký chuyên gia", stage: "TỔNG KẾT & SỨ MỆNH" },
+            { id: 22, type: "CK01", title: "Cam kết hành động", stage: "TỔNG KẾT & SỨ MỆNH" },
+            { id: 23, type: "VD01", title: "Chứng nhận hoàn thành", stage: "KHEN THƯỞNG & VINH DANH" },
+            { id: 24, type: "VD01", title: "Vinh danh chính thức", stage: "KHEN THƯỞNG & VINH DANH" }
+        ];
+
+
+        // -------------------------------------------------------------
+        // LOGIC TRÒ CHƠI ÔN TẬP SLIDE 4: SẮP XẾP CÂU Y KHOA
+        // -------------------------------------------------------------
+        const s4CorrectSentence = ["Thở sâu", "Box Breathing", "giúp", "hạ nhịp tim", "và", "làm dịu", "hạch hạnh nhân."];
+        const s4ShuffledWords = ["Box Breathing", "giúp", "Thở sâu", "làm dịu", "hạch hạnh nhân.", "hạ nhịp tim", "và"];
+        let s4SelectedWords = [];
+
+        function renderGame4() {
+            const pool = document.getElementById("unscramble-pool");
+            const slots = document.getElementById("unscramble-slots");
+            
+            pool.innerHTML = "";
+            s4ShuffledWords.forEach((word, idx) => {
+                const block = document.createElement("div");
+                block.className = "word-block";
+                block.innerText = word;
+                block.id = `wb-${idx}`;
+                block.onclick = () => selectWordBlock(word, idx);
+                pool.appendChild(block);
+            });
+
+            s4SelectedWords = [];
+            updateSlotsUI();
+        }
+
+        function selectWordBlock(word, index) {
+            playStamp();
+            s4SelectedWords.push({ word, index });
+            const block = document.getElementById(`wb-${index}`);
+            block.classList.add("used");
+            updateSlotsUI();
+        }
+
+        function removeSelectedWord(selIdx) {
+            playTick();
+            const removed = s4SelectedWords.splice(selIdx, 1)[0];
+            const block = document.getElementById(`wb-${removed.index}`);
+            block.classList.remove("used");
+            updateSlotsUI();
+        }
+
+        function updateSlotsUI() {
+            const slots = document.getElementById("unscramble-slots");
+            if (s4SelectedWords.length === 0) {
+                slots.innerHTML = `<span style="color: var(--text-muted); font-size: 20px; font-weight: bold; font-style: italic;" id="unscramble-placeholder">Click vào các thẻ từ bên dưới để ghép câu...</span>`;
+            } else {
+                slots.innerHTML = "";
+                s4SelectedWords.forEach((item, idx) => {
+                    const block = document.createElement("div");
+                    block.className = "word-block";
+                    block.innerText = item.word;
+                    block.onclick = () => removeSelectedWord(idx);
+                    slots.appendChild(block);
+                });
+            }
+        }
+
+        function resetGame4() {
+            playTick();
+            s4SelectedWords = [];
+            const blocks = document.querySelectorAll(".word-block");
+            blocks.forEach(b => b.classList.remove("used"));
+            updateSlotsUI();
+        }
+
+        function checkGame4() {
+            if (s4SelectedWords.length !== s4CorrectSentence.length) {
+                playAlarmSound();
+                alert("Bạn cần chọn đầy đủ tất cả các từ trong bể từ!");
+                return;
+            }
+
+            let correct = true;
+            for (let i = 0; i < s4CorrectSentence.length; i++) {
+                if (s4SelectedWords[i].word !== s4CorrectSentence[i]) {
+                    correct = false;
+                    break;
+                }
+            }
+
+            if (correct) {
+                playApplause();
+                triggerConfetti();
+                alert("Chúc mừng! Câu mô tả quy tắc giải tỏa cảm xúc y khoa chính xác hoàn toàn!");
+            } else {
+                playAlarmSound();
+                alert("Quy tắc chưa chính xác! Gợi ý: Hãy bắt đầu bằng 'Thở sâu'...");
+            }
+        }
+
+        // Timer logics for Slide 4
+        let timer4Val = 300;
+        let timer4Interval = null;
+
+        function startTimer4() {
+            playTick();
+            if (timer4Interval) return;
+            timer4Interval = setInterval(() => {
+                if (timer4Val > 0) {
+                    timer4Val--;
+                    updateTimer4UI();
+                } else {
+                    clearInterval(timer4Interval);
+                    timer4Interval = null;
+                    playSiren();
+                    alert("Hết giờ làm bài ôn tập!");
+                }
+            }, 1000);
+        }
+
+        function updateTimer4UI() {
+            const display = document.getElementById("timer-display-4");
+            const min = Math.floor(timer4Val / 60);
+            const sec = timer4Val % 60;
+            display.innerText = `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
+        }
+
+        // -------------------------------------------------------------
+        // TIMERS FOR SLIDES 10, 13, 16, 18
+        // -------------------------------------------------------------
+        let activeTimers = {};
+
+        function startGeneralTimer(slideId, duration) {
+            playTick();
+            if (activeTimers[slideId]) return;
+            let val = duration;
+            activeTimers[slideId] = setInterval(() => {
+                if (val > 0) {
+                    val--;
+                    const min = Math.floor(val / 60);
+                    const sec = val % 60;
+                    document.getElementById(`timer-display-${slideId}`).innerText = `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
+                } else {
+                    clearInterval(activeTimers[slideId]);
+                    delete activeTimers[slideId];
+                    playSiren();
+                    alert("Đồng hồ đếm ngược hết giờ!");
+                }
+            }, 1000);
+        }
+
+        function startTimer10() { startGeneralTimer(10, 420); }
+        function resetTimer10() {
+            playTick();
+            clearInterval(activeTimers[10]);
+            delete activeTimers[10];
+            document.getElementById("timer-display-10").innerText = "07:00";
+        }
+
+        function startTimer13() { startGeneralTimer(13, 420); }
+        function resetTimer13() {
+            playTick();
+            clearInterval(activeTimers[13]);
+            delete activeTimers[13];
+            document.getElementById("timer-display-13").innerText = "07:00";
+        }
+
+        function startTimer16() { startGeneralTimer(16, 480); }
+        function resetTimer16() {
+            playTick();
+            clearInterval(activeTimers[16]);
+            delete activeTimers[16];
+            document.getElementById("timer-display-16").innerText = "08:00";
+        }
+
+        function startTimer18() { startGeneralTimer(18, 600); }
+        function resetTimer18() {
+            playTick();
+            clearInterval(activeTimers[18]);
+            delete activeTimers[18];
+            document.getElementById("timer-display-18").innerText = "10:00";
+        }
+
+        function pauseTimer(slideId) {
+            playTick();
+            if (slideId === 4) {
+                clearInterval(timer4Interval);
+                timer4Interval = null;
+            } else {
+                clearInterval(activeTimers[slideId]);
+                delete activeTimers[slideId];
+            }
+        }
+
+        // Pause all timers when switching slides
+        function pauseAllTimers() {
+            clearInterval(timer4Interval);
+            timer4Interval = null;
+            Object.keys(activeTimers).forEach(id => {
+                clearInterval(activeTimers[id]);
+                delete activeTimers[id];
+            });
+        }
+
+        // -------------------------------------------------------------
+        // LOGIC LỜI THỀ Y KHOA SLIDE 22
+        // -------------------------------------------------------------
+        function signPledge22() {
+            const ck1 = document.getElementById("ck22-1").checked;
+            const ck2 = document.getElementById("ck22-2").checked;
+            const ck3 = document.getElementById("ck22-3").checked;
+            const sig = document.getElementById("sig-22").value.trim ? document.getElementById("sig-22").value.trim() : document.getElementById("sig-22").value;
+
+            if (!ck1 || !ck2 || !ck3) {
+                playAlarmSound();
+                alert("Vui lòng tích chọn đầy đủ cả 3 điều khoản cam kết y đức!");
+                return;
+            }
+            if (!sig) {
+                playAlarmSound();
+                alert("Vui lòng nhập Tên kíp trực của nhóm bạn!");
+                return;
+            }
+
+            playApplause();
+            document.getElementById("stamp-pledge-22").style.display = "block";
+            // Populate the cert name for the next slide automatically
+            document.getElementById("cert-group-name").value = sig.toUpperCase();
+            alert(`Đã ký cam kết thành công cho kíp trực: ${sig.toUpperCase()}`);
+        }
+
+        // -------------------------------------------------------------
+        // LOGIC BẰNG KHEN SLIDE 23
+        // -------------------------------------------------------------
+        function issueCertificate() {
+            const val = document.getElementById("cert-group-name").value.trim();
+            if (!val) {
+                playAlarmSound();
+                alert("Vui lòng nhập tên kíp trực để in chứng nhận!");
+                return;
+            }
+            playApplause();
+            triggerConfetti();
+            document.querySelector(".vd01-input-container").style.display = "none";
+            const recip = document.getElementById("cert-recipient-name");
+            recip.innerText = val.toUpperCase();
+            recip.style.display = "block";
+        }
+
+        // Confetti effect helper
+        function triggerConfetti() {
+            if (typeof startConfetti === "function") {
+                startConfetti();
+            }
+        }
+
+
+        window.onload = () => {
+            buildSidebar();
+            updateSlideUI(); if(currentSlide.id === 4) { renderGame4(); } else { resetGame4(); }
+
+            document.addEventListener('keydown', (e) => {
+                const activeEl = document.activeElement;
+                if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA')) {
+                    return;
+                }
+                if (e.key === 'ArrowRight' || e.key === 'Right') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+                    prevSlide();
+                }
+            });
+        };
+    </script>
+</body>
+</html>
