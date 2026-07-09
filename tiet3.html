@@ -1030,7 +1030,66 @@
             text-align: center;
             box-shadow: 6px 6px 0px var(--primary-dark);
         }
-</style>
+
+        /* =============================================================
+           CSS ĐỒNG BỘ FONT CHỮ VÀ KHOẢNG CÁCH DÒNG GIỐNG SLIDE 10
+           ============================================================= */
+        
+        /* Tiêu đề chính viết in hoa, in đậm, cỡ chữ giống S10 (34px) */
+        .slide-header-box [class*="title"], 
+        .slide-header-box [class*="header"],
+        .slide-header-box h1 {
+            font-size: 34px !important;
+            font-weight: 800 !important;
+            color: var(--primary-dark) !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 1.3 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        /* Tiêu đề phụ viết in hoa, in đậm, cỡ chữ giống S10 (18px) */
+        .slide-header-box [class*="subtitle"],
+        .slide-header-box h2 {
+            font-size: 18px !important;
+            font-weight: 800 !important;
+            color: var(--text-muted) !important;
+            margin-top: 8px !important;
+            margin-bottom: 0 !important;
+            padding: 0 !important;
+            line-height: 1.4 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        /* Nội dung có cỡ chữ và line-height giống S10 (18px, 1.6) */
+        .mt01-col-desc,
+        .gt01-desc,
+        .pv01-content,
+        .cb01-list li,
+        .hd01-step-text,
+        .da01-content,
+        .da01-content p,
+        .tk01-item,
+        .ck01-term,
+        .ck01-signature-box label,
+        .vd01-cert-box,
+        .vd01-cert-box div:not(.vd01-cert-header):not(.vd01-cert-title):not(#cert-recipient-name):not(.vd01-input-container):not(#cert-group-name) {
+            font-size: 18px !important;
+            line-height: 1.6 !important;
+            color: var(--text-main) !important;
+        }
+
+        /* Tinh chỉnh khoảng cách dòng/đoạn giống S10 (margin-bottom: 8px) */
+        .cb01-list li,
+        .tk01-item,
+        .ck01-term,
+        .da01-content p {
+            margin-bottom: 8px !important;
+        }
+
+    </style>
 </head>
 <body>
 
