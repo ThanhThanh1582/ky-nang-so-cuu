@@ -1099,6 +1099,134 @@
             width: 100% !important;
         }
 
+    
+        /* Style definitions for Slide 8 (CB01 Split Column layout) */
+        .cb01-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .cb01-card {
+            background: rgba(255, 255, 255, 0.6);
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 6px 6px 0px var(--primary-dark);
+        }
+        .cb01-card-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .cb01-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .cb01-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px !important;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-main);
+        }
+        .cb01-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: -2px;
+            color: var(--primary);
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        /* Style definitions for Slide 9 & 15 (HD01 Process Flow Diagram) */
+        .hd01-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 30px;
+            width: 100%;
+            margin: 20px 0;
+            position: relative;
+        }
+        .hd01-step {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.7);
+            border: 3px solid var(--primary-dark);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 6px 6px 0px var(--primary-dark);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .hd01-step:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 6px 6px 0px var(--primary);
+        }
+        .hd01-step-num {
+            font-size: 26px !important;
+            font-weight: 800;
+            color: white;
+            background: var(--primary-dark);
+            padding: 6px 16px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid var(--primary-dark);
+            box-shadow: 2px 2px 0px rgba(0,0,0,0.15);
+            text-transform: uppercase;
+        }
+        .hd01-step-text {
+            font-size: 18px !important;
+            line-height: 1.6;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+        .hd01-step:not(:last-child)::after {
+            content: "➔";
+            position: absolute;
+            right: -28px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 28px;
+            color: var(--primary-dark);
+            z-index: 2;
+        }
+
+        /* Style definitions for Slide 21 (TK01 Custom Bullets) */
+        .tk01-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .tk01-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px !important;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-main);
+        }
+        .tk01-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: -2px;
+            color: var(--primary);
+            font-size: 24px;
+            line-height: 1;
+        }
+
     </style>
 </head>
 <body>
@@ -1463,10 +1591,10 @@
                         </div>
 
                         <div class="da01-box" style="width: 100%; max-width: 800px; margin: 0 auto; padding: 20px;">
-                            <div class="da01-content" style="font-size: 18px; line-height: 1.7; text-align: center;">
-                                <p style="margin-bottom: 10px; font-weight: bold; color: var(--primary);">🩺 DIỄN ĐÀN BÁC SĨ TRUYỀN THÔNG</p>
-                                <p style="margin-bottom: 10px;">Đại diện kíp trực tiến hành thuyết trình sản phẩm poster, giải thích thông điệp sức khỏe và cách điều hòa cảm xúc nhằm thuyết phục người nghe.</p>
-                                <p>Cả lớp đóng vai những người dân/học sinh khối dưới lắng nghe, đưa ra nhận xét y khoa và đặt câu hỏi chất vấn chéo.</p>
+                            <div class="da01-content" style="font-size: 18px; line-height: 1.7; text-align: left;">
+                                <p style="margin-bottom: 12px; font-weight: bold; color: var(--primary); text-align: center;">🩺 DIỄN ĐÀN BÁC SĨ TRUYỀN THÔNG</p>
+                                <p style="margin-bottom: 10px; padding-left: 20px; text-indent: -20px;">• Đại diện kíp trực tiến hành thuyết trình sản phẩm poster, giải thích thông điệp sức khỏe và cách điều hòa cảm xúc nhằm thuyết phục người nghe.</p>
+                                <p style="margin-bottom: 0; padding-left: 20px; text-indent: -20px;">• Cả lớp đóng vai những người dân/học sinh khối dưới lắng nghe, đưa ra nhận xét y khoa và đặt câu hỏi chất vấn chéo.</p>
                             </div>
                         </div>
                     </div>
