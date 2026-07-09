@@ -1087,7 +1087,7 @@
                             <span class="timer-display" id="timer-display-4">05:00</span>
                             <div class="timer-controls">
                                 <button class="btn-timer" id="btn-start-4" onclick="startTimer4()">BẮT ĐẦU</button>
-                                <button class="btn-timer" onclick="pauseTimer(4)">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="pauseTimer4()">TẠM DỪNG</button>
                                 <button class="btn-timer" onclick="resetGame4()">LÀM LẠI</button>
                             </div>
                         </div>
@@ -1195,7 +1195,7 @@
                             <span class="timer-display" id="timer-display-10">07:00</span>
                             <div class="timer-controls">
                                 <button class="btn-timer" id="btn-start-10" onclick="startTimer10()">BẮT ĐẦU</button>
-                                <button class="btn-timer" onclick="pauseTimer(10)">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="pauseTimer10()">TẠM DỪNG</button>
                                 <button class="btn-timer" onclick="resetTimer10()">LÀM LẠI</button>
                             </div>
                         </div>
@@ -1240,7 +1240,7 @@
                             <span class="timer-display" id="timer-display-13">07:00</span>
                             <div class="timer-controls">
                                 <button class="btn-timer" id="btn-start-13" onclick="startTimer13()">BẮT ĐẦU</button>
-                                <button class="btn-timer" onclick="pauseTimer(13)">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="pauseTimer13()">TẠM DỪNG</button>
                                 <button class="btn-timer" onclick="resetTimer13()">LÀM LẠI</button>
                             </div>
                         </div>
@@ -1296,7 +1296,7 @@
                             <span class="timer-display" id="timer-display-16">08:00</span>
                             <div class="timer-controls">
                                 <button class="btn-timer" id="btn-start-16" onclick="startTimer16()">BẮT ĐẦU</button>
-                                <button class="btn-timer" onclick="pauseTimer(16)">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="pauseTimer16()">TẠM DỪNG</button>
                                 <button class="btn-timer" onclick="resetTimer16()">LÀM LẠI</button>
                             </div>
                         </div>
@@ -1325,13 +1325,13 @@
                 <!-- SLIDE 18: DIỄN ĐÀN TRUYỀN THÔNG (TB01) -->
                 <div class="slide-frame" id="slide-18">
                     <div class="template-tb01">
-                        <div class="tb01-header" style="font-size: 32px; font-weight: 800; color: var(--primary-dark); text-align: center; text-transform: uppercase;">BÁO CÁO CHIẾN DỊCH TRUYỀN THÔNG</div>
+                        <div class="tb01-header" style="font-size: 32px; font-weight: 800; color: var(--primary-dark); text-align: center; text-transform: uppercase;">BÁC BÁO CÁO CHIẾN DỊCH TRUYỀN THÔNG</div>
                         
                         <div class="th01-timer-row" style="align-self: center; margin: 10px 0; padding: 4px 15px;">
                             <span class="timer-display" id="timer-display-18">10:00</span>
                             <div class="timer-controls">
                                 <button class="btn-timer" id="btn-start-18" onclick="startTimer18()">BẮT ĐẦU</button>
-                                <button class="btn-timer" onclick="pauseTimer(18)">TẠM DỪNG</button>
+                                <button class="btn-timer" onclick="pauseTimer18()">TẠM DỪNG</button>
                                 <button class="btn-timer" onclick="resetTimer18()">LÀM LẠI</button>
                             </div>
                         </div>
@@ -1423,7 +1423,6 @@
                             
                             <div style="font-size: 20px; font-weight: 600; color: var(--text-main); margin: 15px 0;">Chứng nhận kíp trực đạt giải Poster ấn tượng nhất:</div>
                             
-                            <!-- Nhập tên trực tiếp -->
                             <div class="vd01-input-container" style="display: flex; gap: 10px; justify-content: center; align-items: center; margin-bottom: 20px; z-index: 100; position: relative;">
                                 <input type="text" id="cert-group-name" placeholder="Nhập tên kíp trực..." style="padding: 10px 15px; font-size: 20px; border: 2px solid var(--primary); border-radius: 8px; width: 320px; outline: none; font-weight: bold; text-align: center;">
                                 <button class="btn btn-action" style="margin: 0; padding: 10px 25px;" onclick="issueCertificate()">CẤP BẰNG</button>
@@ -1476,6 +1475,7 @@
 
     <!-- TRÌNH ĐIỀU KHIỂN LOGIC SỐ HÓA VÀ ÂM THANH NHÂN TẠO -->
     <script>
+
         const slidesConfig = [
             { id: 1, type: "MĐ01", title: "Slide Bìa bài học", stage: "KHỞI ĐỘNG" },
             { id: 2, type: "MT01", title: "Mục tiêu bài học", stage: "MỤC TIÊU" },
@@ -1503,6 +1503,220 @@
             { id: 24, type: "VD01", title: "Vinh danh chính thức", stage: "KHEN THƯỞNG & VINH DANH" }
         ];
 
+        let currentSlideIndex = 0;
+        let timers = {};
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        // 1. TỰ ĐỘNG KHỞI TẠO DANH SÁCH SIDEBAR
+        function buildSidebar() {
+            const sidebar = document.querySelector(".sidebar");
+            const header = sidebar.querySelector(".sidebar-header");
+            sidebar.innerHTML = "";
+            sidebar.appendChild(header);
+
+            const groups = {};
+            slidesConfig.forEach(slide => {
+                if (!groups[slide.stage]) {
+                    groups[slide.stage] = [];
+                }
+                groups[slide.stage].push(slide);
+            });
+
+            for (let stage in groups) {
+                const groupDiv = document.createElement("div");
+                groupDiv.className = "sidebar-stage-group";
+
+                const titleDiv = document.createElement("div");
+                titleDiv.className = "sidebar-stage-title";
+                titleDiv.innerText = stage;
+                groupDiv.appendChild(titleDiv);
+
+                const ul = document.createElement("ul");
+                ul.className = "slide-list";
+
+                groups[stage].forEach(slide => {
+                    const li = document.createElement("li");
+                    li.className = "slide-item";
+                    li.setAttribute("data-slide-id", slide.id);
+                    li.onclick = () => goToSlide(slide.id);
+                    li.innerHTML = `
+                        <span class="slide-badge">${slide.type}</span>
+                        <span>S${slide.id}: ${slide.title.toUpperCase()}</span>
+                    `;
+                    ul.appendChild(li);
+                });
+
+                groupDiv.appendChild(ul);
+                sidebar.appendChild(groupDiv);
+            }
+        }
+
+        // 2. KHỞI TẠO HIỆU ỨNG CHỮ CHẠY ĐÁNH MÁY CHO SLIDE 1
+        let typewriterTimeout1 = null;
+        let typewriterTimeout2 = null;
+        function typeWriterEffect() {
+            const titleEl = document.getElementById("slide1-title");
+            const subtitleEl = document.getElementById("slide1-subtitle");
+            const titleText = "VÌ SAO CẢM XÚC THAY ĐỔI MẠNH?";
+            const subtitleText = "TIẾT 3: LAN TỎA CHIẾN DỊCH SỨC KHỎE";
+            
+            if (typewriterTimeout1) clearTimeout(typewriterTimeout1);
+            if (typewriterTimeout2) clearTimeout(typewriterTimeout2);
+            
+            titleEl.textContent = "";
+            subtitleEl.textContent = "";
+            
+            let i = 0;
+            function typeTitle() {
+                if (i < titleText.length) {
+                    titleEl.textContent += titleText.charAt(i);
+                    i++;
+                    typewriterTimeout1 = setTimeout(typeTitle, 60);
+                } else {
+                    let j = 0;
+                    function typeSubtitle() {
+                        if (j < subtitleText.length) {
+                            subtitleEl.textContent += subtitleText.charAt(j);
+                            j++;
+                            typewriterTimeout2 = setTimeout(typeSubtitle, 60);
+                        }
+                    }
+                    typeSubtitle();
+                }
+            }
+            typeTitle();
+        }
+
+        // 3. ĐIỀU HƯỚNG SLIDE
+        function adjustSlideScale() {
+            const activeFrame = document.querySelector('.slide-frame.active');
+            if (!activeFrame) return;
+
+            const viewport = document.querySelector('.slide-viewport');
+            if (!viewport) return;
+
+            activeFrame.style.transform = 'none';
+            activeFrame.style.width = '100%';
+            activeFrame.style.maxWidth = '1180px';
+            activeFrame.style.height = 'auto';
+
+            const fWidth = activeFrame.offsetWidth;
+            const fHeight = activeFrame.offsetHeight;
+
+            const vWidth = viewport.clientWidth - 40;
+            const vHeight = viewport.clientHeight - 40;
+
+            const scaleX = vWidth / fWidth;
+            const scaleY = vHeight / fHeight;
+            const scale = Math.min(scaleX, scaleY);
+
+            activeFrame.style.transform = `scale(${scale})`;
+            activeFrame.style.transformOrigin = 'center center';
+            viewport.style.overflow = 'hidden';
+            activeFrame.style.visibility = 'visible';
+        }
+
+        function updateSlideUI() {
+            // Tạm dừng tất cả bộ đếm thời gian
+            pauseAllTimers();
+
+            const frames = document.querySelectorAll(".slide-frame");
+            frames.forEach(f => f.classList.remove("active"));
+
+            const currentSlide = slidesConfig[currentSlideIndex];
+            const activeFrame = document.getElementById(`slide-${currentSlide.id}`);
+            if (activeFrame) {
+                activeFrame.style.visibility = "hidden";
+                activeFrame.classList.add("active");
+            }
+
+            const items = document.querySelectorAll(".slide-item");
+            items.forEach(item => {
+                const slideId = item.getAttribute("data-slide-id");
+                if (slideId == currentSlide.id) {
+                    item.classList.add("active");
+                } else {
+                    item.classList.remove("active");
+                }
+            });
+
+            document.getElementById("header-slide-info").innerHTML = `Slide ${currentSlide.id}: ${currentSlide.title.toUpperCase()}`;
+            document.getElementById("header-stage-badge").innerText = `GIAI ĐOẠN: ${currentSlide.stage.toUpperCase()}`;
+
+            const roleBadge = document.getElementById("header-role-badge");
+            if (roleBadge) {
+                const sId = currentSlide.id;
+                const isPractitioner = (sId >= 2 && sId <= 4);
+                const isOfficial = (sId >= 5 && sId <= 24);
+
+                if (currentSlideIndex === 0) {
+                    roleBadge.style.display = "none";
+                } else {
+                    roleBadge.style.display = "block";
+                    if (isPractitioner) {
+                        roleBadge.innerText = "🩺 CHUYÊN GIA TẬP SỰ";
+                        roleBadge.style.background = "rgba(0, 119, 182, 0.1)";
+                        roleBadge.style.color = "var(--primary)";
+                        roleBadge.style.borderColor = "rgba(0, 119, 182, 0.3)";
+                    } else if (isOfficial) {
+                        roleBadge.innerText = "🎖️ BÁC SĨ CHÍNH THỨC";
+                        roleBadge.style.background = "rgba(0, 168, 150, 0.12)";
+                        roleBadge.style.color = "#00a896";
+                        roleBadge.style.borderColor = "rgba(0, 168, 150, 0.3)";
+                    }
+                }
+            }
+
+            document.getElementById("btn-prev").className = `btn btn-nav ${currentSlideIndex === 0 ? 'btn-disabled' : ''}`;
+            document.getElementById("btn-next").className = `btn btn-action ${currentSlideIndex === slidesConfig.length - 1 ? 'btn-disabled' : ''}`;
+
+            // Xử lý sự kiện đặc biệt của từng slide
+            if (currentSlide.id === 1) {
+                typeWriterEffect();
+            }
+
+            if (currentSlide.id === 4) {
+                renderGame4();
+            }
+
+            if (currentSlide.id === 12) {
+                setTimeout(() => {
+                    playSiren();
+                }, 300);
+            }
+
+            if (currentSlide.id === 24) {
+                setTimeout(() => {
+                    startConfetti();
+                    playApplause();
+                }, 300);
+            }
+
+            preventCompoundWordWrapping();
+            adjustSlideScale();
+        }
+
+        function prevSlide() {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                updateSlideUI();
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < slidesConfig.length - 1) {
+                currentSlideIndex++;
+                updateSlideUI();
+            }
+        }
+
+        function goToSlide(slideId) {
+            const idx = slidesConfig.findIndex(slide => slide.id == slideId);
+            if (idx !== -1) {
+                currentSlideIndex = idx;
+                updateSlideUI();
+            }
+        }
 
         // -------------------------------------------------------------
         // LOGIC TRÒ CHƠI ÔN TẬP SLIDE 4: SẮP XẾP CÂU Y KHOA
@@ -1514,6 +1728,7 @@
         function renderGame4() {
             const pool = document.getElementById("unscramble-pool");
             const slots = document.getElementById("unscramble-slots");
+            if (!pool || !slots) return;
             
             pool.innerHTML = "";
             s4ShuffledWords.forEach((word, idx) => {
@@ -1533,7 +1748,7 @@
             playStamp();
             s4SelectedWords.push({ word, index });
             const block = document.getElementById(`wb-${index}`);
-            block.classList.add("used");
+            if (block) block.classList.add("used");
             updateSlotsUI();
         }
 
@@ -1541,12 +1756,13 @@
             playTick();
             const removed = s4SelectedWords.splice(selIdx, 1)[0];
             const block = document.getElementById(`wb-${removed.index}`);
-            block.classList.remove("used");
+            if (block) block.classList.remove("used");
             updateSlotsUI();
         }
 
         function updateSlotsUI() {
             const slots = document.getElementById("unscramble-slots");
+            if (!slots) return;
             if (s4SelectedWords.length === 0) {
                 slots.innerHTML = `<span style="color: var(--text-muted); font-size: 20px; font-weight: bold; font-style: italic;" id="unscramble-placeholder">Click vào các thẻ từ bên dưới để ghép câu...</span>`;
             } else {
@@ -1562,16 +1778,18 @@
         }
 
         function resetGame4() {
-            playTick();
             s4SelectedWords = [];
             const blocks = document.querySelectorAll(".word-block");
             blocks.forEach(b => b.classList.remove("used"));
             updateSlotsUI();
+            
+            timer4Val = 300;
+            updateTimer4UI();
         }
 
         function checkGame4() {
             if (s4SelectedWords.length !== s4CorrectSentence.length) {
-                playAlarmSound();
+                playSirenShort();
                 alert("Bạn cần chọn đầy đủ tất cả các từ trong bể từ!");
                 return;
             }
@@ -1589,7 +1807,7 @@
                 triggerConfetti();
                 alert("Chúc mừng! Câu mô tả quy tắc giải tỏa cảm xúc y khoa chính xác hoàn toàn!");
             } else {
-                playAlarmSound();
+                playSirenShort();
                 alert("Quy tắc chưa chính xác! Gợi ý: Hãy bắt đầu bằng 'Thở sâu'...");
             }
         }
@@ -1614,15 +1832,22 @@
             }, 1000);
         }
 
+        function pauseTimer4() {
+            playTick();
+            clearInterval(timer4Interval);
+            timer4Interval = null;
+        }
+
         function updateTimer4UI() {
             const display = document.getElementById("timer-display-4");
+            if (!display) return;
             const min = Math.floor(timer4Val / 60);
             const sec = timer4Val % 60;
             display.innerText = `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
         }
 
         // -------------------------------------------------------------
-        // TIMERS FOR SLIDES 10, 13, 16, 18
+        // GENERAL TIMERS FOR SLIDES 10, 13, 16, 18
         // -------------------------------------------------------------
         let activeTimers = {};
 
@@ -1635,7 +1860,8 @@
                     val--;
                     const min = Math.floor(val / 60);
                     const sec = val % 60;
-                    document.getElementById(`timer-display-${slideId}`).innerText = `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
+                    const disp = document.getElementById(`timer-display-${slideId}`);
+                    if (disp) disp.innerText = `${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
                 } else {
                     clearInterval(activeTimers[slideId]);
                     delete activeTimers[slideId];
@@ -1646,49 +1872,57 @@
         }
 
         function startTimer10() { startGeneralTimer(10, 420); }
-        function resetTimer10() {
+        function pauseTimer10() {
             playTick();
             clearInterval(activeTimers[10]);
             delete activeTimers[10];
-            document.getElementById("timer-display-10").innerText = "07:00";
+        }
+        function resetTimer10() {
+            playTick();
+            pauseTimer10();
+            const disp = document.getElementById("timer-display-10");
+            if (disp) disp.innerText = "07:00";
         }
 
         function startTimer13() { startGeneralTimer(13, 420); }
-        function resetTimer13() {
+        function pauseTimer13() {
             playTick();
             clearInterval(activeTimers[13]);
             delete activeTimers[13];
-            document.getElementById("timer-display-13").innerText = "07:00";
+        }
+        function resetTimer13() {
+            playTick();
+            pauseTimer13();
+            const disp = document.getElementById("timer-display-13");
+            if (disp) disp.innerText = "07:00";
         }
 
         function startTimer16() { startGeneralTimer(16, 480); }
-        function resetTimer16() {
+        function pauseTimer16() {
             playTick();
             clearInterval(activeTimers[16]);
             delete activeTimers[16];
-            document.getElementById("timer-display-16").innerText = "08:00";
+        }
+        function resetTimer16() {
+            playTick();
+            pauseTimer16();
+            const disp = document.getElementById("timer-display-16");
+            if (disp) disp.innerText = "08:00";
         }
 
         function startTimer18() { startGeneralTimer(18, 600); }
-        function resetTimer18() {
+        function pauseTimer18() {
             playTick();
             clearInterval(activeTimers[18]);
             delete activeTimers[18];
-            document.getElementById("timer-display-18").innerText = "10:00";
         }
-
-        function pauseTimer(slideId) {
+        function resetTimer18() {
             playTick();
-            if (slideId === 4) {
-                clearInterval(timer4Interval);
-                timer4Interval = null;
-            } else {
-                clearInterval(activeTimers[slideId]);
-                delete activeTimers[slideId];
-            }
+            pauseTimer18();
+            const disp = document.getElementById("timer-display-18");
+            if (disp) disp.innerText = "10:00";
         }
 
-        // Pause all timers when switching slides
         function pauseAllTimers() {
             clearInterval(timer4Interval);
             timer4Interval = null;
@@ -1705,23 +1939,25 @@
             const ck1 = document.getElementById("ck22-1").checked;
             const ck2 = document.getElementById("ck22-2").checked;
             const ck3 = document.getElementById("ck22-3").checked;
-            const sig = document.getElementById("sig-22").value.trim ? document.getElementById("sig-22").value.trim() : document.getElementById("sig-22").value;
+            const sig = document.getElementById("sig-22").value.trim();
 
             if (!ck1 || !ck2 || !ck3) {
-                playAlarmSound();
+                playSirenShort();
                 alert("Vui lòng tích chọn đầy đủ cả 3 điều khoản cam kết y đức!");
                 return;
             }
             if (!sig) {
-                playAlarmSound();
+                playSirenShort();
                 alert("Vui lòng nhập Tên kíp trực của nhóm bạn!");
                 return;
             }
 
-            playApplause();
+            playStamp();
             document.getElementById("stamp-pledge-22").style.display = "block";
+            
             // Populate the cert name for the next slide automatically
-            document.getElementById("cert-group-name").value = sig.toUpperCase();
+            const certInput = document.getElementById("cert-group-name");
+            if (certInput) certInput.value = sig.toUpperCase();
             alert(`Đã ký cam kết thành công cho kíp trực: ${sig.toUpperCase()}`);
         }
 
@@ -1731,7 +1967,7 @@
         function issueCertificate() {
             const val = document.getElementById("cert-group-name").value.trim();
             if (!val) {
-                playAlarmSound();
+                playSirenShort();
                 alert("Vui lòng nhập tên kíp trực để in chứng nhận!");
                 return;
             }
@@ -1745,15 +1981,251 @@
 
         // Confetti effect helper
         function triggerConfetti() {
-            if (typeof startConfetti === "function") {
-                startConfetti();
+            startConfetti();
+        }
+
+        document.addEventListener('click', () => {
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        });
+
+        // -------------------------------------------------------------
+        // HỆ THỐNG ÂM THANH
+        // -------------------------------------------------------------
+        function playSiren() {
+            let osc1 = audioCtx.createOscillator();
+            let osc2 = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+
+            osc1.type = 'sawtooth';
+            osc2.type = 'sine';
+
+            osc1.frequency.setValueAtTime(440, audioCtx.currentTime);
+            osc1.frequency.linearRampToValueAtTime(580, audioCtx.currentTime + 0.6);
+            osc1.frequency.linearRampToValueAtTime(440, audioCtx.currentTime + 1.2);
+
+            osc2.frequency.setValueAtTime(220, audioCtx.currentTime);
+
+            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 1.5);
+
+            osc1.connect(gain);
+            osc2.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc1.start();
+            osc2.start();
+            osc1.stop(audioCtx.currentTime + 1.5);
+            osc2.stop(audioCtx.currentTime + 1.5);
+        }
+
+        function playSirenShort() {
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+            gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.3);
+        }
+
+        function playStamp() {
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(100, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(10, audioCtx.currentTime + 0.3);
+
+            gain.gain.setValueAtTime(0.8, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.3);
+        }
+
+        function playTick() {
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+            gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.05);
+        }
+
+        function playBell() {
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(980, audioCtx.currentTime);
+
+            gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 1.0);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 1.0);
+        }
+
+        function playApplause() {
+            const bufferSize = audioCtx.sampleRate * 2.0;
+            const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+            const data = buffer.getChannelData(0);
+
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+
+            let noise = audioCtx.createBufferSource();
+            noise.buffer = buffer;
+
+            let filter = audioCtx.createBiquadFilter();
+            filter.type = 'bandpass';
+            filter.frequency.value = 1000;
+
+            let gain = audioCtx.createGain();
+            gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 2.0);
+
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            noise.start();
+            noise.stop(audioCtx.currentTime + 2.0);
+        }
+
+        // -------------------------------------------------------------
+        // PHÁO HOA CONFETTI
+        // -------------------------------------------------------------
+        const canvas = document.getElementById("confetti-canvas");
+        const ctx = canvas.getContext("2d");
+        let confetti = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function createConfettiPiece() {
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height - canvas.height,
+                r: Math.random() * 6 + 4,
+                d: Math.random() * canvas.height,
+                color: `hsl(${Math.random() * 360}, 90%, 60%)`,
+                tilt: Math.random() * 10 - 5,
+                tiltAngleIncremental: Math.random() * 0.07 + 0.02,
+                tiltAngle: 0
+            };
+        }
+
+        function startConfetti() {
+            canvas.style.display = "block";
+            resizeCanvas();
+            confetti = [];
+            for (let i = 0; i < 150; i++) {
+                confetti.push(createConfettiPiece());
+            }
+            animateConfetti();
+        }
+
+        function animateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            let remaining = false;
+
+            confetti.forEach((p, idx) => {
+                p.tiltAngle += p.tiltAngleIncremental;
+                p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
+                p.x += Math.sin(p.tiltAngle);
+                p.tilt = Math.sin(p.tiltAngle - idx / 3) * 15;
+
+                if (p.y < canvas.height) {
+                    remaining = true;
+                }
+
+                ctx.beginPath();
+                ctx.lineWidth = p.r;
+                ctx.strokeStyle = p.color;
+                ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+                ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+                ctx.stroke();
+            });
+
+            if (remaining) {
+                requestAnimationFrame(animateConfetti);
+            } else {
+                canvas.style.display = "none";
             }
         }
 
+        window.addEventListener('resize', () => {
+            if (typeof resizeCanvas === 'function') {
+                resizeCanvas();
+            }
+            adjustSlideScale();
+        });
 
+        // -------------------------------------------------------------
+        // NGĂN NGẮT DÒNG TIẾNG VIỆT
+        // -------------------------------------------------------------
+        function preventCompoundWordWrapping() {
+            const medicalTerms = [
+                "hạch hạnh nhân", "vỏ não trước trán", "bánh xe cảm xúc", "thông điệp tôi",
+                "quá trình myelin hóa", "bão cảm xúc", "nhiễm độc hành vi", "bình tĩnh lại",
+                "Bác sĩ Cảm xúc", "bác sĩ cảm xúc", "cơ chế não bộ", "triệu chứng sinh lý",
+                "biểu hiện cơ thể", "kíp trực cấp cứu", "Bệnh viện Cảm xúc", "sơ cứu cảm xúc",
+                "vòng quay giải tỏa", "bác sĩ cộng đồng", "Đại sứ Sức khỏe", "Đại sứ cảm xúc"
+            ];
+            medicalTerms.sort((a, b) => b.length - a.length);
+            const regexes = medicalTerms.map(term => ({
+                regex: new RegExp(term.replace(/ /g, '[ \t\r\n]+'), 'gi'),
+                replacement: term.replace(/ /g, ' ')
+            }));
+
+            function traverseDOM(node) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    let text = node.nodeValue;
+                    let replaced = false;
+
+                    regexes.forEach(({ regex, replacement }) => {
+                        if (regex.test(text)) {
+                            text = text.replace(regex, replacement);
+                            replaced = true;
+                        }
+                    });
+
+                    if (replaced) {
+                        node.nodeValue = text;
+                    }
+                } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE') {
+                    for (let i = 0; i < node.childNodes.length; i++) {
+                        traverseDOM(node.childNodes[i]);
+                    }
+                }
+            }
+
+            traverseDOM(document.body);
+        }
+
+        // BẮT ĐẦU ỨNG DỤNG
         window.onload = () => {
             buildSidebar();
-            updateSlideUI(); if(currentSlide.id === 4) { renderGame4(); } else { resetGame4(); }
+            updateSlideUI();
 
             document.addEventListener('keydown', (e) => {
                 const activeEl = document.activeElement;
@@ -1767,6 +2239,7 @@
                 }
             });
         };
+
     </script>
 </body>
 </html>
