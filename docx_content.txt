@@ -1,0 +1,211 @@
+QUY CHUẨN ĐIỀN AUTOMATION: TIẾT 1 - Theme Bác sĩ
+
+PHẦN MỞ ĐẦU BÀI HỌC
+(Phần này chạy cố định đầu tiết học trước khi phân vai và vào các hoạt động chính)
+SLIDE 1. MĐ01: TEMPLATE MỞ ĐẦU BÀI HỌC
+a. Cơ cấu nội dung:
+- Mã số bài học (16pt - Bold): [Mã số bài học] (Ví dụ: 6.11)
+- Tên bài học (40pt - 44pt): [Tên bài học từ Lesson Design]
+- Số tiết (18pt - Italic): (Ẩn hoàn toàn trường này)
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Mã số, Tên bài học và Số tiết nằm ở chính giữa.
+d. Tương tác & Animation: Hiệu ứng chữ chạy đánh máy (Typewriter) chạy tự động ở phần Tên bài học khi active slide.
+SLIDE 2. MT01: TEMPLATE MỤC TIÊU BÀI HỌC
+a. Cơ cấu nội dung:
+- Tiêu đề chính: Cố định chữ "MỤC TIÊU BÀI HỌC"
+- Nội dung: Phân chia thành 3 khối nội dung rõ ràng lấy từ nguồn bài học: [Kiến thức] - [Kỹ năng] - [Thái độ]
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: 3 khối mục tiêu dàn đều thành 3 cột hàng dọc cân đối ở nửa dưới slide.
+d. Tương tác & Animation: Không
+SLIDE 3. QS01: TEMPLATE CÂU HỎI CỐT LÕI (BIG QUESTION)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (26pt): Cố định chữ "CÂU HỎI LỚN"
+- Nội dung (24pt - Bold): [Nội dung câu hỏi lớn từ Lesson Design]
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị (36pt): Đóng khung câu hỏi và hiện chính giữa màn hình.
+d. Tương tác & Animation: Không
+SLIDE 4. PV01: TEMPLATE PHÂN VAI
+a. Cơ cấu nội dung:
+- Nội dung: [Tên vai trò nhập vai và mô tả nhiệm vụ chính của học sinh]
+- Câu dẫn mẫu 1 (Chủ đề Thể chất / Dinh dưỡng): "Chào mừng các bác sĩ nội trú đến với Khoa Dinh dưỡng lâm sàng. Hôm nay, các bạn sẽ trực tiếp thăm khám và lên phác đồ cứu chữa cho các bệnh nhân nhi gặp vấn đề về phát triển thể chất."
+- Câu dẫn mẫu 2 (Chủ đề Tâm lý / Kỹ năng mềm): "Hội đồng tâm lý Nova Hospital chính thức thành lập. Các chuyên gia có nhiệm vụ lắng nghe tâm sự, giải mã cảm xúc và gỡ rối các ca bệnh tổn thương tinh thần."
+- Câu dẫn mẫu 3 (Chủ đề An toàn mạng / Logic): "Biệt đội bác sĩ máy tính đã vào vị trí trực ban. Nhiệm vụ của các kỹ sư là rà soát hệ thống, chẩn đoán virus và cấp cứu dữ liệu khẩn cấp."
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Hiển thị khung chữ chính giữa màn hình.
+d. Tương tác & Animation: Không
+PHẦN 1: TIẾP NHẬN BỆNH NHÂN KHẨN CẤP
+(Mục tiêu: Quan sát 1 ca bệnh khẩn cấp, là 1 ví dụ đặc trưng của bài học để học sinh rút ra các nhận định ban đầu)
+SLIDE 5. BĐ01: TEMPLATE THÔNG BÁO BÁO ĐỘNG KỊCH TÍNH
+a. Cơ cấu nội dung:
+- Tiêu đề chính (26pt): Cố định chữ "CẢNH BÁO KHẨN CẤP"
+- Nội dung (20pt - Màu nổi bật/Bold): [Nội dung kịch bản nguy cơ bất ngờ] (Dữ liệu ví dụ đặc trưng lấy từ tình huống khẩn cấp của bài học)
+b. Hình ảnh (Prompt AI):
+- Prompt: 
+c. Hiển thị: Hiển thị kịch tính tạo không khí khẩn cấp.
+d. Tương tác & Animation: Tự động kích hoạt hiệu ứng nhấp nháy màn hình (Flash animation 2-3 giây, 0.5 giây nháy 1 lần) và phát một đoạn âm thanh tiếng còi hú báo động ngắn (2-3 giây) ngay khi chuyển đến slide
+
+SLIDE 6. CB01: TEMPLATE CHUẨN BỊ
+a. Cơ cấu nội dung:
+- Tiêu đề (32pt): “CHUẨN BỊ”
+- Nội dung (24pt): [2 thẻ dụng cụ và hình thức tổ chức] (Lấy dữ liệu học liệu ban đầu và hình thức tổ chức của giai đoạn 1)
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị:
+- Tiêu đề: Nằm ở góc trên cùng, căn giữa màn hình.
+- Bố cục: Màn hình chia làm 2 thẻ lớn chiếm không gian cân xứng. Thẻ “Dụng cụ” bên trái hiển thị [các dụng cụ] dạng List. Thẻ “Hình thức tổ chức” bên phải hiển thị [Hình thức tổ chức].
+d. Tương tác & Animation: Không
+SLIDE 7. HD01: TEMPLATE QUY TRÌNH THỰC HIỆN
+a. Cơ cấu nội dung:
+- Tiêu đề chính (26pt): Cố định chữ "Quy trình khám bênh"
+- Nội dung (18pt): Chuỗi các bước hành động trực quan (Bước 1: Quan sát ca bệnh khẩn cấp ➔ Bước 2: Thảo luận nhanh tìm triệu chứng ➔ Bước 3: Đưa ra nhận định ban đầu)
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Tiêu đề chính & phụ căn giữa, chiếm 1/3 diện tích nửa trên slide. Bố cục hiện theo các khối hình chữ nhật hoặc mũi tên tiến trình, dàn ngang tuần tự từ trái sang phải.
+d. Tương tác & Animation: Không
+SLIDE 8. TH01: TEMPLATE THỰC HIỆN HOẠT ĐỘNG (CASE STUDY & REVEAL)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (36 – 44 pt): Điền [Tên hoạt động] (Ví dụ: "MỞ KHÓA CA BỆNH KHẨN CẤP")
+- Tiêu đề phụ (28 – 32 pt): Điền [Yêu cầu hoạt động / Nhiệm vụ thảo luận] (Ví dụ: "Học sinh thảo luận tìm ra bạn có nguy cơ ảnh hưởng lớn nhất")
+- Nội dung cốt lõi (20 – 24 pt): Điền [Nội dung đề bài / Tình huống / Câu hỏi thảo luận] (Hiển thị chi tiết dữ liệu ca bệnh khẩn cấp làm ví dụ mẫu)
+- Thời gian: Điền [thời gian đếm ngược nhận định ban đầu]
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: 
+- Tiêu đề & phụ: Căn giữa phía trên slide.
+- Khối nội dung tình huống: Đặt ở vị trí trung tâm, căn lề trái để học sinh dễ đọc. Có thể làm dưới dạng một khung hộp thoại nhắn tin giả lập lớn.
+- Đồng hồ số (Digital Clock): Hiện số ở bên dưới khối nội dung, sử dụng font chữ chuyên dụng dạng Monospace để các con số không bị dịch chuyển khi nhảy giây. Thiết kế 3 nút điều khiển bên dưới: BẮT ĐẦU, TẠM DỪNG, LÀM LẠI.
+d. Tương tác & Animation: 
+- Trạng thái mặc định: Hiển thị đầy đủ các thành phần.
+- Click 'BẮT ĐẦU': Đồng hồ chạy đếm ngược thời gian thực, phát âm thanh tích tắc.
+- Hết giờ (00:00): Toàn bộ màn hình chớp nháy đỏ cảnh báo mạnh 3 lần, phát âm thanh chuông báo động reo lớn.
+PHẦN 2: NGHIÊN CỨU LÂM SÀNG & ĐIỀU TRỊ TOÀN DIỆN
+(Mục tiêu: Học sinh học tập và khám phá kiến thức - kỹ năng thông qua việc xử lý từ 2 hoặc 3 ca bệnh đặc trưng)
+SLIDE 9. GT01: TEMPLATE GIỚI THIỆU GIAI ĐOẠN HOẠT ĐỘNG
+a. Cơ cấu nội dung:
+- Tiêu đề chính (32pt): “Giai đoạn” (Hiện số giai đoạn tiếp theo, ví dụ: "Giai đoạn 2")
+- Tiêu đề phụ (26pt): “Nhận ca bệnh” (Tên giai đoạn học tập từ Lesson Design)
+- Nội dung (24pt): [Nhiệm vụ mục tiêu ngắn gọn của giai đoạn] (Mô tả việc tiếp nhận hồ sơ các ca bệnh đặc trưng tiếp theo)
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Chính giữa màn hình.
+d. Tương tác & Animation: Có Nút tương tác phụ "Nhận ca bệnh". Học sinh ấn sẽ chuyển sang slide 10.
+SLIDE 10. NV01: TEMPLATE GIAO NHIỆM VỤ CHI TIẾT (GIAI ĐOẠN 2: NHẬN CA BỆNH)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (26pt): Cố định chữ "Hồ sơ bệnh án"
+- Nội dung (18pt): Đoạn văn bản mô tả bối cảnh tình huống và câu hỏi cần giải quyết lấy từ nguồn dữ liệu: [Nhiệm vụ bác sĩ đọc hồ sơ và phân tích 2 hoặc 3 ca bệnh đặc trưng] (văn bản căn lề trái)
+b. Hình ảnh (Prompt AI):
+- Prompt: A close up of a futuristic digital tablet mockup interface displaying data files, modern UI dashboard elements, interactive charts and stats, corporate styling, clean reading pane --ar 16:9
+c. Tương tác & Animation: Số nút tương tác phụ "Xem chi tiết" bằng số hồ sơ bệnh án, hoặc học sinh ấn trực tiếp vào từng hình ảnh hồ sơ bệnh án trên slide để xem nội dung chi tiết dạng Modal popup window kèm tiếng lật tài liệu.
+SLIDE 11. GT01: TEMPLATE GIỚI THIỆU GIAI ĐOẠN KHÁM BỆNH (SLIDE MỚI BỔ SUNG)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (32pt): “Giai đoạn 3”
+- Tiêu đề phụ (26pt): “Khám bệnh”
+- Nội dung (24pt): Tiến hành rà soát các chỉ số y khoa và phát hiện dấu hiệu bất thường trên các hồ sơ ca bệnh đặc trưng.
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Chính giữa màn hình.
+d. Tương tác & Animation: Không
+SLIDE 12. CB01: TEMPLATE CHUẨN BỊ (GIAI ĐOẠN 3: KHÁM BỆNH)
+a. Cơ cấu nội dung:
+- Tiêu đề (32pt): “CHUẨN BỊ”
+- Nội dung (24pt): Thẻ Dụng cụ hiển thị [Danh sách 2 hoặc 3 hồ sơ ca bệnh + phiếu khám bệnh dạng bảng] dạng List bên trái. Thẻ Hình thức tổ chức hiển thị [Hình thức tổ chức nhóm 4] bên phải.
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Tiêu đề căn giữa trên cùng, bố cục chia đôi màn hình 2 thẻ cân xứng.
+d. Tương tác & Animation: Không
+SLIDE 13. HD01: TEMPLATE QUY TRÌNH THỰC HIỆN (GIAI ĐOẠN 3: KHÁM BỆNH - ĐÃ SỬA THÀNH BIẾN)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (26pt): Cố định chữ "QUY TRÌNH THỰC HIỆN"
+- Nội dung (18pt): [Chuỗi các bước hành động công việc khám bệnh được cấu trúc từ Lesson Design] (Hệ thống tự động map dữ liệu biến từ nguồn bài học).
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Tiêu đề chính & phụ căn giữa, chiếm 1/3 diện tích nửa trên slide. Bố cục hiển thị nội dung theo các khối hình học tiến trình dàn ngang tuần tự từ lề trái sang lề phải màn hình.
+d. Tương tác & Animation: Không
+SLIDE 14. TH01: TEMPLATE THỰC HIỆN HOẠT ĐỘNG (GIAI ĐOẠN 3: KHÁM BỆNH)
+a. Cơ cấu nội dung: Hiển thị dữ liệu đề bài, phiếu khám bệnh giả lập cùng đồng hồ số Monospace đếm ngược thời gian thực (8 phút) để học sinh thực hành khám bệnh theo nhóm.
+SLIDE 15. CB01: TEMPLATE CHUẨN BỊ TRÌNH BÀY (GIAI ĐOẠN 4: CHẨN ĐOÁN)
+a. Cơ cấu nội dung:
+- Tiêu đề (32pt): “CHUẨN BỊ”
+- Nội dung (24pt): Thẻ Dụng cụ hiển thị [Phiếu chẩn đoán/Bảng nhóm] dạng List. Thẻ Hình thức tổ chức hiển thị [Học sinh thảo luận, chuẩn bị lên trình bày hồ sơ].
+b. Quy định hiển thị câu mẫu gợi ý trình bày (Đã xuống dòng từng câu cụ thể):
+  > Câu gợi ý 1: "Sau khi tiến hành thăm khám hồ sơ ca bệnh số ..., nhóm bác sĩ chúng tôi nhận thấy triệu chứng đặc trưng là ..."
+  > Câu gợi ý 2: "Nguyên nhân chính dẫn đến tình trạng này là do thói quen ..."
+  > Câu gợi ý 3: "Vì vậy, chúng tôi đưa ra chẩn đoán ca bệnh này gặp vấn đề về ..."
+c. Hiển thị: Tiêu đề căn giữa trên cùng, bố cục chia đôi màn hình 2 khối lớn cân xứng.
+d. Tương tác & Animation: Không
+SLIDE 16. TB01: TEMPLATE HỘI CHẨN (GIAI ĐOẠN 5: HỘI CHẨN)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (32pt): Cố định chữ "HỘI CHẨN"
+- Nội dung: Đại diện các nhóm bác sĩ luân phiên lên trình bày hồ sơ bệnh án, triệu chứng, nguyên nhân và chẩn đoán của mình. Hội đồng cả lớp tiến hành phản biện, chất vấn chéo và bổ sung ý kiến.
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Nội dung nằm ở trung tâm slide.
+d. Tương tác & Animation: Không
+SLIDE 17. ĐA01: TEMPLATE KẾT QUẢ HỘI CHẨN (SLIDE CHUYỂN VỊ TRÍ + ĐỔI TIÊU ĐỀ)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (32pt): Cố định chữ "Kết quả hội chẩn"
+- Nội dung: Hiển thị chi tiết phần kiến thức, kỹ năng chuẩn y khoa và cơ chế khoa học cốt lõi lấy từ nguồn bài học: [Nội dung giải thích khoa học bài học / Insight học sinh cần khám phá] (Giải thích, chuẩn hóa và chốt kiến thức y lý cho học sinh).
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Nội dung nằm chính giữa slide.
+d. Tương tác & Animation: Không
+SLIDE 18. GT01: TEMPLATE GIỚI THIỆU GIAI ĐOẠN KÊ ĐƠN VÀ CHĂM SÓC (SLIDE MỚI BỔ SUNG)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (32pt): “Giai đoạn 6”
+- Tiêu đề phụ (26pt): “Kê đơn và chăm sóc”
+- Nội dung (24pt): Thảo luận hội đồng để tìm ra phương pháp chữa bệnh, lập kế hoạch kế đơn thuốc và chăm sóc sức khỏe đúng cách cho bệnh nhân.
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Chính giữa màn hình.
+d. Tương tác & Animation: Không
+SLIDE 19. CB01: TEMPLATE CHUẨN BỊ (GIAI ĐOẠN 6: KÊ ĐƠN VÀ CHĂM SÓC)
+a. Cơ cấu nội dung:
+- Tiêu đề (32pt): “CHUẨN BỊ”
+- Nội dung (24pt): Thẻ Dụng cụ hiển thị [Sổ tay bác sĩ / Phiếu kê đơn phác đồ, bút màu] dạng List bên trái. Thẻ Hình thức tổ chức hiển thị [Thảo luận nhóm tìm cách chữa bệnh] bên phải.
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Tiêu đề căn giữa, bố cục chia làm 2 thẻ lớn chiếm không gian cân xứng.
+d. Tương tác & Animation: Không
+SLIDE 20. HD01: TEMPLATE QUY TRÌNH THỰC HIỆN (GIAI ĐOẠN 6: KÊ ĐƠN VÀ CHĂM SÓC)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (26pt): Cố định chữ "QUY TRÌNH THỰC HIỆN"
+- Nội dung (18pt): Thao tác hành động: (Bước 1: Nghiên cứu nguyên nhân đã chẩn đoán ➔ Bước 2: Đề xuất giải pháp khắc phục cụ thể ➔ Bước 3: Hoàn thiện phác đồ vào Sổ tay bác sĩ).
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Căn lề lọt lòng tiến trình dàn ngang tuần tự.
+d. Tương tác & Animation: Không
+SLIDE 21. TB01: TEMPLATE BÁO CÁO PHÁC ĐỒ ĐIỀU TRỊ (GIAI ĐOẠN 6: KÊ ĐƠN VÀ CHĂM SÓC)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (32pt): Cố định chữ "BÁO CÁO PHÁC ĐỒ ĐIỀU TRỊ"
+- Nội dung: Các nhóm lên chia sẻ cách chữa bệnh tối ưu mà nhóm tìm ra.
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Trung tâm slide.
+d. Tương tác & Animation: Không
+SLIDE 22. ĐA01: TEMPLATE ĐÁP ÁN: ĐƠN THUỐC VÀ CÁCH CHĂM SÓC ĐÚNG (SLIDE MỚI BỔ SUNG)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (32pt): Cố định chữ "ĐÁP ÁN: ĐƠN THUỐC VÀ CÁCH CHĂM SÓC ĐÚNG"
+- Nội dung: Hiển thị phác đồ y khoa chuẩn, danh mục đơn thuốc và hướng dẫn điều trị dinh dưỡng/vận động/giấc ngủ chuẩn xác lấy từ nguồn tài liệu bài học: [Giải pháp điều trị đúng từ Lesson Design].
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Nội dung nằm chính giữa slide.
+d. Tương tác & Animation: Không
+SLIDE 23. TK01: TEMPLATE TỔNG KẾT BÀI HỌC (GIAI ĐOẠN 7: LƯU HỒ SƠ BỆNH ÁN)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (32pt): Cố định chữ "TỔNG KẾT"
+- Nội dung: Nội dung chốt tổng lực lấy từ nguồn khác: [Nội dung các chốt Kiến thức/Kỹ năng từ Lesson Design] (Học sinh thảo luận cả lớp phản hồi nhanh để nhớ lại toàn bộ bài học).
+b. Hình ảnh (Prompt AI): Không
+c. Hiển thị: Tiêu đề chính nằm ở phần trên cùng màn hình, căn lề giữa. Vị trí nội dung xếp thành một danh sách (Bulleted list) theo chiều dọc, chiếm 70% không gian slide.
+d. Tương tác & Animation: Không
+SLIDE 24. CK01: TEMPLATE BẢN CAM KẾT HÀNH ĐỘNG (GIAI ĐOẠN 8: ACTION PLEDGE)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (36 – 44 pt): Mặc định ghi chữ "BẢN CAM KẾT HÀNH ĐỘNG".
+- Tiêu đề phụ (28 – 32 pt): Điền [Lời kêu gọi hành động] từ bài học.
+- Nội dung điều khoản (20 – 24 pt): Điền [Các điều khoản cam kết hành động thực tế 1, 2, 3...] để áp dụng cho bản thân học sinh.
+b. Quy định hiển thị: Bố cục nằm trọn vẹn trong một khung đồ họa mang hình dáng tờ giấy cuộn cổ hoặc tấm bảng thông báo lớn, căn lề trái. Có thiết kế các ô Checkbox trống bên trái các điều khoản. Ô chữ ký nằm ở góc dưới cùng bên trái, nút hành động "BẤM CAM KẾT" nằm ở góc dưới cùng bên phải của khung.
+c. Quy định tương tác: Bước 1: Click tích chọn (V) vào các ô Checkbox trước điều khoản ➔ Bước 2: Click vào ô Chữ ký để hiện tên lớp học ➔ Bước 3: Click chuột vào nút "CAM KẾT" kích hoạt hiệu ứng một con dấu đỏ (Stamp approved) đóng cộp xuống vị trí chữ ký phát âm thanh lớn, để lại hình con dấu có chữ “ĐÃ CAM KẾT”.
+d. Hình ảnh (Prompt AI): Không
+SLIDE 25. VD01: TEMPLATE KHEN THƯỞNG & VINH DANH (TEMPLATE 9)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (36 – 44 pt): Mặc định ghi chữ "CHỨNG NHẬN HOÀN THÀNH NHIỆM VỤ".
+- Tiêu đề phụ (28 – 32 pt): Điền [Lời vinh danh / Lời cảm ơn sự nỗ lực của cả lớp].
+- Nội dung trung tâm (36 – 44 pt): Ô trống tự động điền: [Tên cá nhân/nhóm xuất sắc hoặc tên tập thể lớp] (Áp dụng kích thước Tiêu đề lớn cho Tên vinh danh).
+b. Quy định hiển thị: 
+- Giao diện: Hiển thị slide dưới dạng một tấm Giấy chứng nhận/Bằng khen trang trọng toàn màn hình.
+- Vị trí chữ: Tiêu đề đặt phía trên, căn giữa. ô nhập tên nhóm đặt ở chính giữa tâm slide. Con dấu chứng nhận nằm ở góc dưới bên phải.
+c. Quy định tương tác: 
+- Hiệu ứng: Giáo viên click chuột để điền tên nhóm lên chứng nhận. Khi bấm enter hoặc click vào nút "HOÀN THÀNH" ➔ Kích hoạt hiệu ứng pháo hoa rơi rực rỡ đầy màn hình (Confetti) và phát âm thanh tiếng vỗ tay vang dội chúc mừng.
+d. Hình ảnh (Prompt AI): Không
+SLIDE 26. VD01: TEMPLATE VINH DANH CHÚC MỪNG BÁC SĨ CHÍNH THỨC (SLIDE MỚI BỔ SUNG)
+a. Cơ cấu nội dung:
+- Tiêu đề chính (36 – 44 pt): Cố định chữ "LỄ VINH DANH BÁC SĨ CHÍNH THỨC"
+- Tiêu đề phụ (28 – 32 pt): "Chúc mừng các bạn đã xuất sắc vượt qua thử thách bác sĩ thực tập và chính thức trở thành bác sĩ chính của Nova Hospital!"
+- Nội dung trung tâm (36 – 44 pt): [Tên tập thể lớp hoặc các kíp trực xuất sắc]
+b. Quy định hiển thị: Giao diện đồ họa giả lập buổi lễ trao bằng thăng chức bác sĩ chính trang trọng. Tiêu đề đặt ở 1/3 phía trên, tên tập thể nằm ở trung tâm slide.
+c. Quy định tương tác: Khi active slide, tự động kích hoạt hiệu ứng pháo hoa Confetti rực rỡ tràn màn hình cùng âm thanh nhạc kịch chúc mừng chiến thắng vang dội.

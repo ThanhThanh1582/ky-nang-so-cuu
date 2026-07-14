@@ -1,0 +1,226 @@
+# BẢN MÔ TẢ CHI TIẾT SLIDE: TIẾT 3
+## CHỦ ĐỀ: KỸ NĂNG SƠ CỨU VẾT THƯƠNG NHẸ - TIẾT 3: CHUYÊN GIA TUYÊN TRUYỀN SỨC KHỎE
+*(Theo Quy chuẩn điền tự động - Theme Bác sĩ)*
+
+---
+
+## PHẦN MỞ ĐẦU BÀI HỌC
+(Phần này chạy cố định đầu tiết học để thiết lập bối cảnh tiếp nối của Tiết 3)
+
+### SLIDE 1. MĐ01: TEMPLATE MỞ ĐẦU BÀI HỌC
+*   **a. Cơ cấu nội dung:**
+    *   Mã số bài học (16pt - Bold): 6.31.3
+    *   Tên bài học (40pt - 44pt): Bài 31: Kỹ năng sơ cứu vết thương nhẹ - Tiết 3: Chuyên gia tuyên truyền sức khỏe
+    *   Số tiết (18pt - Italic): Tiết 3: Lan tỏa chiến dịch sức khỏe
+*   **b. Hình ảnh (Prompt AI):** Không
+*   **c. Hiển thị:** Mã số, Tên bài học và Số tiết nằm ở chính giữa màn hình.
+*   **d. Tương tác & Animation:** Hiệu ứng chữ chạy đánh máy (Typewriter) chạy tự động ở phần Tên bài học và Số tiết khi active slide.
+
+### SLIDE 2. MT01: TEMPLATE MỤC TIÊU BÀI HỌC
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính: Cố định chữ "MỤC TIÊU BÀI HỌC"
+    *   Nội dung: Phân chia thành 3 khối nội dung rõ ràng lấy từ nguồn bài học Tiết 3:
+        *   **Kiến thức**:
+            - Nhớ phác đồ sơ cứu vết xước, bỏng, chảy máu cam.
+            - Phát hiện lỗi sai thông tin và hình vẽ trên cẩm nang.
+            - Hiểu tâm lý các nhóm đối tượng người nghe.
+        *   **Kỹ năng**:
+            - Đánh giá tính chính xác của tài liệu sơ cứu.
+            - Thuyết trình thuyết phục người nghe thay đổi thói quen sai.
+        *   **Thái độ**:
+            - Tự tin tuyên truyền bảo vệ sức khỏe học đường.
+*   **b. Hình ảnh (Prompt AI):** Không
+*   **c. Hiển thị:** 3 khối mục tiêu dàn đều thành 3 cột hàng dọc cân đối ở nửa dưới slide.
+*   **d. Tương tác & Animation:** Không.
+
+---
+
+## PHẦN 1: KÍCH HOẠT & TIẾP NHẬN NHIỆM VỤ TUYÊN TRUYỀN
+(Mục tiêu: Ôn tập kiến thức để mở khóa và thấu hiểu đối tượng người nghe của chiến dịch)
+
+### SLIDE 3. GT01: TEMPLATE GIỚI THIỆU GIAI ĐOẠN 1
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (32pt): “Giai đoạn 1”
+    *   Tiêu đề phụ (26pt): “Mở khóa nhiệm vụ tuyên truyền”
+    *   Nội dung (24pt): Ôn kiến thức, tạo hứng thú trước khi bước vào ngày hội truyền thông chính thức.
+*   **b. Hình ảnh (Prompt AI):** Không
+*   **c. Hiển thị:** Chính giữa màn hình.
+
+### SLIDE 4. TH01: TEMPLATE THỰC HIỆN HOẠT ĐỘNG (ÔN KIẾN THỨC)
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (36 – 44 pt): "MỞ KHÓA GIẤY PHÉP PHÁT THANH"
+    *   Tiêu đề phụ (28 – 32 pt): "Hoàn thành câu hỏi ôn tập để kích hoạt giấy phép tuyên truyền"
+    *   Nội dung cốt lõi (20 – 24 pt) - Các mảnh ghép thông điệp chuẩn y khoa cần kéo thả:
+        *   Thẻ 1: Rửa trôi đất cát liên tục 3-5 phút dưới vòi nước chảy.
+        *   Thẻ 2: Làm mát vùng da bị bỏng dưới vòi nước sạch 15-20 phút.
+        *   Thẻ 3: Ngồi cúi đầu nhẹ và bóp chặt cánh mũi trong 10 phút.
+    *   Thời gian: 05:00 (5 phút).
+*   **b. Hình ảnh (Prompt AI):**
+    *   Prompt: `A vibrant and cute 3D cartoon style illustration of a high-tech school radio station control room. Glowing buttons on a console, whimsical audio wave charts, friendly medical crosses on the screens, bright colors, Disney Pixar style, highly detailed --ar 16:9`
+*   **c. Hiển thị & Tương tác:** Có đồng hồ số Monospace đếm ngược thời gian thực (5 phút). Khi bấm 'BẮT ĐẦU' phát tiếng tích tắc, hết giờ chớp đỏ màn hình 3 lần kèm chuông báo lớn.
+*   **d. Luồng đặc biệt:** Trò chơi kéo thả hoàn thành khẩu hiệu. Khi giáo viên bấm "Xem đáp án", hệ thống chuyển trực tiếp đến slide tổng kết kết quả chuẩn y khoa, không đi qua slide phản biện trung gian.
+
+### SLIDE 5. GT01: TEMPLATE GIỚI THIỆU GIAI ĐOẠN 2
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (32pt): “Giai đoạn 2”
+    *   Tiêu đề phụ (26pt): “Nhận nhiệm vụ tuyên truyền”
+    *   Nội dung (24pt): Hiểu audience & mục tiêu của chiến dịch.
+*   **b. Hình ảnh (Prompt AI):** Không
+
+### SLIDE 6. PV01: TEMPLATE PHÂN VAI CHUYÊN GIA TRUYỀN THÔNG ĐA KÊNH
+*   **a. Cơ cấu nội dung:**
+    *   Nội dung: "Hội đồng Y tế Công cộng chính thức mở rộng kịch bản! Hôm nay, các bác sĩ sẽ nhận vai trò là các Chuyên gia Tuyên truyền Sức khỏe. Nhiệm vụ tối cao của các bạn là thấu hiểu tâm lý đối tượng người nghe (Audience), rà soát thông điệp khoa học để đưa sản phẩm poster tiếp cận, thuyết phục người dân thay đổi thói quen!"
+*   **b. Hiển thị:** Khung chữ chính giữa màn hình.
+
+### SLIDE 7. NV01: TEMPLATE GIAO NHIỆM VỤ CHI TIẾT (PHÂN TÍCH AUDIENCE)
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (26pt): Cố định chữ "Hồ sơ đối tượng truyền thông"
+    *   Nội dung (18pt): Nhiệm vụ Chuyên gia: Đọc và phân tích kỹ lưỡng hồ sơ 3 nhóm đối tượng dưới đây để lên chiến lược thuyết phục:
+        *   Hồ sơ đối tượng #1 - Học sinh tiểu học (Nhóm Khán giả Nhí): Đặc điểm: Thích hình ảnh sinh động, câu chuyện vui nhộn, từ ngữ ngắn gọn dễ hiểu. Rất dễ bắt chước hành vi của người khác.
+        *   Hồ sơ đối tượng #2 - Thầy cô & Phụ huynh (Nhóm Khán giả Trưởng thành): Đặc điểm: Cần bằng chứng khoa học xác thực, cơ chế sinh lý rõ ràng, số liệu thống kê thực tế để tin tưởng.
+        *   Hồ sơ đối tượng #3 - Nhân viên căng tin & Bảo vệ (Nhóm Khán giả Thực tế): Đặc điểm: Cần hướng dẫn hành động cụ thể, nhanh gọn, dễ làm ngay trong tình huống khẩn cấp.
+*   **b. Hình ảnh (Prompt AI):**
+    *   Prompt: `A colorful 3D cartoon style demographic profile chart on a whimsical tablet screen. Friendly illustrated character avatars of kids, teachers, and school guards with cute medical icons and clean interface, cheerful Disney Pixar aesthetic --ar 16:9`
+*   **c. Tương tác & Animation:** Nút tương tác phụ "XEM CHI TIẾT 📁". Click chuột kích hoạt Modal popup window chứa bảng phân tích đặc điểm tâm lý người nghe (Người nghe là ai? Họ đang có thói quen sai gì? Từ ngữ nào sẽ thuyết phục được họ?) kèm tiếng lật tài liệu.
+
+---
+
+## PHẦN 2: THẨM ĐỊNH LÂM SÀNG & HOÀN THIỆN SẢN PHẨM
+(Mục tiêu: Kiểm tra tính đúng đắn của thông điệp y khoa và tối ưu hóa độ thuyết phục)
+
+### SLIDE 8. GT01: TEMPLATE GIỚI THIỆU GIAI ĐOẠN 3
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (32pt): “Giai đoạn 3”
+    *   Tiêu đề phụ (26pt): “Kiểm tra thông điệp”
+    *   Nội dung (24pt): Đảm bảo nội dung đúng theo chuẩn kiến thức y khoa đã học.
+
+### SLIDE 9. CB01: TEMPLATE CHUẨN BỊ (GIAI ĐOẠN 3: KIỂM TRA)
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề (32pt): “CHUẨN BỊ”
+    *   Nội dung (24pt): Thẻ Dụng cụ hiển thị `[Poster đã phác thảo ở tiết 2, Phiếu thẩm định thông điệp y tế]` bên trái. Thẻ Hình thức tổ chức hiển thị `[Hội đồng chuyên môn thảo luận nhóm 4 chuyên gia truyền thông y tế]` bên phải.
+
+### SLIDE 10. HD01: TEMPLATE QUY TRÌNH THẨM ĐỊNH THÔNG ĐIỆP
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (26pt): Cố định chữ "QUY TRÌNH THỰC HIỆN"
+    *   Nội dung (18pt): Chuỗi bước hành động: (Bước 1: Rà soát lại các kiến thức cốt lõi ➔ Bước 2: Đối chiếu thông tin trên poster xem đã chính xác chưa ➔ Bước 3: Đánh dấu các điểm cần sửa đổi về mặt khoa học).
+*   **b. Hiển thị:** Các khối hình học tiến trình dàn ngang tuần tự từ lề trái sang lề phải.
+
+### SLIDE 11. TH01: TEMPLATE THỰC HIỆN HOẠT ĐỘNG (RÀ SOÁT NỘI DUNG)
+*   **a. Cơ cấu nội dung:** 
+    *   Tiêu đề chính: THẨM ĐỊNH POSTER NHÓM
+    *   Nội dung: Hiển thị khung tiêu chí kiểm định (Đúng kiến thức, rõ ràng, không sai lệch) cùng đồng hồ số Monospace đếm ngược thời gian thực 07:00 (7 phút) để các nhóm tự kiểm tra sản phẩm.
+*   **b. Hình ảnh (Prompt AI):**
+    *   Prompt: `A playful 3D cartoon style illustration of a cozy pediatric editing room. A cute little child editor holding a big cartoonish magnifying glass, rousingly checking a giant illustrated medical handbook with colorful diagrams on a wooden desk, Pixar style, warm lighting --ar 16:9`
+
+### SLIDE 12. GT01: TEMPLATE GIỚI THIỆU GIAI ĐOẠN 4
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (32pt): “Giai đoạn 4”
+    *   Tiêu đề phụ (26pt): “Hoàn thiện thông điệp”
+    *   Nội dung (24pt): Tăng độ rõ ràng & thuyết phục cho sản phẩm truyền thông.
+*   **b. Hình ảnh (Prompt AI):** Không
+
+### SLIDE 13. BĐ01: TEMPLATE THÔNG BÁO SẮP ĐẾN GIỜ G (KỊCH TÍNH)
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (26pt): Cố định chữ "CẢNH BÁO KHẨN CẤP"
+    *   Nội dung (20pt - Đỏ/Bold): "Xe phát thanh tuyên truyền chuẩn bị lăn bánh! Chỉ còn một cơ hội cuối cùng để chỉnh sửa các lỗi đồ họa và làm nổi bật Slogan trước khi tiếp cận người dân!"
+*   **b. Hình ảnh (Prompt AI):**
+    *   Prompt: `A futuristic broadcast station control room, flashing warning lights, countdown timers glowing in deep orange and cyan, high tension --ar 16:9`
+*   **c. Tương tác & Animation:** Tự động kích hoạt hiệu ứng nhấp nháy flash màn hình (2-3 giây) và phát âm thanh tiếng còi tít tít hối thúc ngắn khi chuyển slide.
+
+### SLIDE 14. TH01: TEMPLATE THỰC HIỆN HOẠT ĐỘNG (HOÀN THIỆN POSTER)
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính: TỐI ƯU HÓA POSTER TRUYỀN THÔNG
+    *   Nội dung: Khung thực hành trang trí cuối cùng, tô màu, hoàn thiện chữ viết (Khắc phục các lỗi bôi kem đánh răng lên vết bỏng, ngửa đầu khi chảy máu cam, vẽ sai kỹ thuật quấn băng gạc thắt nghẹt). Đồng hồ số đếm ngược chạy 07:00 (7 phút).
+
+---
+
+## PHẦN 3: DIỄN TẬP & PHÁT ĐỘNG CHIẾN DỊCH TRUYỀN THÔNG TOÀN DIỆN
+(Mục tiêu: Thử nghiệm kỹ năng thuyết trình, phân vai và chính thức chia sẻ thông điệp tới cộng đồng)
+
+### SLIDE 15. GT01: TEMPLATE GIỚI THIỆU GIAI ĐOẠN 5
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (32pt): “Giai đoạn 5”
+    *   Tiêu đề phụ (26pt): “Duyệt & diễn tập chiến dịch”
+    *   Nội dung (24pt): Phân vai, luyện tập, chốt readiness trước khi thuyết trình chính thức.
+
+### SLIDE 16. HD01: TEMPLATE QUY TRÌNH DIỄN TẬP NHANH
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (26pt): Cố định chữ "QUY TRÌNH THỰC HIỆN"
+    *   Nội dung (18pt): Thao tác hành động: (Bước 1: Phân chia người cầm poster, người thuyết trình chính, người tương tác ➔ Bước 2: Nói thử theo câu mẫu gợi ý ➔ Bước 3: Góp ý sửa tư thế, giọng nói).
+
+### SLIDE 17. TH01: TEMPLATE THỰC HIỆN HOẠT ĐỘNG (DIỄN TẬP TRONG NHÓM)
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính: DIỄN TẬP PHÁT SÓNG TRONG NHÓM
+    *   Nội dung: Các nhóm tự luyện tập thuyết trình lướt qua sản phẩm poster trong nội bộ kíp trực 4 học sinh. Đồng hồ số Monospace chạy đếm ngược 08:00 (8 phút).
+
+### SLIDE 18. GT01: TEMPLATE GIỚI THIỆU GIAI ĐOẠN 6
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (32pt): “Giai đoạn 6”
+    *   Tiêu đề phụ (26pt): “Tuyên truyền sức khỏe”
+    *   Nội dung (24pt): Chia sẻ với cộng đồng (Báo cáo chiến dịch trước hội đồng cả lớp).
+
+### SLIDE 19. TB01: TEMPLATE DIỄN ĐÀN TRUYỀN THÔNG Y TẾ
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (32pt): Cố định chữ "BÁO CÁO CHIẾN DỊCH TRUYỀN THÔNG"
+    *   Nội dung: Đại diện các kíp trực lên thuyết trình về poster, giải thích thông điệp sức khỏe và cách phòng bệnh nhằm thuyết phục người nghe. Các câu thoại gợi ý trình bày:
+        *   Câu 1: "Sau khi tiến hành xâm nhập kiểm duyệt bản phác thảo Cẩm nang Sơ cứu, nhóm Chuyên gia chúng tôi phát hiện lỗi sai nguy hại nhất là..."
+        *   Câu 2: "Lỗi này nếu đưa ra cộng đồng sẽ vô cùng nguy hiểm vì cơ chế sinh lý bị tàn phá là..."
+        *   Câu 3: "Vì vậy, chúng tôi đề xuất điều chỉnh thông điệp truyền thông chuẩn xác là..."
+        *   *Cả lớp đóng vai người dân để lắng nghe và đặt câu hỏi chất vấn chéo.*
+*   **b. Hình ảnh (Prompt AI):**
+    *   Prompt: `A cheerful and lively 3D cartoon style illustration of a school healthcare festival campaign. Cute little student ambassadors wearing white coats confidently presenting colorful health guides on a small decorated stage, happy audience listening, bright Pixar style --ar 16:9`
+*   **c. Hiển thị & Tương tác:** Nội dung nằm ở trung tâm slide. Thiết lập đồng hồ đếm ngược thời gian thuyết trình của mỗi nhóm: 10:00 (Tổng thời gian 10 phút cho các nhóm).
+
+### SLIDE 20. ĐA01: TEMPLATE CHUẨN HÓA CHIẾN DỊCH (ĐÁP ÁN BÁC SĨ CHUYÊN GIA)
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (32pt): Cố định chữ "Kết quả chiến dịch chuẩn"
+    *   Nội dung: Hiển thị đúc kết các giải pháp truyền thông đúng đắn nhất, các lỗi sai phổ biến cần tránh khi giải thích khoa học:
+        *   *Kỹ thuật thuyết phục bằng cơ chế sinh lý*: Thay vì chỉ nói "Không được bôi kem đánh răng", hãy giải thích cho người nghe hiểu rằng kem đánh răng bịt kín lỗ chân lông, giữ nhiệt độ nung nấu lấn sâu phá hủy tế bào da bên dưới.
+        *   *Kỹ thuật thuyết phục bằng thực hành trực quan*: Trực tiếp quấn băng gạc chuẩn xác trước mặt người nghe, chỉ cho họ cách kiểm tra tuần hoàn đầu chi bằng cách bấm nhẹ móng tay để họ thấy tính an toàn của phương pháp chuẩn y khoa.
+        *   *Kỹ thuật điều phối giọng nói*: Sử dụng tông giọng điềm tĩnh, tự tin, phát âm rõ ràng các từ khóa cốt lõi để tạo dựng niềm tin vững chắc cho cộng đồng.
+
+---
+
+## PHẦN TỔNG KẾT, LỜI THỀ Y KHOA & VINH DANH CHÍNH THỨC
+(Mục tiêu: Đúc kết bài học, ký cam kết dài hạn và trao chứng nhận hoàn thành)
+
+### SLIDE 21. GT01: TEMPLATE GIỚI THIỆU GIAI ĐOẠN 7 & 8
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (32pt): “Tổng kết & Sứ mệnh”
+    *   Tiêu đề phụ (26pt): “Nhật ký chuyên gia & Sứ mệnh bác sĩ”
+    *   Nội dung (24pt): Reflection & Adaptation (Tự ngẫm lại năng lực bản thân và duy trì lý tưởng bảo vệ cộng đồng).
+*   **b. Hình ảnh (Prompt AI):** Không
+
+### SLIDE 22. TK01: TEMPLATE TỔNG KẾT BÀI HỌC (NHẬT KÝ CHUYÊN GIA)
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (32pt): Cố định chữ "TỔNG KẾT"
+    *   Nội dung: Nội dung chốt tổng lực về toàn bộ chuỗi kiến thức bảo vệ sức khỏe của cả 3 tiết học dưới dạng Bulleted list theo chiều dọc, chiếm 70% không gian:
+        *   *Sứ mệnh truyền thông y tế*: Tuyên truyền sức khỏe không chỉ là nói lý thuyết suông, mà là bảo vệ sinh mạng cộng đồng thông qua việc dũng cảm vạch trần và bài trừ các ngộ nhận nguy hiểm.
+        *   *Quy tắc tối thượng của thông điệp y khoa*: Luôn đặt độ vô trùng thông tin và tính chính xác khoa học lên hàng đầu.
+        *   *Nghệ thuật thuyết phục đám đông*: Thuyết phục hiệu quả nhất bằng cách giải thích cơ chế sinh lý học trực quan và biểu diễn kỹ thuật thực tế thay vì ép buộc.
+
+### SLIDE 23. CK01: TEMPLATE SỨ MỆNH BÁC SĨ (ACTION PLEDGE)
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (36 – 44 pt): Mặc định ghi chữ "BẢN CAM KẾT HÀNH ĐỘNG".
+    *   Tiêu đề phụ (28 – 32 pt): "Lời thề y khoa: Sứ mệnh bảo vệ sức khỏe cộng đồng"
+    *   Nội dung điều khoản (20 – 24 pt):
+        *   [ ] Tôi cam kết luôn đặt tính chính xác khoa học và độ vô trùng thông tin y khoa lên hàng đầu trong mọi thông điệp truyền thông.
+        *   [ ] Tôi cam kết kiên quyết đấu tranh, lên tiếng vạch trần và bài trừ các phương pháp sơ cứu dân gian nguy hại trong gia đình và trường học.
+        *   [ ] Tôi cam kết chủ động lan tỏa, hướng dẫn và huấn luyện kỹ năng sơ cứu chuẩn y khoa cho bạn bè và những người xung quanh bằng thái độ kiên nhẫn, thấu cảm.
+        *   [ ] Tôi cam kết luôn duy trì tinh thần điềm tĩnh, tự tin và hành động có trách nhiệm của người đại diện cho sứ mệnh bảo vệ an toàn sức khỏe học đường.
+*   **b. Quy định hiển thị:** Nằm trong khung bảng thông báo lớn, có các ô Checkbox trống bên trái điều khoản. Ô chữ ký nằm dưới cùng bên trái, nút "CAM KẾT" nằm ở góc dưới cùng bên phải.
+*   **c. Quy định tương tác:** Học sinh tích chọn Checkbox ➔ Click ô Chữ ký hiện tên lớp `[Tập thể Chuyên gia Sức khỏe Lớp 6A2 - Nova Hospital]` ➔ Bấm nút "CAM KẾT" kích hoạt hiệu ứng đóng cộp dấu đỏ "ĐÃ CAM KẾT" và phát âm thanh lớn.
+
+### SLIDE 24. VD01: TEMPLATE VINH DANH KHEN THƯỞNG CHIẾN DỊCH
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (36 – 44 pt): Mặc định ghi chữ "CHỨNG NHẬN HOÀN THÀNH NHIỆM VỤ".
+    *   Tiêu đề phụ (28 – 32 pt): "Vinh danh Chuyên gia truyền thông y tế xuất sắc vì cộng đồng!"
+    *   Nội dung trung tâm (36 – 44 pt): Ô trống cho phép giáo viên nhập trực tiếp.
+*   **b. Quy định hiển thị & tương tác:** Hiển thị dạng Bằng khen trang trọng toàn màn hình. Giáo viên click điền tên nhóm/kíp trực đạt giải, ấn Enter/Hoàn thành sẽ kích hoạt hiệu ứng pháo hoa Confetti rơi rực rỡ kèm tiếng vỗ tay vang dội chúc mừng.
+
+### SLIDE 25. VD01: TEMPLATE LỄ BẾ MẠC & VINH DANH CHÍNH THỨC
+*   **a. Cơ cấu nội dung:**
+    *   Tiêu đề chính (36 – 44 pt): Cố định chữ "LỄ VINH DANH BÁC SĨ CHÍNH THỨC"
+    *   Tiêu đề phụ (28 – 32 pt): "Chúc mừng toàn thể các bạn đã xuất sắc vượt qua mọi thử thách, bảo vệ thành công cộng đồng và chính thức trở thành Bác sĩ chuyên khoa của Nova Hospital!"
+    *   Nội dung trung tâm (36 – 44 pt): Tập thể Chuyên gia Sức khỏe Lớp 6A2 - Nova Hospital
+*   **b. Quy định hiển thị & tương tác:** Giao diện sân khấu bế mạc trang trọng. Khi chuyển đến slide này, hệ thống tự động kích hoạt hiệu ứng pháo hoa Confetti tràn màn hình cùng âm thanh nhạc kịch chiến thắng vang dội.

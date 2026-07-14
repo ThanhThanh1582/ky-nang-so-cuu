@@ -1,0 +1,321 @@
+Number of paragraphs: 264
+Number of tables: 0
+
+--- FIRST 50 PARAGRAPHS ---
+P0: 'Trường:...................' | Style: Normal
+P1: 'Tổ:............................    Họ và tên giáo viên: ............................' | Style: Normal
+P2: '' | Style: Normal
+P3: 'TÊN BÀI DẠY: BÀI 7.6: VÌ SAO CẢM XÚC THAY ĐỔI MẠNH?' | Style: Heading 2
+P4: 'TIẾT 1: BÁC SĨ CẢM XÚC (HỘI CHẨN LÂM SÀNG)' | Style: Heading 3
+P5: 'Môn học/Hoạt động giáo dục: Kỹ năng sống / Giáo dục cảm xúc xã hội (SEL); Lớp: 6' | Style: Normal
+P6: 'Thời gian thực hiện: 1 tiết (45 phút)' | Style: Normal
+P7: '' | Style: Normal
+P8: '' | Style: Normal
+P9: 'II. THIẾT BỊ DẠY HỌC VÀ HỌC LIỆU' | Style: Heading 3
+P10: 'Giáo viên chuẩn bị: Máy tính, thiết bị chạy slide `tiet1.html` (có âm thanh báo động còi cứu thương)' | Style: List Bullet
+P11: 'Học sinh chuẩn bị: Bút viết, bút dạ quang highlighter.' | Style: List Bullet
+P12: '' | Style: Normal
+P13: '__________________________________________________' | Style: Normal
+P14: '' | Style: Normal
+P15: 'III. TIẾN TRÌNH DẠY HỌC' | Style: Heading 3
+P16: '' | Style: Normal
+P17: '1. Hoạt động 1: Khởi động - Nhận diện cơn bão cảm xúc và nguyên lý "Tạm dừng" (10 phút)' | Style: Heading 4
+P18: '##### a. Mục tiêu' | Style: Normal
+P19: 'Nhận diện khái niệm bão cảm xúc và nguyên lý sơ cứu đầu tiên là "Tạm dừng" phản ứng bản năng.' | Style: List Bullet
+P20: '##### b. Nội dung' | Style: Normal
+P21: 'Thảo luận nhóm chọn 3 hành vi sơ cứu ca bệnh giận dữ và đối chiếu đáp án chuẩn trên thiết bị.' | Style: List Bullet
+P22: '##### c. Sản phẩm' | Style: Normal
+P23: 'Phương án sơ cứu chọn trên thiết bị; kết luận của học sinh về hành vi sơ cứu cảm xúc đầu tiên (Tạm d' | Style: List Bullet
+P24: '##### d. Tổ chức thực hiện' | Style: Normal
+P25: '' | Style: Normal
+P26: '* Giai đoạn 1: Mở khóa ca bệnh' | Style: Normal
+P27: 'Mục tiêu:' | Style: List Bullet
+P28: 'Nhận diện bão cảm xúc và nguyên lý sơ cứu đầu tiên là "Tạm dừng".' | Style: List Bullet
+P29: 'Giao nhiệm vụ:' | Style: List Bullet
+P30: 'Giáo viên:' | Style: List Bullet 2
+P31: 'Trình chiếu Slide 5-8C, phát còi cứu thương báo động; yêu cầu kíp trực thảo luận chọn 3 hành vi sơ c' | Style: List Bullet
+P32: 'Học sinh:' | Style: List Bullet 2
+P33: 'Quan sát tình huống bão cảm xúc trên slide; tiếp nhận nhiệm vụ.' | Style: List Bullet
+P34: 'Thực hiện:' | Style: List Bullet
+P35: 'Giáo viên:' | Style: List Bullet 2
+P36: 'Theo dõi và hỗ trợ kíp trực thảo luận.' | Style: List Bullet
+P37: 'Học sinh:' | Style: List Bullet 2
+P38: 'Thảo luận nhóm 4 học sinh; đại diện thực hiện kéo thả 3 phương án sơ cứu trên thiết bị.' | Style: List Bullet
+P39: 'Báo cáo:' | Style: List Bullet
+P40: 'Giáo viên:' | Style: List Bullet 2
+P41: 'Tổ chức báo cáo lý do chọn; kích hoạt đáp án chuẩn y khoa trên thiết bị.' | Style: List Bullet
+P42: 'Học sinh:' | Style: List Bullet 2
+P43: 'Trình bày lý do chọn; đối chiếu đáp án chuẩn trên thiết bị.' | Style: List Bullet
+P44: 'Kết luận:' | Style: List Bullet
+P45: 'Giáo viên:' | Style: List Bullet 2
+P46: 'Chốt nguyên lý sơ cứu cảm xúc đầu tiên là tạm dừng phản ứng bản năng.' | Style: List Bullet
+P47: 'Học sinh:' | Style: List Bullet 2
+P48: 'Ghi nhận nguyên lý "Tạm dừng" vào vở.' | Style: List Bullet
+P49: '' | Style: Normal
+
+Number of inline shapes (images): 0
+Paragraph 0 has drawing/image
+Paragraph 1 has drawing/image
+Paragraph 2 has drawing/image
+Paragraph 3 has drawing/image
+Paragraph 4 has drawing/image
+Paragraph 5 has drawing/image
+Paragraph 6 has drawing/image
+Paragraph 7 has drawing/image
+Paragraph 8 has drawing/image
+Paragraph 9 has drawing/image
+Paragraph 10 has drawing/image
+Paragraph 11 has drawing/image
+Paragraph 12 has drawing/image
+Paragraph 13 has drawing/image
+Paragraph 14 has drawing/image
+Paragraph 15 has drawing/image
+Paragraph 16 has drawing/image
+Paragraph 17 has drawing/image
+Paragraph 18 has drawing/image
+Paragraph 19 has drawing/image
+Paragraph 20 has drawing/image
+Paragraph 21 has drawing/image
+Paragraph 22 has drawing/image
+Paragraph 23 has drawing/image
+Paragraph 24 has drawing/image
+Paragraph 25 has drawing/image
+Paragraph 26 has drawing/image
+Paragraph 27 has drawing/image
+Paragraph 28 has drawing/image
+Paragraph 29 has drawing/image
+Paragraph 30 has drawing/image
+Paragraph 31 has drawing/image
+Paragraph 32 has drawing/image
+Paragraph 33 has drawing/image
+Paragraph 34 has drawing/image
+Paragraph 35 has drawing/image
+Paragraph 36 has drawing/image
+Paragraph 37 has drawing/image
+Paragraph 38 has drawing/image
+Paragraph 39 has drawing/image
+Paragraph 40 has drawing/image
+Paragraph 41 has drawing/image
+Paragraph 42 has drawing/image
+Paragraph 43 has drawing/image
+Paragraph 44 has drawing/image
+Paragraph 45 has drawing/image
+Paragraph 46 has drawing/image
+Paragraph 47 has drawing/image
+Paragraph 48 has drawing/image
+Paragraph 49 has drawing/image
+Paragraph 50 has drawing/image
+Paragraph 51 has drawing/image
+Paragraph 52 has drawing/image
+Paragraph 53 has drawing/image
+Paragraph 54 has drawing/image
+Paragraph 55 has drawing/image
+Paragraph 56 has drawing/image
+Paragraph 57 has drawing/image
+Paragraph 58 has drawing/image
+Paragraph 59 has drawing/image
+Paragraph 60 has drawing/image
+Paragraph 61 has drawing/image
+Paragraph 62 has drawing/image
+Paragraph 63 has drawing/image
+Paragraph 64 has drawing/image
+Paragraph 65 has drawing/image
+Paragraph 66 has drawing/image
+Paragraph 67 has drawing/image
+Paragraph 68 has drawing/image
+Paragraph 69 has drawing/image
+Paragraph 70 has drawing/image
+Paragraph 71 has drawing/image
+Paragraph 72 has drawing/image
+Paragraph 73 has drawing/image
+Paragraph 74 has drawing/image
+Paragraph 75 has drawing/image
+Paragraph 76 has drawing/image
+Paragraph 77 has drawing/image
+Paragraph 78 has drawing/image
+Paragraph 79 has drawing/image
+Paragraph 80 has drawing/image
+Paragraph 81 has drawing/image
+Paragraph 82 has drawing/image
+Paragraph 83 has drawing/image
+Paragraph 84 has drawing/image
+Paragraph 85 has drawing/image
+Paragraph 86 has drawing/image
+Paragraph 87 has drawing/image
+Paragraph 88 has drawing/image
+Paragraph 89 has drawing/image
+Paragraph 90 has drawing/image
+Paragraph 91 has drawing/image
+Paragraph 92 has drawing/image
+Paragraph 93 has drawing/image
+Paragraph 94 has drawing/image
+Paragraph 95 has drawing/image
+Paragraph 96 has drawing/image
+Paragraph 97 has drawing/image
+Paragraph 98 has drawing/image
+Paragraph 99 has drawing/image
+Paragraph 100 has drawing/image
+Paragraph 101 has drawing/image
+Paragraph 102 has drawing/image
+Paragraph 103 has drawing/image
+Paragraph 104 has drawing/image
+Paragraph 105 has drawing/image
+Paragraph 106 has drawing/image
+Paragraph 107 has drawing/image
+Paragraph 108 has drawing/image
+Paragraph 109 has drawing/image
+Paragraph 110 has drawing/image
+Paragraph 111 has drawing/image
+Paragraph 112 has drawing/image
+Paragraph 113 has drawing/image
+Paragraph 114 has drawing/image
+Paragraph 115 has drawing/image
+Paragraph 116 has drawing/image
+Paragraph 117 has drawing/image
+Paragraph 118 has drawing/image
+Paragraph 119 has drawing/image
+Paragraph 120 has drawing/image
+Paragraph 121 has drawing/image
+Paragraph 122 has drawing/image
+Paragraph 123 has drawing/image
+Paragraph 124 has drawing/image
+Paragraph 125 has drawing/image
+Paragraph 126 has drawing/image
+Paragraph 127 has drawing/image
+Paragraph 128 has drawing/image
+Paragraph 129 has drawing/image
+Paragraph 130 has drawing/image
+Paragraph 131 has drawing/image
+Paragraph 132 has drawing/image
+Paragraph 133 has drawing/image
+Paragraph 134 has drawing/image
+Paragraph 135 has drawing/image
+Paragraph 136 has drawing/image
+Paragraph 137 has drawing/image
+Paragraph 138 has drawing/image
+Paragraph 139 has drawing/image
+Paragraph 140 has drawing/image
+Paragraph 141 has drawing/image
+Paragraph 142 has drawing/image
+Paragraph 143 has drawing/image
+Paragraph 144 has drawing/image
+Paragraph 145 has drawing/image
+Paragraph 146 has drawing/image
+Paragraph 147 has drawing/image
+Paragraph 148 has drawing/image
+Paragraph 149 has drawing/image
+Paragraph 150 has drawing/image
+Paragraph 151 has drawing/image
+Paragraph 152 has drawing/image
+Paragraph 153 has drawing/image
+Paragraph 154 has drawing/image
+Paragraph 155 has drawing/image
+Paragraph 156 has drawing/image
+Paragraph 157 has drawing/image
+Paragraph 158 has drawing/image
+Paragraph 159 has drawing/image
+Paragraph 160 has drawing/image
+Paragraph 161 has drawing/image
+Paragraph 162 has drawing/image
+Paragraph 163 has drawing/image
+Paragraph 164 has drawing/image
+Paragraph 165 has drawing/image
+Paragraph 166 has drawing/image
+Paragraph 167 has drawing/image
+Paragraph 168 has drawing/image
+Paragraph 169 has drawing/image
+Paragraph 170 has drawing/image
+Paragraph 171 has drawing/image
+Paragraph 172 has drawing/image
+Paragraph 173 has drawing/image
+Paragraph 174 has drawing/image
+Paragraph 175 has drawing/image
+Paragraph 176 has drawing/image
+Paragraph 177 has drawing/image
+Paragraph 178 has drawing/image
+Paragraph 179 has drawing/image
+Paragraph 180 has drawing/image
+Paragraph 181 has drawing/image
+Paragraph 182 has drawing/image
+Paragraph 183 has drawing/image
+Paragraph 184 has drawing/image
+Paragraph 185 has drawing/image
+Paragraph 186 has drawing/image
+Paragraph 187 has drawing/image
+Paragraph 188 has drawing/image
+Paragraph 189 has drawing/image
+Paragraph 190 has drawing/image
+Paragraph 191 has drawing/image
+Paragraph 192 has drawing/image
+Paragraph 193 has drawing/image
+Paragraph 194 has drawing/image
+Paragraph 195 has drawing/image
+Paragraph 196 has drawing/image
+Paragraph 197 has drawing/image
+Paragraph 198 has drawing/image
+Paragraph 199 has drawing/image
+Paragraph 200 has drawing/image
+Paragraph 201 has drawing/image
+Paragraph 202 has drawing/image
+Paragraph 203 has drawing/image
+Paragraph 204 has drawing/image
+Paragraph 205 has drawing/image
+Paragraph 206 has drawing/image
+Paragraph 207 has drawing/image
+Paragraph 208 has drawing/image
+Paragraph 209 has drawing/image
+Paragraph 210 has drawing/image
+Paragraph 211 has drawing/image
+Paragraph 212 has drawing/image
+Paragraph 213 has drawing/image
+Paragraph 214 has drawing/image
+Paragraph 215 has drawing/image
+Paragraph 216 has drawing/image
+Paragraph 217 has drawing/image
+Paragraph 218 has drawing/image
+Paragraph 219 has drawing/image
+Paragraph 220 has drawing/image
+Paragraph 221 has drawing/image
+Paragraph 222 has drawing/image
+Paragraph 223 has drawing/image
+Paragraph 224 has drawing/image
+Paragraph 225 has drawing/image
+Paragraph 226 has drawing/image
+Paragraph 227 has drawing/image
+Paragraph 228 has drawing/image
+Paragraph 229 has drawing/image
+Paragraph 230 has drawing/image
+Paragraph 231 has drawing/image
+Paragraph 232 has drawing/image
+Paragraph 233 has drawing/image
+Paragraph 234 has drawing/image
+Paragraph 235 has drawing/image
+Paragraph 236 has drawing/image
+Paragraph 237 has drawing/image
+Paragraph 238 has drawing/image
+Paragraph 239 has drawing/image
+Paragraph 240 has drawing/image
+Paragraph 241 has drawing/image
+Paragraph 242 has drawing/image
+Paragraph 243 has drawing/image
+Paragraph 244 has drawing/image
+Paragraph 245 has drawing/image
+Paragraph 246 has drawing/image
+Paragraph 247 has drawing/image
+Paragraph 248 has drawing/image
+Paragraph 249 has drawing/image
+Paragraph 250 has drawing/image
+Paragraph 251 has drawing/image
+Paragraph 252 has drawing/image
+Paragraph 253 has drawing/image
+Paragraph 254 has drawing/image
+Paragraph 255 has drawing/image
+Paragraph 256 has drawing/image
+Paragraph 257 has drawing/image
+Paragraph 258 has drawing/image
+Paragraph 259 has drawing/image
+Paragraph 260 has drawing/image
+Paragraph 261 has drawing/image
+Paragraph 262 has drawing/image
+Paragraph 263 has drawing/image
+Total paragraphs with drawing: 264
