@@ -348,11 +348,11 @@
         }
         .qs01-box {
             background: rgba(255, 255, 255, 0.7);
-            border: 3px solid var(--primary-dark);
+            border: 1px solid rgba(0, 119, 182, 0.15);
             border-radius: 16px;
             padding: 40px;
             max-width: 800px;
-            box-shadow: 8px 8px 0px var(--primary-dark);
+            box-shadow: 0 8px 32px rgba(3, 4, 94, 0.08);
         }
         .qs01-header {
             font-size: 24px;
@@ -467,7 +467,7 @@
             padding: 20px;
         }
         .bd01-box {
-            border: 3px solid var(--accent);
+            border: 1px solid rgba(230, 57, 70, 0.2);
             background: rgba(230, 57, 70, 0.08);
             border-radius: 16px;
             padding: 40px;
@@ -1152,7 +1152,7 @@
             <div class="slide-viewport">
 
                 <!-- SLIDE 1 (MĐ01) -->
-                <div class="slide-frame active" id="slide-1" style="background: url('assets/cover.png') no-repeat center center; background-size: cover; border: 4px solid var(--primary-dark); box-shadow: 10px 10px 0px var(--primary-dark); border-radius: 12px; overflow: hidden;">
+                <div class="slide-frame active" id="slide-1" style="background: url('assets/cover.png') no-repeat center center; background-size: cover; display: flex; align-items: center; justify-content: center;">
                     <div class="template-md01">
                         <div class="md01-code">6.31</div>
                         <div class="md01-title" id="slide1-title"></div>
@@ -1166,7 +1166,7 @@
                         <div class="mt01-columns">
                             <div class="mt01-col">
                                 <div class="mt01-col-title">🧪 KIẾN THỨC</div>
-                                <div class="mt01-col-desc">Hiểu rõ hậu quả sinh lý nghiêm trọng của việc sơ cứu sai cách (cơ chế uốn ván kị khí, tích nhiệt hoại tử sâu, sặc máu phổi) và quy trình truyền thông y tế cộng đồng.</div>
+                                <div class="mt01-col-desc">Hiểu rõ hậu quả sinh lý nghiêm trọng của việc sơ cứu sai cách (môi trường thuận lợi cho vi khuẩn phát triển, tích nhiệt hoại tử sâu, sặc máu phổi) và quy trình truyền thông y tế cộng đồng.</div>
                             </div>
                             <div class="mt01-col">
                                 <div class="mt01-col-title">🩹 KỸ NĂNG</div>
@@ -1263,7 +1263,7 @@
                         <div class="tk01-header">TỔNG KẾT ÔN TẬP NGỘ NHẬN</div>
                         <div class="tk01-list-container" style="padding: 20px; max-height: 400px; overflow-y: auto;">
                             <ul class="tk01-list">
-                                <li class="tk01-item">Nhai đắp lá bàng trực tiếp lên vết thương hở tạo môi trường kị khí hoàn hảo, dẫn đến nguy cơ cao nhiễm trùng uốn ván hoại tử chi.</li>
+                                <li class="tk01-item">Nhai đắp lá bàng trực tiếp lên vết thương hở tạo môi trường thuận lợi cho vi khuẩn phát triển, dẫn đến nguy cơ cao nhiễm trùng uốn ván hoại tử chi.</li>
                                 <li class="tk01-item">Bôi kem đánh răng/nước mắm tạo ra lớp màng bọc giữ nhiệt lượng bên trong mô cơ, làm vết bỏng nhẹ ăn sâu hoại tử mô độ 3.</li>
                             </ul>
                         </div>
@@ -1442,13 +1442,13 @@
                             <div style="display: flex; flex-direction: column; gap: 15px; z-index: 2;">
                                 <div style="font-weight: 800; font-size: 20px; color: var(--accent); text-align: center; text-transform: uppercase;">⚠️ BIẾN CHỨNG SINH LÝ NGUY KỊCH</div>
                                 <div class="diag-drag-card match-right-card" id="match-r-hoaitu" onclick="selectRightCard(this)" style="padding: 15px; cursor: pointer; text-align: left; height: auto;">
-                                    Hoại tử tích nhiệt sâu tàn phá các lớp tế bào dưới da.
+                                    Làm vết bỏng bị tích nhiệt bên trong, gây đau rát dữ dội và tổn thương da sâu hơn.
                                 </div>
                                 <div class="diag-drag-card match-right-card" id="match-r-sacmau" onclick="selectRightCard(this)" style="padding: 15px; cursor: pointer; text-align: left; height: auto;">
-                                    Sặc máu vào đường thở gây suy hô hấp cấp tính nguy kịch.
+                                    Làm máu chảy ngược vào đường thở, gây sặc và ngạt thở rất nguy hiểm.
                                 </div>
                                 <div class="diag-drag-card match-right-card" id="match-r-uonvan" onclick="selectRightCard(this)" style="padding: 15px; cursor: pointer; text-align: left; height: auto;">
-                                    Nhiễm trùng uốn ván kị khí giải phóng độc tố thần kinh vận động.
+                                    Tạo môi trường thuận lợi cho vi khuẩn uốn ván phát triển, dễ gây nhiễm trùng nguy hiểm.
                                 </div>
                             </div>
                         </div>
@@ -1466,9 +1466,9 @@
                         <div class="tk01-header">TỔNG KẾT CƠ CHẾ BIẾN CHỨNG</div>
                         <div class="tk01-list-container" style="padding: 20px; max-height: 400px; overflow-y: auto;">
                             <ul class="tk01-list">
-                                <li class="tk01-item">Cơ chế uốn ván kị khí (Ca rách da): Nha bào trực khuẩn uốn ván phát triển cực nhanh trong điều kiện đắp lá cây bẩn bịt kín vết thương, giải phóng độc tố gây co thắt phế quản hoặc toàn thân.</li>
-                                <li class="tk01-item">Cơ chế tích nhiệt gây hoại tử sâu (Ca bỏng nhẹ): Bôi kem đánh răng, nước mắm hay mỡ trăn tạo màng giữ nhiệt nung nấu sâu làm tế bào bị hủy hoại sâu hơn.</li>
-                                <li class="tk01-item">Phản xạ sặc máu phổi nguy kịch (Ca chảy máu cam): Ngửa cổ ra sau làm máu chảy ngược xuống họng và đi nhầm vào khí quản gây ngạt thở hoặc tràn dịch cấp tính.</li>
+                                <li class="tk01-item">Tạo môi trường thuận lợi cho vi khuẩn phát triển (Ca rách da): Đắp lá bẩn bịt kín vết thương tạo điều kiện cho vi khuẩn uốn ván phát triển nhanh, dẫn đến co giật nguy hiểm.</li>
+                                <li class="tk01-item">Tích nhiệt gây tổn thương sâu (Ca bỏng nhẹ): Bôi kem đánh răng, nước mắm tạo lớp màng bọc giữ nhiệt lượng bên trong, khiến vết bỏng bị "luộc chín" từ bên trong và tổn thương da nặng hơn.</li>
+                                <li class="tk01-item">Máu chảy ngược vào đường thở (Ca chảy máu cam): Ngửa cổ ra sau làm máu chảy ngược xuống họng và đi nhầm vào phổi, gây sặc và ngạt thở rất nguy hiểm.</li>
                             </ul>
                         </div>
                     </div>
@@ -1605,7 +1605,7 @@
                         <div class="tk01-list-container" style="padding: 20px; max-height: 400px; overflow-y: auto;">
                             <ul class="tk01-list">
                                 <li class="tk01-item">Sứ mệnh "Bác sĩ cộng đồng" bắt đầu từ việc dũng cảm lên tiếng vạch trần và thay đổi các thói quen sơ cứu sai lầm nguy hại xung quanh mình.</li>
-                                <li class="tk01-item">Khắc sâu 3 cơ chế sinh lý phá hủy: Bôi kem đánh răng gây tích nhiệt hoại tử sâu; Đắp lá cây bẩn gây uốn ván kị khí; Ngửa cổ chảy máu cam gây sặc máu vào đường thở.</li>
+                                <li class="tk01-item">Khắc sâu 3 cơ chế sinh lý phá hủy: Bôi kem đánh răng gây tích nhiệt hoại tử sâu; Đắp lá cây bẩn gây môi trường thuận lợi cho vi khuẩn phát triển; Ngửa cổ chảy máu cam gây sặc máu vào đường thở.</li>
                                 <li class="tk01-item">Luôn tuân thủ quy tắc "3 Nhìn" sinh tử để đánh giá an toàn hiện trường trước khi hỗ trợ bất kỳ ai.</li>
                                 <li class="tk01-item">Áp dụng chuẩn quy trình 5 bước Wound Dressing Steps để đảm bảo tính vô trùng tối đa cho mọi chấn thương nhẹ.</li>
                             </ul>
@@ -2485,7 +2485,7 @@ function updateSlideUI() {
                 "biểu bì", "Vy Anh", "dị vật", "y khoa", "sơ cứu", "vô trùng", "băng bó",
                 "chính xác", "điều kiện", "bắt buộc", "hồ sơ", "ghi nhận", "đầy đủ",
                 "nguyên nhân", "xử trí", "sai lầm", "trước đó", "bệnh nhân", "Nguyễn Gia An",
-                "Phạm Bình Minh", "Trần Hoàng Nam", "Uốn ván kị khí", "Tích nhiệt hoại tử",
+                "Phạm Bình Minh", "Trần Hoàng Nam", "Môi trường thuận lợi cho vi khuẩn phát triển", "Tích nhiệt hoại tử",
                 "Sặc máu phổi", "Đại sứ", "Cộng đồng", "Cẩm nang", "Sơ đồ", "cẩm nang bỏ túi"
             ];
             medicalTerms.sort((a, b) => b.length - a.length);
