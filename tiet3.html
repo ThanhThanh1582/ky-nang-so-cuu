@@ -1078,6 +1078,41 @@
             50% { transform: translate(4px, -4px); }
             75% { transform: translate(-2px, -2px); }
         }
+    
+        .btn-toggle-sidebar {
+            background: rgba(0, 119, 182, 0.08);
+            border: 1px solid rgba(0, 119, 182, 0.15);
+            color: var(--primary-dark);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 110;
+        }
+        .btn-toggle-sidebar:hover {
+            background: rgba(0, 119, 182, 0.15);
+            transform: scale(1.05);
+        }
+        .btn-toggle-sidebar:active {
+            transform: scale(0.95);
+        }
+        .sidebar {
+            transition: width 0.3s ease, opacity 0.3s ease, border-right 0.3s ease;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .sidebar.collapsed {
+            width: 0 !important;
+            opacity: 0;
+            pointer-events: none;
+            border-right: none;
+        }
+
     </style>
     <!-- Font google Outfit -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -1101,6 +1136,7 @@
             
             <!-- HEADER THÔNG TIN Y KHOA -->
             <div class="presentation-header">
+                <button class="btn-toggle-sidebar" onclick="toggleSidebar()" title="Ẩn/Hiện bảng tên slide">☰</button>
                 <div class="header-title" id="header-slide-info">
                     BÀI 31: KỸ NĂNG SƠ CỨU VẾT THƯƠNG NHẸ
                 </div>
@@ -2330,6 +2366,19 @@
             buildSidebar();
             updateSlideUI();
         };
+    
+        function toggleSidebar() {
+            const sidebar = document.querySelector(".sidebar");
+            sidebar.classList.toggle("collapsed");
+            
+            // Re-trigger SVG draw lines if we are on the matching game slide
+            setTimeout(() => {
+                if (typeof drawLines === 'function') {
+                    drawLines();
+                }
+            }, 350);
+        }
+
     </script>
 </body>
 </html>
